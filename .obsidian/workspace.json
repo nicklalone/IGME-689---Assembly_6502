@@ -11,8 +11,12 @@
             "id": "76dabf6ea852d9bb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "01 - On Chasing the Beam/Source Code Notes.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "01 - On Chasing the Beam/Source Code Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "01 - On Chasing the Beam/Source Code Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "01 - On Chasing the Beam/Source Code Notes.md"
+              }
             }
           }
         ]
@@ -139,5 +147,9 @@
     }
   },
   "active": "76dabf6ea852d9bb",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Source Code Examples/halo2600 - proper.asm",
+    "Source Code Examples/halo2600.asm copy",
+    "Source Code Examples/halo2600.asm"
+  ]
 }
