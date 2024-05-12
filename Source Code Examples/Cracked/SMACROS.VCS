@@ -1,0 +1,91 @@
+;************************************************
+;
+;	SOUND MACROS HERE
+;
+;***********************************************
+
+.MACRO	NOTE NAME
+	.dc.b	\NAME
+.ENDM
+
+.MACRO	SOUND	NAME,TIME,VOLUME,FREQ,CONTROL
+
+\NAME   set CURRENT
+.nlist
+CURRENT set CURRENT + 1
+.assert CURRENT < MAXNOTES
+	.org 	TIMEORG
+	.dc.b	\TIME
+TIMEORG  set TIMEORG +1
+	.org 	VOLUMEORG
+	.dc.b	\VOLUME
+VOLUMEORG  set VOLUMEORG + 1
+	.org 	FREQORG
+	.dc.b	\FREQ
+FREQORG set FREQORG +1
+	.org 	CONTROLORG
+	.dc.b	\CONTROL
+.list
+CONTROLORG set CONTROLORG +1
+.ENDM
+
+.MACRO	ASOUND	TIME,VOLUME,FREQ,CONTROL
+.nlist
+	.org 	TIMEORG
+	.dc.b	\TIME
+TIMEORG  set TIMEORG +1
+	.org 	VOLUMEORG
+	.dc.b	\VOLUME
+VOLUMEORG  set VOLUMEORG + 1
+	.org 	FREQORG
+	.dc.b	\FREQ
+FREQORG set FREQORG +1
+	.org 	CONTROLORG
+	.dc.b	\CONTROL
+.list
+CONTROLORG set CONTROLORG +1
+.assert CURRENT < MAXNOTES
+.ENDM
+
+.MACRO	ADSRSTART NAME
+
+\NAME   set CURRENT
+.nlist
+CURRENT set CURRENT + 1
+.assert CURRENT < MAXNOTES
+	.org 	TIMEORG
+	.dc.b	$FF
+TIMEORG  set TIMEORG +1
+	.org 	VOLUMEORG
+	.dc.b	0
+VOLUMEORG  set VOLUMEORG + 1
+	.org 	FREQORG
+	.dc.b	0
+FREQORG set FREQORG +1
+	.org 	CONTROLORG
+	.dc.b	0
+.list
+CONTROLORG set CONTROLORG +1
+.ENDM
+
+
+.MACRO	ADSREND
+
+CURRENT set CURRENT + 1
+.assert CURRENT < MAXNOTES
+.nlist
+	.org 	TIMEORG
+	.dc.b	$FF
+TIMEORG  set TIMEORG +1
+	.org 	VOLUMEORG
+	.dc.b	0
+VOLUMEORG  set VOLUMEORG + 1
+	.org 	FREQORG
+	.dc.b	0
+FREQORG set FREQORG +1
+	.org 	CONTROLORG
+	.dc.b	0
+.list
+CONTROLORG set CONTROLORG +1
+.assert CURRENT < MAXNOTES
+.ENDM

@@ -1,0 +1,1089 @@
+		NEWPAGE ROOSTER_SIDE_CURSOR_TABLE
+SIDECURTAB:
+	.REPT	45
+	.DC.B	1
+	.ENDR
+SIDECUR:
+	.DC.B	$9
+	.DC.B	$19
+	.DC.B	$29
+;	.DC.B	$39	
+;	.DC.B	$39	
+	.DC.B	$29	
+	.DC.B	$19	
+	.DC.B	$9
+
+escur:
+SIDECURSIZE SET escur - SIDECUR
+
+	.REPT	54
+	.DC.B	1
+	.ENDR
+
+
+SPLATHMOVETAB:
+;.......
+	.REPT	43
+	.DC.B	0
+	.ENDR
+
+SPLATHMOVET:
+	.DC.B	$0
+	.DC.B	$0
+	.DC.B	$F2
+	.DC.B	$F2
+	.DC.B	$02	
+	.DC.B	$E2	
+	.DC.B	$02	
+	.DC.B	$02
+	
+	.DC.B	$22
+	.DC.B	$12
+	.DC.B	$12
+	.DC.B	$F2
+	.DC.B	$12
+	.DC.B	$00
+
+RBLANK:
+	.REPT	43
+	.DC.B	0
+	.ENDR
+
+	NEWPAGE	pagel
+
+SPLATSIZETAB:
+	.REPT	42
+	.DC.B	0
+	.ENDR
+SPLATSIZET:	.DC.B	$00
+	.DC.B	$10
+	.DC.B	$10
+	.DC.B	$10	
+	.DC.B	$20	
+	.DC.B	$30	
+	.DC.B	$30	
+	.DC.B	$30
+	.DC.B	$20
+	.DC.B	$20
+	.DC.B	$10
+SST:
+SPLAT_SIZE set SST - SPLATSIZET
+
+	.REPT	42
+	.DC.B	0
+	.ENDR
+
+;	NEWPAGE	HMOVE_TABLE
+
+HMTAB:
+hmtab:
+;	.DC.B	$71
+;	.DC.B	$61
+;	.DC.B	$51
+;	.DC.B	$41
+;	.DC.B	$31
+;	.DC.B	$21
+
+
+ 	.DC.B	$11	;0
+	.DC.B	$01
+	.DC.B	$F1
+	.DC.B	$E1
+	.DC.B	$D1
+	.DC.B	$C1
+	.DC.B	$B1
+	.DC.B	$A1
+	.DC.B	$91
+
+	.DC.B	$72
+	.DC.B	$62
+	.DC.B	$52
+	.DC.B	$42
+	.DC.B	$32
+	.DC.B	$22
+	.DC.B	$12
+	.DC.B	$02
+	.DC.B	$F2
+	.DC.B	$E2
+	.DC.B	$D2
+	.DC.B	$C2
+	.DC.B	$B2
+	.DC.B	$A2
+	.DC.B	$92
+
+	.DC.B	$73
+	.DC.B	$63
+	.DC.B	$53
+	.DC.B	$43
+	.DC.B	$33
+	.DC.B	$23
+	.DC.B	$13
+	.DC.B	$03
+	.DC.B	$F3
+	.DC.B	$E3
+	.DC.B	$D3
+	.DC.B	$C3
+	.DC.B	$B3
+	.DC.B	$A3
+	.DC.B	$93
+
+	.DC.B	$74
+	.DC.B	$64
+	.DC.B	$54
+	.DC.B	$44
+	.DC.B	$34
+	.DC.B	$24
+	.DC.B	$14
+	.DC.B	$04
+	.DC.B	$F4
+	.DC.B	$E4
+	.DC.B	$D4
+	.DC.B	$C4
+	.DC.B	$B4
+	.DC.B	$A4
+	.DC.B	$94
+
+	.DC.B	$75
+	.DC.B	$65
+	.DC.B	$55
+	.DC.B	$45
+	.DC.B	$35
+	.DC.B	$25
+	.DC.B	$15
+	.DC.B	$05
+	.DC.B	$F5
+	.DC.B	$E5
+	.DC.B	$D5
+	.DC.B	$C5
+	.DC.B	$B5
+	.DC.B	$A5
+	.DC.B	$95
+
+	.DC.B	$76
+	.DC.B	$66
+	.DC.B	$56
+	.DC.B	$46
+	.DC.B	$36
+	.DC.B	$26
+	.DC.B	$16
+	.DC.B	$06
+	.DC.B	$F6
+	.DC.B	$E6
+	.DC.B	$D6
+	.DC.B	$C6
+	.DC.B	$B6
+	.DC.B	$A6
+	.DC.B	$96
+
+	.DC.B	$77
+	.DC.B	$67
+	.DC.B	$57
+	.DC.B	$47
+	.DC.B	$37
+	.DC.B	$27
+	.DC.B	$17
+	.DC.B	$07
+	.DC.B	$F7
+	.DC.B	$E7
+	.DC.B	$D7
+	.DC.B	$C7
+	.DC.B	$B7
+	.DC.B	$A7
+	.DC.B	$97
+
+	.DC.B	$78
+	.DC.B	$68
+	.DC.B	$58
+	.DC.B	$48
+	.DC.B	$38
+	.DC.B	$28
+	.DC.B	$18
+	.DC.B	$08
+	.DC.B	$F8
+	.DC.B	$E8
+	.DC.B	$D8
+	.DC.B	$C8
+	.DC.B	$B8
+	.DC.B	$A8
+	.DC.B	$98
+
+	.DC.B	$79
+	.DC.B	$69
+	.DC.B	$59
+	.DC.B	$49
+	.DC.B	$39
+	.DC.B	$29
+	.DC.B	$19
+	.DC.B	$09
+	.DC.B	$F9
+	.DC.B	$E9
+	.DC.B	$D9
+	.DC.B	$C9
+	.DC.B	$B9
+	.DC.B	$A9
+	.DC.B	$99
+
+	.DC.B	$7A
+	.DC.B	$6A
+	.DC.B	$5A
+	.DC.B	$4A
+	.DC.B	$3A
+	.DC.B	$2A
+	.DC.B	$1A
+	.DC.B	$0A
+	.DC.B	$FA
+	.DC.B	$EA
+	.DC.B	$DA
+	.DC.B	$CA
+	.DC.B	$BA
+	.DC.B	$AA
+	.DC.B	$9A
+
+	.DC.B	$7B
+	.DC.B	$6B
+	.DC.B	$5B
+	.DC.B	$4B
+	.DC.B	$3B
+	.DC.B	$2B
+	.DC.B	$1B
+	.DC.B	$0B
+	.DC.B	$FB
+	.DC.B	$EB
+	.DC.B	$DB
+	.DC.B	$CB
+	.DC.B	$BB
+	.DC.B	$AB
+	.DC.B	$9B
+	.DC.B	$8B
+
+;HMTAB:
+;hmtab:
+;	.DC.B	$11	;0
+;	.DC.B	$01
+;	.DC.B	$F1
+;	.DC.B	$E1
+;	.DC.B	$D1
+;	.DC.B	$C1
+;	.DC.B	$B1
+;	.DC.B	$A1
+;	.DC.B	$91
+;
+;	.DC.B	$72
+;	.DC.B	$62
+;	.DC.B	$52
+;	.DC.B	$42
+;	.DC.B	$32
+;	.DC.B	$22
+;	.DC.B	$12
+;	.DC.B	$02
+;	.DC.B	$F2
+;	.DC.B	$E2
+;	.DC.B	$D2
+;	.DC.B	$C2
+;	.DC.B	$B2
+;	.DC.B	$A2
+;	.DC.B	$92
+;
+;	.DC.B	$73
+;	.DC.B	$63
+;	.DC.B	$53
+;	.DC.B	$43
+;	.DC.B	$33
+;	.DC.B	$23
+;	.DC.B	$13
+;	.DC.B	$03
+;	.DC.B	$F3
+;	.DC.B	$E3
+;	.DC.B	$D3
+;	.DC.B	$C3
+;	.DC.B	$B3
+;	.DC.B	$A3
+;	.DC.B	$93
+;
+;	.DC.B	$74
+;	.DC.B	$64
+;	.DC.B	$54
+;	.DC.B	$44
+;	.DC.B	$34
+;	.DC.B	$24
+;	.DC.B	$14
+;	.DC.B	$04
+;	.DC.B	$F4
+;	.DC.B	$E4
+;	.DC.B	$D4
+;	.DC.B	$C4
+;	.DC.B	$B4
+;	.DC.B	$A4
+;	.DC.B	$94
+;
+;	.DC.B	$75
+;	.DC.B	$65
+;	.DC.B	$55
+;	.DC.B	$45
+;	.DC.B	$35
+;	.DC.B	$25
+;	.DC.B	$15
+;	.DC.B	$05
+;	.DC.B	$F5
+;	.DC.B	$E5
+;	.DC.B	$D5
+;	.DC.B	$C5
+;	.DC.B	$B5
+;	.DC.B	$A5
+;	.DC.B	$95
+
+;	.DC.B	$76
+;	.DC.B	$66
+;	.DC.B	$56
+;	.DC.B	$46
+;	.DC.B	$36
+;	.DC.B	$26
+;	.DC.B	$16
+;	.DC.B	$06
+;	.DC.B	$F6
+;	.DC.B	$E6
+;	.DC.B	$D6
+;	.DC.B	$C6
+;	.DC.B	$B6
+;	.DC.B	$A6
+;	.DC.B	$96
+;
+;	.DC.B	$77
+;	.DC.B	$67
+;	.DC.B	$57
+;	.DC.B	$47
+;	.DC.B	$37
+;	.DC.B	$27
+;	.DC.B	$17
+;	.DC.B	$07
+;	.DC.B	$F7
+;	.DC.B	$E7
+;	.DC.B	$D7
+;	.DC.B	$C7
+;	.DC.B	$B7
+;	.DC.B	$A7
+;	.DC.B	$97
+
+;	.DC.B	$78
+;	.DC.B	$68
+;	.DC.B	$58
+;	.DC.B	$48
+;	.DC.B	$38
+;	.DC.B	$28
+;	.DC.B	$18
+;	.DC.B	$08
+;	.DC.B	$F8
+;	.DC.B	$E8
+;	.DC.B	$D8
+;	.DC.B	$C8
+;	.DC.B	$B8
+;	.DC.B	$A8
+;	.DC.B	$98
+;
+;	.DC.B	$79
+;	.DC.B	$69
+;	.DC.B	$59
+;	.DC.B	$49
+;	.DC.B	$39
+;	.DC.B	$29
+;	.DC.B	$19
+;	.DC.B	$09
+;	.DC.B	$F9
+;	.DC.B	$E9
+;	.DC.B	$D9
+;	.DC.B	$C9
+;	.DC.B	$B9
+;	.DC.B	$A9
+;	.DC.B	$99
+;
+;	.DC.B	$7A
+;	.DC.B	$6A
+;	.DC.B	$5A
+;	.DC.B	$4A
+;	.DC.B	$3A
+;	.DC.B	$2A
+;	.DC.B	$1A
+;	.DC.B	$0A
+;	.DC.B	$FA
+;	.DC.B	$EA
+;	.DC.B	$DA
+;	.DC.B	$CA
+;	.DC.B	$BA
+;	.DC.B	$AA
+;	.DC.B	$9A
+;
+;	.DC.B	$7B
+;	.DC.B	$6B
+;	.DC.B	$5B
+;	.DC.B	$4B
+;	.DC.B	$3B
+;	.DC.B	$2B
+;	.DC.B	$1B
+;	.DC.B	$0B
+;	.DC.B	$FB
+;	.DC.B	$EB
+;	.DC.B	$DB
+;	.DC.B	$CB
+;	.DC.B	$BB
+;	.DC.B	$AB
+;	.DC.B	$9B
+;	.DC.B	$8B
+
+
+FULL	= 32
+W	= FULL
+H	= FULL/2
+Q	= FULL/4
+QUARTER = Q
+E	= FULL/8
+S	= FULL/16
+
+
+		NEWPAGE musicpage
+
+MAXNOTES   = $1d
+ZTIMEORG:	
+TIMEORG:	.ds.b	MAXNOTES
+ZVOLUMEORG:
+VOLUMEORG:	.ds.b	MAXNOTES
+ZCONTROLORG:
+CONTROLORG:	.ds.b	MAXNOTES
+ZFREQORG:
+FREQORG:	.ds.b	MAXNOTES
+
+
+MUSTUFF:
+
+CURRENT  set 0
+
+;	SOUND	NAME, TIME, VOLUME, FREQ, CNTL
+
+	SOUND	STOP,0,0,0,0
+
+         SOUND   REST2,2,0,0,0		;rests
+         SOUND   REST,Q,0,0,0
+;        SOUND   REST1,13,0,0,0
+        SOUND   RESTT,3,0,0,0
+        SOUND   RESTL,1,0,0,0
+;        SOUND   RESTE,E,0,0,0
+         SOUND   RESTS,S,0,0,0
+;
+       SOUND   Z1,1,3,11,8		;effects noises
+
+
+
+        SOUND   Z2,1,4,10,8		;used in egg splat sound
+       SOUND   Z3,1,6,9,8		;and fire button shot sound
+        SOUND   Z4,1,8,7,8
+        SOUND   Z5,1,10,6,8
+        SOUND   Z6,2,15,4,8
+	SOUND   Z7,2,3,13,8
+
+	SOUND	DM1,W,15,16,6	;E FLAT	-- DEATH MARCH NOTES;
+	SOUND	DM2,Q,15,17,6	;D	-- I HOPE;
+	SOUND	DM3,W,15,17,6	;D
+	SOUND	DM4,Q,15,19,6	;C
+	SOUND	DM5,W,15,19,6	;C
+	SOUND	DM6,W,15,19,6	;C
+	SOUND	DM7,Q,15,20,6	;B
+;	SOUND	DM8,Q,15,21,6	;B FLAT
+
+;	SOUND	CLLQ,Q,15,31,6	;
+;	SOUND	CLLH,H,15,31,6	;
+;	SOUND	DLQ,Q,15,29,6	;
+;	SOUND	ELQ,Q,15,27,6	;
+;	SOUND	FLQ,Q,15,23,6	;
+;	SOUND	GLQ,Q,15,24,6	;
+;	SOUND	ALQ,Q,15,18,6	;
+;	SOUND	BLQ,Q,15,16,6	;
+;	SOUND	CLHQ,Q,15,15,6	;
+
+	SOUND	CLE,E,15,31,4	;C & other notes. out of tune as hell, though.	
+	SOUND	CLQ,Q,15,31,4	;	quarter note
+;	SOUND	CLH,H,15,31,4	;	quarter note
+;
+;	SOUND	DE,Q,15,29,4	;	eighth note
+;	SOUND	DQ,Q,15,29,4	;	quarter note
+;
+;	SOUND	EE,E,15,27,4	;E	eighth note
+;	SOUND	EQ,Q,15,27,4	;	quarter note
+;
+	SOUND	FE,E,15,23,4	;F
+;	SOUND	FQ,Q,15,23,4	
+;;
+;	SOUND	GE,E,15,24,4	;G
+;	SOUND	GQ,Q,15,24,4	;
+;	SOUND	GH,H,15,24,4	;	half note
+;;
+	SOUND	AE,E,15,18,4	;A
+;	SOUND	AQ,Q,15,18,4
+;	SOUND	AH,H,15,18,4
+;	SOUND	AW,W,15,18,4	;	whole note
+;;
+;	SOUND	BE,Q,15,16,4	;	eighth note
+;	SOUND	BQ,Q,15,16,4	;	quarter note
+;
+;	SOUND	CHE,E,15,15,4	;C ABOVE CLE
+	SOUND	CHQ,Q,15,15,4	;C ABOVE CLE
+	SOUND	CHH,H,15,15,4	;C ABOVE CLE
+;
+       SOUND   SW0,3,1,7,8
+       SOUND   SW1,2,1,6,8
+;
+;	SOUND	PEEP,3,4,15,4	
+
+
+	.org	MUSTUFF
+
+	;CRACKED TUNES
+
+musictab:
+	.dc.b		0
+swoosh:
+
+SWOOSH	set	swoosh-musictab
+	NOTE	SW0
+	NOTE	SW1
+	NOTE	REST
+	NOTE	STOP
+
+;zpeep:
+;PEEPZ	set	zpeep-musictab
+;	NOTE	PEEP
+;	NOTE	REST
+;	NOTE	PEEP
+;	NOTE	STOP
+
+HUNT:
+;SCR_INIT SET HUNT - musictab
+
+;	NOTE	REST
+;	NOTE	CLE
+;	NOTE	RESTT
+;	NOTE	FE	
+;	NOTE	RESTT
+;	NOTE	AE
+;	NOTE	RESTT
+;	NOTE	CLE
+;	NOTE	RESTT
+;	NOTE	FE
+;	NOTE	RESTT
+;	NOTE	AE
+;	NOTE	RESTT
+;	NOTE	CLE
+;	NOTE	RESTT
+;	NOTE	FE
+;	NOTE	RESTT
+;	NOTE	AH
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	STOP
+
+TOMB:
+DEATH_MARCH SET TOMB - musictab
+
+	NOTE	REST
+	NOTE	DM6
+	NOTE	DM5
+	NOTE	DM4
+	NOTE	RESTT
+	NOTE	DM6
+	NOTE	DM1
+	NOTE	DM2
+	NOTE	RESTT
+	NOTE	DM3
+	NOTE	DM4
+	NOTE	RESTT
+	NOTE	DM5
+	NOTE	DM7
+	NOTE	RESTT
+	NOTE	DM6
+	NOTE	REST
+	NOTE	STOP
+
+charge:
+CHARGE	SET	charge - musictab
+
+	NOTE	REST
+	NOTE	CLE
+	NOTE	RESTT
+	NOTE	FE
+	NOTE	RESTT
+	NOTE	AE
+	NOTE	RESTT
+	NOTE	CHQ
+	NOTE	RESTS
+	NOTE	RESTT
+	NOTE	AE
+	NOTE	RESTT
+	NOTE	CHH
+	NOTE	REST
+
+	NOTE	REST
+	NOTE	STOP
+
+;test:
+;STARTM_UP 	set test - musictab
+;
+;	NOTE	CLQ	;CLLQ
+;	NOTE	DQ	;REST
+;	NOTE	EQ	;REST
+;	NOTE	FQ	;REST
+;	NOTE	GQ	;DLQ
+;	NOTE	REST	;REST
+;	NOTE	AQ	;FLQ
+;	NOTE	BQ	;GLQ
+;	NOTE	AQ	;FLQ
+;	NOTE	REST	;REST
+;	NOTE	CHQ	;GLQ
+;	NOTE	REST	;REST
+;	NOTE	CLH	;CLLH
+;
+;	NOTE	REST	;REST
+;	NOTE	BQ	;REST
+;	NOTE	AQ	;FLQ
+;	NOTE	GQ	;REST
+;	NOTE	AQ	;REST
+;	NOTE	REST	;REST
+;	NOTE	BQ	;GLQ
+;	NOTE	AQ	;REST
+;	NOTE	BQ	;GLQ
+;	NOTE	REST	;REST
+;	lda	#SCR_INIT
+;	jsr	PLAY_SND0
+;	NOTE	CHH	;REST
+;	NOTE	REST	;REST
+;	NOTE	REST	;REST
+;	NOTE	CLH	;CLLQ
+;
+;	NOTE	REST
+;	NOTE	STOP
+;
+;test2:
+;STARTB_UP	SET	test2 - musictab
+;
+;	NOTE	CLLQ
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	DLQ
+;	NOTE	REST
+;	NOTE	FLQ
+;	NOTE	GLQ
+;	NOTE	FLQ
+;	NOTE	REST
+;	NOTE	GLQ
+;	NOTE	REST
+;	NOTE	CLLH
+;
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	FLQ
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	REST
+;	NOTE	GLQ
+;;	NOTE	REST
+;	NOTE	GLQ
+;	NOTE	REST
+; 	NOTE	REST
+;	NOTE	REST
+;;	NOTE	REST
+;	NOTE	REST
+;	NOTE	CLLH
+;
+; 	NOTE	REST
+;     	NOTE	STOP
+; 
+;
+	;CRACKED SOUNDS & NOISES
+
+tscoff:				;SOUND OF EGG SPLATTING & CRACKING
+SCOFF	set tscoff - musictab
+
+	NOTE	REST
+	NOTE    Z1 
+	NOTE    Z2 
+	NOTE	Z3
+	NOTE	REST
+	NOTE	Z4
+	NOTE	Z5
+;	NOTE	Z6 
+	NOTE	REST	
+	NOTE	STOP
+
+tshot:				;SOUND OF FIRE BUTTON SHOT
+SHOT	set tshot - musictab
+
+        NOTE    Z6
+        NOTE    Z5 
+        NOTE    Z4
+        NOTE    Z3
+        NOTE    Z2
+        NOTE    Z1
+        NOTE    Z7
+	NOTE	REST
+        NOTE    STOP
+
+
+DINK:
+DING	SET DINK - musictab
+
+	NOTE	RESTL
+	NOTE	CHQ
+	NOTE	RESTL
+	NOTE	STOP
+
+
+SKERSIZE:
+	.DC.B	ERK1SIZE	;TOP
+	.DC.B	ERK2SIZE+1
+	.DC.B	ERK3SIZE+1
+	.DC.B	ERK4SIZE+1
+	.DC.B	ERK5SIZE+1
+	.DC.B	ERK6SIZE+1
+	.DC.B	ERK7SIZE+1
+
+
+REGG1:
+	.dc.b	0
+	.dc.b	$1c
+	.dc.b	$7e
+	.dc.b	$fe
+	.dc.b	$fe
+	.dc.b	$fe
+	.dc.b	$7e
+	.dc.b	$1c
+
+
+	NEWPAGE  PAGE22
+
+
+ROOSTER0:
+
+;ROOSTER1:
+;	.dc.b	$0 ; x 8 y 128
+;	.dc.b	$FE ; x 8 y 129
+;	.dc.b	$FC ; x 8 y 130
+;	.dc.b	$78 ; x 8 y 131
+;	.dc.b	$70 ; x 8 y 132
+;	.dc.b	$60 ; x 8 y 133
+;	.dc.b	$20 ; x 8 y 134
+;	.dc.b	$20 ; x 8 y 135
+;	.dc.b	$20 ; x 8 y 136
+;	.dc.b	$70 ; x 8 y 137
+;	.dc.b	$70 ; x 8 y 138
+;	.dc.b	$C0 ; x 8 y 139
+;	.dc.b	$C2 ; x 8 y 140
+;	.dc.b	$C2 ; x 8 y 141
+;	.dc.b	$C2 ; x 8 y 142
+;	.dc.b	$0 ; x 8 y 143
+;	.dc.b	$0 ; x 8 y 144
+;	.dc.b	$0 ; x 8 y 145
+;	.dc.b	$0 ; x 8 y 146
+;	.dc.b	$0 ; x 8 y 147
+;	.dc.b	$0 ; x 8 y 148
+;	.dc.b	$0 ; x 8 y 149
+;	.dc.b	$0 ; x 8 y 150
+;	.dc.b	$0 ; x 8 y 151
+;	.dc.b	$0 ; x 8 y 152
+;	.dc.b	$0 ; x 8 y 153
+;	.dc.b	$0 ; x 8 y 154
+;	.dc.b	$0 ; x 8 y 155
+
+	.dc.b	$0 ; x 8 y 138
+	.dc.b	$C ; x 8 y 139
+	.dc.b	$C ; x 8 y 140
+	.dc.b	$C ; x 8 y 141
+	.dc.b	$C ; x 8 y 142
+	.dc.b	$C ; x 8 y 143
+	.dc.b	$C ; x 8 y 144
+	.dc.b	$C ; x 8 y 145
+	.dc.b	$C ; x 8 y 146
+	.dc.b	$8 ; x 8 y 147
+	.dc.b	$8 ; x 8 y 148
+	.dc.b	$18 ; x 8 y 149
+	.dc.b	$38 ; x 8 y 150
+	.dc.b	$7C ; x 8 y 151
+	.dc.b	$E7 ; x 8 y 152
+	.dc.b	$C7 ; x 8 y 153
+	.dc.b	$8D ; x 8 y 154
+	.dc.b	$81 ; x 8 y 155
+	.dc.b	$C1 ; x 8 y 156
+	.dc.b	$C3 ; x 8 y 157
+	.dc.b	$63 ; x 8 y 158
+	.dc.b	$76 ; x 8 y 159
+	.dc.b	$3C ; x 8 y 160
+	.dc.b	$18 ; x 8 y 161
+
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+;ROOSTER0:
+ROOSTER1:
+;	.dc.b	$0 ; x 8 y 161
+;	.dc.b	$2 ; x 8 y 162
+;	.dc.b	$6 ; x 8 y 163
+;	.dc.b	$E ; x 8 y 164
+;	.dc.b	$1A ; x 8 y 165
+;	.dc.b	$3B ; x 8 y 166
+;	.dc.b	$31 ; x 8 y 167
+;	.dc.b	$63 ; x 8 y 168
+;	.dc.b	$67 ; x 8 y 169
+;	.dc.b	$3F ; x 8 y 170
+;	.dc.b	$3E ; x 8 y 171
+;	.dc.b	$EA ; x 8 y 172
+;	.dc.b	$14 ; x 8 y 173
+;	.dc.b	$56 ; x 8 y 174
+;	.dc.b	$14 ; x 8 y 175
+;	.dc.b	$73 ; x 8 y 176
+;	.dc.b	$FF ; x 8 y 177
+;	.dc.b	$FE ; x 8 y 178
+;	.dc.b	$7E ; x 8 y 179
+;	.dc.b	$DE ; x 8 y 180
+;	.dc.b	$DF ; x 8 y 181
+;	.dc.b	$1B ; x 8 y 182
+;	.dc.b	$1B ; x 8 y 183
+;	.dc.b	$33 ; x 8 y 184
+;	.dc.b	$43 ; x 8 y 185
+;	.dc.b	$6 ; x 8 y 186
+;	.dc.b	$6 ; x 8 y 187
+;	.dc.b	$8 ; x 8 y 188
+
+	dc.b	0
+	dc.b	0
+	dc.b	0
+	dc.b	0
+	dc.b	0
+	dc.b	0
+	dc.b	0
+
+	.dc.b	$0 ; x 8 y 102
+	.dc.b	$C ; x 8 y 103
+	.dc.b	$38 ; x 8 y 104
+	.dc.b	$70 ; x 8 y 105
+	.dc.b	$60 ; x 8 y 106
+	.dc.b	$C3 ; x 8 y 107
+	.dc.b	$86 ; x 8 y 108
+	.dc.b	$BC ; x 8 y 109
+	.dc.b	$F8 ; x 8 y 110
+	.dc.b	$C0 ; x 8 y 111
+	.dc.b	$0 ; x 8 y 112
+	.dc.b	$10 ; x 8 y 113
+	.dc.b	$1C ; x 8 y 114
+	.dc.b	$1E ; x 8 y 115
+	.dc.b	$16 ; x 8 y 116
+	.dc.b	$33 ; x 8 y 117
+	.dc.b	$7D ; x 8 y 118
+	.dc.b	$4E ; x 8 y 119
+	.dc.b	$C6 ; x 8 y 120
+	.dc.b	$E6 ; x 8 y 121
+	.dc.b	$F4 ; x 8 y 122
+	.dc.b	$B0 ; x 8 y 123
+	.dc.b	$98 ; x 8 y 124
+	.dc.b	$D8 ; x 8 y 125
+	.dc.b	$D8 ; x 8 y 126
+	.dc.b	$D0 ; x 8 y 127
+	.dc.b	$80 ; x 8 y 128
+	.dc.b	$80 ; x 8 y 129
+					.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+
+CHICKCOLOR:
+	.REPT	16
+	.DC.B	ORANGE
+	.ENDR
+	.REPT	19
+	.DC.B	REDBIRD
+	.ENDR
+
+
+	.dc.b	0 
+	.dc.b	0 
+	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;	.dc.b	0 
+;;	.dc.b	0 
+;	.dc.b	0 
+
+	NEWPAGE	RNUM
+
+RNUM0:	.DC.B	$00,$00,$3C,$66,$66,$66,$66,$66,$3C
+RNUM1:	.DC.B	$00,$00,$7E,$18,$18,$18,$18,$78,$38
+RNUM2:	.DC.B	$00,$00,$7E,$60,$60,$3C,$06,$46,$7C
+RNUM3:	.DC.B	$00,$00,$3C,$46,$06,$0C,$06,$46,$3C
+RNUM4:	.DC.B	$00,$00,$0C,$0C,$7E,$4C,$2C,$1C,$0C
+RNUM5:	.DC.B	$00,$00,$7C,$46,$06,$7C,$60,$60,$7E
+RNUM6:	.DC.B	$00,$00,$3C,$66,$66,$7C,$60,$62,$3C
+RNUM7:	.DC.B	$00,$00,$30,$30,$30,$18,$0C,$46,$7E
+RNUM8:	.DC.B	$00,$00,$3C,$66,$66,$3C,$66,$66,$3C
+RNUM9:	.DC.B	$00,$00,$3C,$46,$06,$3E,$66,$66,$3C
+
+

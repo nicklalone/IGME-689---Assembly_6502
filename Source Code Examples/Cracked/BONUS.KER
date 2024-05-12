@@ -1,0 +1,172 @@
+;.list	;
+;
+;	display "score" - miles / speed / msg
+;
+;
+
+SCOREKERSIZE 	SET 	8
+COPYSIZ		SET	12
+KERSIZ 		set	12 ;8	;CHARSIZ + 4
+NUMKER		set 	4
+BLANKSIZE	set	14
+EGGAREA		SET	(KERSIZ + BLANKSIZE + 4 ) * NUMKER
+FUDGE 		SET	9  ;+10
+WAITIME		SET	192 - (EGGAREA + SCOREKERSIZE + FUDGE)
+BKMAX		SET	30;	29
+EGGSIZ		SET	7
+
+BOTBLK		SET	8
+TOPBLK		SET	10
+
+BSCREEN		SET 	10+(BKMAX*4)
+
+
+
+TSIZ:	.dc.b	6
+	.dc.b	12
+	.dc.b	20
+	.dc.b	20
+
+SCORE:	
+	LDY	#TOPBLK	; was $1A (WAITIME/2)-1 ;-1 CAUSE WE ADDED 1 LINE BELOW
+TOPL:	WSYNC
+	lda	#3	; NUMKER -1
+	sta	TEMP2
+	DEY
+	BPL	TOPL
+
+sloop:	WSYNC
+			;4
+	STAI	BKMAX,TEMP3	;
+	lda	R_KERSIZ	; 
+	sta	TEMP		;
+	lda	tcolor0
+	sta	COLUP0
+	sta	COLUP1
+
+
+	ldy	TEMP2
+	lda	R_SCREEN
+	bne	ck2		; title screen ?
+	lda	TSIZ,y
+	sta	TEMP		;TEMP = IMAGE SIZE
+ck2:	lda	R_SCREEN
+	CMP	#INBONUSSCREEN
+	BEQ	regular
+sizset:
+	LDY	R_SCREEN_INDEX
+	dey
+	lda	INTRO_IMAGE_TAB,y   ; size adjustment
+	sta	TEMP3
+	LDY	TEMP2		;3;7
+	cpy	#2
+	bne	regular
+	ldy	R_SCREEN_INDEX   ; load up for intro screen
+	dey
+	ldx	#SCREEN_SIZE-1
+zloopz:	lda	INTRO_IMAGE_TAB,y
+	sta	DIGIT1,x
+	dey
+	dex
+	bpl	zloopz
+	jmp	zcommon
+
+regular:
+	jsr 	LOAD_SIX
+zcommon:
+;	WSYNC
+	lda	TEMP3
+	sec
+	sbc	TEMP
+	pha
+	jsr	SCORE_KER	;6;60	;+WSYNC 63
+	pla
+	tay
+zblankz:
+	WSYNC
+	DEY
+	Bpl	zblankz
+	dec	TEMP2
+	bpl	sloop
+
+	lda	#WHITE
+	sta	COLUP0
+	sta	COLUP1
+	ldy	#4
+	jsr	LOAD_SIX
+	ldy	SCOREK   ;12	;KERSIZ
+	sty	TEMP
+	jsr	SCORE_KER
+
+	ldy	#BOTBLK		; blank lines at bottom
+BOTLOOP:
+	WSYNC
+	PTR	OVERSCAN,BANKJMP	
+	dey
+	bpl	BOTLOOP
+
+	JMP	ROMJMPD
+
+
+SCORE_KER:
+	LDY	TEMP
+SCORELOOP:
+	LDA	@DIGIT2(Y)	;5;71
+	TAX			;2;73
+	WSYNC			;3;76
+;	WASTE3			;3;3
+	LDA	@DIGIT1(Y) 	;5;8
+	STA	TEMP1		;3;11
+	LDA	@DIGIT6(Y)	;5;16
+	STA	GRP0		;3;19
+	LDA	@DIGIT5(Y)	;5;24
+	STA	GRP1		;3;27
+	LDA	@DIGIT4(Y) 	;5;32
+	STA	GRP0		;3;35
+	LDA	@DIGIT3(Y) 	;5;40
+	LDY	TEMP1		;3;43
+	STA	GRP1		;3;46
+	STX	GRP0		;3;49
+	STY	GRP1		;3;52
+	STA	GRP0		;3;55
+	DEC	TEMP		;5;60
+	ldy	TEMP		;3;63
+	BPL	SCORELOOP	;3;66
+CLRPL:
+;	WSYNC
+	LDA	#00		;2
+	STA	GRP0		;3
+	STA	GRP1		;3    
+	STA	GRP0		;3
+	RTS
+
+ENDSCR:
+ENDSCRP	set (ENDSCR & $FF00)  
+SCRPG   set (SCORELOOP & $FF00)
+
+	.assert  ENDSCRP = SCRPG  ; kernal can't cross page ....
+
+
+LOAD_SIX:
+	LDA	Y,SIXCHAR1	;4;11
+	STA	DIGIT1		;3;14
+	LDA	Y,SIXCHAR2	;4;18
+	STA	DIGIT2		;3;21
+	LDA	Y,SIXCHAR3	;4;25
+	STA	DIGIT3		;3;28
+	LDA	Y,SIXCHAR4	;4;32
+	STA	DIGIT4		;3;35
+	LDA	Y,SIXCHAR5	;4;39
+	STA	DIGIT5		;3;42
+	LDA	Y,SIXCHAR6	;4;46
+	STA	DIGIT6		;3;49
+	lda	Y,SIXPAGE
+	STA	DIGIT1+1
+	STA	DIGIT2+1
+	STA	DIGIT3+1
+	STA	DIGIT4+1
+	STA	DIGIT5+1
+	STA	DIGIT6+1
+	rts
+
+;.nlist

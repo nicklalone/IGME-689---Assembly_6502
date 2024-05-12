@@ -1,0 +1,5 @@
+rm crkvcs.prn
+mac -l crkvcs
+rm crkvcs.o
+mac crkvcs
+dload crkvcs.o

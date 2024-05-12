@@ -1,0 +1,43 @@
+
+MadMAC 0.13 Beta Release					12-Aug-1987 lmd
+
+
+(If you have a copy of MadMAC with a version number "0.11t" or earlier,
+it is definitely advantagous to use 0.13, since there have been a
+significant number of bug fixes....)
+
+
+Files in the distribution are:
+
+	README		Distribution documentation
+	MAC.PRG		Macro assembler
+	MAC.MAN		"nroff"-style assembler manual
+	CONV65.PRG	6502 object file converter
+	CONV65.MAN	"nroff"-style man page for CONV65.PRG
+	M.PRG		"Quick" MAC.PRG invoker
+	ATARI.S		Preliminary Atari ST equates and macros
+
+	CODE.S		68000 opcodes the assembler implements
+	CODE65.S	6502 opcodes the assembler implements
+	INSTMAC.S	Sample MAC installer (silly example)
+	EXAMPLE.S   \
+	EXAMPLE1.S  ->- Silly example programs
+	EXAMPLE2.S  /
+	BUGS.S      \
+	SHIFT.S	    ->- another silly example program
+	IMAGES.S    /
+
+
+MAC and ALN *love* to eat memory.  You may have to remove or
+shrink massive ramdisks and desk accessories.
+
+The example programs were assembled with the following assembler
+command lines:
+
+	mac -p example				==> example.prg
+	mac -p example1				==> example1.prg
+	mac -p example2				==> example2.prg
+	mac -p bugs shift images		==> bugs.prg
+	mac -p instmac				==> instmac.prg
+	mac code				==> code.o
+	mac code65				==> code65.o

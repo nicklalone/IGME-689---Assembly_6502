@@ -1,0 +1,29 @@
+
+Dear Julie
+
+	This version is the "RANCH Screen Milestone". The changes made
+in addition to the ranch screen stuff are:
+
+	1	 The 3 levels of dificulty are implemented
+	2	 The "demo" mode plays the game better.
+	3 	 The  animations move more smoothly
+	4	 The walking character on the subway screen 
+		 is entirely new.
+	5	 The rooster character on the ranch screen
+		 is new.
+
+ The addition of the two player mode is started. I am trying to
+ find room for:
+
+	1	Two player select logic
+	2	Two player graphics on all intro and game over
+		screens
+	3	Egg indicator on ranch screen.
+
+  Please call me after you have a chance to look at the cart.
+
+
+					Thanks,
+
+					 Bruce Williams
+

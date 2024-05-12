@@ -1,0 +1,2089 @@
+       NEWPAGE	GORILLA
+.nlist
+gorilla1:
+
+	.dc.b	$47 ; x 8 y 17
+	.dc.b	$E3 ; x 8 y 18
+	.dc.b	$B6 ; x 8 y 19
+	.dc.b	$1C ; x 8 y 20
+	.dc.b	$4D ; x 8 y 21
+	.dc.b	$6D ; x 8 y 22
+	.dc.b	$3D ; x 8 y 23
+	.dc.b	$1F ; x 8 y 24
+	.dc.b	$F ; x 8 y 25
+	.dc.b	$6 ; x 8 y 26
+	.dc.b	$4 ; x 8 y 27
+	.dc.b	$1F ; x 8 y 28
+	.dc.b	$15 ; x 8 y 29
+	.dc.b	$E ; x 8 y 30
+
+
+	repval 0,20		;20
+
+gorilla2:
+
+	.dc.b	$E6 ; x 8 y 42
+	.dc.b	$33 ; x 8 y 43
+	.dc.b	$36 ; x 8 y 44
+	.dc.b	$1C ; x 8 y 45
+	.dc.b	$99 ; x 8 y 46
+	.dc.b	$DD ; x 8 y 47
+	.dc.b	$7F ; x 8 y 48
+	.dc.b	$3E ; x 8 y 49
+	.dc.b	$1C ; x 8 y 50
+	.dc.b	$8 ; x 8 y 51
+	.dc.b	$8 ; x 8 y 52
+	.dc.b	$3E ; x 8 y 53
+	.dc.b	$2A ; x 8 y 54
+	.dc.b	$1C ; x 8 y 55
+
+
+	repval 0,20		;20
+
+gorilla3:
+
+	.dc.b	$78 ; x 8 y 63
+	.dc.b	$19 ; x 8 y 64
+	.dc.b	$1F ; x 8 y 65
+	.dc.b	$36 ; x 8 y 66
+	.dc.b	$B0 ; x 8 y 67
+	.dc.b	$F9 ; x 8 y 68
+	.dc.b	$7B ; x 8 y 69
+	.dc.b	$7E ; x 8 y 70
+	.dc.b	$3C ; x 8 y 71
+	.dc.b	$18 ; x 8 y 72
+	.dc.b	$10 ; x 8 y 73
+	.dc.b	$7C ; x 8 y 74
+	.dc.b	$54 ; x 8 y 75
+	.dc.b	$38 ; x 8 y 76
+
+	repval 0,20		;20
+
+.list
+
+OWL04:
+	.dc.b	$14 ; x 8 y 114
+.nlist
+	.dc.b	$10 ; x 8 y 115
+	.dc.b	$3F ; x 8 y 116
+	.dc.b	$7E ; x 8 y 117
+	.dc.b	$A8 ; x 8 y 118
+	.dc.b	$AF ; x 8 y 119
+	.dc.b	$67 ; x 8 y 120	
+
+	repval 0,24
+.list
+
+
+mouse0:	.dc.b	$48 ; x 8 y 174
+.nlist
+	.dc.b	$24 ; x 8 y 175
+	.dc.b	$FC ; x 8 y 176
+	.dc.b	$FE ; x 8 y 177
+	.dc.b	$7F ; x 8 y 178
+	.dc.b	$31 ; x 8 y 179
+	.dc.b	$21 ; x 8 y 180
+	.dc.b	$1 ; x 8 y 181
+	.dc.b	$2 ; x 8 y 182
+	repval 0,24
+.list
+
+mouse1:
+	.dc.b	$12 ; x 8 y 189
+.nlist
+	.dc.b	$24 ; x 8 y 190
+	.dc.b	$FC ; x 8 y 191
+	.dc.b	$FE ; x 8 y 192
+	.dc.b	$7E ; x 8 y 193
+	.dc.b	$32 ; x 8 y 194
+	.dc.b	$21 ; x 8 y 195
+	.dc.b	$1 ; x 8 y 196
+	.dc.b	$1 ; x 8 y 197
+	.dc.b	$6 ; x 8 y 198
+
+	repval 0,23
+.list
+
+
+	NEWPAGE CURSOR_IMAGE_PIPE
+
+	repval 0,40
+
+PCURSOR:
+	.dc.b	$10 ; x 8 y 183
+.nlist
+	.dc.b	$10 ; x 8 y 184
+	.dc.b	$7C ; x 8 y 185
+	.dc.b	$6C ; x 8 y 186
+	.dc.b	$44 ; x 8 y 187
+	.dc.b	$44 ; x 8 y 188
+	.dc.b	$82 ; x 8 y 189
+	.dc.b	$82 ; x 8 y 190
+	.dc.b	$44 ; x 8 y 191
+	.dc.b	$44 ; x 8 y 192
+	.dc.b	$6C ; x 8 y 193
+	.dc.b	$6C ; x 8 y 194
+	.dc.b	$10 ; x 8 y 195
+	.dc.b	$10 ; x 8 y 196
+
+	.REPT 40
+	.DC.B	0
+	.ENDR
+
+.list
+
+
+PEGGTABLE:
+	.REPT 4
+	.DC.B	2
+	.ENDR
+
+	repval 0,40
+
+
+PEGGCURS:.dc.b	$10 ; x 8 y 183
+	.dc.b	$10 ; x 8 y 184
+	.dc.b	$7C ; x 8 y 185
+	.dc.b	$6C ; x 8 y 186
+	.dc.b	$44 ; x 8 y 187
+	.dc.b	$44 ; x 8 y 188		WAS $44, ADDED $18 FOR EGG
+	.dc.b	$92 ; x 8 y 189		WAS $82
+	.dc.b	$BA ; x 8 y 190		WAS $82
+	.dc.b	$54 ; x 8 y 191		WAS $44
+	.dc.b	$44 ; x 8 y 192
+	.dc.b	$6C ; x 8 y 193
+	.dc.b	$6C ; x 8 y 194
+	.dc.b	$10 ; x 8 y 195
+	.dc.b	$10 ; x 8 y 196
+
+	repval 0,35
+
+
+OWL03:
+	.dc.b	$14 ; x 8 y 96
+.nlist
+	.dc.b	$18 ; x 8 y 97
+	.dc.b	$3F ; x 8 y 98
+	.dc.b	$6E ; x 8 y 99
+	.dc.b	$E8 ; x 8 y 100
+	.dc.b	$AC ; x 8 y 101
+	.dc.b	$6A ; x 8 y 102
+	.dc.b	$A ; x 8 y 103
+	.dc.b	$A ; x 8 y 104
+	.dc.b	$6 ; x 8 y 105
+	.dc.b	$6 ; x 8 y 106
+
+	.REPT	35
+	.DC.B	0
+	.ENDR
+.list
+
+
+	NEWPAGE dfiodf
+
+;	repval	0,(PMAXKERSIZ)/2
+
+PONEIMG:
+	.dc.b	$0 ; x 8 y 13
+.nlist
+	.dc.b	$E0 ; x 8 y 14
+	.dc.b	$A0 ; x 8 y 15
+	.dc.b	$A0 ; x 8 y 16
+	.dc.b	$E0 ; x 8 y 17
+	.dc.b	$0 ; x 8 y 18
+	.dc.b	$E0 ; x 8 y 19
+	.dc.b	$A0 ; x 8 y 20
+	.dc.b	$A0 ; x 8 y 21
+	.dc.b	$E0 ; x 8 y 22
+	.dc.b	$0 ; x 8 y 23
+	.dc.b	$E0 ; x 8 y 24
+	.dc.b	$40 ; x 8 y 25
+	.dc.b	$40 ; x 8 y 26
+	.dc.b	$C0 ; x 8 y 27
+	.dc.b	$40 ; x 8 y 28
+
+	repval	0,(PMAXKERSIZ)/2
+.list
+
+
+PTWOIMG:
+
+	.dc.b	$0 ; x 8 y 38
+.nlist
+	.dc.b	$F0 ; x 8 y 39
+	.dc.b	$B0 ; x 8 y 40
+	.dc.b	$B0 ; x 8 y 41
+	.dc.b	$F0 ; x 8 y 42
+	.dc.b	$0 ; x 8 y 43
+	.dc.b	$F0 ; x 8 y 44
+	.dc.b	$B0 ; x 8 y 45
+	.dc.b	$B0 ; x 8 y 46
+	.dc.b	$F0 ; x 8 y 47
+	.dc.b	$0  ; x 8 y 48
+	.dc.b	$F0 ; x 8 y 49
+	.dc.b	$60 ; x 8 y 50
+	.dc.b	$60 ; x 8 y 51
+	.dc.b	$E0 ; x 8 y 52
+	.dc.b	$20 ; x 8 y 53
+
+	repval	0,(PMAXKERSIZ)/2
+
+.list
+
+
+
+SOLIDGAME3:
+	.dc.b	$87 ; x 24 y 87
+.nlist
+	.dc.b	$C4 ; x 24 y 86
+	.dc.b	$64 ; x 24 y 85
+	.dc.b	$24 ; x 24 y 84
+
+	.dc.b	$24 ; x 24 y 83
+	.dc.b	$24 ; x 24 y 82
+	.dc.b	$24 ; x 24 y 81
+	.dc.b	$24 ; x 24 y 80
+
+	.dc.b	$E7 ; x 24 y 79
+	.dc.b	$0 ; x 24 y 68
+	.dc.b	$0 ; x 24 y 69
+;over3:	
+	.dc.b	$EF ; x 24 y 67
+	.dc.b	$29 ; x 24 y 66
+	.dc.b	$29 ; x 24 y 65
+	.dc.b	$29 ; x 24 y 64
+	.dc.b	$29 ; x 24 y 63
+	.dc.b	$28 ; x 24 y 62
+	.dc.b	$68 ; x 24 y 61
+	.dc.b	$C9 ; x 24 y 60
+	.dc.b	$8F ; x 24 y 59
+sgz:
+SOLIDGAME_SIZE 	set sgz - SOLIDGAME3 -1
+
+;PONEHIMG:
+;	.dc.b	$0 ; x 8 y 62
+;	.dc.b	$F0 ; x 8 y 63
+;	.dc.b	$B0 ; x 8 y 64
+;	.dc.b	$B0 ; x 8 y 65
+;	.dc.b	$F0 ; x 8 y 66
+;	.dc.b	$0 ; x 8 y 67
+;	.dc.b	$F0 ; x 8 y 68
+;	.dc.b	$B0 ; x 8 y 69
+;	.dc.b	$B0 ; x 8 y 70
+;	.dc.b	$F0 ; x 8 y 71
+;	.dc.b	$0 ; x 8 y 72
+;	.dc.b	$F0 ; x 8 y 73
+;	.dc.b	$80 ; x 8 y 74
+;	.dc.b	$60 ; x 8 y 75
+;	.dc.b	$B0 ; x 8 y 76
+;	.dc.b	$F0 ; x 8 y 77
+;
+;	repval	0,(PMAXKERSIZ-PMINKERSIZ)/2
+;
+;PTWOHIMG:
+;
+;	.dc.b	$0 ; x 8 y 83
+;	.dc.b	$E0 ; x 8 y 84
+;	.dc.b	$A0 ; x 8 y 85
+;	.dc.b	$A0 ; x 8 y 86
+;	.dc.b	$E0 ; x 8 y 87
+;	.dc.b	$0 ; x 8 y 88
+;	.dc.b	$E0 ; x 8 y 89
+;	.dc.b	$A0 ; x 8 y 90
+;	.dc.b	$A0 ; x 8 y 91
+;	.dc.b	$E0 ; x 8 y 92
+;	.dc.b	$0 ; x 8 y 93
+;	.dc.b	$E0 ; x 8 y 94
+;	.dc.b	$80 ; x 8 y 95
+;	.dc.b	$E0 ; x 8 y 96
+;	.dc.b	$20 ; x 8 y 97
+;	.dc.b	$E0 ; x 8 y 98
+;
+;
+;	repval	0,(PMAXKERSIZ-PMINKERSIZ)/2
+;
+.list
+GAMEOVER4:	
+	.dc.b	$CE ; x 32 y 47
+.nlist
+	.dc.b	$E ; x 32 y 46
+	.dc.b	$F ; x 32 y 45
+	.dc.b	$8F ; x 32 y 44
+
+	.dc.b	$E ; x 32 y 43
+	.dc.b	$E ; x 32 y 42
+	.dc.b	$CF ; x 32 y 41
+	.dc.b	$0 ; x 32 y 48
+
+	.dc.b	$0 ; x 32 y 49
+	.dc.b	$0 ; x 32 y 49
+	.dc.b	$0 ; x 32 y 49
+
+.list
+
+OVER4:	
+	.dc.b	$CF ; x 32 y 31
+.nlist
+	.dc.b	$CE ; x 32 y 30
+	.dc.b	$CE ; x 32 y 29
+	.dc.b	$CF ; x 32 y 28
+	.dc.b	$CE ; x 32 y 27
+	.dc.b	$CE ; x 32 y 26
+	.dc.b	$CF ; x 32 y 25
+;	.dc.b	$0 ; x 32 y 50
+;	.dc.b	$0 ; x 32 y 51
+;	.dc.b	$0 ; x 32 y 24
+;	.dc.b	$0 ; x 32 y 32
+.list
+;
+;
+;	Julie - 568-8300
+;
+ggz:
+GAMEOVER_SIZE 	set ggz - GAMEOVER4 -1
+
+SOLIDGAME4:	
+	.dc.b	$F9 ; x 32 y 87
+.nlist
+	.dc.b	$9 ; x 32 y 86
+	.dc.b	$F9 ; x 32 y 85
+	.dc.b	$F1 ; x 32 y 84
+
+	.dc.b	$11 ; x 32 y 83
+	.dc.b	$F1 ; x 32 y 82
+	.dc.b	$F9 ; x 32 y 81
+	.dc.b	$9 ; x 32 y 80
+
+	.dc.b	$F9 ; x 32 y 79
+	.dc.b	$0 ; x 32 y 88
+	.dc.b	$0 ; x 32 y 68
+;	.dc.b	$0 ; x 32 y 69
+
+;over4:	
+	.dc.b	$79 ; x 32 y 67
+	.dc.b	$49 ; x 32 y 66
+	.dc.b	$49 ; x 32 y 65
+	.dc.b	$C9 ; x 32 y 64
+	.dc.b	$49 ; x 32 y 63
+	.dc.b	$9 ; x 32 y 62
+	.dc.b	$89 ; x 32 y 61
+	.dc.b	$C9 ; x 32 y 60
+	.dc.b	$79 ; x 32 y 59
+.list
+
+GAMEOVER5:	
+
+	.dc.b	$E0 ; x 40 y 47
+.nlist
+	.dc.b	$E0 ; x 40 y 46
+	.dc.b	$C0 ; x 40 y 45
+	.dc.b	$C0 ; x 40 y 44
+	.dc.b	$E0 ; x 40 y 43
+	.dc.b	$E0 ; x 40 y 42
+	.dc.b	$C0 ; x 40 y 41
+	.dc.b	$0 ; x 40 y 24
+	.dc.b	$0 ; x 40 y 24
+.list
+
+OVER5:	
+	.dc.b	$E0 ; x 40 y 31
+.nlist
+	.dc.b	$0 ; x 40 y 30
+	.dc.b	$0 ; x 40 y 29
+	.dc.b	$C0 ; x 40 y 28
+	.dc.b	$0 ; x 40 y 27
+	.dc.b	$0 ; x 40 y 26
+	.dc.b	$E0 ; x 40 y 25
+;	.dc.b	$0 ; x 40 y 48
+;	.dc.b	$0 ; x 40 y 49
+;	.dc.b	$0 ; x 40 y 50
+;	.dc.b	$0 ; x 40 y 51
+;	.dc.b	$0 ; x 40 y 52
+
+.list
+
+SOLIDGAME5:
+	.dc.b	$FE ; x 40 y 87
+.nlist
+	.dc.b	$32 ; x 40 y 86
+	.dc.b	$32 ; x 40 y 85
+	.dc.b	$26 ; x 40 y 84
+
+	.dc.b	$6 ; x 40 y 83
+	.dc.b	$32 ; x 40 y 82
+	.dc.b	$32 ; x 40 y 81
+	.dc.b	$6 ; x 40 y 80
+
+	.dc.b	$FC ; x 40 y 79
+	.dc.b	$0 ; x 40 y 68
+	.dc.b	$0 ; x 40 y 69
+
+;over5:
+	.dc.b	$FE ; x 40 y 67
+	.dc.b	$2 ; x 40 y 66
+	.dc.b	$3E ; x 40 y 65
+	.dc.b	$3C ; x 40 y 64
+	.dc.b	$4 ; x 40 y 63
+	.dc.b	$3C ; x 40 y 62
+	.dc.b	$3E ; x 40 y 61
+	.dc.b	$2 ; x 40 y 60
+	.dc.b	$FE ; x 40 y 59
+
+;BLANKGAMEOVER:	.dc.b	$0 ; x 40 y 88
+;	repval	0,19
+.list
+
+OVER1:
+	.dc.b	$3F ; x 8 y 31
+.nlist
+	.dc.b	$77 ; x 8 y 30
+	.dc.b	$77 ; x 8 y 29
+	.dc.b	$7F ; x 8 y 28
+	.dc.b	$70 ; x 8 y 27
+	.dc.b	$70 ; x 8 y 26
+	.dc.b	$3F ; x 8 y 25
+;	.dc.b	$0 ; x 8 y 48
+;	.dc.b	$0 ; x 8 y 49
+;	.dc.b	$0 ; x 8 y 50
+;	.dc.b	$0 ; x 8 y 51
+
+.list
+
+SOLIDGAME1:	
+	.dc.b	$3F ; x 8 y 87
+.nlist
+	.dc.b	$61 ; x 8 y 86
+	.dc.b	$4C ; x 8 y 85
+	.dc.b	$4C ; x 8 y 84
+
+	.dc.b	$4C ; x 8 y 83
+	.dc.b	$4C ; x 8 y 82
+	.dc.b	$4C ; x 8 y 81
+	.dc.b	$61 ; x 8 y 80
+
+	.dc.b	$3F ; x 8 y 79
+	.dc.b	$0 ; x 8 y 68
+	.dc.b	$0 ; x 8 y 68
+;over1:
+	.dc.b	$3F ; x 8 y 67
+	.dc.b	$60 ; x 8 y 66
+	.dc.b	$4C ; x 8 y 65
+	.dc.b	$4C ; x 8 y 64
+	.dc.b	$48 ; x 8 y 63
+	.dc.b	$4F ; x 8 y 62
+	.dc.b	$4F ; x 8 y 61
+	.dc.b	$60 ; x 8 y 60
+	.dc.b	$3F ; x 8 y 59	
+.list
+ 	
+GAMEOVER2:
+	.dc.b	$E ; x 16 y 47
+.nlist
+	.dc.b	$1F ; x 16 y 46
+	.dc.b	$3B ; x 16 y 45
+	.dc.b	$3B ; x 16 y 44
+	.dc.b	$3B ; x 16 y 43
+	.dc.b	$3B ; x 16 y 42
+	.dc.b	$3B ; x 16 y 41
+	.dc.b	$0 ; x 16 y 24
+	.dc.b	$0 ; x 16 y 32
+
+OVER2:
+	.dc.b	$3B ; x 16 y 31
+	.dc.b	$3B ; x 16 y 30
+	.dc.b	$3F ; x 16 y 29
+	.dc.b	$3B ; x 16 y 28
+	.dc.b	$3B ; x 16 y 27
+	.dc.b	$1F ; x 16 y 26
+	.dc.b	$E ; x 16 y 25
+;	.dc.b	$0 ; x 16 y 48
+;	.dc.b	$0 ; x 16 y 49
+;	.dc.b	$0 ; x 16 y 50
+;	.dc.b	$0 ; x 16 y 51
+.list
+
+SOLIDGAME2:
+	.dc.b	$7 ; x 16 y 87
+.nlist
+	.dc.b	$8C ; x 16 y 86
+	.dc.b	$98 ; x 16 y 85
+	.dc.b	$93 ; x 16 y 84
+	.dc.b	$93 ; x 16 y 83
+	.dc.b	$93 ; x 16 y 82
+	.dc.b	$93 ; x 16 y 81
+	.dc.b	$93 ; x 16 y 80
+	.dc.b	$1F ; x 16 y 79
+	.dc.b	$0 ; x 16 y 68
+	.dc.b	$0 ; x 16 y 69
+
+;over2:	
+	.dc.b	$9F ; x 16 y 67
+	.dc.b	$93 ; x 16 y 66
+	.dc.b	$93 ; x 16 y 65
+	.dc.b	$90 ; x 16 y 64
+	.dc.b	$93 ; x 16 y 63
+	.dc.b	$93 ; x 16 y 62
+	.dc.b	$98 ; x 16 y 61
+	.dc.b	$8C ; x 16 y 60
+	.dc.b	$87 ; x 16 y 59
+.list
+
+GAMEOVER3:
+	.dc.b	$1F ; x 24 y 47
+.nlist
+	.dc.b	$1C ; x 24 y 46
+	.dc.b	$9C ; x 24 y 45
+	.dc.b	$9F ; x 24 y 44
+	.dc.b	$9C ; x 24 y 43
+	.dc.b	$9C ; x 24 y 42
+	.dc.b	$9F ; x 24 y 41
+	.dc.b	$0 ; x 24 y 48
+	.dc.b	$0 ; x 24 y 49
+OVER3:	
+	.dc.b	$B9 ; x 24 y 31
+	.dc.b	$B9 ; x 24 y 30
+	.dc.b	$B9 ; x 24 y 29
+	.dc.b	$BF ; x 24 y 28
+	.dc.b	$BF ; x 24 y 27
+	.dc.b	$3F ; x 24 y 26
+	.dc.b	$39 ; x 24 y 25
+;	.dc.b	$0 ; x 24 y 50
+;	.dc.b	$0 ; x 24 y 51
+;	.dc.b	$0 ; x 24 y 24
+;	.dc.b	$0 ; x 24 y 32
+
+
+.list
+
+GAMEOVER1:
+	.dc.b	$3E ; x 8 y 47
+.nlist
+	.dc.b	$77 ; x 8 y 46
+	.dc.b	$77 ; x 8 y 45
+	.dc.b	$77 ; x 8 y 44
+	.dc.b	$77 ; x 8 y 43
+	.dc.b	$77 ; x 8 y 42
+	.dc.b	$3E ; x 8 y 41
+
+	.dc.b	$0 ; x 8 y 49
+	.dc.b	$0 ; x 8 y 49
+
+.list
+
+INTRO_IMAGE_TAB:
+	.dc.w	SUBWAY5
+	.dc.w	SUBWAY4
+	.dc.w	SUBWAY3
+	.dc.w	SUBWAY2
+	.dc.w	SUBWAY1
+	.dc.w	SUBWAY0
+
+	.dc.b	BKMAX
+
+.sc:
+SUBWAY_IMAGE	set .sc - INTRO_IMAGE_TAB
+SCREEN_SIZE	set	SUBWAY_IMAGE
+
+
+	.dc.w	TREE5
+	.dc.w	TREE4
+	.dc.w	TREE3
+	.dc.w	TREE2
+	.dc.w	TREE1
+	.dc.w	TREE0
+
+	.dc.b	BKMAX
+
+
+.tc:
+TREE_IMAGE	set .tc - INTRO_IMAGE_TAB
+
+	.dc.w	RANCH5
+	.dc.w	RANCH4
+	.dc.w	RANCH3
+	.dc.w	RANCH2
+	.dc.w	RANCH1
+	.dc.w	RANCH0
+
+	.dc.b	BKMAX
+
+
+rc:
+RANCH_IMAGE	set rc - INTRO_IMAGE_TAB
+
+	.dc.w	TITLE5
+	.dc.w	TITLE4
+	.dc.w	TITLE3
+	.dc.w	TITLE2
+	.dc.w	TITLE1
+	.dc.w	TITLE0
+
+	.dc.b	BKMAX
+
+
+.tcz:
+TITLE_IMAGE	set .tcz - INTRO_IMAGE_TAB
+
+
+	.dc.w	BLANK
+	.dc.w	SOLIDGAME5
+	.dc.w	SOLIDGAME4
+	.dc.w	SOLIDGAME3
+	.dc.w	SOLIDGAME2
+	.dc.w	SOLIDGAME1
+
+	.dc.b	BKMAX
+
+
+solid:
+SOLIDGAME_IMAGE	set solid - INTRO_IMAGE_TAB
+
+
+;	ENDPAGE lfjap
+
+
+;	NEWPAGE PIPE_BACK_COLOR
+
+PIPEBACKCOLOR:
+PIPECOLOR	= 6
+WALLCOLOR	= $F
+
+	COLUM	(ENEST5START-9),8,4		;BLUE FLOOR
+.nlist
+
+	COLUM	1,8,3		;TOP OF FLOOR
+	COLUM	1,8,3
+	COLUM	1,8,2
+	COLUM	1,8,2
+	COLUM	1,8,1
+	COLUM	1,8,1
+	COLUM	1,8,0
+	COLUM	1,8,0
+
+	COLUM	1,15,2		;BOTTOM OF WALL
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+
+	COLUM	1,15,2		;MORE WALL
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,15,3
+	COLUM	1,15,2
+	COLUM	1,0,3		;PIPE 2
+	COLUM	1,0,3		;PIPE 2
+	COLUM	1,0,4
+	COLUM	1,0,5
+	COLUM	1,0,5
+	COLUM	1,0,4
+	COLUM	1,0,3
+	COLUM	1,15,4
+
+	COLUM	1,15,3		;MORE WALL
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+
+	COLUM	1,15,3		;MORE WALL
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+
+	COLUM	1,15,3		;MORE WALL
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+
+	COLUM	1,15,3		;MORE WALL
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,15,4
+	COLUM	1,15,3
+	COLUM	1,0,3
+	COLUM	1,0,3
+	COLUM	1,0,4
+	COLUM	1,0,5
+	COLUM	1,0,5
+	COLUM	1,0,4
+	COLUM	1,0,3
+
+	COLUM	1,15,5		;MORE WALL
+	COLUM	1,15,4
+	COLUM	1,15,5
+	COLUM	1,15,4
+	COLUM	1,15,5
+	COLUM	1,15,4
+	COLUM	1,15,5
+	COLUM	1,15,4
+	COLUM	1,15,5		;MORE WALL
+	COLUM	1,15,4
+	COLUM	1,15,5
+	COLUM	1,15,4
+	COLUM	1,15,5
+	COLUM	1,15,4
+	COLUM	1,15,5
+	COLUM	1,15,4
+
+	COLUM	1,15,5		;MORE WALL
+	COLUM	1,15,4
+	COLUM	1,15,5
+	COLUM	1,15,4
+	COLUM	1,15,5
+	COLUM	1,15,4
+	COLUM	1,15,5
+
+	COLUM	1,15,4
+
+
+	COLUM	1,0,3		;PIPE 2
+	COLUM	1,0,4
+	COLUM	1,0,5
+	COLUM	1,0,5
+	COLUM	1,0,4
+	COLUM	1,0,3
+
+	COLUM	1,15,5 ;DEH
+	COLUM	1,15,6 ;DEH
+	COLUM	1,15,5 ;DEH
+	COLUM	1,15,6 ;DEH
+	COLUM	1,15,5 ;DEH
+
+	COLUM	1,15,6		;MORE WALL
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+
+	COLUM	1,15,6		;MORE WALL
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+
+	COLUM	1,15,6		;MORE WALL
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+
+	COLUM	1,15,6		;MORE WALL
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+
+	COLUM	1,15,6		;MORE WALL
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+
+	COLUM	1,15,6		;MORE WALL
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+	COLUM	1,15,6
+	COLUM	1,15,5
+
+	COLUM	1,15,6
+
+EP:
+	.dc.b	0	; mark end
+
+PIPECOLORSIZE SET EP - PIPEBACKCOLOR
+
+;	ENDPAGE	dkdk
+
+;
+;
+;
+;	Area to be re-done
+;
+;
+;
+;
+;
+.list
+	NEWPAGE NUMTAB_IMAGE
+BONUS_IMAGES:
+
+NUM0:	.DC.B	$00,$00,$3C,$66,$66,$66,$66,$66,$3C
+.nlist
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM1:	.DC.B	$00,$00,$7E,$18,$18,$18,$18,$78,$38
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM2:	.DC.B	$00,$00,$7E,$60,$60,$3C,$06,$46,$7C
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM3:	.DC.B	$00,$00,$3C,$46,$06,$0C,$06,$46,$3C
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM4:	.DC.B	$00,$00,$0C,$0C,$7E,$4C,$2C,$1C,$0C
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM5:	.DC.B	$00,$00,$7C,$46,$06,$7C,$60,$60,$7E
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM6:	.DC.B	$00,$00,$3C,$66,$66,$7C,$60,$62,$3C
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM7:	.DC.B	$00,$00,$30,$30,$30,$18,$0C,$46,$7E
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM8:	.DC.B	$00,$00,$3C,$66,$66,$3C,$66,$66,$3C
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+NUM9:	.DC.B	$00,$00,$3C,$46,$06,$3E,$66,$66,$3C
+;	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+;
+
+;	.DC.B	$00,$00,$00,$00,$00,$00,$00,$00,$00,0,0,0,0,0,0,0,0,0,0,0
+EGG1:
+	.dc.b	0
+	.dc.b	$1c
+	.dc.b	$7e
+	.dc.b	$fe
+	.dc.b	$fe
+	.dc.b	$fe
+	.dc.b	$7e
+	.dc.b	$1c
+
+
+.list
+
+PBLANK:			; blank for the pipe & bonus screens
+BLANK:
+	.dc.b	0
+.nlist
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+	.dc.b	0,0,0,0,0,0,0,0,0,0,0
+
+;
+;
+;	Intro Screen Images
+;
+;
+;
+.list
+
+SUBWAY0:
+	.dc.b	$39 ; x 8 y 8
+.nlist
+	.dc.b	$39 ; x 8 y 9
+	.dc.b	$39 ; x 8 y 10
+	.dc.b	$39 ; x 8 y 11
+	.dc.b	$39 ; x 8 y 12
+	.dc.b	$3F ; x 8 y 13
+	.dc.b	$3F ; x 8 y 14
+	.dc.b	$3F ; x 8 y 15
+	.dc.b	$3F ; x 8 y 16
+	.dc.b	$3F ; x 8 y 17
+	.dc.b	$39 ; x 8 y 18
+	.dc.b	$39 ; x 8 y 19
+	.dc.b	$0 ; x 8 y 20
+	.dc.b	$0 ; x 8 y 21
+	.dc.b	$0 ; x 8 y 22
+	.dc.b	$0 ; x 8 y 23
+	.dc.b	$FC ; x 8 y 24
+	.dc.b	$FE ; x 8 y 25
+	.dc.b	$E ; x 8 y 26
+	.dc.b	$E ; x 8 y 27
+	.dc.b	$1E ; x 8 y 28
+	.dc.b	$3C ; x 8 y 29
+	.dc.b	$78 ; x 8 y 30
+	.dc.b	$F0 ; x 8 y 31
+	.dc.b	$E0 ; x 8 y 32
+	.dc.b	$E0 ; x 8 y 33
+	.dc.b	$FE ; x 8 y 34
+	.dc.b	$7E ; x 8 y 35
+.list
+
+szz:
+SUBWAY_SIZE	set szz - SUBWAY0-1
+
+RANCH0:
+	.dc.b	$3B ; x 8 y 64
+.nlist
+	.dc.b	$3B ; x 8 y 65
+	.dc.b	$1F ; x 8 y 66
+	.dc.b	$1F ; x 8 y 67
+	.dc.b	$E ; x 8 y 68
+	.dc.b	$E ; x 8 y 69
+	.dc.b	$7 ; x 8 y 70
+	.dc.b	$0 ; x 8 y 71
+	.dc.b	$0 ; x 8 y 72
+	.dc.b	$0 ; x 8 y 73
+	.dc.b	$0 ; x 8 y 74
+	.dc.b	$0 ; x 8 y 75
+	.dc.b	$0 ; x 8 y 76
+	.dc.b	$0 ; x 8 y 77
+	.dc.b	$0 ; x 8 y 78
+	.dc.b	$0 ; x 8 y 79
+.list
+
+rzz:
+RANCH_SIZE	set rzz - RANCH0-1
+
+SUBWAY1:
+;	.dc.b	$0 ; x 16 y 4
+;	.dc.b	$0 ; x 16 y 5
+;	.dc.b	$0 ; x 16 y 6
+;	.dc.b	$0 ; x 16 y 7
+	.dc.b	$CE ; x 16 y 8
+.nlist
+	.dc.b	$CE ; x 16 y 9
+	.dc.b	$CE ; x 16 y 10
+	.dc.b	$CE ; x 16 y 11
+	.dc.b	$CF ; x 16 y 12
+	.dc.b	$CF ; x 16 y 13
+	.dc.b	$CE ; x 16 y 14
+	.dc.b	$CE ; x 16 y 15
+	.dc.b	$CE ; x 16 y 16
+	.dc.b	$CF ; x 16 y 17
+	.dc.b	$C7 ; x 16 y 18
+	.dc.b	$C3 ; x 16 y 19
+	.dc.b	$0 ; x 16 y 20
+	.dc.b	$0 ; x 16 y 21
+	.dc.b	$0 ; x 16 y 22
+	.dc.b	$0 ; x 16 y 23
+	.dc.b	$7C ; x 16 y 24
+	.dc.b	$FE ; x 16 y 25
+	.dc.b	$EE ; x 16 y 26
+	.dc.b	$EE ; x 16 y 27
+	.dc.b	$EE ; x 16 y 28
+	.dc.b	$EE ; x 16 y 29
+	.dc.b	$EE ; x 16 y 30
+	.dc.b	$EE ; x 16 y 31
+	.dc.b	$EE ; x 16 y 32
+	.dc.b	$EE ; x 16 y 33
+	.dc.b	$EE ; x 16 y 34
+	.dc.b	$EE ; x 16 y 35
+
+
+.list
+	
+	NEWPAGE TREE_INTRO
+
+TITB1:
+	.dc.b	$60 ; x 8 y 119
+.nlist
+	.dc.b	$70 ; x 8 y 120
+	.dc.b	$18 ; x 8 y 121
+	.dc.b	$1C ; x 8 y 122
+	.dc.b	$1F ; x 8 y 123
+	.dc.b	$3F ; x 8 y 124
+	.dc.b	$FF ; x 8 y 125
+	.dc.b	$FC ; x 8 y 126
+	.dc.b	$5C ; x 8 y 127
+	.dc.b	$5C ; x 8 y 128
+	.dc.b	$E ; x 8 y 129
+	.dc.b	$E ; x 8 y 130
+	.dc.b	$7 ; x 8 y 131
+	.dc.b	$7 ; x 8 y 132
+	.dc.b	$3 ; x 8 y 133
+	.dc.b	$3 ; x 8 y 134
+	.dc.b	$2 ; x 8 y 135
+	.dc.b	$2 ; x 8 y 136
+
+.list
+
+TITB2:
+	.dc.b	$60 ; x 8 y 147
+.nlist
+	.dc.b	$70 ; x 8 y 148
+	.dc.b	$18 ; x 8 y 149
+	.dc.b	$1C ; x 8 y 150
+	.dc.b	$1F ; x 8 y 151
+	.dc.b	$3F ; x 8 y 152
+	.dc.b	$FF ; x 8 y 153
+	.dc.b	$FC ; x 8 y 154
+	.dc.b	$5E ; x 8 y 155
+	.dc.b	$4E ; x 8 y 156
+	.dc.b	$E ; x 8 y 157
+	.dc.b	$E ; x 8 y 158
+	.dc.b	$4 ; x 8 y 159
+	.dc.b	$4 ; x 8 y 160
+.list
+
+COLRTAB:
+	dc.b	WHITE
+	dc.b	PINK
+	dc.b	REDORG
+	dc.b	GOLD
+
+RANCH1:
+	.dc.b	$9D ; x 16 y 64
+.nlist
+	.dc.b	$9D ; x 16 y 65
+	.dc.b	$8F ; x 16 y 66
+	.dc.b	$8E ; x 16 y 67
+	.dc.b	$E7 ; x 16 y 68
+	.dc.b	$E3 ; x 16 y 69
+	.dc.b	$E0 ; x 16 y 70
+	.dc.b	$0 ; x 16 y 71
+	.dc.b	$7 ; x 16 y 72
+	.dc.b	$7 ; x 16 y 73
+	.dc.b	$3 ; x 16 y 74
+	.dc.b	$3 ; x 16 y 75
+	.dc.b	$1 ; x 16 y 76
+	.dc.b	$1 ; x 16 y 77
+	.dc.b	$3 ; x 16 y 78
+	.dc.b	$0 ; x 16 y 79
+
+.list
+
+SUBWAY2:
+	.dc.b	$E7 ; x 24 y 8
+.nlist
+	.dc.b	$E7 ; x 24 y 9
+	.dc.b	$E7 ; x 24 y 10
+	.dc.b	$E7 ; x 24 y 11
+	.dc.b	$E7 ; x 24 y 12
+	.dc.b	$E7 ; x 24 y 13
+	.dc.b	$E7 ; x 24 y 14
+	.dc.b	$E7 ; x 24 y 15
+	.dc.b	$E7 ; x 24 y 16
+	.dc.b	$E7 ; x 24 y 17
+	.dc.b	$C7 ; x 24 y 18
+	.dc.b	$87 ; x 24 y 19
+	.dc.b	$0 ; x 24 y 20
+	.dc.b	$0 ; x 24 y 21
+	.dc.b	$0 ; x 24 y 22
+	.dc.b	$0 ; x 24 y 23
+	.dc.b	$FC ; x 24 y 24
+	.dc.b	$FE ; x 24 y 25
+	.dc.b	$EE ; x 24 y 26
+	.dc.b	$EE ; x 24 y 27
+	.dc.b	$EE ; x 24 y 28
+	.dc.b	$EE ; x 24 y 29
+	.dc.b	$FC ; x 24 y 30
+	.dc.b	$FE ; x 24 y 31
+	.dc.b	$EE ; x 24 y 32
+	.dc.b	$EE ; x 24 y 33
+	.dc.b	$FE ; x 24 y 34
+	.dc.b	$FC ; x 24 y 35
+.list
+
+RANCH2:
+	.dc.b	$CE ; x 24 y 64
+.nlist
+	.dc.b	$CE ; x 24 y 65
+	.dc.b	$E7 ; x 24 y 66
+	.dc.b	$E7 ; x 24 y 67
+	.dc.b	$73 ; x 24 y 68
+	.dc.b	$E3 ; x 24 y 69
+	.dc.b	$E1 ; x 24 y 70
+	.dc.b	$0 ; x 24 y 71
+	.dc.b	$E ; x 24 y 72
+	.dc.b	$E ; x 24 y 73
+	.dc.b	$87 ; x 24 y 74
+	.dc.b	$87 ; x 24 y 75
+	.dc.b	$C3 ; x 24 y 76
+	.dc.b	$C3 ; x 24 y 77
+	.dc.b	$F9 ; x 24 y 78
+	.dc.b	$0 ; x 24 y 79
+
+.list
+
+SUBWAY3:
+	.dc.b	$73 ; x 32 y 8
+.nlist
+	.dc.b	$73 ; x 32 y 9
+	.dc.b	$70 ; x 32 y 10
+	.dc.b	$F0 ; x 32 y 11
+	.dc.b	$F0 ; x 32 y 12
+	.dc.b	$F0 ; x 32 y 13
+	.dc.b	$F0 ; x 32 y 14
+	.dc.b	$F0 ; x 32 y 15
+	.dc.b	$F0 ; x 32 y 16
+	.dc.b	$70 ; x 32 y 17
+	.dc.b	$73 ; x 32 y 18
+	.dc.b	$73 ; x 32 y 19
+	.dc.b	$0 ; x 32 y 20
+	.dc.b	$0 ; x 32 y 21
+	.dc.b	$0 ; x 32 y 22
+	.dc.b	$0 ; x 32 y 23
+	.dc.b	$C3 ; x 32 y 24
+	.dc.b	$E7 ; x 32 y 25
+	.dc.b	$FF ; x 32 y 26
+	.dc.b	$FF ; x 32 y 27
+	.dc.b	$FF ; x 32 y 28
+	.dc.b	$FF ; x 32 y 29
+	.dc.b	$FF ; x 32 y 30
+	.dc.b	$E7 ; x 32 y 31
+	.dc.b	$E7 ; x 32 y 32
+	.dc.b	$E7 ; x 32 y 33
+	.dc.b	$E7 ; x 32 y 34
+	.dc.b	$E7 ; x 32 y 35
+
+.list
+
+SUBWAY4:
+	.dc.b	$F9 ; x 40 y 8
+.nlist
+	.dc.b	$F9 ; x 40 y 9
+	.dc.b	$E1 ; x 40 y 10
+	.dc.b	$E1 ; x 40 y 11
+	.dc.b	$E1 ; x 40 y 12
+	.dc.b	$E1 ; x 40 y 13
+	.dc.b	$E1 ; x 40 y 14
+	.dc.b	$E1 ; x 40 y 15
+	.dc.b	$E1 ; x 40 y 16
+	.dc.b	$E1 ; x 40 y 17
+	.dc.b	$F8 ; x 40 y 18
+	.dc.b	$F8 ; x 40 y 19
+	.dc.b	$0 ; x 40 y 20
+	.dc.b	$0 ; x 40 y 21
+	.dc.b	$0 ; x 40 y 22
+	.dc.b	$0 ; x 40 y 23
+	.dc.b	$77 ; x 40 y 24
+	.dc.b	$77 ; x 40 y 25
+	.dc.b	$77 ; x 40 y 26
+	.dc.b	$77 ; x 40 y 27
+	.dc.b	$7F ; x 40 y 28
+	.dc.b	$7F ; x 40 y 29
+	.dc.b	$77 ; x 40 y 30
+	.dc.b	$77 ; x 40 y 31
+	.dc.b	$77 ; x 40 y 32
+	.dc.b	$7F ; x 40 y 33
+	.dc.b	$3E ; x 40 y 34
+	.dc.b	$1C ; x 40 y 35
+.list
+
+RANCH4:
+	.dc.b	$E3 ; x 40 y 64
+.nlist
+	.dc.b	$73 ; x 40 y 65
+	.dc.b	$81 ; x 40 y 66
+	.dc.b	$81 ; x 40 y 67
+	.dc.b	$C0 ; x 40 y 68
+	.dc.b	$DC ; x 40 y 69
+	.dc.b	$7C ; x 40 y 70
+	.dc.b	$0 ; x 40 y 71
+	.dc.b	$F0 ; x 40 y 72
+	.dc.b	$0 ; x 40 y 73
+	.dc.b	$80 ; x 40 y 74
+	.dc.b	$F0 ; x 40 y 75
+	.dc.b	$C0 ; x 40 y 76
+	.dc.b	$C0 ; x 40 y 77
+	.dc.b	$FE ; x 40 y 78
+	.DC.B	0
+
+;	ENDPAGE ddddd
+.list
+;
+RANCH3:
+	.dc.b	$E3 ; x 32 y 64
+.nlist
+	.dc.b	$E7 ; x 32 y 65
+	.dc.b	$F3 ; x 32 y 66
+	.dc.b	$F3 ; x 32 y 67
+	.dc.b	$F9 ; x 32 y 68
+	.dc.b	$F9 ; x 32 y 69
+	.dc.b	$DC ; x 32 y 70
+	.dc.b	$0 ; x 32 y 71
+	.dc.b	$E7 ; x 32 y 72
+	.dc.b	$E7 ; x 32 y 73
+	.dc.b	$73 ; x 32 y 74
+	.dc.b	$F3 ; x 32 y 75
+	.dc.b	$B9 ; x 32 y 76
+	.dc.b	$B9 ; x 32 y 77
+	.dc.b	$DC ; x 32 y 78
+	.dc.b	$0 ; x 32 y 79
+.list
+
+SUBWAY5:
+	.dc.b	$DC ; x 48 y 8
+.nlist
+	.dc.b	$DC ; x 48 y 9
+	.dc.b	$DC ; x 48 y 10
+	.dc.b	$DC ; x 48 y 11
+	.dc.b	$FC ; x 48 y 12
+	.dc.b	$FC ; x 48 y 13
+	.dc.b	$DC ; x 48 y 14
+	.dc.b	$DC ; x 48 y 15
+	.dc.b	$DC ; x 48 y 16
+	.dc.b	$FC ; x 48 y 17
+	.dc.b	$F8 ; x 48 y 18
+	.dc.b	$70 ; x 48 y 19
+	.dc.b	$0 ; x 48 y 20
+	.dc.b	$0 ; x 48 y 21
+	.dc.b	$0 ; x 48 y 22
+	.dc.b	$0 ; x 48 y 23
+	.dc.b	$1C ; x 48 y 24
+	.dc.b	$1C ; x 48 y 25
+	.dc.b	$1C ; x 48 y 26
+	.dc.b	$1C ; x 48 y 27
+	.dc.b	$1C ; x 48 y 28
+	.dc.b	$1C ; x 48 y 29
+	.dc.b	$3E ; x 48 y 30
+	.dc.b	$3E ; x 48 y 31
+	.dc.b	$77 ; x 48 y 32
+	.dc.b	$77 ; x 48 y 33
+	.dc.b	$77 ; x 48 y 34
+	.dc.b	$77 ; x 48 y 35
+.list
+
+RANCH5:
+	.dc.b	$B8 ; x 48 y 64
+.nlist
+	.dc.b	$B8 ; x 48 y 65
+	.dc.b	$DC ; x 48 y 66
+	.dc.b	$FC ; x 48 y 67
+	.dc.b	$EE ; x 48 y 68
+	.dc.b	$EE ; x 48 y 69
+	.dc.b	$77 ; x 48 y 70
+	.dc.b	$0 ; x 48 y 71
+	.dc.b	$0 ; x 48 y 72
+	.dc.b	$0 ; x 48 y 73
+	.dc.b	$0 ; x 48 y 74
+	.dc.b	$0 ; x 48 y 75
+	.dc.b	$0 ; x 48 y 76
+	.dc.b	$0 ; x 48 y 77
+	.dc.b	$0 ; x 48 y 78
+	.dc.b	$0 ; x 48 y 79
+
+
+
+
+
+.list
+;
+;	????
+;
+	NEWPAGE	T_IMAGE_PAGE
+
+P11:
+	.dc.b	$66 ; x 8 y 18
+.nlist
+	.dc.b	$66 ; x 8 y 19
+	.dc.b	$6E ; x 8 y 20
+	.dc.b	$7E ; x 8 y 21
+	.dc.b	$7E ; x 8 y 22
+	.dc.b	$76 ; x 8 y 23
+	.dc.b	$66 ; x 8 y 24
+
+.list
+
+P21:
+	.dc.b	$3C ; x 16 y 18
+.nlist
+	.dc.b	$66 ; x 16 y 19
+	.dc.b	$66 ; x 16 y 20
+	.dc.b	$66 ; x 16 y 21
+	.dc.b	$3C ; x 16 y 22
+	.dc.b	0,0
+.list
+
+P31:
+	.dc.b	$60 ; x 24 y 18
+.nlist
+	.dc.b	$60 ; x 24 y 19
+	.dc.b	$60 ; x 24 y 20
+	.dc.b	$66 ; x 24 y 21
+	.dc.b	$7C ; x 24 y 22
+	.dc.b	0,0
+.list
+
+P41:
+	.dc.b	$C6 ; x 32 y 18
+.nlist
+	.dc.b	$C6 ; x 32 y 19
+	.dc.b	$D6 ; x 32 y 20
+	.dc.b	$FE ; x 32 y 21
+	.dc.b	$EC ; x 32 y 22
+	.dc.b	0,0
+.list
+
+P51:
+	.dc.b	$3E ; x 40 y 18
+.nlist
+	.dc.b	$66 ; x 40 y 19
+	.dc.b	$3E ; x 40 y 20
+	.dc.b	$6 ; x 40 y 21
+	.dc.b	$3C ; x 40 y 22
+	.dc.b	0,0
+.list
+
+P61:
+	.dc.b	$3C ; x 48 y 18
+.nlist
+	.dc.b	$18 ; x 48 y 19
+	.dc.b	$18 ; x 48 y 20
+	.dc.b	$18 ; x 48 y 21
+	.dc.b	$18 ; x 48 y 22
+	.dc.b	$18 ; x 48 y 23
+	.dc.b	$38 ; x 48 y 24
+
+.list
+
+P12:
+	.dc.b	$F1 ; x 8 y 37
+.nlist
+	.dc.b	$61 ; x 8 y 38
+	.dc.b	$61 ; x 8 y 39
+	.dc.b	$61 ; x 8 y 40
+	.dc.b	$61 ; x 8 y 41
+	.dc.b	$60 ; x 8 y 42
+	.dc.b	$F0 ; x 8 y 43
+.list
+
+P22:
+	.dc.b	$99 ; x 16 y 37
+.nlist
+	.dc.b	$98 ; x 16 y 38
+	.dc.b	$98 ; x 16 y 39
+	.dc.b	$99 ; x 16 y 40
+	.dc.b	$F0 ; x 16 y 41
+	.dc.b	0,0
+
+.list
+P32:
+	.dc.b	$F0 ; x 24 y 37
+.nlist
+	.dc.b	$19 ; x 24 y 38
+	.dc.b	$F0 ; x 24 y 39
+	.dc.b	$80 ; x 24 y 40
+	.dc.b	$F8 ; x 24 y 41
+	.dc.b	0,0
+.list
+
+P42:
+	.dc.b	$F9 ; x 32 y 37
+.nlist
+	.dc.b	$99 ; x 32 y 38
+	.dc.b	$F9 ; x 32 y 39
+	.dc.b	$19 ; x 32 y 40
+	.dc.b	$F1 ; x 32 y 41
+	.dc.b	0,0
+.list
+
+P52:
+	.dc.b	$98 ; x 40 y 37
+.nlist
+	.dc.b	$99 ; x 40 y 38
+	.dc.b	$99 ; x 40 y 39
+	.dc.b	$99 ; x 40 y 40
+	.dc.b	$F0 ; x 40 y 41
+	.dc.b	0,0
+.list
+
+P62:	.dc.b	$F0 ; x 48 y 37
+.nlist
+	.dc.b	$80 ; x 48 y 38
+	.dc.b	$F8 ; x 48 y 39
+	.dc.b	$98 ; x 48 y 40
+	.dc.b	$F0 ; x 48 y 41
+	.dc.b	0,0
+.list
+
+P13:
+	.dc.b	$FE ; x 8 y 65
+.nlist
+	.dc.b	$E0 ; x 8 y 66
+	.dc.b	$E0 ; x 8 y 67
+	.dc.b	$FC ; x 8 y 68
+	.dc.b	$E0 ; x 8 y 69
+	.dc.b	$E0 ; x 8 y 70
+	.dc.b	$FE ; x 8 y 71
+
+.list
+
+
+
+P23:
+	.dc.b	$3F ; x 16 y 65
+.nlist
+	.dc.b	$77 ; x 16 y 66
+	.dc.b	$3F ; x 16 y 67
+	.dc.b	$7 ; x 16 y 68
+	.dc.b	$3E ; x 16 y 69
+	.dc.b	0,0
+
+.list
+
+P33:
+	.dc.b	$3F ; x 24 y 65
+.nlist
+	.dc.b	$3 ; x 24 y 66
+	.dc.b	$1F ; x 24 y 67
+	.dc.b	$38 ; x 24 y 68
+	.dc.b	$1F ; x 24 y 69
+	.dc.b	0,0
+
+.list
+
+P43:
+	.dc.b	$1F ; x 32 y 64
+.nlist
+	.dc.b	$1 ; x 32 y 65
+	.dc.b	$8F ; x 32 y 66
+	.dc.b	$1D ; x 32 y 67
+	.dc.b	$1D ; x 32 y 68
+	.dc.b	$9D ; x 32 y 69
+	.dc.b	0
+	.dc.b	0
+.list
+
+P53:
+	.dc.b	$80 ; x 40 y 64
+.nlist
+	.dc.b	$C0 ; x 40 y 65
+	.dc.b	$C0 ; x 40 y 66
+	.dc.b	$C0 ; x 40 y 67
+	.dc.b	$C0 ; x 40 y 68
+	.dc.b	$C0 ; x 40 y 69
+	.dc.b	0
+	.dc.b	0
+.list
+
+
+TITBLK:	
+TREE0:
+	.dc.b	$0 ; x 8 y 31
+.nlist
+	.dc.b	$0 ; x 8 y 32
+	.dc.b	$0 ; x 8 y 33
+	.dc.b	$0 ; x 8 y 34
+	.dc.b	$0 ; x 8 y 35
+	.dc.b	$0 ; x 8 y 36
+	.dc.b	$0 ; x 8 y 37
+	.dc.b	$0 ; x 8 y 38
+	.dc.b	$0 ; x 8 y 39
+	.dc.b	$0 ; x 8 y 40
+	.dc.b	$0 ; x 8 y 41
+	.dc.b	$0 ; x 8 y 42
+	.dc.b	$0 ; x 8 y 43
+	.dc.b	$0 ; x 8 y 44
+	.dc.b	$0 ; x 8 y 45
+	.dc.b	$0 ; x 8 y 46
+	.dc.b	$0 ; x 8 y 47
+	.dc.b	$0 ; x 8 y 48
+	.dc.b	$1C ; x 8 y 49
+	.dc.b	$1C ; x 8 y 50
+	.dc.b	$1C ; x 8 y 51
+	.dc.b	$3E ; x 8 y 52
+	.dc.b	$77 ; x 8 y 53
+	.dc.b	$77 ; x 8 y 54
+	.dc.b	$77 ; x 8 y 55
+.list
+
+TREE1:
+	.dc.b	$7 ; x 16 y 31
+.nlist
+	.dc.b	$7 ; x 16 y 32
+	.dc.b	$7 ; x 16 y 33
+	.dc.b	$7 ; x 16 y 34
+	.dc.b	$7 ; x 16 y 35
+	.dc.b	$7 ; x 16 y 36
+	.dc.b	$1F ; x 16 y 37
+	.dc.b	$0 ; x 16 y 38
+	.dc.b	$0 ; x 16 y 39
+	.dc.b	$E ; x 16 y 40
+	.dc.b	$E ; x 16 y 41
+	.dc.b	$E ; x 16 y 42
+	.dc.b	$1F ; x 16 y 43
+	.dc.b	$3B ; x 16 y 44
+	.dc.b	$3B ; x 16 y 45
+	.dc.b	$3B ; x 16 y 46
+	.dc.b	$0 ; x 16 y 47
+	.dc.b	$0 ; x 16 y 48
+	.dc.b	$1F ; x 16 y 49
+	.dc.b	$38 ; x 16 y 50
+	.dc.b	$3F ; x 16 y 51
+	.dc.b	$3B ; x 16 y 52
+	.dc.b	$1F ; x 16 y 53
+	.dc.b	$0 ; x 16 y 54
+	.dc.b	$0 ; x 16 y 55
+.list
+
+tzz:
+TREE_SIZE	set tzz - TREE1 -1
+
+TREE2:
+	.dc.b	$E ; x 24 y 31
+.nlist
+	.dc.b	$E ; x 24 y 32
+	.dc.b	$E ; x 24 y 33
+	.dc.b	$E ; x 24 y 34
+	.dc.b	$F ; x 24 y 35
+	.dc.b	$0 ; x 24 y 36
+	.dc.b	$C0 ; x 24 y 37
+	.dc.b	$0 ; x 24 y 38
+	.dc.b	$0 ; x 24 y 39
+	.dc.b	$F ; x 24 y 40
+	.dc.b	$1D ; x 24 y 41
+	.dc.b	$1D ; x 24 y 42
+	.dc.b	$1D ; x 24 y 43
+	.dc.b	$8F ; x 24 y 44
+	.dc.b	$80 ; x 24 y 45
+	.dc.b	$80 ; x 24 y 46
+	.dc.b	$0 ; x 24 y 47
+	.dc.b	$0 ; x 24 y 48
+	.dc.b	$1 ; x 24 y 49
+	.dc.b	$3 ; x 24 y 50
+	.dc.b	$83 ; x 24 y 51
+	.dc.b	$83 ; x 24 y 52
+	.dc.b	$3 ; x 24 y 53
+	.dc.b	$3 ; x 24 y 54
+	.dc.b	$1 ; x 24 y 55
+
+.list
+
+TREE3:
+	.dc.b	$3 ; x 32 y 31
+.nlist
+	.dc.b	$7 ; x 32 y 32
+	.dc.b	$7 ; x 32 y 33
+	.dc.b	$E7 ; x 32 y 34
+	.dc.b	$C3 ; x 32 y 35
+	.dc.b	$0 ; x 32 y 36
+	.dc.b	$0 ; x 32 y 37
+	.dc.b	$0 ; x 32 y 38
+	.dc.b	$0 ; x 32 y 39
+	.dc.b	$87 ; x 32 y 40
+	.dc.b	$C3 ; x 32 y 41
+	.dc.b	$C3 ; x 32 y 42
+	.dc.b	$C3 ; x 32 y 43
+	.dc.b	$83 ; x 32 y 44
+	.dc.b	$3 ; x 32 y 45
+	.dc.b	$7 ; x 32 y 46
+	.dc.b	$0 ; x 32 y 47
+	.dc.b	$0 ; x 32 y 48
+	.dc.b	$F1 ; x 32 y 49
+	.dc.b	$B9 ; x 32 y 50
+	.dc.b	$B9 ; x 32 y 51
+	.dc.b	$B9 ; x 32 y 52
+	.dc.b	$B9 ; x 32 y 53
+	.dc.b	$B9 ; x 32 y 54
+	.dc.b	$F1 ; x 32 y 55
+
+
+.list
+
+TREE4:
+	.dc.b	$E1 ; x 40 y 31
+.nlist
+	.dc.b	$3 ; x 40 y 32
+	.dc.b	$F3 ; x 40 y 33
+	.dc.b	$73 ; x 40 y 34
+	.dc.b	$E1 ; x 40 y 35
+	.dc.b	$0 ; x 40 y 36
+	.dc.b	$0 ; x 40 y 37
+	.dc.b	$0 ; x 40 y 38
+	.dc.b	$0 ; x 40 y 39
+	.dc.b	$C7 ; x 40 y 40
+	.dc.b	$87 ; x 40 y 41
+	.dc.b	$87 ; x 40 y 42
+	.dc.b	$87 ; x 40 y 43
+	.dc.b	$87 ; x 40 y 44
+	.dc.b	$87 ; x 40 y 45
+	.dc.b	$87 ; x 40 y 46
+	.dc.b	$0 ; x 40 y 47
+	.dc.b	$0 ; x 40 y 48
+	.dc.b	$FC ; x 40 y 49
+	.dc.b	$C0 ; x 40 y 50
+	.dc.b	$C0 ; x 40 y 51
+	.dc.b	$C0 ; x 40 y 52
+	.dc.b	$C0 ; x 40 y 53
+	.dc.b	$C0 ; x 40 y 54
+	.dc.b	$C0 ; x 40 y 55
+
+.list
+
+	NEWPAGE TITL_PAGE
+
+TREE5:
+	.dc.b	$F0 ; x 48 y 31
+.nlist
+	.dc.b	$80 ; x 48 y 32
+	.dc.b	$F8 ; x 48 y 33
+	.dc.b	$B8 ; x 48 y 34
+	.dc.b	$F0 ; x 48 y 35
+	.dc.b	$0 ; x 48 y 36
+	.dc.b	$0 ; x 48 y 37
+	.dc.b	$0 ; x 48 y 38
+	.dc.b	$0 ; x 48 y 39
+	.dc.b	$70 ; x 48 y 40
+	.dc.b	$E0 ; x 48 y 41
+	.dc.b	$C0 ; x 48 y 42
+	.dc.b	$E0 ; x 48 y 43
+	.dc.b	$70 ; x 48 y 44
+	.dc.b	$0 ; x 48 y 45
+	.dc.b	$0 ; x 48 y 46
+	.dc.b	$0 ; x 48 y 47
+	.dc.b	$0 ; x 48 y 48
+	.dc.b	$F8 ; x 48 y 49
+	.dc.b	$FC ; x 48 y 50
+	.dc.b	$EE ; x 48 y 51
+	.dc.b	$EE ; x 48 y 52
+	.dc.b	$EE ; x 48 y 53
+	.dc.b	$FC ; x 48 y 54
+	.dc.b	$F8 ; x 48 y 55
+
+
+
+.list
+
+TITLE0:
+	.dc.b	$0 ; x 8 y 24
+.nlist
+	.dc.b	$0 ; x 8 y 25
+	.dc.b	$1C ; x 8 y 26
+	.dc.b	$3E ; x 8 y 27
+	.dc.b	$7E ; x 8 y 28
+	.dc.b	$76 ; x 8 y 29
+	.dc.b	$E0 ; x 8 y 30
+	.dc.b	$E0 ; x 8 y 31
+	.dc.b	$C0 ; x 8 y 32
+	.dc.b	$C0 ; x 8 y 33
+	.dc.b	$C0 ; x 8 y 34
+	.dc.b	$C0 ; x 8 y 35
+	.dc.b	$C1 ; x 8 y 36
+	.dc.b	$C1 ; x 8 y 37
+	.dc.b	$E0 ; x 8 y 38
+	.dc.b	$E6 ; x 8 y 39
+	.dc.b	$E6 ; x 8 y 40
+	.dc.b	$E6 ; x 8 y 41
+	.dc.b	$FE ; x 8 y 42
+	.dc.b	$7C ; x 8 y 43
+	.dc.b	$38 ; x 8 y 44
+
+.list
+
+ts:
+TITLE_SIZE set ts - TITLE0 -1
+
+
+
+TITLE1:
+	.dc.b	$0 ; x 16 y 24
+.nlist
+	.dc.b	$0 ; x 16 y 25
+	.dc.b	$C7 ; x 16 y 26
+	.dc.b	$CC ; x 16 y 27
+	.dc.b	$CC ; x 16 y 28
+	.dc.b	$CC ; x 16 y 29
+	.dc.b	$CC ; x 16 y 30
+	.dc.b	$CC ; x 16 y 31
+	.dc.b	$C7 ; x 16 y 32
+	.dc.b	$E8 ; x 16 y 33
+	.dc.b	$E8 ; x 16 y 34
+	.dc.b	$FA ; x 16 y 35
+	.dc.b	$B3 ; x 16 y 36
+	.dc.b	$B3 ; x 16 y 37
+	.dc.b	$0 ; x 16 y 38
+	.dc.b	$0 ; x 16 y 39
+	.dc.b	$0 ; x 16 y 40
+	.dc.b	$0 ; x 16 y 41
+	.dc.b	$0 ; x 16 y 42
+	.dc.b	$0 ; x 16 y 43
+	.dc.b	$0 ; x 16 y 44
+
+.list
+TITLE2:
+
+	.dc.b	$0 ; x 24 y 24
+.nlist
+	.dc.b	$0 ; x 24 y 25
+	.dc.b	$E7 ; x 24 y 26
+	.dc.b	$CF ; x 24 y 27
+	.dc.b	$CD ; x 24 y 28
+	.dc.b	$D8 ; x 24 y 29
+	.dc.b	$D8 ; x 24 y 30
+	.dc.b	$D8 ; x 24 y 31
+	.dc.b	$D8 ; x 24 y 32
+	.dc.b	$59 ; x 24 y 33
+	.dc.b	$59 ; x 24 y 34
+	.dc.b	$CF ; x 24 y 35
+	.dc.b	$CF ; x 24 y 36
+	.dc.b	$86 ; x 24 y 37
+	.dc.b	$0 ; x 16 y 38
+	.dc.b	$0 ; x 16 y 39
+	.dc.b	$0 ; x 16 y 40
+	.dc.b	$0 ; x 16 y 41
+	.dc.b	$0 ; x 16 y 42
+.list
+TITLE3:
+	.dc.b	$0 ; x 16 y 43
+.nlist
+	.dc.b	$0 ; x 16 y 44
+
+;	.dc.b	$0 ; x 32 y 24
+;	.dc.b	$0 ; x 32 y 25
+	.dc.b	$63 ; x 32 y 26
+	.dc.b	$67 ; x 32 y 27
+	.dc.b	$66 ; x 32 y 28
+	.dc.b	$6C ; x 32 y 29
+	.dc.b	$7C ; x 32 y 30
+	.dc.b	$78 ; x 32 y 31
+	.dc.b	$70 ; x 32 y 32
+	.dc.b	$78 ; x 32 y 33
+	.dc.b	$7C ; x 32 y 34
+	.dc.b	$6E ; x 32 y 35
+	.dc.b	$66 ; x 32 y 36
+	.dc.b	$66 ; x 32 y 37
+	.dc.b	$60 ; x 32 y 38
+	.dc.b	$60 ; x 32 y 39
+	.dc.b	$60 ; x 32 y 40
+	.dc.b	$60 ; x 32 y 41
+	.dc.b	$C0 ; x 32 y 42
+
+
+.list
+TITLE4:
+
+; Rama 647-4009 824-7444
+
+
+	.dc.b	$0 ; x 40 y 24
+.nlist
+	.dc.b	$0 ; x 40 y 25
+	.dc.b	$1E ; x 40 y 26
+	.dc.b	$33 ; x 40 y 27
+	.dc.b	$73 ; x 40 y 28
+	.dc.b	$60 ; x 40 y 29
+	.dc.b	$7F ; x 40 y 30
+	.dc.b	$7F ; x 40 y 31
+	.dc.b	$63 ; x 40 y 32
+	.dc.b	$63 ; x 40 y 33
+	.dc.b	$36 ; x 40 y 34
+	.dc.b	$1C ; x 40 y 35
+	.dc.b	$00 ; x 40 y 36
+	.dc.b	$20 ; x 40 y 37
+	.dc.b	$20 ; x 40 y 38
+	.dc.b	$20 ; x 40 y 39
+	.dc.b	$60 ; x 40 y 40
+	.dc.b	$E0 ; x 40 y 41
+	.dc.b	$E0 ; x 40 y 42
+.list
+TITLE5:
+	.dc.b	$0 ; x 40 y 43
+.nlist
+	.dc.b	$0 ; x 40 y 44
+
+
+;	.dc.b	$0 ; x 48 y 24
+;	.dc.b	$0 ; x 48 y 25
+	.dc.b	$1F ; x 48 y 26
+	.dc.b	$33 ; x 48 y 27
+	.dc.b	$73 ; x 48 y 28
+	.dc.b	$63 ; x 48 y 29
+	.dc.b	$63 ; x 48 y 30
+	.dc.b	$63 ; x 48 y 31
+	.dc.b	$63 ; x 48 y 32
+	.dc.b	$73 ; x 48 y 33
+	.dc.b	$33 ; x 48 y 34
+	.dc.b	$1F ; x 48 y 35
+	.dc.b	$3 ; x 48 y 36
+	.dc.b	$3 ; x 48 y 37
+	.dc.b	$3 ; x 48 y 38
+	.dc.b	$3 ; x 48 y 39
+	.dc.b	$3 ; x 48 y 40
+	.dc.b	$3 ; x 48 y 41
+	.dc.b	$3 ; x 48 y 42
+	.dc.b	$7 ; x 48 y 43
+	.dc.b	$7 ; x 48 y 44
+
+
+.list
+;
+;
+;
+;
+t2p0:
+	.dc.b	$2 ; x 8 y 25
+.nlist
+	.dc.b	$2 ; x 8 y 26
+	.dc.b	$3 ; x 8 y 27
+	.dc.b	$2 ; x 8 y 28
+	.dc.b	$1 ; x 8 y 29
+	.dc.b	$38 ; x 8 y 30
+	.dc.b	$44 ; x 8 y 31
+	.dc.b	$BA ; x 8 y 32
+	.dc.b	$A2 ; x 8 y 33
+	.dc.b	$BA ; x 8 y 34
+	.dc.b	$44 ; x 8 y 35
+	.dc.b	$38 ; x 8 y 36
+	.dc.b	0
+
+.list
+
+
+
+PLAYER1:
+t2p1:
+box10:
+
+	.dc.b	$49 ; x 16 y 25
+.nlist
+	.dc.b	$49 ; x 16 y 26
+	.dc.b	$C9 ; x 16 y 27
+	.dc.b	$49 ; x 16 y 28
+	.dc.b	$BE ; x 16 y 29
+	.dc.b	$0 ; x 16 y 30
+	.dc.b	$8B ; x 16 y 31
+	.dc.b	$8A ; x 16 y 32
+	.dc.b	$BB ; x 16 y 33
+	.dc.b	$AA ; x 16 y 34
+	.dc.b	$BB ; x 16 y 35
+	.dc.b	$0 ; x 16 y 36
+	.dc.b	0
+.list
+
+t2p2:
+box20:
+
+	.dc.b	$29 ; x 24 y 25
+.nlist
+	.dc.b	$2A ; x 24 y 26
+	.dc.b	$EE ; x 24 y 27
+	.dc.b	$29 ; x 24 y 28
+	.dc.b	$CE ; x 24 y 29
+	.dc.b	$0 ; x 24 y 30
+	.dc.b	$B8 ; x 24 y 31
+	.dc.b	$A8 ; x 24 y 32
+	.dc.b	$B8 ; x 24 y 33
+	.dc.b	$A8 ; x 24 y 34
+	.dc.b	$B8 ; x 24 y 35
+	.dc.b	$0 ; x 24 y 36
+	.dc.b	$0 ; x 24 y 37
+;	.dc.b	$0 ; x 24 y 38
+
+
+
+.list
+
+PLAYER3:
+t2p3:
+box30:
+
+
+	.dc.b	$43 ; x 32 y 25
+.nlist
+	.dc.b	$44 ; x 32 y 26
+	.dc.b	$44 ; x 32 y 27
+	.dc.b	$43 ; x 32 y 28
+	.dc.b	$40 ; x 32 y 29
+	.dc.b	$0 ; x 32 y 30
+	.dc.b	$0 ; x 32 y 31
+	.dc.b	$0 ; x 32 y 32
+	.dc.b	$0 ; x 32 y 33
+	.dc.b	$0 ; x 32 y 34
+	.dc.b	$0 ; x 32 y 35
+	.dc.b	$0 ; x 32 y 36
+	.dc.b	$0 ; x 32 y 37
+.list
+
+PLAYER4:
+t2p4:
+box40:
+
+
+	.dc.b	$32 ; x 40 y 25
+.nlist
+	.dc.b	$4B ; x 40 y 26
+	.dc.b	$4A ; x 40 y 27
+	.dc.b	$33 ; x 40 y 28
+	.dc.b	$0 ; x 40 y 29
+	.dc.b	$0 ; x 40 y 30
+	.dc.b	$0 ; x 40 y 31
+	.dc.b	$0 ; x 40 y 32
+	.dc.b	$0 ; x 40 y 33
+	.dc.b	$0 ; x 40 y 34
+	.dc.b	$0 ; x 40 y 35
+	.dc.b	$0 ; x 40 y 36
+	.dc.b	$0 ; x 40 y 37
+.list
+
+PLAYER5:
+t2p5:
+box50:
+
+	.dc.b	$D1 ; x 48 y 25
+.nlist
+	.dc.b	$9C ; x 48 y 26
+	.dc.b	$54 ; x 48 y 27
+	.dc.b	$9C ; x 48 y 28
+	.dc.b	$0 ; x 48 y 29
+	.dc.b	$0 ; x 48 y 30
+	.dc.b	$0 ; x 48 y 31
+	.dc.b	$0 ; x 48 y 32
+	.dc.b	$0 ; x 48 y 33
+	.dc.b	$0 ; x 48 y 34
+	.dc.b	$0 ; x 48 y 35
+	.dc.b	$0 ; x 48 y 36
+	.dc.b	$0 ; x 48 y 37
+
+
+
+
+
+.list
+
+	NEWPAGE khkhk
+t3p0:
+	.dc.b	$93 ; x 8 y 121
+.nlist
+	.dc.b	$A4 ; x 8 y 122
+	.dc.b	$E4 ; x 8 y 123
+	.dc.b	$94 ; x 8 y 124
+	.dc.b	$E3 ; x 8 y 125
+	.dc.b	$0 ; x 8 y 126
+	.dc.b	$38 ; x 8 y 127
+	.dc.b	$44 ; x 8 y 128
+	.dc.b	$BA ; x 8 y 129
+	.dc.b	$A2 ; x 8 y 130
+	.dc.b	$BA ; x 8 y 131
+	.dc.b	$44 ; x 8 y 132
+	.dc.b	$38 ; x 8 y 133
+.list
+
+t3p1:	.dc.b	$3B ; x 16 y 121
+.nlist
+	.dc.b	$AA ; x 16 y 122
+	.dc.b	$BB ; x 16 y 123
+	.dc.b	$AA ; x 16 y 124
+	.dc.b	$3B ; x 16 y 125
+	.dc.b	$0 ; x 16 y 126
+	.dc.b	$0 ; x 16 y 127
+	.dc.b	$0 ; x 16 y 128
+	.dc.b	$11 ; x 16 y 129
+	.dc.b	$11 ; x 16 y 130
+	.dc.b	$17 ; x 16 y 131
+	.dc.b	$15 ; x 16 y 132
+	.dc.b	$17 ; x 16 y 133
+.list
+
+;
+;
+;
+;
+t3p4:	.dc.b	$B8 ; x 40 y 121
+.nlist
+	.dc.b	$A1 ; x 40 y 122
+	.dc.b	$B2 ; x 40 y 123
+	.dc.b	$A2 ; x 40 y 124
+	.dc.b	$BA ; x 40 y 125
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0	;33
+.list
+
+t3p5:	.dc.b	$8E ; x 48 y 121
+.nlist
+	.dc.b	$48 ; x 48 y 122
+	.dc.b	$2C ; x 48 y 123
+	.dc.b	$28 ; x 48 y 124
+	.dc.b	$2E ; x 48 y 125
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+.list
+
+t3p2:	.dc.b	$A5 ; x 24 y 121
+.nlist
+	.dc.b	$29 ; x 24 y 122
+	.dc.b	$39 ; x 24 y 123
+	.dc.b	$25 ; x 24 y 124
+	.dc.b	$BB ; x 24 y 125
+	.dc.b	$0 ; x 24 y 126
+	.dc.b	$0 ; x 24 y 127
+	.dc.b	$0 ; x 24 y 128
+	.dc.b	$72 ; x 24 y 129
+	.dc.b	$52 ; x 24 y 130
+	.dc.b	$72 ; x 24 y 131
+	.dc.b	$51 ; x 24 y 132
+	.dc.b	$77 ; x 24 y 133
+.list
+
+t3p3:	.dc.b	$4 ; x 32 y 121
+.nlist
+	.dc.b	$4 ; x 32 y 122
+	.dc.b	$5 ; x 32 y 123
+	.dc.b	$6 ; x 32 y 124
+	.dc.b	$84 ; x 32 y 125
+	.dc.b	0   ;	
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0
+	.dc.b	0	; 33
+
+.list

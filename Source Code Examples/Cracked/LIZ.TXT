@@ -1,0 +1,299 @@
+
+
+BIRDSIZE  = 10  ; WRONG ---!!!!!!!!!!!!!!**********
+REFLEFT = $0
+REFRIGHT = $FF
+;
+;
+;	frame structure  
+;
+;
+
+;
+;
+; bit 7 = X - TURN 
+; bit 6 = Y - TURN 
+; bit 5 = }} HOLD TABLE INDEX
+; bit 4 = }
+;
+; bit 3 = }
+; bit 2 = } X MOVEMENT
+
+; bit 1 = } Y MOVEMENT
+; bit 0 = }
+
+
+MVUP = $40
+MVDN = $00
+TURN = $80
+
+
+NOXMV = 0
+MINX = 4
+MEDX = 8
+MAXX = $0c
+
+
+NOYMV = 0
+MINY = 1
+MEDY = 2
+MAXY = 3
+
+
+HLLO = $00
+HLMD = $10
+HLHI = $20
+HLST = $30
+
+
+MVSLO = HLHI+NOYMV+MINX
+
+
+FRZ = HLST+NOYMV+NOXMV
+
+RG  = HLMD+NOYMV+MEDX
+SRG  = HLHI+NOYMV+MEDX
+FST = HLLO+NOYMV+MAXX
+
+GOUP = HLMD+MAXY+MVUP+MINX
+GODN = HLMD+MAXY+MVDN+MINX
+
+
+;.macro	aniframe	hold,xoff,yoff,image,color
+.macro	aniframe	move,image
+	.dc.b	\move	
+	.dc.w	\image
+.endm
+
+
+;
+;
+;	frame address table entry 
+;
+;
+.macro	FRAMELOC	frame
+	.dc.b	\frame-framepage
+.endm
+
+;**********************************************************************
+;
+;
+;	Animation Sequences
+;
+;
+;
+;*********************************************************************
+	NEWPAGE	sequences
+framepage:
+
+FUP:
+	aniframe	GODN,bird1
+	aniframe	GOUP,bird2
+	aniframe	GOUP,bird3
+	aniframe	GOUP,bird4
+	dc.b		0
+
+
+FDN:
+	aniframe	GODN,bird1
+	aniframe	GODN,bird2
+	aniframe	GODN,bird3
+	aniframe	GOUP,bird4
+	dc.b		0
+
+FSTR:
+	aniframe	RG,bird3
+	aniframe	FST,bird2
+	aniframe	GOUP,bird1
+	aniframe	RG,bird2
+	aniframe	FST,bird3
+	aniframe	GODN,bird4
+	dc.b		0
+
+FTN:
+	aniframe	RG,bird1
+	aniframe	GOUP,bird3
+	aniframe	TURN+RG,tbird
+	aniframe	RG,bird3
+	aniframe	GODN,bird4
+	dc.b		0
+
+
+
+OWLANI:
+	aniframe 	HLMD+MINX+MVDN+MINY+TURN,OWL00
+	aniframe 	HLLO+MEDX+MEDY+MVUP,OWL01
+	aniframe 	HLMD+MINX+MVDN+MINY+TURN,OWL02
+	dc.b		0	
+
+TOWLANI:
+	aniframe 	HLMD+MINX+MVUP+MINY,OWL00
+	aniframe 	HLMD+MAXX+MINY,OWL01
+	aniframe 	HLMD+MEDX+MVDN+MINY,OWL02
+	dc.b		0	
+
+
+OWLUP:
+	aniframe 	HLMD+MINX+MVUP+MEDY,OWL00
+	aniframe 	HLMD+MEDY+MVUP+MEDX,OWL01
+	aniframe 	HLMD+MINX+MVUP+MINY,OWL02
+
+	dc.b		0	
+OWLDN:
+	aniframe 	HLMD+MAXX+MVDN+MAXY,OWL00
+	aniframe 	HLMD+MINY+MVDN+MAXX,OWL01
+	aniframe 	HLMD+NOXMV+MVDN+MINY,OWL02
+	dc.b		0	
+
+;
+;	snake
+;
+SNRT:
+	aniframe	MVSLO,snake1
+	aniframe	RG,snake2
+	aniframe	FST,snake3
+	aniframe	RG,snake4
+	dc.b		0
+
+FSNRT:
+	aniframe	RG,snake1
+	aniframe	MVSLO,snake2
+	aniframe	MVSLO+TURN,snake3
+	aniframe	RG,snake4
+	dc.b		0
+
+
+DGFLUP1:
+	aniframe 	HLMD+MEDY+MVUP+MINX,OWL03
+	aniframe 	HLMD+MEDY+MVUP+MINX,OWL04
+	dc.b		0
+DGFLST:
+	aniframe	FST,OWL03
+	aniframe	FST,OWL04
+	dc.b		0
+
+DGFLTN1:
+	aniframe	MVSLO,OWL03
+	aniframe	MVSLO+TURN,OWL04
+	aniframe	MVSLO,OWL03
+	dc.b		0
+
+DGFLDN1:
+	aniframe 	HLLO+MEDY+MVDN+MINX,OWL03
+	aniframe 	HLLO+MEDY+MVDN+MINX,OWL04
+	dc.b		0
+
+GLST1:
+
+	aniframe	MVSLO,gorilla1
+	aniframe	FST,gorilla2
+	aniframe	MVSLO,gorilla3
+	aniframe	MVSLO,gorilla2
+	dc.b		0
+
+GLTN1:
+	aniframe	MVSLO,gorilla1
+	aniframe	MVSLO+TURN,gorilla2
+	aniframe	MVSLO,gorilla3
+	aniframe	MVSLO,gorilla2
+	dc.b		0
+
+MRFST:
+	aniframe	FST,mouse1
+	aniframe	FST,mouse0
+	.dc.b	0
+MRST:
+	aniframe	RG,mouse1
+	aniframe	FST,mouse0
+	.dc.b	0
+MRTN:
+	aniframe	GOUP,mouse0
+	aniframe	GODN+TURN,mouse1
+	aniframe	GODN,mouse1
+	.dc.b	0
+
+MRHOP:
+	aniframe	GOUP,mouse0
+	aniframe	MVSLO,mouse1
+	aniframe	GODN,mouse1
+	.dc.b	0
+
+
+COLOR_TAB:
+.sc:
+SNAKE_COLOR	set	.sc -COLOR_TAB
+	.dc.b	YELLOWGREEN 
+	.dc.b	YELLOWGREEN 
+	.dc.b	YELLOWGREEN 
+	.dc.b	YELLOWGREEN 
+
+	.dc.b	YELLOWGREEN 
+	.dc.b	YELLOWGREEN 
+	.dc.b	YELLOWGREEN 
+	.dc.b	REDBIRD
+
+bc:
+BIRD_COLOR	set	bc - COLOR_TAB
+dc:
+DRAGONFLY_COLOR	set	dc - COLOR_TAB
+
+	.dc.b	REDBIRD
+	.dc.b	BLACKBIRD
+	.dc.b	BLUEBIRD
+	.dc.b	PINKBIRD
+
+	.dc.b	REDBIRD
+	.dc.b	YELLOWBIRD
+	.dc.b	BLACK
+	.dc.b	GREY	
+
+mc:
+MOUSE_COLOR	set	mc - COLOR_TAB
+
+	.dc.b	GREY
+	.dc.b	GREY
+	.dc.b	BLACK
+	.dc.b	WHITE
+
+
+	.dc.b	GREY
+	.dc.b	GREY
+	.dc.b	GREY
+	.dc.b	GREY
+
+
+.gc:
+MONKEY_COLOR	set	.gc - COLOR_TAB
+.oc:
+OWL_COLOR	set	.oc - COLOR_TAB
+
+	.dc.b	$34
+	.dc.b	$34
+	.dc.b	$34
+	.dc.b	$34
+
+	.dc.b	$34
+	.dc.b	$34
+	.dc.b	$34
+	.dc.b	$34
+
+
+
+
+
+HOLD_TAB:
+
+	.dc.b	04
+	.dc.b	06
+	.dc.b	08
+	.dc.b	200
+
+
+MVTAB:
+	.dc.b	0
+	.dc.b	1
+	.dc.b	2
+	.dc.b	3
+
+
+;	NEWPAGE	end_sequences

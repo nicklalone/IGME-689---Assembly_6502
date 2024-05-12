@@ -1,0 +1,72 @@
+
+
+	.dc.b	$E0 ; x 8 y 9
+	.dc.b	$20 ; x 8 y 10
+	.dc.b	$42 ; x 8 y 11
+	.dc.b	$82 ; x 8 y 12
+	.dc.b	$7E ; x 8 y 13
+	.dc.b	$31 ; x 8 y 14
+	.dc.b	$DB ; x 8 y 15
+	.dc.b	$99 ; x 8 y 16
+	.dc.b	$5D ; x 8 y 17
+	.dc.b	$3D ; x 8 y 18
+	.dc.b	$7F ; x 8 y 19
+	.dc.b	$FF ; x 8 y 20
+	.dc.b	$FF ; x 8 y 21
+	.dc.b	$7F ; x 8 y 22
+	.dc.b	$3F ; x 8 y 23
+	.dc.b	$7E ; x 8 y 24
+	.dc.b	$7C ; x 8 y 25
+	.dc.b	$2C ; x 8 y 26
+	.dc.b	$18 ; x 8 y 27
+	.dc.b	$0 ; x 8 y 28
+
+
+	.dc.b	$38 ; x 8 y 38
+	.dc.b	$8 ; x 8 y 39
+	.dc.b	$A ; x 8 y 40
+	.dc.b	$A ; x 8 y 41
+	.dc.b	$7E ; x 8 y 42
+	.dc.b	$28 ; x 8 y 43
+	.dc.b	$9B ; x 8 y 44
+	.dc.b	$CD ; x 8 y 45
+	.dc.b	$59 ; x 8 y 46
+	.dc.b	$39 ; x 8 y 47
+	.dc.b	$7D ; x 8 y 48
+	.dc.b	$FF ; x 8 y 49
+	.dc.b	$FF ; x 8 y 50
+	.dc.b	$7F ; x 8 y 51
+	.dc.b	$3F ; x 8 y 52
+	.dc.b	$7E ; x 8 y 53
+	.dc.b	$7C ; x 8 y 54
+	.dc.b	$2C ; x 8 y 55
+	.dc.b	$18 ; x 8 y 56
+	.dc.b	$0 ; x 8 y 57
+
+
+
+
+
+	.dc.b	$E6 ; x 8 y 120
+	.dc.b	$23 ; x 8 y 121
+	.dc.b	$2E ; x 8 y 122
+	.dc.b	$28 ; x 8 y 123
+	.dc.b	$9B ; x 8 y 124
+	.dc.b	$C9 ; x 8 y 125
+	.dc.b	$9D ; x 8 y 126
+	.dc.b	$BD ; x 8 y 127
+	.dc.b	$BF ; x 8 y 128
+	.dc.b	$FF ; x 8 y 129
+	.dc.b	$FF ; x 8 y 130
+	.dc.b	$FF ; x 8 y 131
+	.dc.b	$FF ; x 8 y 132
+	.dc.b	$FF ; x 8 y 133
+	.dc.b	$7F ; x 8 y 134
+	.dc.b	$3E ; x 8 y 135
+	.dc.b	$7E ; x 8 y 136
+	.dc.b	$7C ; x 8 y 137
+	.dc.b	$2C ; x 8 y 138
+	.dc.b	$18 ; x 8 y 139
+
+
+

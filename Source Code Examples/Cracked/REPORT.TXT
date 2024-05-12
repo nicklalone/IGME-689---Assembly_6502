@@ -1,0 +1,89 @@
+Problem
+-------
+
+1) Known - final timing
+2) Known - final rom pack
+3) Known - ranch not finished in tested version
+4) Known - the characters come on and off the screen, turn, etc to
+	   try to give them more character. This is to help make 
+	   up for the VCS graphics quality.
+5) known - final rom packing
+6) known - John and discussed and finalized how to handle this.
+7) Bug   - hope it goes away with the final rom pack
+8) see #4
+9) known - John and discussed and finalized how to handle this.
+10) Not in the VCS version
+11) known - John and discussed and finalized how to handle this.
+12) let me know what is not functioning in demo mode. The demo
+	     mode does not play the game well. Is there anything
+	   else wrong?
+
+Comments
+--------
+
+1) 	The rooster graphics need work. This is scheduled.
+
+2) 	see #4 above. The change of direction helps to make up for the 
+	fact that the characters movement are restricted to horizontal
+	bands for common VCS reasons. If they can't go up and down,
+	the back and forth is needed to avoid a "Shooting Gallery"
+	look that is even farther from the ST game. It would be very 
+	easy to remove the back and forth movement and would free some
+	space, but I feel it would do the game real damage.
+
+3) 	At present there is no space for the adding "hay" to the ranch screen
+	It would require adding a 6 Character Kernel and data. It is a good 
+	idea though.
+
+4) 	known - John and discussed and finalized how to handle this.
+
+5) 	will look at this - the speed is to mantain a rather fast game screen
+	switch rate. The VCS version does not have the detailed screens
+	of the ST version. It is felt to help if the screen switches 
+	before they get tired of looking at it. 
+
+6) 	This is to make the game harder. Without the many screens of the 
+	and full screen movement of the ST version, the "jerky" movement
+	helps. The "look" of it can be improved, but the quick movements
+	are needed. Early versions had smooth movement and it was not
+	as good. This is another adaption to avoid the "Shooting Gallery"
+	look.
+
+ 7)     The detail is limited by the VCS. 
+
+ 8) 	I know there are trackballs for the VCS, but a mouse ? Let me know 
+	how the interface works and I will let you know....
+
+ 9)     If we can think of a way to add a round number, I want to very much.
+	this is high on my list. I hope to find room.
+
+10) 	The cursor control needs more than to be slowed down. It needs to be
+	"ramped" so it goes faster as you move it large distances and slower
+	when you move small distances. This is being done as part of the
+	final game.
+
+11)     Final timeing has not been done and this should fix this. 
+
+12)	 The animation of a snake coiling and uncoiling in 8 pixels will be jerky.
+ 	the 8 pixel wide object is a VCS limit. I was happy to get a snake 
+	animation period. This one is the last of many snakes we tried.
+	We are still tweeking the timing though.
+
+13) 	this is a rom pack problem ... gone soon
+
+14) 	Pressing the select button stops the game for debugging at present.
+
+15) 	I think we need to make the game harder also. I am trying to do this
+	without resorting to just speeding up the game, although the final
+	game will be faster also.
+
+16) 	Rom space is limited but we plan to try to use the entire title.
+
+
+ Thanks for the testing and comments.
+
+
+					Bruce Williams
+
+
+	

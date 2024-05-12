@@ -1,0 +1,197 @@
+                            GUNFIGHT
+
+
+<<...It's  shoot-out time  and you've  got to be
+    faster than your opponent or the computer. Move,
+        dodge, or hide behind a covered wagon or cactus.
+            But whatever  you  do,  don't  waste  your time
+                because your opponent is shooting back. Take your
+                    position,  aim,  and fire before he gets you...>>
+
+
+PLAYING THE GAME
+
+The easiest (and cheapest) way to play Gunfight is to use one of the available 
+Atari VCS emulators. I especially recommend Z26 by John Saeger on which it was 
+completely developed.
+
+Download Z26 from: http://www.whimsey.com/z26/
+
+For the real experience --> play it on the real thing!
+
+You can order the game on cartridge from Hozer Video Games. Check out their 
+homepage: http://webpages.charter.net/hozervideo/
+
+USING THE CONTROLLER
+
+Gunfight uses your joystick controllers. Be sure the joysticks are plugged 
+firmly into the controller jacks at the back of your Atari Video Computer 
+System.
+
+The joystick controller plugged into the left controller jack controls the left 
+cowboy, and the right joystick controls the right cowboy. Hold the joystick with 
+the red button to your upper left, toward the television screen.
+
+Gunfight supports two general play modes: 
+- 1 Human Cowboy vs. 1 Computer-controlled Cowboy 
+- 1 Human Cowboy vs. 1 Human Cowboy
+
+
+THE SCREEN
+
+The screen is divided into two parts: an upper status area and a game area.
+
+The game area is further divided into three sections: an obstacle area in the 
+middle and cowboy zones on either side of it.
+
+In the status area, you'll find three pairs of digits/icons.  They normally 
+show, from left to right:
+
+- The 2-digit score of the left cowboy 
+- An icon symbolizing the current play mode 
+- An icon symbolizing if the computer-controlled cowboy is on or off 
+- The 2-digit score of the right cowboy
+
+
+CONFIGURATION SWITCHES
+
+When the left difficulty switch is in position A (Sheriff), the speed of the 
+bullets is doubled, and you're competing against a slightly smarter 
+computer-controlled cowboy. Switch to position B (Deputy) for a simpler game (so 
+you can learn how to fulfill your duties).
+
+The right difficulty switch toggles the artificial intelligence (AI) ON/OFF. 
+This can be done any time on the fly. When in position A, you are playing 
+against the AI, and an Atari symbol is displayed in the status line. Switch it 
+to B, and a joystick appears there, signifying that the cowboy is under human 
+control.
+
+The COLOR/B&W switch in COLOR position enables the horizontal bouncing of the 
+bullets. The B&W position disables it.
+
+
+CHOOSING A VARIATION
+
+There are four game variations in Gunfight: 
+
+Standard, Sixshooter, Escape, & Score
+
+Press GAME SELECT to choose the desired game variation. The current variation 
+icon is shown in the status area.
+
+
+CHOOSING A SCENARIO
+
+There are eight different scenarios available in Gunfight:
+
+Four shootable ones:
+Xype Logo, Cacti 1, Stage Coach & Saloon
+
+And four non-shootables:
+Arrows 1, Rocks, Arrows 2 & Cacti 2
+
+Press GAME RESET to switch from one scenario to the next. After every Game Over, 
+you're automatically carried on to the next scenario.
+
+
+STARTING THE GAME
+
+Whenever the title tune is playing, you're in the attract mode. The left cowboy 
+can now start a new game by pressing the fire button.
+
+
+CONTROLLING YOUR COWBOY
+
+Within his zone, your cowboy will move in whatever direction the joystick is 
+pushed. 
+
+To fire your gun, you need to press the fire button while walking either 
+straight or diagonally towards your enemy. The bullets are fired in the 
+direction you're walking.
+
+When a cowboy gets hit by his opponent's bullet, his hat will fall off. Watch 
+out, because another hit will knock him down and score a point for the opponent!
+
+
+GAMEPLAY
+
+Gunfight offers 4 different play variants:
+
+Standard: The two cowboys are directly duelling each other. The first to down 
+the other player seven times wins this variant.
+
+Sixshooter: Same as the standard variant, except that after six shots, the 
+cowboys need to reload their guns. In order to do so, they should quickly pick 
+up the ammunition box that is thrown into the scene whenever a cowboy needs to 
+reload.
+
+Escape: The left cowboy tries to knock out the right one who's totally 
+defenseless! The left cowboy only needs to down his opponent once to win. The 
+right cowboy wins if he can survive until the counter expires.
+
+Score: In this variant, destroying a part of an obstacle gains a cowboy 1 point 
+and downing his competitor gains him 5 points. The first cowboy to achieve 42 
+points wins.
+
+
+FEEDBACK
+
+I'd really like to read comments, reviews, love or hate mails regarding 
+Gunfight. Send your mail to: cybergoth@nexgo.de
+
+
+ACKNOWLEDGMENTS
+
+This project wouldn't have been possible without the [Stella] guys, the members 
+of the Atari 2600 programmers mailing list: 
+http://www.biglist.com/lists/stella/stella.html
+
+Thanks to the nice people on the list I have found the encouragement, the 
+information and the support needed to complete this project!
+
+I think that some peoples efforts deserve a special mention:
+
+Thomas Jentzsch helped me a lot in optimizing various parts of the 6502 code, 
+especially the kernel code. Additionally he's one of the top ranking idea 
+contributors, playtesters and moral supporters.
+
+Glenn Saunders provided lots of encouragement, ideas and all sorts of 
+constructive feedback throughout the whole development process.
+
+Piero Cavina suggested amongst various other things the 'Escape' mode of the 
+game.
+
+Eckhard Stolberg as usual provided his superior hardware knowledge, especially 
+for the final real thing PAL/NTSC tuning & conversion.
+
+Marcell Bollman transcribed the 'Ring Of Fire' tune.
+
+Tim Snider & Erik Mooney proofread this manual.
+
+XXX created the label artwork.
+
+Various code snippets within the [Stella] archive were used as a base to certain 
+subroutines of Gunfight. Worth mentioning are the horizontal positioning 
+algorithm of Andrew Davie's QB and the sound driver of Kurt Woloch's Ship demo.
+
+Many other people supported the project with feedback, encouragement, ideas, 
+bug-reports or else. Names of other top contributors that pop into my mind (in 
+no particular order) are:
+
+Ruffin Bailey, Gonzalo, Erik Mooney, Joe Grand & Chris Wilkson!
+
+Hugs and kisses to Madeleine, for everything!
+
+Thanks to you all! And thanks to all other people that helped creating Gunfight!
+
+
+LEGAL STUFF
+
+This game is freeware, so the BIN may be freely distributed as long as it is 
+accompanied by this documentation file. Gunfight may be included on websites and 
+shareware or freeware compilations, but please contact me first. You are not 
+allowed to distribute Gunfight on Atari 2600 cartridges without my explicit 
+permission.
+
+
+Gunfight (C) 2001 by Manuel Polik (XYPE)

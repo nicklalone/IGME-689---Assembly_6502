@@ -1,0 +1,3 @@
+cp ..\wkback\* ..\wkback2
+cp * ..\wkback
+cp * a:\

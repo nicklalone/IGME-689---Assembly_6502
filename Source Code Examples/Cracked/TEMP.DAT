@@ -1,0 +1,347 @@
+
+
+MAXKERSIZ = $2F+2
+
+BRDTSIZE = $12
+BRD1SIZE = $12
+BRD2SIZE = $E
+BRD3SIZE = $A
+BRD4SIZE = $A
+SNK1SIZE = $C
+SNK2SIZE = $A
+SNK3SIZE = $8
+SNK4SIZE = $4
+OWL0SIZE = $17
+OWL1SIZE = $14
+OWL2SIZE = $13
+COLORSIZE = 27 ;DECIMAL
+
+
+BRDTKSIZE = (MAXKERSIZ -$12)
+BRD1KSIZE = (MAXKERSIZ -$12)
+BRD2KSIZE = (MAXKERSIZ -$E)
+BRD3KSIZE = (MAXKERSIZ -$A)
+BRD4KSIZE = (MAXKERSIZ -$A)
+SNK1KSIZE = (MAXKERSIZ -$C)
+SNK2KSIZE = (MAXKERSIZ -$A)
+SNK3KSIZE = (MAXKERSIZ -$8)
+SNK4KSIZE = (MAXKERSIZ -$4)
+OWL0KSIZE = (MAXKERSIZ -$17)
+OWL1KSIZE = (MAXKERSIZ -$14)
+OWL2KSIZE = (MAXKERSIZ -$13)
+COLORKSIZE = (MAXKERSIZ -27)
+
+;    2           =0000002F               MAXKERSIZ = $2F
+;    3                                   
+;    4           =00000012               BRDTSIZE = $12
+;    5           =00000012               BRD1SIZE = $12
+;    6           =0000000E               BRD2SIZE = $E
+;    7           =0000000A               BRD3SIZE = $A
+;    8           =0000000A               BRD4SIZE = $A
+;    9           =0000000C               SNK1SIZE = $C
+;   10           =0000000A               SNK2SIZE = $A
+;   11           =00000008               SNK3SIZE = $8
+;   12           =00000004               SNK4SIZE = $4
+;   13           =00000017               OWL0SIZE = $17
+;   14           =00000014               OWL1SIZE = $14
+;   15           =00000013               OWL2SIZE = $13
+;   16           =0000001B               COLORSIZE = 27 ;DECIMAL
+
+
+
+;   19           =0000001D               BRDTIMAGE = (MAXKERSIZ -$12)
+;   20           =0000001D               BRD1IMAGE = (MAXKERSIZ -$12)
+;   21           =00000021               BRD2IMAGE = (MAXKERSIZ -$E)
+;   22           =00000025               BRD3IMAGE = (MAXKERSIZ -$A)
+;   23           =00000025               BRD4IMAGE = (MAXKERSIZ -$A)
+;   24           =00000023               SNK1IMAGE = (MAXKERSIZ -$C)
+;   25           =00000025               SNK2IMAGE = (MAXKERSIZ -$A)
+;   26           =00000027               SNK3IMAGE = (MAXKERSIZ -$8)
+;   27           =0000002B               SNK4IMAGE = (MAXKERSIZ -$4)
+;   28           =00000018               OWL0IMAGE = (MAXKERSIZ -$17)
+;   29           =0000001B               OWL1IMAGE = (MAXKERSIZ -$14)
+;   30           =0000001C               OWL2IMAGE = (MAXKERSIZ -$13)
+;   31           =00000014               COLORIMAGE = (MAXKERSIZ -27)
+;   32                                   
+
+;***********************************************************************
+;
+;
+;	"ART" is defined	
+;
+;
+ART:
+	NEWPAGE bird_imagz
+
+		repval	0,$1D
+
+ABRDTIMAGE:	;.ds.b	$12
+tbird:
+	.dc.b	$38 ; x 8 y 91
+	.dc.b	$38 ; x 8 y 92
+	.dc.b	$54 ; x 8 y 93
+	.dc.b	$54 ; x 8 y 94
+	.dc.b	$38 ; x 8 y 95
+	.dc.b	$7C ; x 8 y 96
+	.dc.b	$7C ; x 8 y 97
+	.dc.b	$54 ; x 8 y 98
+	.dc.b	$D6 ; x 8 y 99
+	.dc.b	$D6 ; x 8 y 100
+	.dc.b	$92 ; x 8 y 101
+	.dc.b	$82 ; x 8 y 102
+	.dc.b	$82 ; x 8 y 103
+	.dc.b	$82 ; x 8 y 104
+	.dc.b	$82 ; x 8 y 105
+	.dc.b	$82 ; x 8 y 106
+	.dc.b	$82 ; x 8 y 107
+	.dc.b	$82 ; x 8 y 108
+
+		repval	0,$1d
+
+ABRD1IMAGE:	;.ds.b	$12
+bird1:
+	.dc.b	$60 ; x 8 y 119
+	.dc.b	$70 ; x 8 y 120
+	.dc.b	$18 ; x 8 y 121
+	.dc.b	$1C ; x 8 y 122
+	.dc.b	$1F ; x 8 y 123
+	.dc.b	$3F ; x 8 y 124
+	.dc.b	$FF ; x 8 y 125
+	.dc.b	$FC ; x 8 y 126
+	.dc.b	$5C ; x 8 y 127
+	.dc.b	$5C ; x 8 y 128
+	.dc.b	$E ; x 8 y 129
+	.dc.b	$E ; x 8 y 130
+	.dc.b	$7 ; x 8 y 131
+	.dc.b	$7 ; x 8 y 132
+	.dc.b	$3 ; x 8 y 133
+	.dc.b	$3 ; x 8 y 134
+	.dc.b	$2 ; x 8 y 135
+	.dc.b	$2 ; x 8 y 136
+
+	repval	0,$21
+
+ABRD2IMAGE:	;.ds.b	$0e
+bird2:
+	.dc.b	$60 ; x 8 y 147
+	.dc.b	$70 ; x 8 y 148
+	.dc.b	$18 ; x 8 y 149
+	.dc.b	$1C ; x 8 y 150
+	.dc.b	$1F ; x 8 y 151
+	.dc.b	$3F ; x 8 y 152
+	.dc.b	$FF ; x 8 y 153
+	.dc.b	$FC ; x 8 y 154
+	.dc.b	$5E ; x 8 y 155
+	.dc.b	$4E ; x 8 y 156
+	.dc.b	$E ; x 8 y 157
+	.dc.b	$E ; x 8 y 158
+	.dc.b	$4 ; x 8 y 159
+	.dc.b	$4 ; x 8 y 160
+
+		repval	0,$25
+
+
+ABRD3IMAGE: ;	.ds.b	$0A
+bird3:
+	.dc.b	$60 ; x 8 y 171
+	.dc.b	$70 ; x 8 y 172
+	.dc.b	$18 ; x 8 y 173
+	.dc.b	$1C ; x 8 y 174
+	.dc.b	$1F ; x 8 y 175
+	.dc.b	$3F ; x 8 y 176
+	.dc.b	$FF ; x 8 y 177
+	.dc.b	$FE ; x 8 y 178
+	.dc.b	$5E ; x 8 y 179
+	.dc.b	$4F ; x 8 y 180
+	
+		repval	0,$25
+	
+
+
+	NEWPAGE	BIRD_IMAGE2
+
+		repval	0,$23
+	
+
+ABRD4IMAGE:	;.ds.b	$0A
+bird4:
+	.dc.b	$60 ; x 8 y 189
+	.dc.b	$70 ; x 8 y 190
+	.dc.b	$18 ; x 8 y 191
+	.dc.b	$1C ; x 8 y 192
+	.dc.b	$1F ; x 8 y 193
+	.dc.b	$3F ; x 8 y 194
+	.dc.b	$FE ; x 8 y 195
+	.dc.b	$FF ; x 8 y 196
+	.dc.b	$40 ; x 8 y 197
+	.dc.b	$40 ; x 8 y 198
+
+	repval	0,$25
+
+ASNK1IMAGE:	;.ds.b	$0c
+snake1:	.dc.b	$44 ; x 8 y 131
+	.dc.b	$EE ; x 8 y 132
+	.dc.b	$AA ; x 8 y 133
+	.dc.b	$AA ; x 8 y 134
+	.dc.b	$AA ; x 8 y 135
+	.dc.b	$AB ; x 8 y 136
+	.dc.b	$A9 ; x 8 y 137
+	.dc.b	$B9 ; x 8 y 138
+	.dc.b	$D0 ; x 8 y 139
+	.dc.b	$50 ; x 8 y 140
+	.dc.b	$C0 ; x 8 y 141
+	.dc.b	$40 ; x 8 y 142
+
+	repval  0,$25
+
+
+ASNK2IMAGE:	;.ds.b	$0a
+snake2:	.dc.b	$21 ; x 8 y 155
+	.dc.b	$71 ; x 8 y 156
+	.dc.b	$D1 ; x 8 y 157
+	.dc.b	$9B ; x 8 y 158
+	.dc.b	$CA ; x 8 y 159
+	.dc.b	$6A ; x 8 y 160
+	.dc.b	$2E ; x 8 y 161
+	.dc.b	$24 ; x 8 y 162
+	.dc.b	$C0 ; x 8 y 163
+	.dc.b	$40 ; x 8 y 164
+
+		repval 0,$27
+	
+
+ASNK3IMAGE:	;.ds.b	$08
+snake3:	.dc.b	$79 ; x 8 y 176
+	.dc.b	$FD ; x 8 y 177
+	.dc.b	$87 ; x 8 y 178
+	.dc.b	$82 ; x 8 y 179
+	.dc.b	$C0 ; x 8 y 180
+	.dc.b	$40 ; x 8 y 181
+	.dc.b	$C0 ; x 8 y 182
+	.dc.b	$40 ; x 8 y 183
+
+	repval 0,$2b
+	
+
+	NEWPAGE SNAKE_IMAGE1
+
+	repval 0,$18
+	
+ASNK4IMAGE:	;.ds.b	$4
+snake4:	.dc.b	$1C ; x 8 y 195
+	.dc.b	$3E ; x 8 y 196
+	.dc.b	$E3 ; x 8 y 197
+	.dc.b	$41 ; x 8 y 198
+
+	repval 0,$2b
+
+
+
+AOWL0IMAGE:	;.ds.b	$17
+
+OWL00:
+;	.dc.b	$70 ; x 8 y 3
+;	.dc.b	$78 ; x 8 y 4
+;	.dc.b	$3E ; x 8 y 5
+;	.dc.b	$3E ; x 8 y 6
+;	.dc.b	$2A ; x 8 y 7
+
+
+	.dc.b	$A5 ; x 8 y 35
+	.dc.b	$66 ; x 8 y 36
+	.dc.b	$24 ; x 8 y 37
+	.dc.b	$3C ; x 8 y 38
+	.dc.b	$7E ; x 8 y 39
+	.dc.b	$FF ; x 8 y 40
+
+
+	.dc.b	$3E ; x 8 y 8
+	.dc.b	$3E ; x 8 y 9
+	.dc.b	$3E ; x 8 y 10
+	.dc.b	$3E ; x 8 y 11
+
+	.dc.b	$36 ; x 8 y 12
+	.dc.b	$36 ; x 8 y 13
+	.dc.b	$2A ; x 8 y 14
+	.dc.b	$2A ; x 8 y 15
+	.dc.b	$2A ; x 8 y 16
+	.dc.b	$2A ; x 8 y 17
+	.dc.b	$3E ; x 8 y 18
+	.dc.b	$3E ; x 8 y 19
+	.dc.b	$36 ; x 8 y 20
+	.dc.b	$36 ; x 8 y 21
+	.dc.b	$22 ; x 8 y 22
+	.dc.b	$63 ; x 8 y 23
+	.dc.b	$63 ; x 8 y 24
+	.dc.b	$C1 ; x 8 y 25
+	.dc.b	$C1 ; x 8 y 26
+		
+	repval 0,$18
+	
+AOWL1IMAGE:	;.ds.b	$14
+OWL01:
+;	.dc.b	$70 ; x 8 y 33
+;	.dc.b	$78 ; x 8 y 34
+;	.dc.b	$3E ; x 8 y 35
+;	.dc.b	$3E ; x 8 y 36
+;	.dc.b	$2A ; x 8 y 37
+
+	.dc.b	$A5 ; x 8 y 35
+	.dc.b	$66 ; x 8 y 36
+	.dc.b	$24 ; x 8 y 37
+	.dc.b	$3C ; x 8 y 38
+	.dc.b	$7E ; x 8 y 39
+	.dc.b	$FF ; x 8 y 40
+
+	.dc.b	$3E ; x 8 y 38
+	.dc.b	$3E ; x 8 y 39
+	.dc.b	$3E ; x 8 y 40
+	.dc.b	$3E ; x 8 y 41
+
+	.dc.b	$36 ; x 8 y 42
+	.dc.b	$36 ; x 8 y 43
+	.dc.b	$6B ; x 8 y 44
+	.dc.b	$6B ; x 8 y 45
+	.dc.b	$6B ; x 8 y 46
+	.dc.b	$6B ; x 8 y 47
+	.dc.b	$FF ; x 8 y 48
+	.dc.b	$FF ; x 8 y 49
+	.dc.b	$D7 ; x 8 y 50
+	.dc.b	$D7 ; x 8 y 51
+	.dc.b	$81 ; x 8 y 52
+	
+	repval 0,$1c
+
+AOWL2IMAGE:	;.ds.b	$13
+OWL02:
+;	.dc.b	$70 ; x 8 y 64
+;	.dc.b	$78 ; x 8 y 65
+;	.dc.b	$3E ; x 8 y 66
+;	.dc.b	$3E ; x 8 y 67
+;	.dc.b	$EB ; x 8 y 68
+;	.dc.b	$FF ; x 8 y 69
+;	.dc.b	$FF ; x 8 y 70
+
+	.dc.b	$A5 ; x 8 y 35
+	.dc.b	$66 ; x 8 y 36
+	.dc.b	$24 ; x 8 y 37
+	.dc.b	$3C ; x 8 y 38
+	.dc.b	$7E ; x 8 y 39
+	.dc.b	$FF ; x 8 y 40
+
+;	.dc.b	0,0,0
+	.dc.b	$7F ; x 8 y 71
+	.dc.b	$7F ; x 8 y 72
+	.dc.b	$37 ; x 8 y 73
+	.dc.b	$37 ; x 8 y 74
+	.dc.b	$2A ; x 8 y 75
+	.dc.b	$2A ; x 8 y 76
+	.dc.b	$2A ; x 8 y 77
+	.dc.b	$2A ; x 8 y 78
+	.dc.b	$3E ; x 8 y 79
+	.dc.b	$3E ; x 8 y 80
+	.dc.b	$14 ; x 8 y 81
+	.dc.b	$14 ; x 8 y 82
+	
+	repval 0,$1c
+

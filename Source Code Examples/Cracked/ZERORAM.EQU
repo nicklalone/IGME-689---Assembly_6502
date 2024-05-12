@@ -1,0 +1,192 @@
+;********************************************88
+;END MACROS
+;********************************************
+
+; Frank 415-454-7089
+
+;********************************************88
+;START RAM EQUATES
+;********************************************
+.ORG	$80
+LEVEL:		.ds.b	1
+
+VOFFSET:	.ds.w	1
+
+HOFFSET:	.ds.w	1
+
+ENDROUND:	.ds.b	1
+FRMCNT:		.DS.B	1
+FRMCNTH: 	.DS.B	1	;HIGH BYTE OF FRAME COUNTER
+CONCNT:		.ds.b	1
+CONSTAT:	.ds.b	1
+STEMP:		.ds.b	1
+TIMER:		.DS.B	1
+FIRE_VAL:	.ds.b	1
+
+;
+;	animator ram
+;
+TOP:		.ds.w	1
+;image_data:	
+CHICKEN1DATA:	.ds.w	1
+CHICKEN2DATA:
+;SEQ:
+		.ds.w	1
+
+;SEQTAB:		.ds.w	1
+
+;BKCOLOR:	.ds.b	1		; background color for title,bonus,ranch 
+
+jcount:				
+;PFCOLOR:
+	.ds.b	1
+
+AUDVTEMP:	.DS.W	1
+ENDPTR:		.DS.W	1
+
+SCOREK:	
+PIPEWALLFIX:	.DS.B	1
+tcolor0:	.ds.b	1
+tcolor1:	.ds.b	1
+tcolor2:
+jvalue:		.ds.b	1
+;tcolor3:
+
+TOPKER:		.DS.W	1
+
+
+SIDECURSOR:			;ONE WORD
+SIXCHAR1:			;TABLE OF 5 BYTES
+CURSOR1:	.DS.W	1
+CURSOR2:	.DS.W	1
+CURSOR3:	.DS.W	1
+
+SIXCHAR2:			;TABLE OF 5 BYTES
+CURSOR4:	.DS.W	1
+SPLATHMOVE:			;ONE WORD
+CURSOR5:	.DS.W	1
+SPLATHMOVE1:			;7BYTE TABLE
+CURSOR6:	.DS.W	1
+
+
+SIXCHAR3:			;TABLE OF 5 BYTES
+CURSOR7:	.DS.W	1
+CURSOR8:	.DS.W	1
+CURSOR9:	.DS.W	1
+
+SPLATSIZE:			;ONE WORD
+SIXCHAR4:			;TABLE OF 5 BYTES
+CURSOR10:	.DS.W	1
+CURSOR11:	.DS.W	1
+
+FALLINGEGG1:	.DS.W	1
+SPLATSIZE1:			;7 BYTE TABLE
+
+SIXCHAR5:			;TABLE OF 5 BYTES
+FALLINGEGG2:	.DS.W	1
+FALLINGEGG3:	.DS.W	1
+FALLINGEGG4:	.DS.W	1
+
+
+SIXCHAR6:			;TABLE OF 5 BYTES
+FALLINGEGG5:	.DS.W	1
+FALLINGEGG6:	.DS.W	1
+FALLINGEGG7:	.DS.W	1
+SIXPAGE:			;TABLE OF  BYTES
+FALLINGEGG8:	.DS.W	1
+FALLINGEGG9:	.DS.W	1
+FALLINGEGG10:	.DS.W	1
+FALLINGEGG11:	.DS.W	1
+
+
+
+
+BIRDCOLOR:
+DIGIT1:			;ONEWORD
+BIRD1COLOR:	.DS.B	1
+BIRD2COLOR:	.DS.B	1
+DIGIT2:			;ONEWORD
+BIRD3COLOR:	.DS.B	1
+BIRD4COLOR:	.DS.B	1
+DIGIT3:			;ONEWORD
+BIRD5COLOR:	.DS.B	1
+BIRD6COLOR:	.DS.B	1
+
+BIRDCHAR:				; six byte array
+DIGIT4:			;ONEWORD
+BIRD1CHAR:	.DS.B	1
+BIRD2CHAR:	.DS.B	1
+DIGIT5:			;ONEWORD
+BIRD3CHAR:	.DS.B	1
+BIRD4CHAR:	.DS.B	1
+DIGIT6:			;ONEWORD
+BIRD5CHAR:	.DS.B	1
+BIRD6CHAR:	.DS.B	1
+
+
+
+
+
+BIRDDATA:
+BIRD1DATA:	.DS.W	1
+CHICKENCOLOR:			;ONEWORD
+BIRD2DATA:	.DS.W	1
+SIDECURSOR1:			;7 BYTES
+BIRD3DATA:	.DS.W	1
+BIRD4DATA:	.DS.W	1
+BIRD5DATA:	.DS.W	1
+BIRD6DATA:	.DS.W	1
+
+GFLG1:		.DS.B	1	;GENERAL FLAGS :01 =1 =ATTRACT MODE
+		;		;:01 = 1= TITLE MODE
+		;  	        ;:07 & :06 =RSCAN FIRE STATUS 
+		;		;0= NOSHOT LASTFRAME
+NESTIMAGES:
+NEST1:		.DS.B	1
+REGGCOUNT:
+NEST2:		.DS.B	1
+NEST3:		.DS.B	1
+NEST4:		.DS.B	1
+NEST5:		.DS.B	1
+
+
+HALF_SIZE:	.ds.b	1	; docur var
+FIRST_KERNAL:	.ds.b	1
+
+CHAR_NUMBER:
+TEMP0:		.DS.B	1
+
+CHAR_YPOS:
+TEMP1:		.DS.B	1
+
+TEMP2:		.DS.B	1
+TEMP3:		.DS.B	1
+
+TEMP4:		.DS.B	1
+TEMP:
+TEMP5:		.DS.B	1
+
+SOUNDC:		.ds.b	1
+		.ds.b	1
+R_RANDOM:
+W_RANDOM:
+		.ds.b	1
+
+;xposu:		.ds.w	1
+xposd:		.ds.w	1
+
+SELECTH:	.ds.b	1
+SELECTV:	.ds.b	1
+
+BANKJMP:	.DS.W	1
+		.DS.W	3	; 6 BYTES STACK
+
+endram:
+ZEROUSED set endram-$80
+
+.assert ZEROUSED < $80
+	
+
+
+;END OF ZERO PAGE RAM
+;*************************************************

@@ -1,0 +1,91 @@
+startsara:
+R_KERSIZ:	.DS.B	1
+R_BLANKSIZE:	.DS.B	1
+R_RETURN_BANK:		.DS.B	1
+r_new_score:		.ds.b	2		;2 byte decimal score arrays
+r_old_score:		.ds.b	2
+R_BKER:		.DS.B	1	; NUMBER OF KERNAL CONTAINING CENTER OF CURSOR
+R_BULLSEYE:	.DS.B	1	; OFFSET OF CENTER OF KERNAL INTO KERNAL
+R_LAST:		.DC.B	1	; LAST JOYSTICK POSITION
+R_MTIME:	.DC.B	1	; # OF FRAMES W/ CURRENT DIRECTION ( 0 15 )
+;R_HOFFSET:	.DC.B	1	; CURSOR X POSITION
+;R_VOFFSET: 	.DS.B 	1	; CURSOR Y POSITION
+R_VPOS:		.DS.B	1	; docursor Y POSITION
+R_KOFFSET:	.ds.b	1	; TEMP !!!!!???
+R_DIST:		.ds.b	1	; TEMP !!!!!???
+R_SIZE:		.ds.b	1	; TEMP !!!!!???
+R_SPAMT:	.ds.b	1	; TEMP !!!!!???
+R_CURHPOS1:	.DS.B	1	; TEMP !!!!!???
+R_CURHPOS5:	.DS.B	1	; TEMP !!!!!???
+R_EGGDELPTR:	.DS.B	1	; TEMP !!!!!???
+R_EGGHMOVE:	.DS.B	1	; TEMP !!!!!???
+R_EGGX:		.DS.B	1	; TEMP !!!!!???
+R_EGGY:		.DS.B	1	; TEMP !!!!!???
+R_EGGS:		.DS.B	1
+R_STATE:	.ds.b	1
+R_SCREEN:	.ds.b	1
+R_SPLATSET:
+R_SHOWTIM0: 	.DS.B	1
+R_SPLATMOVE:
+R_SHOWTIM1: 	.DS.B	1
+R_SHOWTIM2: 	.DS.B	1
+R_SHOWTIM3: 	.DS.B	1
+R_SHOWTIM4: 	.DS.B	1
+R_SHOWTIM5: 	.DS.B	1
+
+r_da_one:	
+R_BRD1REF:	.DS.B	1
+R_RRHMOV0:
+R_BRD2REF:	.DS.B	1
+R_RRHMOV1:
+R_BRD3REF:	.DS.B	1
+R_RRESET0:	
+R_BRD4REF:	.DS.B	1
+R_BRD5REF:	.DS.B	1
+R_RRESET1:	
+R_BRD6REF:	.DS.B	1
+R_EGGS1:			;TEMP EGG CONUNT USED IN BONUS SCREEN
+R_BRD1HMOVE: .DS.B	1
+R_BRD2HMOVE: .DS.B	1
+R_BRD3HMOVE: .DS.B	1
+R_BRD4HMOVE: .DS.B	1
+R_BRD5HMOVE: .DS.B	1
+R_BRD6HMOVE: .DS.B	1
+R_BRD1DELPTR:	.DS.B  1
+R_BRD2DELPTR:	.DS.B  1
+R_BRD3DELPTR:	.DS.B  1
+R_BRD4DELPTR:	.DS.B  1
+R_BRD5DELPTR:	.DS.B  1
+R_BRD6DELPTR:	.DS.B  1
+;R_DIR:
+;R_DIRECTION: 	.DS.B 	1
+r_tunenum:	ds.b	2
+r_timer:	ds.b	2
+;R_FLAG:	ds.b	2
+;R_RANDOM:	.DS.B	1
+r_got_egg: 	.DS.B 1		;r_got_egg is a 6 byte array
+r_rooster_hold:	.DS.B 1
+r_rooster_scroll:	.DS.B 1
+r_rooster_window:	.DS.B 1
+		.ds.b	2
+
+r_splat_hold:		.DS.B 1
+r_splat_vpos:		.DS.B 1
+r_splat_hpos:
+
+R_BIRDDATA:	.DS.W	6
+r_xpos: 	.DS.B 6
+r_ypos: 	.DS.B 6
+r_frame_hold: 
+r_hold: 	.DS.B 6
+R_SCREEN_INDEX:	.DS.B 1
+r_seq:		.DS.B	6
+
+R_EGG_IN_CUR:		.DS.B   1	;$80
+R_TIMEVAL:	.ds.b	1
+R_EGGNUM:	.ds.b	1
+R_TIMEZ:		.ds.b	1
+
+endsara:
+sarasize equ	endsara - startsara
+.assert sarasize < 129
