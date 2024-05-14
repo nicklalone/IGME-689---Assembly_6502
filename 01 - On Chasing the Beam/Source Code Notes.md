@@ -22,4 +22,25 @@ I will pull source code from:
 	* https://www.biglist.com/lists/stella/archives/200103/msg00284.html
 2. Github: 
 	* https://github.com/DNSDEBRO/Disassemblies/tree/main/Atari2600
-	* 
+
+And others places. I'll update these sources as I find more. 
+
+Also pulled some resources of dumping and decompiling other games: 
+
+https://medium.com/@johnidouglasmarangon/how-to-compile-assembly-code-for-games-on-the-atari-2600-16c3d79d6e50
+
+https://stella-emu.github.io/docs/debugger.html
+
+https://stella-emu.github.io/
+
+https://www.alienbill.com/2600/101/docs/stella.html
+http://blog.kevtris.org/blogfiles/Atari%202600%20Mappers.txt
+https://www.alienbill.com/2600/
+
+https://forums.atariage.com/forum/31-2600-programming-for-newbies/
+
+https://atariprojects.org/2019/01/20/compile-assembly-code-for-the-atari-2600-10-15-mins/
+
+https://forums.atariage.com/topic/185693-halo-2600-source/
+
+https://www.pagetable.com/?p=39
