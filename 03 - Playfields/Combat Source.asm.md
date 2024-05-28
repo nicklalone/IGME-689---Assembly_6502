@@ -18,7 +18,7 @@
 ;
 ; Thanks to Brian Prescott for pointing me to Joe DeCuir's
 ; presentation notes, which revealed Atari's original names
-; for the main loop toplevel routines and offered some guidance
+; for the main loop top level routines and offered some guidance
 ; on their separation of function.
 ;
 ; I have removed some of the breathless intro-to-VCS and historical

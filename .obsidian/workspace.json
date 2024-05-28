@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Chasing the Beam/Notes.md",
+                "file": "03 - Playfields/Combat Source.asm.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Chasing the Beam/Notes.md",
+                "file": "03 - Playfields/Combat Source.asm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Chasing the Beam/Notes.md",
+                "file": "03 - Playfields/Combat Source.asm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Chasing the Beam/Notes.md"
+                "file": "03 - Playfields/Combat Source.asm.md"
               }
             }
           }
@@ -148,6 +148,10 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
+    "02 - IDE and Getting Started/Notes 1.md",
+    "02 - IDE and Getting Started/Combat Source.asm.md",
+    "01 - On Chasing the Beam/Source Code Notes.md",
+    "01 - On Chasing the Beam/Notes.md",
     "03 - Playfields/Notes.md",
     "03 - Playfields/Combat Source.asm.md",
     "Source Code Examples/Yars Revenge/Yars_Revenge.asm",
@@ -156,8 +160,6 @@
     "05 - Player Input/Adventure.asm.md",
     "04 - Asymmetry and Sprites/Adventure.asm.md",
     "Source Code Examples/Adventure/Adventure.asm.md",
-    "02 - IDE and Getting Started/Combat Source.asm.md",
-    "01 - On Chasing the Beam/Source Code Notes.md",
     "Source Code Examples/A-Team/a-team.asm",
     "Source Code Examples/A-Team/a-team.asm.crdownload",
     "Source Code Examples/A-Team",
