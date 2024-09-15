@@ -3,7 +3,6 @@ Periodically, we will be using the source code of specific games as notes for th
 The games we'll be referring to should be well known to everyone entering the class and if they aren't known to the student, we'll have ample opportunity to play in class. 
 
 Those games are: 
-
 * Combat
 * Adventure
 * Pac Man (Original and the Re-release)
