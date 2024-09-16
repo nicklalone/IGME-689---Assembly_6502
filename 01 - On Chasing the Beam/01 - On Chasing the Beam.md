@@ -16,9 +16,7 @@ We have pornographic games, pirated games, games that reportedly destroyed the g
 
 So, where do we begin? How? Why?
 
-Over the course of the semester, i'll be bringing you through not only the history of Atari 2600 programming, but the language it used for development -- Assembly 6502. We will be "racing the beam" all semester. So get ready!
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sJFnWZH5FXc?si=p-55AMiUwLfz8yM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Over the course of the semester, i'll be bringing you through not only the history of Atari 2600 programming, but the language it used for development -- Assembly 6502. We will be "[racing the beam](https://www.youtube.com/embed/sJFnWZH5FXc?si=p-55AMiUwLfz8yM2)" all semester. So get ready!
 
 # <a id = "welcome"></a>Welcome!!!!
 
@@ -53,7 +51,6 @@ Howard Scott Warshaw
 
 (Sources):
 https://spectrum.ieee.org/atari-2600
-
 
 # <a id = "logistics"></a>Logistics
 I wrote this course for 3 reasons: 
@@ -101,7 +98,7 @@ Over the course, we will learn about the games, their history, and more.
 # <a id = "day1"></a>Day 1
 History of the machine and its legacy
 
-# <a id = "today"></a>Day 2
+# <a id = "day2"></a>Day 2
 Chipset and hardware
 
 Next week: The elements of the screen, IDEs, and Getting Started - pipeline and experimentation, other places to practice.
