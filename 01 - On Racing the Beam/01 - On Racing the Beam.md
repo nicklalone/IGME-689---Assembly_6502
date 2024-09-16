@@ -88,10 +88,15 @@ I've used and collected a huge number of resources for this course. I'll put a b
 * https://skilldrick.github.io/easy6502/#first-program
 	* This is a super neat visualization engine of Assembly. It's sort of like Python Anywhere but for Assembly and will be useful at times. 
 * Snake in Assembly: https://gist.github.com/wkjagt/9043907
+* Stella: 
+	* Stella Download: https://stella-emu.github.io/
+	* Stella Source: https://github.com/stella-emu/stella
+	* Stella Documentation: https://alienbill.com/2600/101/docs/stella.html
+	* Stella Debugger: https://stella-emu.github.io/docs/debugger.html
 # <a id = "tldr"></a>TLDR
-Old machine is old, but it contains all the building blocks we still use. While it has extreme limitations (4k bytes of memory total), that limitation is reinforced by being able to interact with the hardware as directly as possible.
+Old machine is old, but it contains all the building blocks we still use in the industry to this day. While it has extreme limitations (4k bytes of memory total (which can be augmented with memory banking but we'll not cover that in this course)), that limitation is reinforced by being able to interact with the hardware as directly as possible. As such, programming for this newly re-released system can show you on a very intimate level how your code and the hardware interact.
 
-The video game industry had to learn how to make games, D&D existed but was not incorporated immediately into the world of games in the home arcades because of the limitations. 
+Another reason this is useful is that the video game industry had to learn how to make games, D&D existed but was not incorporated immediately into the world of games in the home arcades because of the limitations. 
 
 Over the course, we will learn about the games, their history, and more.
 

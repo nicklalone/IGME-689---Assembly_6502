@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Chasing the Beam/01 - On Chasing the Beam.md",
+                "file": "04 - Asymmetry and Sprites/Adventure.asm.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Chasing the Beam/01 - On Chasing the Beam.md",
+                "file": "04 - Asymmetry and Sprites/Adventure.asm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Chasing the Beam/01 - On Chasing the Beam.md",
+                "file": "04 - Asymmetry and Sprites/Adventure.asm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Chasing the Beam/01 - On Chasing the Beam.md"
+                "file": "04 - Asymmetry and Sprites/Adventure.asm.md"
               }
             }
           }
@@ -148,10 +148,25 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
-    "01 - On Chasing the Beam/Notes.md",
-    "01 - On Chasing the Beam/01 - On Chasing the Beam.md",
-    "01 - On Chasing the Beam/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
-    "01 - On Chasing the Beam/Source Code Notes.md",
+    "04 - Asymmetry and Sprites/04 - Asymmetry and Sprites.md",
+    "03 - Playfields/03 - Playfields.md",
+    "02 - IDE and Getting Started/02 - IDE and Getting Started.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "12 - 16 - As Needed/Notes and Resources.md",
+    "11 - Polish/Notes and Resources.md",
+    "10 - Lives/Notes and Resources.md",
+    "09 - Intersecting 2/Notes and Resources.md",
+    "08 - Intersecting/Notes and Resources.md",
+    "07 - Score Keeping/Notes and Resources.md",
+    "06 - Enemy Behaviors/Notes and Resources.md",
+    "05 - Player Input/Notes and Resources.md",
+    "04 - Asymmetry and Sprites/Notes and Resources.md",
+    "03 - Playfields/Notes and Resources.md",
+    "02 - IDE and Getting Started/Notes and Resources.md",
+    "01 - On Racing the Beam/Notes and Resources.md",
+    "01 - On Racing the Beam/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
+    "02 - IDE and Getting Started/Combat Source.asm.md",
+    "01 - On Racing the Beam/Source Code Notes.md",
     "Background Readings/atari2600_fsm.pdf",
     "Background Readings/AI Chatbots Can Talk Conspiracy Theorists Out of Believing - IEEE Spectrum.pdf",
     "Images/lX-7PrPghpg2SDzySXbaR_tia-pinouts.jpg",
@@ -162,9 +177,6 @@
     "03 - Playfields/Combat Source.asm.md",
     "Source Code Examples/Dragonfire/Dragonfire - alt.asm",
     "Administration/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
-    "02 - IDE and Getting Started/Notes 1.md",
-    "02 - IDE and Getting Started/Combat Source.asm.md",
-    "03 - Playfields/Notes.md",
     "Source Code Examples/Yars Revenge/Yars_Revenge.asm",
     "Source Code Examples/Yars Revenge",
     "Source Code Examples/untitled folder",
