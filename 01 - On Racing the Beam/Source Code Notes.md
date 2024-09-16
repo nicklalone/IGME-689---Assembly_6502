@@ -2,12 +2,15 @@ Periodically, we will be using the source code of specific games as notes for th
 
 The games we'll be referring to should be well known to everyone entering the class and if they aren't known to the student, we'll have ample opportunity to play in class. 
 
-Those games are: 
+Those games are going to be varied but we will start with: 
+* Pong
 * Combat
+Afterward, we'll start getting a bit more complicated and go for games like: 
 * Adventure
 * Pac Man (Original and the Re-release)
 * Yars Revenge
 * Pitfall
+* Halo 2600
 
 Where possible, i will be offering other sources as they have been decompiled and are available elsewhere. 
 
@@ -27,10 +30,6 @@ And others places. I'll update these sources as I find more.
 Also pulled some resources of dumping and decompiling other games: 
 
 https://medium.com/@johnidouglasmarangon/how-to-compile-assembly-code-for-games-on-the-atari-2600-16c3d79d6e50
-
-https://stella-emu.github.io/docs/debugger.html
-
-https://stella-emu.github.io/
 
 https://www.alienbill.com/2600/101/docs/stella.html
 http://blog.kevtris.org/blogfiles/Atari%202600%20Mappers.txt

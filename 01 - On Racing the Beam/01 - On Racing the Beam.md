@@ -8,16 +8,21 @@
 
 ---------------- Table of Contents ---------------- 
 
-The Atari 2600 was released in 1977, 1 year before I was born. It existed as an active system up until around 1991 and just last year, 2023, it got a release for modern televisions. There has been an active development community for the Atari 2600 since the machine was new and, in fact, we owe the 2600 for just about everything from developers actually being named to crunch to innumerable facets of the video game industry that exist to this day. 
+The Atari 2600 was released in 1977, 1 year before I was born. It existed as an active system up until around 1991 and just last year, 2023, it got a release for modern televisions. Or in other words, a thing from my childhood is new again.
 
-In fact, we could point to Steve Jobs getting his start in software development at Atari. We could point to Mark Cerny, the current Sony system architect, as employee 16,000 of Atari at the age of 17 where he would create Marble Madness and push the envelope of 3-D design. 
+Fortunately, there has been an active development community for the Atari 2600 since the machine was new. Learning about that enthusiast community, the company that birthed the video game console, and where all those employees went in the great crash in the 80s will teach us a lot. We owe Atari a ton; in fact, we owe the 2600 for just about everything (good and bad) from developers actually being named to crunch to innumerable facets of the video game industry that exist to this day. 
 
-We have pornographic games, pirated games, games that reportedly destroyed the game industry, and much, much more. 
+We could point to Steve Jobs getting his start in software development at Atari (really it was Woz but that's a long story). We could point to Mark Cerny, the current Sony system architect, as employee 16,000 of Atari at the age of 17 where he would create Marble Madness and push the envelope of 3-D design. 
+
+We have pornographic games, super racist games, pirated games, games that reportedly destroyed the game industry, edugames, exercise games, and much, much more. 
+
+It's a vast, complex ecosystem that has never truly stopped learning. 
 
 So, where do we begin? How? Why?
 
-Over the course of the semester, i'll be bringing you through not only the history of Atari 2600 programming, but the language it used for development -- Assembly 6502. We will be "[racing the beam](https://www.youtube.com/embed/sJFnWZH5FXc?si=p-55AMiUwLfz8yM2)" all semester. So get ready!
+Over the course of the semester, i'll be bringing you through not only the history of Atari 2600 programming, but the language it used for development -- Assembly 6502. 
 
+We will be "[racing the beam](https://www.youtube.com/embed/sJFnWZH5FXc?si=p-55AMiUwLfz8yM2)" all semester. So get ready!
 # <a id = "welcome"></a>Welcome!!!!
 
 Goal: Introduce a general history and tech spec we'll be working with. 
