@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md",
+                "file": "01 - On Racing the Beam/Source Code Notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md",
+                "file": "01 - On Racing the Beam/Source Code Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md",
+                "file": "01 - On Racing the Beam/Source Code Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md"
+                "file": "01 - On Racing the Beam/Source Code Notes.md"
               }
             }
           }
@@ -148,17 +148,18 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
+    "02 - IDE and Getting Started/Combat Source.asm.md",
+    "04 - Players, Missiles, and Balls/Adventure.asm.md",
+    "04 - Players, Missiles, and Balls/04 - Players, Missiles, and Balls.md",
+    "03 - Playfields and Asymmetry/03 - Playfields.md",
+    "02 - IDE and Getting Started/02 - IDE and Getting Started.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "Images/2600_wires.jpg",
     "Images/mobo.jpg",
     "Images/TIA.jpg",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "02 - IDE and Getting Started/02 - IDE and Getting Started.md",
     "01 - On Racing the Beam/Notes and Resources.md",
     "01 - On Racing the Beam/Source Code Notes.md",
     "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
-    "04 - Asymmetry and Sprites/Adventure.asm.md",
-    "04 - Asymmetry and Sprites/04 - Asymmetry and Sprites.md",
-    "03 - Playfields/03 - Playfields.md",
     "12 - 16 - As Needed/Notes and Resources.md",
     "11 - Polish/Notes and Resources.md",
     "10 - Lives/Notes and Resources.md",
@@ -167,15 +168,14 @@
     "07 - Score Keeping/Notes and Resources.md",
     "06 - Enemy Behaviors/Notes and Resources.md",
     "05 - Player Input/Notes and Resources.md",
-    "04 - Asymmetry and Sprites/Notes and Resources.md",
-    "03 - Playfields/Notes and Resources.md",
+    "04 - Players, Missiles, and Balls/Notes and Resources.md",
+    "03 - Playfields and Asymmetry/Notes and Resources.md",
     "02 - IDE and Getting Started/Notes and Resources.md",
-    "02 - IDE and Getting Started/Combat Source.asm.md",
     "Background Readings/atari2600_fsm.pdf",
     "Background Readings/AI Chatbots Can Talk Conspiracy Theorists Out of Believing - IEEE Spectrum.pdf",
     "Background Readings",
     "Images",
-    "03 - Playfields/Combat Source.asm.md",
+    "03 - Playfields and Asymmetry/Combat Source.asm.md",
     "Source Code Examples/Dragonfire/Dragonfire - alt.asm",
     "Administration/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
     "Source Code Examples/Yars Revenge/Yars_Revenge.asm",

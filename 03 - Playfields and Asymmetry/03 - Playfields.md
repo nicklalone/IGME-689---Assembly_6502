@@ -7,3 +7,8 @@
 5. [Day 2](#day2)
 
 ---------------- Table of Contents ---------------- 
+
+# <a id = "day1"></a>Day 1
+Hello World and the Playfield
+
+# <a id = "day2"></a>Day 2
