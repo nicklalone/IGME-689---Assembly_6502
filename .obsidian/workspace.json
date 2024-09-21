@@ -13,9 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Racing the Beam/Source Code Notes.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "7d11ade05293f813",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/6507.gif"
               }
             }
           }
@@ -85,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Racing the Beam/Source Code Notes.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Racing the Beam/Source Code Notes.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Racing the Beam/Source Code Notes.md"
+                "file": "README.md"
               }
             }
           }
@@ -148,17 +158,23 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
+    "Images/6507.gif",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "Images/MOS6502.png",
+    "02 - IDE and Getting Started/02 - IDE and Getting Started.md",
+    "02 - IDE and Getting Started/Notes and Resources.md",
     "02 - IDE and Getting Started/Combat Source.asm.md",
+    "01 - On Racing the Beam/01 - Notes and Resources.md",
+    "Images/2600_wires.jpg",
+    "Images/macvsas.png",
+    "Images/processor.png",
+    "Images/TIA.jpg",
+    "Images/mobo.jpg",
+    "README.md",
+    "01 - On Racing the Beam/Source Code Notes.md",
     "04 - Players, Missiles, and Balls/Adventure.asm.md",
     "04 - Players, Missiles, and Balls/04 - Players, Missiles, and Balls.md",
     "03 - Playfields and Asymmetry/03 - Playfields.md",
-    "02 - IDE and Getting Started/02 - IDE and Getting Started.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "Images/2600_wires.jpg",
-    "Images/mobo.jpg",
-    "Images/TIA.jpg",
-    "01 - On Racing the Beam/Notes and Resources.md",
-    "01 - On Racing the Beam/Source Code Notes.md",
     "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
     "12 - 16 - As Needed/Notes and Resources.md",
     "11 - Polish/Notes and Resources.md",
@@ -170,7 +186,6 @@
     "05 - Player Input/Notes and Resources.md",
     "04 - Players, Missiles, and Balls/Notes and Resources.md",
     "03 - Playfields and Asymmetry/Notes and Resources.md",
-    "02 - IDE and Getting Started/Notes and Resources.md",
     "Background Readings/atari2600_fsm.pdf",
     "Background Readings/AI Chatbots Can Talk Conspiracy Theorists Out of Believing - IEEE Spectrum.pdf",
     "Background Readings",
@@ -184,7 +199,6 @@
     "05 - Player Input/Adventure.asm.md",
     "Source Code Examples/Adventure/Adventure.asm.md",
     "Source Code Examples/Pac Man/SECURITY.md",
-    "Source Code Examples/Pac Man/README.md",
-    "Source Code Examples/Pac Man/CODE_OF_CONDUCT.md"
+    "Source Code Examples/Pac Man/README.md"
   ]
 }

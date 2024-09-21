@@ -1,3 +1,7 @@
+The Atari 2600 was a real mess.  It's a good thing that we don't try to program machines like that anymore because it was just absurd. But it was kind of fun in a sick way if you like that kind of challenge.
+	Howard Scott Warshaw, Atari 2600 game developer
+	Creator of Yar's Revenge and E.T. the Extra-Terrestrial
+
 ---------------- Table of Contents ---------------- 
 
 1. [Welcome](#welcome)
@@ -10,7 +14,9 @@
 
 The Atari 2600 was released in 1977, 1 year before I was born. It existed as an active system up until around 1991 and just last year, 2023, it got a release for modern televisions. Or in other words, a thing from my childhood is new again.
 
-Fortunately, there has been an active development community for the Atari 2600 since the machine was new. Learning about that enthusiast community, the company that birthed the video game console, and where all those employees went in the great crash in the 80s will teach us a lot. We owe Atari a ton; in fact, we owe the 2600 for just about everything (good and bad) from developers actually being named to crunch to innumerable facets of the video game industry that exist to this day. 
+Fortunately, there has been an active development community for the Atari 2600 since the machine was new. Learning about that enthusiast community, the company that birthed the video game console, and where all those employees went in the great crash in the 80s will teach us a lot about how we've learned to make games, but also how we've learned to develop games. 
+
+We owe Atari a ton; in fact, we owe the 2600 for just about everything (good and bad) from developers actually being named to crunch to 3rd party developers to innumerable facets of the video game industry that exist to this day. 
 
 We could point to Steve Jobs getting his start in software development at Atari (really it was Woz but that's a long story). We could point to Mark Cerny, the current Sony system architect, as employee 16,000 of Atari at the age of 17 where he would create Marble Madness and push the envelope of 3-D design. 
 
@@ -110,6 +116,17 @@ History of the machine and its legacy
 
 # <a id = "day2"></a>Day 2
 Chipset and hardware
+
+![](images/mobo.jpg)
+
+![](images/2600_wires.jpg)
+
+![](images/TIA.jpg)
+
+Here is where things get funky. Atari didn't want to pay for the full 6502, they wanted to strip it down and make it even cheaper. With the help of the Intel 8080 and MOS6502 developer Chuck Pebble, they came up with the 6507. 
+![](images/MOS6502.png) ![](images/6507.gif)
+
+The result was a price point that could get this box into the homes of everyone. 
 
 Next week: The elements of the screen, IDEs, and Getting Started - pipeline and experimentation, other places to practice.
 
