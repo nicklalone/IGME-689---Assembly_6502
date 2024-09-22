@@ -2,13 +2,13 @@ This is a course devoted to making the development of games on the Atari 2600 in
 
 * go through source code and annotate it, 
 * read [Racing the Beam](https://www.amazon.com/Racing-Beam-Computer-Platform-Studies/dp/0262539764/)
-* Develop prototype games and coding assignments
-* Spend the last five weeks alone or in a group making your own game.
+* develop a prototype and coding assignments
+* spend the last five weeks alone or in a group making your own game
 
 By the end of class, if you are happy with your game, I will pay for you to: 
-* Print your game to cartridge
+* Print your game to cartridge (If I can get the equipment, i'll do this for you but I need to practice soldering a bit more)
 * Print an instruction manual
-* Make a game box.
+* Make a game box (i'll provide some links and what materials and can help)
 
 This course owes a tremendous amount of thanks to: 
 1. [Atari Age](https://atariage.com/index.php)

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "01 - On Racing the Beam/01 - Notes and Resources.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "01 - On Racing the Beam/01 - Notes and Resources.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "01 - On Racing the Beam/01 - Notes and Resources.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "01 - On Racing the Beam/01 - Notes and Resources.md"
               }
             }
           }
@@ -158,6 +158,8 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
+    "07 - Score Keeping/Notes and Resources.md",
+    "README.md",
     "Images/6507.gif",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "Images/MOS6502.png",
@@ -170,7 +172,6 @@
     "Images/processor.png",
     "Images/TIA.jpg",
     "Images/mobo.jpg",
-    "README.md",
     "01 - On Racing the Beam/Source Code Notes.md",
     "04 - Players, Missiles, and Balls/Adventure.asm.md",
     "04 - Players, Missiles, and Balls/04 - Players, Missiles, and Balls.md",
@@ -181,7 +182,6 @@
     "10 - Lives/Notes and Resources.md",
     "09 - Intersecting 2/Notes and Resources.md",
     "08 - Intersecting/Notes and Resources.md",
-    "07 - Score Keeping/Notes and Resources.md",
     "06 - Enemy Behaviors/Notes and Resources.md",
     "05 - Player Input/Notes and Resources.md",
     "04 - Players, Missiles, and Balls/Notes and Resources.md",
