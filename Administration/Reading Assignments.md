@@ -1,0 +1,1 @@
+In this class, we are reading Racing the Beam. 

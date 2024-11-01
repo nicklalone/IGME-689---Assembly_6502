@@ -13,19 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Racing the Beam/01 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "7d11ade05293f813",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/6507.gif"
               }
             }
           }
@@ -95,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Racing the Beam/01 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Racing the Beam/01 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Racing the Beam/01 - Notes and Resources.md"
+                "file": "01 - On Racing the Beam/00 - Notes and Resources.md"
               }
             }
           }
@@ -156,50 +146,50 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cb0ada1fc762006b",
+  "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
-    "PPTs/07 - Day 2.pptx",
-    "PPTs/07 - Day 1 copy.pptx",
-    "PPTs/07 - Day 1.pptx",
-    "PPTs/06 - Day 2.pptx",
-    "PPTs/06 - Day 1.pptx",
-    "PPTs/05 - Day 2.pptx",
-    "PPTs/05 - Day 1.pptx",
-    "PPTs/04 - Day 2.pptx",
-    "PPTs/04 - Day 1.pptx",
-    "PPTs/03 - Day 2.pptx",
-    "PPTs/03 - Day 1.pptx",
-    "07 - Score Keeping/Notes and Resources.md",
-    "README.md",
-    "Images/6507.gif",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "Images/MOS6502.png",
-    "02 - IDE and Getting Started/02 - IDE and Getting Started.md",
-    "02 - IDE and Getting Started/Notes and Resources.md",
+    "01 - On Racing the Beam/00 - Notes and Resources.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
+    "05 - Player Input/01 - Player Sprites.md",
+    "05 - Player Input/02 - Hello World Attacks.md",
+    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
+    "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
+    "11 - Polish/01 - Player Sprites 2.md",
+    "11 - Polish/01 - Player Sprites.md",
+    "10 - Lives/01 - Player Sprites 2.md",
+    "10 - Lives/01 - Player Sprites.md",
+    "09 - Intersecting 2/01 - Player Sprites 2.md",
+    "09 - Intersecting 2/01 - Player Sprites.md",
+    "08 - Intersecting/01 - Player Sprites 2.md",
+    "08 - Intersecting/01 - Player Sprites.md",
+    "07 - Score Keeping/01 - Player Sprites 2.md",
+    "07 - Score Keeping/01 - Player Sprites.md",
+    "06 - Enemy Behaviors/01 - Player Sprites 2.md",
+    "06 - Enemy Behaviors/01 - Player Sprites.md",
     "02 - IDE and Getting Started/Combat Source.asm.md",
-    "01 - On Racing the Beam/01 - Notes and Resources.md",
-    "Images/2600_wires.jpg",
-    "Images/macvsas.png",
-    "Images/processor.png",
+    "01 - On Racing the Beam/02 - What does the beam race on?.md",
     "Images/TIA.jpg",
+    "Images/processor.png",
+    "Images/MOS6502.png",
     "Images/mobo.jpg",
-    "01 - On Racing the Beam/Source Code Notes.md",
-    "04 - Players, Missiles, and Balls/Adventure.asm.md",
-    "04 - Players, Missiles, and Balls/04 - Players, Missiles, and Balls.md",
-    "03 - Playfields and Asymmetry/03 - Playfields.md",
-    "12 - 16 - As Needed/Notes and Resources.md",
-    "11 - Polish/Notes and Resources.md",
-    "10 - Lives/Notes and Resources.md",
-    "09 - Intersecting 2/Notes and Resources.md",
-    "08 - Intersecting/Notes and Resources.md",
-    "06 - Enemy Behaviors/Notes and Resources.md",
-    "05 - Player Input/Notes and Resources.md",
-    "04 - Players, Missiles, and Balls/Notes and Resources.md",
-    "03 - Playfields and Asymmetry/Notes and Resources.md",
-    "03 - Playfields and Asymmetry/Combat Source.asm.md",
-    "05 - Player Input/Adventure.asm.md",
-    "Source Code Examples/Adventure/Adventure.asm.md",
-    "Source Code Examples/Pac Man/SECURITY.md",
-    "Source Code Examples/Pac Man/README.md"
+    "Images/macvsas.png",
+    "Images/6507.gif",
+    "Images/2600_wires.jpg",
+    "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
+    "Background Readings/atari2600_fsm.pdf",
+    "Background Readings/Atari 2600 Field Service Manual 2024 (USA).pdf",
+    "Background Readings/AI Chatbots Can Talk Conspiracy Theorists Out of Believing - IEEE Spectrum.pdf",
+    "Administration/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
+    "Administration/ad1.pdf",
+    "Administration/Source Code Assignment.md",
+    "Administration/Reading Assignments.md",
+    "PPTs/~$01 - Day 1.pptx",
+    "PPTs/~$01 - Day 2.pptx",
+    "Images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
+    "Images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif"
   ]
 }
