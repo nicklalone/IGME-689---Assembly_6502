@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/02 - What does the beam race on?.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/02 - What does the beam race on?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/02 - What does the beam race on?.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md"
+                "file": "01 - On Racing the Beam/02 - What does the beam race on?.md"
               }
             }
           }
@@ -148,8 +148,11 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "PPTs/~$01 - Day 1.pptx",
+    "Images/resolution.png",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
+    "PPTs/~$01 - Day 2.pptx",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "02 - IDE and Getting Started/02 - Bones.md",
     "05 - Player Input/01 - Player Sprites.md",
@@ -186,9 +189,6 @@
     "Administration/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
     "Administration/ad1.pdf",
     "Administration/Source Code Assignment.md",
-    "Administration/Reading Assignments.md",
-    "PPTs/~$01 - Day 1.pptx",
-    "PPTs/~$01 - Day 2.pptx",
     "Images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
     "Images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif"
   ]
