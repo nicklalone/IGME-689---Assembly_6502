@@ -16,7 +16,7 @@ So, we're going to be working mostly in the world of Assembly as it is in the pr
 The general outline of this particular talk is as follows:
 
 1. What is the resolution?
-2. How does a cart work with the Atari?
+2. How does a cart work wit[[01 - IDE and Getting Started]]h the Atari?
 3. What is the mental model for how programming on this thing works?
 
 ## Resolution 
