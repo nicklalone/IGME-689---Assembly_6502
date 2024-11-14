@@ -13,12 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "mode": "source",
                 "source": false
-              },
-              "icon": "lucide-file",
-              "title": "00 - Notes and Resources"
+              }
             }
           }
         ]
@@ -41,9 +39,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Files"
+              }
             }
           },
           {
@@ -58,9 +54,7 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Search"
+              }
             }
           },
           {
@@ -68,9 +62,7 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "state": {}
             }
           }
         ]
@@ -93,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,9 +93,7 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for 00 - Notes and Resources"
+              }
             }
           },
           {
@@ -112,12 +102,10 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from 00 - Notes and Resources"
+              }
             }
           },
           {
@@ -128,9 +116,7 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
+              }
             }
           },
           {
@@ -139,10 +125,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md"
-              },
-              "icon": "lucide-list",
-              "title": "Outline of 00 - Notes and Resources"
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md"
+              }
             }
           }
         ]
@@ -164,16 +148,15 @@
   },
   "active": "cb0ada1fc762006b",
   "lastOpenFiles": [
+    "02 - IDE and Getting Started/02 - Bones.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "README.md",
     "Images/StellaUI.png",
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
     "PPTs/~$01 - Day 1.pptx",
     "Images/resolution.png",
+    "01 - On Racing the Beam/00 - Notes and Resources.md",
     "PPTs/~$01 - Day 2.pptx",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "02 - IDE and Getting Started/02 - Bones.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
@@ -193,7 +176,6 @@
     "06 - Enemy Behaviors/01 - Player Sprites 2.md",
     "06 - Enemy Behaviors/01 - Player Sprites.md",
     "02 - IDE and Getting Started/Combat Source.asm.md",
-    "01 - On Racing the Beam/02 - What does the beam race on?.md",
     "Images/TIA.jpg",
     "Images/processor.png",
     "Images/MOS6502.png",
@@ -207,6 +189,7 @@
     "Background Readings/AI Chatbots Can Talk Conspiracy Theorists Out of Believing - IEEE Spectrum.pdf",
     "Administration/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
     "Administration/ad1.pdf",
+    "Administration/Source Code Assignment.md",
     "Images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
     "Images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif"
   ]
