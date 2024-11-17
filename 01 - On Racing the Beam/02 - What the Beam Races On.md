@@ -1,8 +1,8 @@
-
-
 ---------------- Table of Contents ---------------- 
 
-1. [Welcome](#welcome)
+1. Day 2 - Tech Specs and More
+	1. On Bankswitching
+	2. Resolution
 2. [Logistics](#logistics)
 3. [TLDR](#tldr)
 4. [Day 1](#day1)

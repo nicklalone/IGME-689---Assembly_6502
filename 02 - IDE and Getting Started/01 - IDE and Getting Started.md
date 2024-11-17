@@ -38,9 +38,12 @@ Original Guide is at: https://atarihq.com/danb/files/stella.pdf
 ## 8 Bit Workshop
 We're going to be using [8-bit Workshop's IDE](https://8bitworkshop.com/v3.11.0/) for a lot of in-class demos and work so I don't have to figure out the legality of installing Stella or any of the other emulators for the Atari. It has everything you'll need to write, compile, and debug your code. It also has a variety of amazing features like Github Integration as well as being an IDE for just about all older systems including early Computers like the Apple ]\[+  and Commodore 64. So, it can be of use elsewhere which is something i'll try and make sure we do with most of our tools.
 
-I'm going to go through the IDE and the various tools that are available to us. For documentation, please refer to the 
+I'm going to go through the IDE and the various tools that are available to us. For documentation, please refer to Hugg's growing documentation page: https://8bitworkshop.com/docs/docs.html
 ### Github Integration
-Speaking of, there is an enormous amount of content for the Atari 2600 on Github. As you get your games going, I will ask you to submit public Github links that give me your current codebase. This course is also available for you to fork via Github so you can have the content you need. Our IDE, [8-bit Workshop](https://8bitworkshop.com/v3.11.0/) allows you to push everything you do to a private scratch space. Just follow the directions by clicking the hamburger menu and then go here: 
+Speaking of, there is an enormous amount of content for the Atari 2600 on Github. As you get your games going, I will ask you to submit public Github links that give me your current codebase. 
+
+This course is also available for you to fork via Github so you can have the content you need. Our IDE, [8-bit Workshop](https://8bitworkshop.com/v3.11.0/) allows you to push everything you do to a private scratch space. Just follow the directions by clicking the hamburger menu and then go here: 
+
 ![](8bitwork-git.png)
 And it will walk you through everything you need. In this way, you can work on the code in your editor of choice, push and pull and publish as needed. Learning how to do this stuff is important as file maintenance is a very necessary skill for all game development projects and you can't just rely on a different IDE like Unity or Unreal to do it for you. 
 
@@ -57,16 +60,33 @@ To the right of that is our actual render. Right now, i've got a simple "Hello W
 
 Let's take a tour of the debugging tools next. 
 ### Disassembly
+![](/images/8bit/8bitwork-disas.png)
+From the documentation, we learned that this tool, "Disassembles the program at the current Program Counter." But what does that mean?
 ### Memory Browser
+![](/images/8bit/8bitwork-membrowse.png)
+From the documentation, we learned that this tool, "Displays a dump of all CPU memory." But what does that mean?
 ### Memory Map
+![](/images/8bit/8bitwork-memmap.png)
+From the documentation, we learned that this tool, "Displays a handy memory map of the system. Certain tools (like linkers) will give additional segment info here.." But what does that mean?
 ### Memory Probe
+![](/images/8bit/8bitwork-memprobe.png)
+From the documentation, we learned that this tool, "Shows a bitmap representing read/write activity across system memory" But what does that mean?
 ### CRT Probe
+![](/images/8bit/8bitwork-crtprobe.png)
+From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
 ### Probe Log
+![](/images/8bit/8bitwork-probelog.png)
+From the documentation, we learned that this tool, "Shows a textual log of CPU/memory activity." But what does that mean?
 ### Scanline I/O
+![](/images/8bit/8bitwork-scanline.png)
+From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
 ### Symbol Profiler
-### Call Stack
-### Debug Tree
+![](/images/8bit/8bitwork-symprof.png)
+From the documentation, we learned that this tool, "Shows a list of symbols, with read/write counts." But what does that mean?
 ### Asset Editor
+![](/images/8bit/8bitwork-asset.png)
+From the documentation, we learned that this tool, "Parses assets (like bitmaps and palettes) and allows editing." But what does that mean?
 
+We won't use this a lot as we don't actually have assets to manage. However, it will sometimes show the memory allocation of named entities like missiles and balls that we'll be able to adjust manually. Over time, we might end up coming back to this depending on if I can figure out how to force assets to end up there.
 # Terms
 

@@ -11,9 +11,11 @@
             "id": "76dabf6ea852d9bb",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "images/processor.png"
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "images/processor.png",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "images/processor.png",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "images/processor.png"
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md"
               }
             }
           }
@@ -146,8 +148,16 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
-    "images/8bit/8bitwork-ide 1.png",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "Source Code Examples/Adventure/Adventure.asm.md",
+    "Source Code Examples/Pac Man/PacMan4k/pacman4K_1_2 copy.asm",
+    "Source Code Examples/Pac Man/pacman4K_1_2.asm",
+    "Source Code Examples/Halo 2600/halo2600 - organized.asm",
+    "images/8bit/8bitwork-asset.png",
     "images/processor.png",
+    "images/8bit/8bitwork-ide 1.png",
     "images/8bit/8bitwork-git 1.png",
     "images/8bit/8bitwork-debug 1.png",
     "images/8bit/8bitwork-symprof.png",
@@ -155,10 +165,6 @@
     "images/8bit/8bitwork-probelog.png",
     "images/8bit/8bitwork-memprobe.png",
     "images/8bit/8bitwork-memmap.png",
-    "images/8bit/8bitwork-membrowse.png",
-    "images/8bit/8bitwork-disas.png",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "images/8bit",
     "images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif",
     "images/Atari 2600A Motherboard Schematic - Rev 14-15.tif",
@@ -167,9 +173,7 @@
     "images",
     "PPTs/~$01 - Day 2.pptx",
     "02 - IDE and Getting Started/02 - Bones.md",
-    "PPTs/~$01 - Day 1.pptx",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
@@ -189,8 +193,6 @@
     "06 - Enemy Behaviors/01 - Player Sprites 2.md",
     "06 - Enemy Behaviors/01 - Player Sprites.md",
     "02 - IDE and Getting Started/Combat Source.asm.md",
-    "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
-    "Background Readings/atari2600_fsm.pdf",
     "Administration/Source Code Assignment.md"
   ]
 }
