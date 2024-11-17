@@ -11,14 +11,10 @@
             "id": "76dabf6ea852d9bb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
+                "file": "images/processor.png"
+              }
             }
           }
         ]
@@ -41,9 +37,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Files"
+              }
             }
           },
           {
@@ -58,9 +52,7 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Search"
+              }
             }
           },
           {
@@ -68,9 +60,7 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "state": {}
             }
           }
         ]
@@ -93,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "images/processor.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,9 +91,7 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              }
             }
           },
           {
@@ -112,12 +100,10 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "images/processor.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              }
             }
           },
           {
@@ -128,9 +114,7 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
+              }
             }
           },
           {
@@ -139,10 +123,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
-              },
-              "icon": "lucide-list",
-              "title": "Outline of README"
+                "file": "images/processor.png"
+              }
             }
           }
         ]
@@ -164,26 +146,30 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
-    "02 - IDE and Getting Started/Combat Source.asm.md",
-    "Pasted image 20241114161107.png",
-    "Pasted image 20241114160946.png",
-    "02 - IDE and Getting Started/Notes and Resources.md",
-    "images/literal.png",
-    "images/literal.png",
-    "02 - IDE and Getting Started/02 - Bones.md",
-    "Pasted image 20241114160522.png",
-    "Pasted image 20241114155433.png",
+    "images/8bit/8bitwork-ide 1.png",
+    "images/processor.png",
+    "images/8bit/8bitwork-git 1.png",
+    "images/8bit/8bitwork-debug 1.png",
+    "images/8bit/8bitwork-symprof.png",
+    "images/8bit/8bitwork-scanline.png",
+    "images/8bit/8bitwork-probelog.png",
+    "images/8bit/8bitwork-memprobe.png",
+    "images/8bit/8bitwork-memmap.png",
+    "images/8bit/8bitwork-membrowse.png",
+    "images/8bit/8bitwork-disas.png",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "images/6507-reset.jpg",
-    "images/6507-reset.jpg.crdownload",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "images/8bit",
+    "images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif",
+    "images/Atari 2600A Motherboard Schematic - Rev 14-15.tif",
+    "images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
+    "images/Atari 2600 Motherboard Schematic.tif",
+    "images",
+    "PPTs/~$01 - Day 2.pptx",
+    "02 - IDE and Getting Started/02 - Bones.md",
+    "PPTs/~$01 - Day 1.pptx",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "README.md",
-    "images/StellaUI.png",
-    "PPTs/~$01 - Day 1.pptx",
-    "images/resolution.png",
-    "PPTs/~$01 - Day 2.pptx",
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
@@ -202,13 +188,9 @@
     "07 - Score Keeping/01 - Player Sprites.md",
     "06 - Enemy Behaviors/01 - Player Sprites 2.md",
     "06 - Enemy Behaviors/01 - Player Sprites.md",
-    "images/TIA.jpg",
+    "02 - IDE and Getting Started/Combat Source.asm.md",
     "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
     "Background Readings/atari2600_fsm.pdf",
-    "Background Readings/Atari 2600 Field Service Manual 2024 (USA).pdf",
-    "Background Readings/AI Chatbots Can Talk Conspiracy Theorists Out of Believing - IEEE Spectrum.pdf",
-    "Administration/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
-    "Administration/ad1.pdf",
-    "images/Atari 2600A Motherboard Schematic - Rev 1-13.tif"
+    "Administration/Source Code Assignment.md"
   ]
 }
