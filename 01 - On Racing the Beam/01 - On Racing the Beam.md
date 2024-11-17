@@ -117,14 +117,14 @@ History of the machine and its legacy
 # <a id = "day2"></a>Day 2
 Chipset and hardware
 
-![](images/mobo.jpg)
+![](mobo.jpg)
 
-![](images/2600_wires.jpg)
+![](2600_wires.jpg)
 
-![](images/TIA.jpg)
+![](TIA.jpg)
 
 Here is where things get funky. Atari didn't want to pay for the full 6502, they wanted to strip it down and make it even cheaper. With the help of the Intel 8080 and MOS6502 developer Chuck Pebble, they came up with the 6507. 
-![](images/MOS6502.png) ![](images/6507.gif)
+![](MOS6502.png) ![](6507.gif)
 
 The result was a price point that could get this box into the homes of everyone. 
 

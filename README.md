@@ -10,6 +10,21 @@ By the end of class, if you are happy with your game, I will pay for you to:
 * Print an instruction manual
 * Make a game box (i'll provide some links and what materials and can help)
 
+# Important Resources
+This is an [Obsidian](https://obsidian.md/) Instance. If you want to view it all, please download the repo and open it in Obsidian. 
+## IDEs, Useful Webpages, and Other Tutorials
+I am one person who himself is still learning the finer points of Assembly 6502. I'm also teaching in a classroom in a college and as such, I have to make sure that certain bureaucratic requirements are met. In recognition of that, i'm going to include a variety of resources.
+### Development Environments, Emulators, and IDEs
+#### Development Environments
+* 8 Bit Workshop - This is the IDE i'll be using in class. It is fantastic and the tie-ins to Github make it far more worthwhile. It additionally has capacity to develop for Batari Basic as well as the NES. 
+  
+* 
+#### Emulators, 
+
+#### IDEs
+
+
+
 This course owes a tremendous amount of thanks to: 
 1. [Atari Age](https://atariage.com/index.php)
 2. [Steven Hugg and 8BitWorkshop](https://8bitworkshop.com/docs/blog/author/steven-hugg.html)
