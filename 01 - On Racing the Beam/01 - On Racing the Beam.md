@@ -1,4 +1,4 @@
-The Atari 2600 was a real mess.  It's a good thing that we don't try to program machines like that anymore because it was just absurd. But it was kind of fun in a sick way if you like that kind of challenge.
+The Atari 2600 was a real mess. It's a good thing that we don't try to program machines like that anymore because it was just absurd. But it was kind of fun in a sick way if you like that kind of challenge.
 	Howard Scott Warshaw, Atari 2600 game developer
 	Creator of Yar's Revenge and E.T. the Extra-Terrestrial
 
@@ -6,9 +6,9 @@ The Atari 2600 was a real mess.  It's a good thing that we don't try to program 
 
 1. [Welcome](#welcome)
 2. [Logistics](#logistics)
-3. [TLDR](#tldr)
-4. [Day 1](#day1)
-5. [Day 2](#day2)
+3. Resources and Additional Spaces to Learn
+4. [TLDR](#tldr)
+5. Next Time
 
 ---------------- Table of Contents ---------------- 
 
@@ -62,7 +62,6 @@ Howard Scott Warshaw
 
 (Sources):
 https://spectrum.ieee.org/atari-2600
-
 # <a id = "logistics"></a>Logistics
 I wrote this course for 3 reasons: 
 1. I grew up with the Intellivision as my first console but have always been curious about the Atari.
@@ -86,48 +85,41 @@ Assembly has been around for nearly 50 years now and it's been active for ages. 
 * Touched a Commodore product
 * Played with a tomogatchi
 * Played with the Atari Lynx.
-The chip (MOS 6502) is also in the hall of fame of chips: https://spectrum.ieee.org/chip-hall-of-fame-mos-technology-6502-microprocessor/particle-7#:~:text=6502%20Micro%2Dprocessor&text=The%20chip%2C%20and%20its%20variants,known%20as%20the%20Atari%20VCS).
+The chip (MOS 6502) is also in the [hall of fame of chips](https://spectrum.ieee.org/chip-hall-of-fame-mos-technology-6502-microprocessor/particle-7#:~:text=6502%20Micro%2Dprocessor&text=The%20chip%2C%20and%20its%20variants,known%20as%20the%20Atari%20VCS)).
 
-I've used and collected a huge number of resources for this course. I'll put a bunch here and a bunch more in the MyCourses instance: 
-* Pikuma 6502 course: https://pikuma.com/courses/learn-assembly-language-programming-atari-2600-games
-* 8-Bit Workshop: https://8bitworkshop.com/ this is where our textbook comes from and our in-class IDE. I'll provide some instructions on other ways to develop as needed. 
-* There is a neat amount of documentation on 8bit workshop as well: https://8bitworkshop.com/docs/platforms/vcs/index.html
-* 6502 documentation: http://www.visual6502.org/
-	* Note in the above that the Atari uses the 6507 chip and as such, has a variety of commands that are not available. 
+I've used and collected a number of resources for this course. I'll put a bunch here and a bunch more in the MyCourses instance.
+
+**Courses:** 
+* [Pikuma 6502 course](https://pikuma.com/courses/learn-assembly-language-programming-atari-2600-games)
+
+**Self-Study**
+* [8-Bit Workshop](https://8bitworkshop.com/)
+	* this is where our textbook comes from and our in-class IDE. I'll provide some instructions on other ways to develop as needed. 
+	* There is a [neat amount of documentation on 8bit workshop as well](https://8bitworkshop.com/docs/platforms/vcs/index.html)
+* [Visual 6502](http://www.visual6502.org/)
+	* Note in the above that the Atari uses the 6507 chip but still can use pretty much everything here. 
+* [Easy 6502](https://skilldrick.github.io/easy6502/#first-program)
+	* This is a super neat visualization engine of Assembly. It's sort of like Python Anywhere but for Assembly and will be useful at times. 
+* [8Blit Atari 2600 Programming](https://www.youtube.com/@8Blit/playlists)
+	* 8Blit is simply amazing. So many easy to understand tutorials and approaches to the work.
+
+**Ephemera and Atari Stuff**
 * https://www.atarimania.com/list_ads_atari_page-_1-_2.html
 	* Ephemera and collected wisdom about the Atari over time. It's neat to see ads and things from when it was new.
-* https://skilldrick.github.io/easy6502/#first-program
-	* This is a super neat visualization engine of Assembly. It's sort of like Python Anywhere but for Assembly and will be useful at times. 
+
+**Sample Code and Alt Projects**
 * Snake in Assembly: https://gist.github.com/wkjagt/9043907
-* Stella: 
-	* Stella Download: https://stella-emu.github.io/
-	* Stella Source: https://github.com/stella-emu/stella
-	* Stella Documentation: https://alienbill.com/2600/101/docs/stella.html
-	* Stella Debugger: https://stella-emu.github.io/docs/debugger.html
+
+**Videos**
+* [28c3: The Atari 2600 Video Computer System: The Ultimate Talk](https://www.youtube.com/watch?v=qvpwf50a48E&ab_channel=28c3)
+* [27c3: Reverse Engineering the MOS 6502 CPU (en)](https://www.youtube.com/watch?v=fWqBmmPQP40&t=1926s&ab_channel=Christiaan008)
+* [Atari 2600 Programming is a Nightmare](https://www.youtube.com/watch?v=-l18Rwbinp8&ab_channel=Truttle1)
+* [Making Labels for 2600 Games](https://www.youtube.com/watch?v=-bbGbGVC6FY&ab_channel=MarkFixesStuff)
+* [Burning EEPROMS for the 2600](https://www.youtube.com/watch?v=77PMlBhEHFw&t=1183s&ab_channel=ArtifactElectronics)
+* [Hello World on an Atari? Not Easy!](https://www.youtube.com/watch?v=iyzehlHJZ7w&t=877s&ab_channel=TheRetroDesk)
 # <a id = "tldr"></a>TLDR
 Old machine is old, but it contains all the building blocks we still use in the industry to this day. While it has extreme limitations (4k bytes of memory total (which can be augmented with memory banking but we'll not cover that in this course)), that limitation is reinforced by being able to interact with the hardware as directly as possible. As such, programming for this newly re-released system can show you on a very intimate level how your code and the hardware interact.
 
 Another reason this is useful is that the video game industry had to learn how to make games, D&D existed but was not incorporated immediately into the world of games in the home arcades because of the limitations. 
 
 Over the course, we will learn about the games, their history, and more.
-
-# <a id = "day1"></a>Day 1
-History of the machine and its legacy
-
-# <a id = "day2"></a>Day 2
-Chipset and hardware
-
-![](mobo.jpg)
-
-![](2600_wires.jpg)
-
-![](TIA.jpg)
-
-Here is where things get funky. Atari didn't want to pay for the full 6502, they wanted to strip it down and make it even cheaper. With the help of the Intel 8080 and MOS6502 developer Chuck Pebble, they came up with the 6507. 
-![](MOS6502.png) ![](6507.gif)
-
-The result was a price point that could get this box into the homes of everyone. 
-
-Next week: The elements of the screen, IDEs, and Getting Started - pipeline and experimentation, other places to practice.
-
-Week 03 - Hello World

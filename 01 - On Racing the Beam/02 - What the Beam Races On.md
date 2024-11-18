@@ -88,8 +88,8 @@ What do these terms mean?
 * Scanlines
 
 And so that's the screen of the machine. There are also reservations and dictated memory allocations for certain things. For example: 
-_Background color_
 
+* Background color
 * 2 player sprites (8 bit), each with its own color
 * Playfield with own color – can also re-use player colors
 * 2 missile sprites (1 bit), re-using player colors

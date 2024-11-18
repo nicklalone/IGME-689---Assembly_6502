@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
+                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
+                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
+                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md"
+                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "76dabf6ea852d9bb",
   "lastOpenFiles": [
+    "02 - IDE and Getting Started/02 - Bones.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
@@ -172,7 +173,6 @@
     "images/Atari 2600 Motherboard Schematic.tif",
     "images",
     "PPTs/~$01 - Day 2.pptx",
-    "02 - IDE and Getting Started/02 - Bones.md",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
