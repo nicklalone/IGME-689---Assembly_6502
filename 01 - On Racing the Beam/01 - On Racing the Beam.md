@@ -6,9 +6,9 @@ The Atari 2600 was a real mess. It's a good thing that we don't try to program m
 
 1. [Welcome](#welcome)
 2. [Logistics](#logistics)
-3. Resources and Additional Spaces to Learn
+3. [Resources and Additional Spaces to Learn](#resources)
 4. [TLDR](#tldr)
-5. Next Time
+5. [Next Time](#nexttime)
 
 ---------------- Table of Contents ---------------- 
 
@@ -79,7 +79,7 @@ The general loop of the course is this:
 5 weeks: 
 1. Make a game.
 2. Check in with me.
-## Resources and Additional Spaces to Learn
+## <a id = "resources"></a>Resources and Additional Spaces to Learn
 Assembly has been around for nearly 50 years now and it's been active for ages. You've probably used something that was written in Assembly and for the 6502 over the years if you've ever: 
 * Touched an NES
 * Touched a Commodore product
@@ -105,7 +105,7 @@ I've used and collected a number of resources for this course. I'll put a bunch 
 
 **Ephemera and Atari Stuff**
 * https://www.atarimania.com/list_ads_atari_page-_1-_2.html
-	* Ephemera and collected wisdom about the Atari over time. It's neat to see ads and things from when it was new.
+	* Ephemera and collected wisdom about the Atari over time. It's neat to see ads and things from when it was new.x`
 
 **Sample Code and Alt Projects**
 * Snake in Assembly: https://gist.github.com/wkjagt/9043907
@@ -117,9 +117,12 @@ I've used and collected a number of resources for this course. I'll put a bunch 
 * [Making Labels for 2600 Games](https://www.youtube.com/watch?v=-bbGbGVC6FY&ab_channel=MarkFixesStuff)
 * [Burning EEPROMS for the 2600](https://www.youtube.com/watch?v=77PMlBhEHFw&t=1183s&ab_channel=ArtifactElectronics)
 * [Hello World on an Atari? Not Easy!](https://www.youtube.com/watch?v=iyzehlHJZ7w&t=877s&ab_channel=TheRetroDesk)
+	* This video gets a bit into Batari Basic so it won't be covered in class but if this is something you're interested in, have at it.
+* [Racing the Beam Explained - Atari 2600 CPU vs. CRT Television](https://www.youtube.com/watch?v=sJFnWZH5FXc&t=441s&ab_channel=RetroGameMechanicsExplained)
 # <a id = "tldr"></a>TLDR
 Old machine is old, but it contains all the building blocks we still use in the industry to this day. While it has extreme limitations (4k bytes of memory total (which can be augmented with memory banking but we'll not cover that in this course)), that limitation is reinforced by being able to interact with the hardware as directly as possible. As such, programming for this newly re-released system can show you on a very intimate level how your code and the hardware interact.
 
 Another reason this is useful is that the video game industry had to learn how to make games, D&D existed but was not incorporated immediately into the world of games in the home arcades because of the limitations. 
 
 Over the course, we will learn about the games, their history, and more.
+# <a id = "nexttime"></a>Next Time
