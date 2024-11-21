@@ -39,24 +39,29 @@ In this section, we''ll talk about the early attempts at games, early video game
 ### Early Attempts at Games
 The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by Christopher Strachy. This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a Checkers playing program from Arthur Samuel in 1959. While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
 
-![[drivemobile.png]]
+![](/images/consoles/drivemobile.png)
 
 #### Tennis for Two (1958)
 The Manhattan Project gave us the Atomic Bomb but almost immediately after using it, the sheer magnitude of what had been done began to weigh heavily on many. Spacewar! from William Higgenbotham was born out of the guilty associated with the bomb. This was not only one of the first video games, but was also a piece of software that used graphic displays, a novelty at the time. 
 
-![[tennis42.png]]
-
+![](/images/consoles/tennis42.png)
 #### Spacewar! (1962)
 Spacewar! has long been considered the first videogame though Higgenbotham's work is more recently being given recognition. Whereas Higgenbotham was working at Brookhaven, Spacewar!'s creators,  Steve Russell in collaboration with Martin Graetz, Wayne Wiitanen, Bob Saunders, Steve Piner, and a few others associated with the railroad club at MIT and a lab at Harvard, were all working at MIT. Much like the game Draughts, mentioned above, there were a variety of games that had been designed but had mostly been novelty games like Checkers or Tic-Tac-Toe. Notably, this game was [written in Assembly](https://www.masswerk.at/spacewar/sources/). 
 
-![[spacewar.png]]
+![](/images/consoles/spacewar.png)
 #### Pong!
 ### Magnavox Odyssey
 This is often considered the first console. It was kind of a weird thing in that it didn't use cartridges but you could use various sheets to shift the games around. It included a number of board game pieces that could be used with the games as there wasn't any logic stored in the console. It is notable for sort of standardizing the normal collection of objects we associate with video games such as detachable controllers, paddles, and light guns. The later, light guns, is important because an older company called Nintendo had formed a partnership with Magnavox to expand their toy production capacity via their carnival light gun games. This would be how Nintendo gets involved with the video game market.
 
-![[odyssey.png]]
+At current, Magnavox (now Phillips Magnavox after its purchase in 1974 and then later would develop the laserdisc with Sony and then even later become a part of the company Raytheon) is mostly owned by a Japanese company called Funai but that company is in trouble.
+
+![](/images/consoles/odyssey.png)
 ### Fairchild Channel F
-![[channelf.png]]
+
+
+Fairchild was owned by Lockheed Martin for a while until it was sold off to the Carlye Group when they were buying things before and during the tech bust in 2000. At the moment, the company doesn't really exist anymore but is considered property of BAE Systems, a defense contractor. You may wonder  
+
+![](/images/consoles/channelf.png)
 
 # <a id="2600"></a> The Atari 2600 and its Legacy
 ## Not the origin but where we started
