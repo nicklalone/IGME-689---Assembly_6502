@@ -5,10 +5,11 @@ The Atari 2600 was a real mess. It's a good thing that we don't try to program m
 ---------------- Table of Contents ---------------- 
 
 1. [Welcome](#welcome)
-2. [Logistics](#logistics)
-3. [Resources and Additional Spaces to Learn](#resources)
-4. [TLDR](#tldr)
-5. [Next Time](#nexttime)
+2. [The 2600 and its Legacy](#2600)
+3. [Logistics](#logistics)
+4. [Resources and Additional Spaces to Learn](#resources)
+5. [TLDR](#tldr)
+6. [Next Time](#nexttime)
 
 ---------------- Table of Contents ---------------- 
 
@@ -30,8 +31,32 @@ Over the course of the semester, i'll be bringing you through not only the histo
 
 We will be "[racing the beam](https://www.youtube.com/embed/sJFnWZH5FXc?si=p-55AMiUwLfz8yM2)" all semester. So get ready!
 # <a id = "welcome"></a>Welcome!!!!
+Goal: Introduce a general history and the context of where and why we'll be creating games for this now live system. 
 
-Goal: Introduce a general history and tech spec we'll be working with. 
+To begin, I think it's important to talk about the software of the console and their legacy. We'll talk about a few notable games and also a few notable competitors you may never have heard of. 
+
+### Early Attempts at Games
+The earliest videogame many of us have been able to find is a game called Draughts (Checkers) in 1951 by Christopher Strachy 
+
+#### Tennis for Two (1958)
+The Manhattan Project gave us the Atomic Bomb but almost immediately after using it, the sheer magnitude of what had been done began to weigh heavily on many. Spacewar! from William Higgenbotham was born out of the guilty associated with the bomb. This was not only one of the first video games, but was also a piece of software that used graphic displays, a novelty at the time. 
+
+![[tennis42.png]]
+
+#### Spacewar! (1962)
+Spacewar! has long been considered the first videogame though Higgenbotham's work is more recently being given recognition. Whereas Higgenbotham was working at Brookhaven, Spacewar!'s creators,  Steve Russell in collaboration with Martin Graetz, Wayne Wiitanen, Bob Saunders, Steve Piner, and a few others associated with the railroad club at MIT and a lab at Harvard, were all working at MIT. Much like the game Draughts, mentioned above, there were a variety of games that had been designed but had mostly been novelty games like Checkers or Tic-Tac-Toe. Notably, this game was [written in Assembly](https://www.masswerk.at/spacewar/sources/). 
+
+![[spacewar.png]]
+#### Pong!
+### Magnavox Odyssey
+This is often considered the first console. It was kind of a weird thing in that it didn't use cartridges but you could use various sheets to shift the games around. It included a number of board game pieces that could be used with the games as there wasn't any logic stored in the console. It is notable for sort of standardizing the normal collection of objects we associate with video games such as detachable controllers, paddles, and light guns. The later, light guns, is important because an older company called Nintendo had formed a partnership with Magnavox to expand their toy production capacity via their carnival light gun games. This would be how Nintendo gets involved with the video game market.
+
+![[odyssey.png]]
+### Fairchild Channel F
+
+
+# <a id="2600"></a> The Atari 2600 and its Legacy
+## The General Loop
 
 Hardware: 
 	Tennis for 2, Droughts, Channel F, 
@@ -126,3 +151,4 @@ Another reason this is useful is that the video game industry had to learn how t
 
 Over the course, we will learn about the games, their history, and more.
 # <a id = "nexttime"></a>Next Time
+We'll talk about the technical nature of the Atari 2600 and just how ~~little~~ much you'll be working with. Be prepared to be amazed!!!
