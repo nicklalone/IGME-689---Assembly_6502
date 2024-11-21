@@ -75,7 +75,7 @@ You can buy one if you like! They are around $130.
 
 So for many of you, you might have heard some myths and legends here and there. Ready Player One is probably a source for a lot of the current nuggets in culture at the moment. However, there's a rich legacy that we'll be digging into today as we learn how to make bits move around on the console. Let's talk about how the Atari got established, establish a high level overview of how it works, and then get into some specifics like the legacy it established in the game industry as a whole. We'll finish by talking about notable games and designers.
 ## Not the origin but where we started
-
+So, the Atari 2600 is not the first game console, not the first video game, not the first game company, and is not the first at really...well, anything. However, it was the moment in time where the home game console moved from extremely expensive curiosity to novel, relatively cheap home entertainment system. 
 
 ### The General Loop
 
