@@ -57,9 +57,13 @@ At current, Magnavox (now Phillips Magnavox after its purchase in 1974 and then 
 
 ![](/images/consoles/odyssey.png)
 ### Fairchild Channel F
+The Fairchild Channel F (F for fun!) was an important console to the history of games but one that got decimated by the popularity of the Atari 2600. It is a notable console as it contains: 
+* origin of the video game cartridge.
+* [first easter egg](https://www.youtube.com/watch?v=ws-ExrlbmtY)
+* perhaps the first programmable game system
+If you get a chance, give the games a shot. It is a bit weird to see games with even fewer resources than a 2k game on the 2600 but it's also neat to see different computational approaches to interactive media.
 
-
-Fairchild was owned by Lockheed Martin for a while until it was sold off to the Carlye Group when they were buying things before and during the tech bust in 2000. At the moment, the company doesn't really exist anymore but is considered property of BAE Systems, a defense contractor. You may wonder  
+Fairchild was owned by Lockheed Martin for a while until it was sold off to the Carlye Group when they were buying things before and during the tech bust in 2000. At the moment, the company doesn't really exist anymore but is considered property of BAE Systems, a defense contractor. You may wonder why so many of these companies end up in defense spaces and this is because of the origin of games from defense technologies. While they may have been born because of war and many games originating from the war gaming tabletop space via Dungeons and Dragons and Stat-o-matic games, their legacy has surprassed their violent origin. 
 
 ![](/images/consoles/channelf.png)
 
