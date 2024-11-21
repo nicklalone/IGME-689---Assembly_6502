@@ -78,6 +78,10 @@ So for many of you, you might have heard some myths and legends here and there. 
 ## Not the origin but where we started
 So, the Atari 2600 is not the first game console, not the first video game, not the first game company, and is not the first at really...well, anything. However, it was the moment in time where the home game console moved from extremely expensive curiosity to novel, relatively cheap home entertainment system. 
 ### The General Loop
+So how did this console work? Well, remember that back then we didn't have individual pixels we could color quickly. We had to wait for an electron beam to go across a screen and then go down. Additionally, we had to deal with very tiny amounts of space. All of these limits provided an endless array of possibility. If I were to call into being a metaphor for what the Atari was like, consider Vine before Tik Tok. 
+
+At its most basic, using terminology that should be familiar to you now, look at the picture below: 
+![](/images/resolution.png)
 
 Hardware: 
 	Tennis for 2, Droughts, Channel F, 
