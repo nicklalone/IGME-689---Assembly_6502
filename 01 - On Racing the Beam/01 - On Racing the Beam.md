@@ -71,12 +71,12 @@ Fairchild was owned by Lockheed Martin for a while until it was sold off to the 
 So, the Atari 2600 turns 50 this year. There's a whole lot of activity in and around the console. So much so that they sat down and re-released a new version of the console (the Atari 2600+) that can hook up to an HDMI signal. The only real tradeoffs are that instead of reading the game cart in real time, it dumps the ROM and reads it internally. It makes a more stable game experience but also makes the first failure to boot (so we gotta blow on the carts) take more time as it needs to load Stella to load the ROM it dumps. 
 
 ![](/images/consoles/2600plus.png)
+
 You can buy one if you like! They are around $130. 
 
 So for many of you, you might have heard some myths and legends here and there. Ready Player One is probably a source for a lot of the current nuggets in culture at the moment. However, there's a rich legacy that we'll be digging into today as we learn how to make bits move around on the console. Let's talk about how the Atari got established, establish a high level overview of how it works, and then get into some specifics like the legacy it established in the game industry as a whole. We'll finish by talking about notable games and designers.
 ## Not the origin but where we started
 So, the Atari 2600 is not the first game console, not the first video game, not the first game company, and is not the first at really...well, anything. However, it was the moment in time where the home game console moved from extremely expensive curiosity to novel, relatively cheap home entertainment system. 
-
 ### The General Loop
 
 Hardware: 
@@ -101,6 +101,8 @@ What makes up the 2600?
 Here, you won't have a system like Unity do things for you, you have to painstakingly *(and concisely)* write a game on your own (or with a team). I will be doing this with you.
 
 And so, you may consider this system, this course, and this language old, backward, and weird but it's also withstood the test of time as the Atari 2600 is new again but unlike all new systems where we have to learn how things work and then build on it with custom libraries and development content, we here will be learning how to do *everything by hand*. And this is very unlike what these folks did. 
+## What a video game is
+
 ## Credits for Designers
 
 ## Founding of Activision
