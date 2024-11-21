@@ -33,10 +33,13 @@ We will be "[racing the beam](https://www.youtube.com/embed/sJFnWZH5FXc?si=p-55A
 # <a id = "welcome"></a>Welcome!!!!
 Goal: Introduce a general history and the context of where and why we'll be creating games for this now live system. 
 
-To begin, I think it's important to talk about the software of the console and their legacy. We'll talk about a few notable games and also a few notable competitors you may never have heard of. 
+To begin, I think it's important to talk about the software of the console and their legacy. Some of what we tried when the video game idea was new has never been developed further. Other aspects of games have been overdeveloped. And so we're in a weird space with regard to the video game at the moment. Tech is stalling, games are stalling, everything is starting to feel stale, and so we have a reason to look backward. 
 
+In this section, we''ll talk about the early attempts at games, early video game consoles, the legacy of the 2600, and games of note on the system. We'll even talk about a few recent games of note released within the past 5-10 years for the 2600. 
 ### Early Attempts at Games
-The earliest videogame many of us have been able to find is a game called Draughts (Checkers) in 1951 by Christopher Strachy 
+The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by Christopher Strachy. This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a Checkers playing program from Arthur Samuel in 1959. While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
+
+![[drivemobile.png]]
 
 #### Tennis for Two (1958)
 The Manhattan Project gave us the Atomic Bomb but almost immediately after using it, the sheer magnitude of what had been done began to weigh heavily on many. Spacewar! from William Higgenbotham was born out of the guilty associated with the bomb. This was not only one of the first video games, but was also a piece of software that used graphic displays, a novelty at the time. 
@@ -53,10 +56,12 @@ This is often considered the first console. It was kind of a weird thing in that
 
 ![[odyssey.png]]
 ### Fairchild Channel F
-
+![[channelf.png]]
 
 # <a id="2600"></a> The Atari 2600 and its Legacy
-## The General Loop
+## Not the origin but where we started
+
+### The General Loop
 
 Hardware: 
 	Tennis for 2, Droughts, Channel F, 
@@ -81,12 +86,15 @@ Here, you won't have a system like Unity do things for you, you have to painstak
 
 And so, you may consider this system, this course, and this language old, backward, and weird but it's also withstood the test of time as the Atari 2600 is new again but unlike all new systems where we have to learn how things work and then build on it with custom libraries and development content, we here will be learning how to do *everything by hand*. And this is very unlike what these folks did. 
 
+## Notable Games and Designers
 Let's take a little journey across Pac Man ports for the 2600.
 Mark Cerny
 Howard Scott Warshaw
 
 (Sources):
 https://spectrum.ieee.org/atari-2600
+
+
 # <a id = "logistics"></a>Logistics
 I wrote this course for 3 reasons: 
 1. I grew up with the Intellivision as my first console but have always been curious about the Atari.
