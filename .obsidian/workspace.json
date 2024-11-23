@@ -13,12 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "mode": "source",
                 "source": false
-              },
-              "icon": "lucide-file",
-              "title": "00 - Notes and Resources"
+              }
             }
           }
         ]
@@ -41,9 +39,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Files"
+              }
             }
           },
           {
@@ -58,9 +54,7 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Search"
+              }
             }
           },
           {
@@ -68,9 +62,7 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "state": {}
             }
           }
         ]
@@ -93,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,9 +93,7 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for 00 - Notes and Resources"
+              }
             }
           },
           {
@@ -112,12 +102,10 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from 00 - Notes and Resources"
+              }
             }
           },
           {
@@ -128,9 +116,7 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
+              }
             }
           },
           {
@@ -139,10 +125,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - On Racing the Beam/00 - Notes and Resources.md"
-              },
-              "icon": "lucide-list",
-              "title": "Outline of 00 - Notes and Resources"
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md"
+              }
             }
           }
         ]
@@ -164,11 +148,10 @@
   },
   "active": "5ba5339bd0308bae",
   "lastOpenFiles": [
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "02 - IDE and Getting Started/02 - Bones.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "IMG_9636.png",
     "Pasted.md",
     "images/asymmetry.png",
@@ -180,6 +163,7 @@
     "images/consoles/spacewar.png",
     "images/consoles/odyssey.png",
     "images/consoles",
+    "01 - On Racing the Beam/00 - Notes and Resources.md",
     "PPTs/~$01 - Day 1.pptx",
     "Source Code Examples/Adventure/Adventure.asm.md",
     "Source Code Examples/Pac Man/PacMan4k/pacman4K_1_2 copy.asm",
