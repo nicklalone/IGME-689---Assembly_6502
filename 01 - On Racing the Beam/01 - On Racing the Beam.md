@@ -82,66 +82,109 @@ So how did this console work? Well, remember that back then we didn't have indiv
 
 At its most basic, using terminology that should be familiar to you now, look at the picture below: 
 ![](/images/resolution.png)
+This will be covered more in depth on class 2. However, what we essentially have is a number of pixels to start processing as the electron beam starts at the upper left and slowly goes down to the bottom right. All of your programming with require a bit of mathing out clock cycles to beam positions to a final resolution of about 160x192 pixels.  
 
-Hardware: 
-	Tennis for 2, Droughts, Channel F, 
-	Chuck Pebble the 8080, the 6502, the 6507
-	Technical development of the TIA development
-	Other systems with the 6502
+Here's a brief glimpse of the specs you'll be working with. 
 
-Functional Description: 
-What makes up the 2600?
-* 6507, a cost-reduced 6502 in a 28-pin package.
-- 6532, with 128 bytes of RAM, 16 I/O ports, and a programmable timer 
-- TIA, which generates video and audio
-- a 2K or 4K ROM via cartridge slot
-
-	Carts contain all ROM and Instructions for hardware.
-	The system itself contains 3 chips (show schematic)
-	The most interesting (maybe) thing about this system is how barebones it is. 
-	There are no tuples for coordinates (x,y). Instead, you time drawing according to the beam's position.
-	What is the beam?
+**Hardware:** 
+* Chuck Pebble was responsible for the chipsets around this time. He designed: 
+	* the 8080, the 6502, and the 6507
+	* This chip is still in use today and has powered everything from the NES to Tamagotchi, and more.
+* Technical development of the TIA took the most amount of time at 2 years. 
+	* This chip was extremely unique at the time and sets the bar for how games would work very generally in how it sends signals and interprets them to and from the ROM and the TV.
+* The 6532 or RIOT chip has with (R)am: 128 bytes, 16 (I/O) ports, and a programmable (T)imer
+	* This is the thing that generally allows you to interact with the 6502 and send signals to the TIA.
+  
+**Notes and Misc**
+* Carts contain all ROM and Instructions for hardware.
+* The system itself contains 3 chips (show schematic)
+* The most interesting (maybe) thing about this system is how barebones it is. 
+* There are no tuples for coordinates (x,y). Instead, you time drawing according to the beam's position.
+	* These days, it's a bit easier with a variety improvements in the compiler (macro.h).
 
 Here, you won't have a system like Unity do things for you, you have to painstakingly *(and concisely)* write a game on your own (or with a team). I will be doing this with you.
 
 And so, you may consider this system, this course, and this language old, backward, and weird but it's also withstood the test of time as the Atari 2600 is new again but unlike all new systems where we have to learn how things work and then build on it with custom libraries and development content, we here will be learning how to do *everything by hand*. And this is very unlike what these folks did. 
-## What a video game is
+## What a video game even is
+So, it's important here to note that when the 2600 was new, we didn't really know what games were for. This time period is absolutely fascinating because while we were moving around squares and circles of differing colors and sizes, sometimes in the vague shape of things, what a game actually was was sort of an unknown. 
 
+Pong, and the early arcade games didn't have ROM or RAM, they used a ton of circuitry to run the game and slowly, RAM was opened up or ROM to store graphics while the hardware did the rest. Software most mostly non-existent. 
+
+And so, with a programmable ROM in the form of a cartridge and enough RAM to store some of that logic, we had our first interactive system that had interchangeable media. While a lot of the early games were just Arcade Ports (bad arcade ports), the canvas was there to start building on. And build they did. 
+
+Shooters, platformers, adventure games, point and click adventure games, and all sorts of other types of games found a home here. At its core though was a super interesting thing - Lopsided play or Asymmetry. Consider this quote from one of your textbooks.
+
+![](asymmetry.png)
+This is a significant shift for games. At the time, nearly all games were based in and around symmetry (think Pong) or just 1 player. By making a game for 2-players at the same time, we had a moment where skill against players became just as possible as skill against yourself or an engine. 
 ## Credits for Designers
+Warren Robinett, who wrote *Adventure* was irked by the fact that Atari wouldn't actually allow them to have credit for their creations. This was why he inserted his name deep in the code and then promptly quit Atari to go into a different tech industry. At the time, Atari execs told the game programmers that, "They were worth as much as the man on the assembly line who put the game into the cardboard box."
 
-## Founding of Activision
+This would culminate in quite a few lawsuits and a crisis in the world of software development as the CEOs and business leaders tried to squash anything but the brand being responsible for games. In fact, much of the way you see credits for games now is owed to this fight. 
+
+One of the most high profile moments due to this issue came with a gang of 4 developers: Bob Whitehead, David Crane, Larry Kaplan, and Alan Miller. These are the 4 original founders of the video game company *Activision*.
+## Lawsuits, the founding of *Activision*, and 3rd party games
+
 
 ## Pipelines (and Crunch)
+When the word technology came into the english language, it was originally a word imbued with cautionary tales in and around new types of labor. That cautionary tale was usurped by folks who decided that technical prowess was akin to cultural power and so the race to spread and make more complex the technological spaces became a sort of race, a sickness. Gone were the labor laws of the working classes in and around manufacturing. Instead, we saw a massive abuse of designers who themselves would gleefully be locked in a room and not allowed to leave until a problem was solved. 
 
+This is the birth of crunch and it continues to this day. Take E.T. for example, this was a game where they *Absolutely Had To* get it out for Christmas but they didn't get the license to design the game until July and they asked Howard Scott Warshaw to get it out by September so it could hit shelves in November. That 5 weeks will become more important later in this course.
 ## Notable Games 
-
+* Yars Revenge - Howard Scott Warshaw
+	* Notable stationary shooter - think Shooter bosses.
+* Raiders of the Lost Ark - Howard Scott Warshaw
+	* Point and click adventure game
+* Breakout - Steve Wozniak
+	* This would form the basis of the Apple ]\[ 
+* Adventure - Warren Robinette
+	* Adventure game but also early action-RPG
+* River Raid - Carol Shaw
+	* Scrolling shooter, also a very important game in terms of women in computing. 
+* Pitfall - David Crane
+	* 255 Screens, procedurally generated rather than stationary. Made for a platformer type game that seemed nearly infinite. I didn't even know it was beatable until I started prepping for this course.
 ## Notable Designers
-Mark Cerny
-Howard Scott Warshaw
+* Mark Cerny
+	* Tell me who this is.
+* Howard Scott Warshaw
+	* See above games.
+* Steve Jobs / Steve Wozniak
+	* Tell me who this is.
+* Chris Crawford
+	* GDC creator, it was in his house the first time but he also did a ton of other things. 
+* Eugene Jarvis
+	* Defender
 
-# <a id = "logistics"></a>Logistics
+**Gang of 4** - Activision Creators
+* Bob Whitehead
+* David Crane 
+* Larry Kaplan
+* Alan Miller 
+# <a id = "logistics"></a>Logistics - Ok, that's a lot, why this course?
 I wrote this course for 3 reasons: 
 1. I grew up with the Intellivision as my first console but have always been curious about the Atari.
-2. Get into Assembly and Vintage Computing because of my actual work.
-3. Teach another programming course that isn't python. 
-The course will be an intense dungeon but we'll try and structure it so it's not so time consuming. 
+2. I wanted to get into Assembly and Vintage Computing because of my actual work.
+3. Teach another programming course that isn't python or anything practical.
 
-The general loop of the course is this: 
-11 weeks: 
+I will warn you now that the course will be an intense dungeon but we'll try and structure it so it's not so time consuming. One thing to keep in mind is that we're going to go extremely slowly through the basics of how an atari game works. At just 2-4KB, that's not a lot. 
+
+So, grades and things. How will it work? The general loop of the course is this: 
+
+**11 weeks - Instruction** in person
 1. Read something - Usually chasing the beam, your textbook, and something else.
 2. Watch something - Usually a post mortem
 3. Annotate a source file - from the 2600's past.
 4. Write something - typically it'll be a brief response, a design doc, or a coding exercise. 
 
-5 weeks: 
+**5 weeks - Development** via Zoom
 1. Make a game.
 2. Check in with me.
 ## <a id = "resources"></a>Resources and Additional Spaces to Learn
-Assembly has been around for nearly 50 years now and it's been active for ages. You've probably used something that was written in Assembly and for the 6502 over the years if you've ever: 
+Assembly has been around for quite a long time now and it's been active for ages. You've probably used something that was written in Assembly and for the 6502 over the years if you've ever: 
 * Touched an NES
 * Touched a Commodore product
 * Played with a tomogatchi
 * Played with the Atari Lynx.
+
 The chip (MOS 6502) is also in the [hall of fame of chips](https://spectrum.ieee.org/chip-hall-of-fame-mos-technology-6502-microprocessor/particle-7#:~:text=6502%20Micro%2Dprocessor&text=The%20chip%2C%20and%20its%20variants,known%20as%20the%20Atari%20VCS)).
 
 I've used and collected a number of resources for this course. I'll put a bunch here and a bunch more in the MyCourses instance.

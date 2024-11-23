@@ -33,8 +33,8 @@ But then we have things like the Microprocessor, RIOT, TIA, Sound adjustors, and
 28 pins instead of 40 
 ![](MOS6502.png) ![](6507.gif)
 
-Price point comparisons.
-		* 
+Price point comparisons (at the time of release)
+* 
 * 6532/RIOT
 	* This stands for "RAM" + I/O or input/output + Timer. 
 		* RAM = 128 bytes of RAM
