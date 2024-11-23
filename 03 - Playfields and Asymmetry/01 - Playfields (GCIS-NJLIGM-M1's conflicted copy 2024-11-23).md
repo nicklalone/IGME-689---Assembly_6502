@@ -10,15 +10,9 @@
 
 # <a id = "day1"></a>Day 1
 
-So let's think about this image again: 
-![](/images/resolution.png)
-
-
 ```asm6502
-	processor 6502		; We need to call into being the 6502 on our IDE.
-	include	 "vcs.h"	
-
-; For this task, we're going to actually use some memory to mess around with the TIA PF0, PF1, PF2, and CTLRPF Registers. Along the way, we'll explore the issues of overscanning and safe areas to draw in the safe visual area of the screen with the the recommended number of VBLANK's
+	processor 6502		; We need to call into being the 
+	include	 "vcs.h"	; This example uses the TIA PF0, PF1, PF2, and CTLRPF Registers to draw a in the safe visual area of the screen, using the generally recommended number of VBLANK's
 
 PFCOLOR equ #$F9 
 
