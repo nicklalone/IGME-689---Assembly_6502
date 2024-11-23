@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
-                "mode": "source",
+                "file": "03 - Playfields and Asymmetry/Combat Source.asm.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
+                "file": "03 - Playfields and Asymmetry/Combat Source.asm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
+                "file": "03 - Playfields and Asymmetry/Combat Source.asm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md"
+                "file": "03 - Playfields and Asymmetry/Combat Source.asm.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "5ba5339bd0308bae",
   "lastOpenFiles": [
+    "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
     "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
@@ -180,7 +181,6 @@
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-    "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
     "11 - Polish/01 - Player Sprites 2.md",
     "11 - Polish/01 - Player Sprites.md",

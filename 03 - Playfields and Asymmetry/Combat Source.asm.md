@@ -1,3 +1,4 @@
+```asm6502
 ; Combat for Atari by Larry Wagner
 ;
 ; Original disassembly by Harry Dodgson
@@ -1986,6 +1987,6 @@ VARMAP	.BYTE  $24 ;Game 1:  0010 0100  TANK
 	;
 AudPitch
 	.BYTE  $0F, $11         ; Motor sound pitch table by player
-
+```
 
 
