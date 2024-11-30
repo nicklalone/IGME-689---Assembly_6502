@@ -40,7 +40,8 @@ In this section, we''ll talk about the early attempts at games, early video game
 The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by Christopher Strachy. This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a Checkers playing program from Arthur Samuel in 1959. While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
 
 ![](/images/consoles/drivemobile.png)
-
+I should also note here that a certain important game company also got its start here. Nintendo's toy lines had evolved to include light gun technology similar to these early arcade games. This would become their entry into games soon after the popularity of this line: 
+![[nintendolightgun.png]]
 #### Tennis for Two (1958)
 The Manhattan Project gave us the Atomic Bomb but almost immediately after using it, the sheer magnitude of what had been done began to weigh heavily on many. Spacewar! from William Higgenbotham was born out of the guilty associated with the bomb. This was not only one of the first video games, but was also a piece of software that used graphic displays, a novelty at the time. 
 
@@ -50,6 +51,11 @@ Spacewar! has long been considered the first videogame though Higgenbotham's wor
 
 ![](/images/consoles/spacewar.png)
 #### Pong!
+So, Pong! was a whole phenomenon. It was a shock to folks in the arcade business, primarily pinball at that time, that this simple collection of wires could generate so much revenue. This game 
+![[pong.png]]
+A thing that I at least find fascinating for this game is that it has no software. It is a collection of wires and circuits without any sort of software at all. It's hard to wrap your head around this now but given the above light gun games, they were essentially combining the two spaces into extremely (what we at the time would call simple) complex ways. Alan Allcorn designed the initial prototype and then the Magnavox Odyssey would release it for their system followed quickly by Atari releasing newer versions of it, getting sued by Magnavox, and then pushing their engineers to disconnect from Pong entirely. 
+
+So let's head to other spaces.
 ### Magnavox Odyssey
 This is often considered the first console. It was kind of a weird thing in that it didn't use cartridges but you could use various sheets to shift the games around. It included a number of board game pieces that could be used with the games as there wasn't any logic stored in the console. It is notable for sort of standardizing the normal collection of objects we associate with video games such as detachable controllers, paddles, and light guns. The later, light guns, is important because an older company called Nintendo had formed a partnership with Magnavox to expand their toy production capacity via their carnival light gun games. This would be how Nintendo gets involved with the video game market.
 
@@ -82,25 +88,30 @@ So how did this console work? Well, remember that back then we didn't have indiv
 
 At its most basic, using terminology that should be familiar to you now, look at the picture below: 
 ![](/images/resolution.png)
-This will be covered more in depth on class 2. However, what we essentially have is a number of pixels to start processing as the electron beam starts at the upper left and slowly goes down to the bottom right. All of your programming with require a bit of mathing out clock cycles to beam positions to a final resolution of about 160x192 pixels.  
+This will be covered more in depth on the enxt time we meet. However, what we essentially have is a number of pixels to start processing as the electron beam starts at the upper left and slowly goes down to the bottom right. All of your programming with require a bit of mathing out clock cycles to beam positions to a final resolution of about 160x192 pixels.  
 
 Here's a brief glimpse of the specs you'll be working with. 
 
 **Hardware:** 
-* Chuck Pebble was responsible for the chipsets around this time. He designed: 
+* MOS 6507
 	* the 8080, the 6502, and the 6507
 	* This chip is still in use today and has powered everything from the NES to Tamagotchi, and more.
-* Technical development of the TIA took the most amount of time at 2 years. 
+	* 1.19mhz processor
+* Television Interface Adaptor (TIA): 
+	* Technical development of the TIA took the most amount of time at 2 years. 
 	* This chip was extremely unique at the time and sets the bar for how games would work very generally in how it sends signals and interprets them to and from the ROM and the TV.
-* The 6532 or RIOT chip has with (R)am: 128 bytes, 16 (I/O) ports, and a programmable (T)imer
+* The 6532 or RIOT chip:
+	* (R)am: 128 bytes, 16 (I/O) ports, and a programmable (T)imer
 	* This is the thing that generally allows you to interact with the 6502 and send signals to the TIA.
+* Cartridge:
+	* 2k - 4k ROM
   
 **Notes and Misc**
 * Carts contain all ROM and Instructions for hardware.
 * The system itself contains 3 chips (show schematic)
 * The most interesting (maybe) thing about this system is how barebones it is. 
 * There are no tuples for coordinates (x,y). Instead, you time drawing according to the beam's position.
-	* These days, it's a bit easier with a variety improvements in the compiler (macro.h).
+	* These days, it's a bit easier with a variety improvements in the compiler.
 
 Here, you won't have a system like Unity do things for you, you have to painstakingly *(and concisely)* write a game on your own (or with a team). I will be doing this with you.
 
@@ -123,24 +134,27 @@ This would culminate in quite a few lawsuits and a crisis in the world of softwa
 
 One of the most high profile moments due to this issue came with a gang of 4 developers: Bob Whitehead, David Crane, Larry Kaplan, and Alan Miller. These are the 4 original founders of the video game company *Activision*.
 ## Lawsuits, the founding of *Activision*, and 3rd party games
+The history of tech is often a battlefield waged in courtrooms around the world. Lawfare is a sometimes dirty business but at least we can typically see the strategies and rhetoric involved. One such court case mostly focuses on a collection of 4 individuals getting fed up with Atari, leaving the company, and starting their own company. 
 
+This resulted in Atari suing for breach of NDA but in court, Atari essentially lost and eventually settled out of court. This resulted in the birth of a small company called Activision which you may have heard of. Atari would also get into the lawfare game wherein once the NES was released, they reverse engineered the 10NES Chip (for a good read on 10NES and the birth of DRM, I suggest [this article](https://journals.sagepub.com/doi/10.1177/1555412010377319)).
 
+There's all manner of lawsuit to read about and each one will give you a far different picture of the what the game industry is and how it came to be that way. 
 ## Pipelines (and Crunch)
 When the word technology came into the english language, it was originally a word imbued with cautionary tales in and around new types of labor. That cautionary tale was usurped by folks who decided that technical prowess was akin to cultural power and so the race to spread and make more complex the technological spaces became a sort of race, a sickness. Gone were the labor laws of the working classes in and around manufacturing. Instead, we saw a massive abuse of designers who themselves would gleefully be locked in a room and not allowed to leave until a problem was solved. 
 
 This is the birth of crunch and it continues to this day. Take E.T. for example, this was a game where they *Absolutely Had To* get it out for Christmas but they didn't get the license to design the game until July and they asked Howard Scott Warshaw to get it out by September so it could hit shelves in November. That 5 weeks will become more important later in this course.
 ## Notable Games 
-* Yars Revenge - Howard Scott Warshaw
+* **Yars Revenge** - Howard Scott Warshaw
 	* Notable stationary shooter - think Shooter bosses.
-* Raiders of the Lost Ark - Howard Scott Warshaw
+* **Raiders of the Lost Ark** - Howard Scott Warshaw
 	* Point and click adventure game
-* Breakout - Steve Wozniak
+* **Breakout** - Steve Wozniak
 	* This would form the basis of the Apple ]\[ 
-* Adventure - Warren Robinette
+* **Adventure** - Warren Robinette
 	* Adventure game but also early action-RPG
-* River Raid - Carol Shaw
+* **River Raid** - Carol Shaw
 	* Scrolling shooter, also a very important game in terms of women in computing. 
-* Pitfall - David Crane
+* **Pitfall** - David Crane
 	* 255 Screens, procedurally generated rather than stationary. Made for a platformer type game that seemed nearly infinite. I didn't even know it was beatable until I started prepping for this course.
 ## Notable Designers
 * Mark Cerny
@@ -153,6 +167,10 @@ This is the birth of crunch and it continues to this day. Take E.T. for example,
 	* GDC creator, it was in his house the first time but he also did a ton of other things. 
 * Eugene Jarvis
 	* Defender
+* Carol Shaw
+	* River Raid
+* Ed Logg
+	* Tengen games (Gauntlet, Tetris, and others)
 
 **Gang of 4** - Activision Creators
 * Bob Whitehead

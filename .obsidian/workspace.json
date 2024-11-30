@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Playfields and Asymmetry/Combat Source.asm.md",
-                "mode": "preview",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03 - Playfields and Asymmetry/Combat Source.asm.md",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03 - Playfields and Asymmetry/Combat Source.asm.md",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03 - Playfields and Asymmetry/Combat Source.asm.md"
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md"
               }
             }
           }
@@ -148,13 +148,16 @@
   },
   "active": "5ba5339bd0308bae",
   "lastOpenFiles": [
-    "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
-    "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "images/consoles/pong.png",
+    "images/nintendolightgun.png",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
+    "03 - Playfields and Asymmetry/Combat Source.asm.md",
+    "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
     "02 - IDE and Getting Started/02 - Bones.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "IMG_9636.png",
     "Pasted.md",
     "images/asymmetry.png",
@@ -172,8 +175,6 @@
     "Source Code Examples/Pac Man/PacMan4k/pacman4K_1_2 copy.asm",
     "Source Code Examples/Pac Man/pacman4K_1_2.asm",
     "Source Code Examples/Halo 2600/halo2600 - organized.asm",
-    "images/8bit/8bitwork-asset.png",
-    "images/processor.png",
     "images/8bit",
     "images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif",
     "images/Atari 2600A Motherboard Schematic - Rev 14-15.tif",
@@ -191,8 +192,6 @@
     "08 - Intersecting/01 - Player Sprites 2.md",
     "08 - Intersecting/01 - Player Sprites.md",
     "07 - Score Keeping/01 - Player Sprites 2.md",
-    "07 - Score Keeping/01 - Player Sprites.md",
-    "06 - Enemy Behaviors/01 - Player Sprites 2.md",
-    "06 - Enemy Behaviors/01 - Player Sprites.md"
+    "07 - Score Keeping/01 - Player Sprites.md"
   ]
 }

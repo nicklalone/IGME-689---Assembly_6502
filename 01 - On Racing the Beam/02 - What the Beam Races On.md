@@ -34,7 +34,9 @@ But then we have things like the Microprocessor, RIOT, TIA, Sound adjustors, and
 ![](MOS6502.png) ![](6507.gif)
 
 Price point comparisons (at the time of release)
-* 
+* the 6502 was $25 a chip. This was too expensive, and so Chuck Pebble designed the 6507 and paired it with the 6532 (RIOT chip) at $12 dollars a piece. 
+* This resulted in a console that cost around $150.00. 
+	* Atari lost a little per console but as there were no 3rd party games, all their games were in house and their cost would make up the loss.
 * 6532/RIOT
 	* This stands for "RAM" + I/O or input/output + Timer. 
 		* RAM = 128 bytes of RAM
@@ -96,12 +98,6 @@ And so that's the screen of the machine. There are also reservations and dictate
 * 1 ball sprite (1 bit), re-using playfield color
 * Requirements: run "Combat" and "Pong"
 
-Chipset and hardware
+**Next week:** The elements of the screen, IDEs, and Getting Started - pipeline and experimentation, other places to practice.
 
-Here is where things get funky. Atari didn't want to pay for the full 6502, they wanted to strip it down and make it even cheaper. With the help of the Intel 8080 and MOS6502 developer Chuck Pebble, they came up with the 6507. 
-
-The result was a price point that could get this box into the homes of everyone. 
-
-Next week: The elements of the screen, IDEs, and Getting Started - pipeline and experimentation, other places to practice.
-
-Week 03 - Hello World
+**Week 03 - Hello World**
