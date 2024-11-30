@@ -41,7 +41,7 @@ The earliest video game many of us have been able to find is a game called Draug
 
 ![](/images/consoles/drivemobile.png)
 I should also note here that a certain important game company also got its start here. Nintendo's toy lines had evolved to include light gun technology similar to these early arcade games. This would become their entry into games soon after the popularity of this line: 
-![[nintendolightgun.png]]
+![](/images/nintendolightgun.png)
 #### Tennis for Two (1958)
 The Manhattan Project gave us the Atomic Bomb but almost immediately after using it, the sheer magnitude of what had been done began to weigh heavily on many. Spacewar! from William Higgenbotham was born out of the guilty associated with the bomb. This was not only one of the first video games, but was also a piece of software that used graphic displays, a novelty at the time. 
 
@@ -51,8 +51,8 @@ Spacewar! has long been considered the first videogame though Higgenbotham's wor
 
 ![](/images/consoles/spacewar.png)
 #### Pong!
-So, Pong! was a whole phenomenon. It was a shock to folks in the arcade business, primarily pinball at that time, that this simple collection of wires could generate so much revenue. This game 
-![[pong.png]]
+So, Pong! was a whole phenomenon. It was a shock to folks in the arcade business, primarily pinball at that time, that this simple collection of wires could generate so much revenue. This game offered a glimpse at what was about to happen with regard to the arcade movement. While this movement would crash and burn much like the home video game movement that started with the Magnavox Odyssey, it remains as a moment in time that we need to pay attention to for what it did do and what it neglected to do.
+![](pong.png)
 A thing that I at least find fascinating for this game is that it has no software. It is a collection of wires and circuits without any sort of software at all. It's hard to wrap your head around this now but given the above light gun games, they were essentially combining the two spaces into extremely (what we at the time would call simple) complex ways. Alan Allcorn designed the initial prototype and then the Magnavox Odyssey would release it for their system followed quickly by Atari releasing newer versions of it, getting sued by Magnavox, and then pushing their engineers to disconnect from Pong entirely. 
 
 So let's head to other spaces.
