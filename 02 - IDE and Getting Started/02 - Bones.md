@@ -9,8 +9,11 @@
 # <a id = "day2"></a>Day 2
 
 
-```
+```asm6502
     processor 6502
+    include "vcs.h"
+    include "macro.h"
+    include "xmacro.h"
     
 
     seg code

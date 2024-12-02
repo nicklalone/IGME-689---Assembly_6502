@@ -9,8 +9,10 @@
 ---------------- Table of Contents ---------------- 
 
 # <a id = "day1"></a>Day 1
+So we're writing code for a 50 year old console that is 4kb at most without memory banking. How hard can it be? Well, instead of writing game logic for a translator or compiler, we're essentially writing machine code directly to a chip set. This means that you're going to have to translate your game loop for the limits and then translate your translation for Assembly. You can also read the actual machine language should you wish.
 
-Getting Started
+
+
 IDEs and Ways to Code
 ## Stella
 Stella Debugger - https://stella-emu.github.io/docs/debugger.html
