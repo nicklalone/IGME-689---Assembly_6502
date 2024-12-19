@@ -32,7 +32,8 @@ Well, this first assignment has you reading *Racing the Beam* about Stella (the 
 With the Hugg book, this is a series of exercises and content that should help you with reference material when you're actually working. I've tried to arrange the class around the topics in this textbook. 
 
 An example response is this. I just wrote it and it is very stream of consciousness: 
-```I grew up in a home that mostly leaned in to video games. It was the 80s though, so my exposure to games was first a Magnavox pong machine we had for a tiny black and white television. We played Pong for hours, days, all the time. It is a weird thing to be able to do that at home. We had an arcade at the mall but we weren’t allowed to go because it the was early 80s and arcades were places of ill reupute at that point.
+```md
+I grew up in a home that mostly leaned in to video games. It was the 80s though, so my exposure to games was first a Magnavox pong machine we had for a tiny black and white television. We played Pong for hours, days, all the time. It is a weird thing to be able to do that at home. We had an arcade at the mall but we weren’t allowed to go because it the was early 80s and arcades were places of ill reupute at that point.
 
 In reading this, I’ve been astounded by just how much work went into this machine. Beginning with the pinball industry and building on this was super interesting. I’ve seen the Spacewar machine at the Strong and I’ve played it a few times over the years in Arcades. It’s also fascinating to see just how much of an impact what Atari did had on games as a whole.
 
