@@ -83,12 +83,12 @@ Speaking of, there is an enormous amount of content for the Atari 2600 on Github
 
 This course is also available for you to fork via Github so you can have the content you need. Our IDE, [8-bit Workshop](https://8bitworkshop.com/v3.11.0/) allows you to push everything you do to a private scratch space. Just follow the directions by clicking the hamburger menu and then go here: 
 
-![](8bitwork-git.png)
+![](/images/8bit/8bitwork-git.png)
 And it will walk you through everything you need. In this way, you can work on the code in your editor of choice, push and pull and publish as needed. Learning how to do this stuff is important as file maintenance is a very necessary skill for all game development projects and you can't just rely on a different IDE like Unity or Unreal to do it for you. 
 
 ### User Interface
 Let's walk through this user interface. We'll situate it below: 
-![](8bitwork-ide.png)
+![](/images/8bit/8bitwork-ide.png)
 So, let's take a tour from the top line and then Left to Right. 
 
 Menus and tools available to view. You'll see on the top bard what file you're working on followed by a number of "step" or "run to here" buttons. These are much the same as those of Stella. Below that, you'll see a list of files being used in the current file (dependencies as well as the actual file you're using). We will constantly use VCS.h and macro.h as they help provide some useful context for us in the modern era. 
