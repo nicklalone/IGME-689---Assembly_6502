@@ -2,7 +2,7 @@
 
 1. [Intro](#intro)
 2. [Assignments](#assignments)
-3. IDE and More
+3. [IDE and More](#idem)
 	1. [Stella](#stella)
 	2. [8-Bit Workshop](#8bws)
 	3. [Day 2](#day2)
@@ -48,6 +48,9 @@ Score attack is a constant feature of pinball and it wasn’t a surprise to see 
 It is more for you, than me. I want to force you to read and this is how I can do that. My apologies.
 
 With that said, let's head in to the IDE and operating environment. 
+
+# <a id="idem"></a>IDEs and More
+
 ## <a id="stella"></a>Stella
 Stella Debugger - https://stella-emu.github.io/docs/debugger.html
 ![](/images/StellaUI.png)
@@ -127,5 +130,9 @@ We won't use this a lot as we don't actually have assets to manage. However, it 
 # Terms to Remember
 At the end of each file, I intend to place a relevant list of things to remember, terms to note. We will begin them here. 
 
+**6502/8080**:
+**6507**:
+**6532/RIOT**:
+**TIA**:
 
 
