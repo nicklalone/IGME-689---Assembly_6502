@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 - IDE and Getting Started"
+              "title": "README"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02 - IDE and Getting Started/02 - Bones.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 02 - Bones"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -149,8 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -164,7 +163,20 @@
   },
   "active": "5ba5339bd0308bae",
   "lastOpenFiles": [
-    "Administration/banner.png",
+    "images/8bit/8bitwork-asset.png",
+    "images/38bit/8bitwork-symprof.png",
+    "images/38bit/8bitwork-scanline.png",
+    "images/38bit/8bitwork-memprobe.png",
+    "images/38bit/8bitwork-probelog.png",
+    "images/38bit/8bitwork-memmap.png",
+    "images/38bit/8bitwork-membrowse.png",
+    "images/38bit/8bitwork-ide.png",
+    "images/38bit/8bitwork-git.png",
+    "images/38bit/8bitwork-disas.png",
+    "images/38bit/8bitwork-debug.png",
+    "images/38bit",
+    "README.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "Administration/~$ - Syllabus.docx",
     "02 - IDE and Getting Started/02 - Bones.md",
     "Administration/Ads/ad3.pdf",
@@ -172,30 +184,18 @@
     "Administration/Ads/ad1.pdf",
     "Administration/Ads/ad2.pdf",
     "Administration/Ads",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "images/consoles/pong.png",
-    "images/nintendolightgun.png",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
     "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
     "03 - Playfields and Asymmetry/Combat Source.asm.md",
     "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
-    "IMG_9636.png",
     "Pasted.md",
-    "images/asymmetry.png",
     "IMG_9636.heic",
-    "images/consoles/2600plus.png",
-    "images/consoles/drivemobile.png",
-    "images/consoles/channelf.png",
-    "images/consoles/tennis42.png",
-    "images/consoles/spacewar.png",
-    "images/consoles/odyssey.png",
     "images/consoles",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
     "PPTs/~$01 - Day 1.pptx",
     "Source Code Examples/Adventure/Adventure.asm.md",
-    "Source Code Examples/Pac Man/PacMan4k/pacman4K_1_2 copy.asm",
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
@@ -208,7 +208,6 @@
     "09 - Intersecting 2/01 - Player Sprites.md",
     "08 - Intersecting/01 - Player Sprites 2.md",
     "08 - Intersecting/01 - Player Sprites.md",
-    "07 - Score Keeping/01 - Player Sprites 2.md",
-    "07 - Score Keeping/01 - Player Sprites.md"
+    "07 - Score Keeping/01 - Player Sprites 2.md"
   ]
 }
