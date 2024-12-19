@@ -1,19 +1,29 @@
 ---------------- Table of Contents ---------------- 
 
-1. [Welcome](#welcome)
-2. [Logistics](#logistics)
+1. [Intro](#intro)
+2. [Assignments](#assignments)
 3. [TLDR](#tldr)
 4. [Day 1](#day1)
 5. [Day 2](#day2)
 
 ---------------- Table of Contents ---------------- 
 
-# <a id = "day1"></a>Day 1
+# <a id = "intro"></a>Introduction
 So we're writing code for a 50 year old console that is 4kb at most without memory banking. How hard can it be? Well, instead of writing game logic for a translator or compiler, we're essentially writing machine code directly to a chip set. This means that you're going to have to translate your game loop for the limits and then translate your translation for Assembly. You can also read the actual machine language should you wish.
 
+It is a very weird way to code at the beginning. Structured programming allowing for things like stable programming languages wouldn't come until a bit later. And so, we're talking about the wild west here. Going back to this is a little awkward and even a bit maddening because there are no helpers
 
+IDEs and Ways to Code help us with our work. Televisions are no longer something to write around, but are automatically included as a coordinate system. Everything we make now is infinitely easier unless we're writing something like Dwarf Fortress or some game that pushes the limits of logic.
 
-IDEs and Ways to Code
+We're going to take a bit of a tour of tools now. Each of these pieces of technology are open source and free given just how long ago this console was live. They are all also mostly developed through the help and guidance of reserved words, built-in functions, and more. In Assembly, we have some of those things since it was the first language to simplify machine language, but we've built so much on that foundation. 
+
+If you'd like more of a history, head over here: https://archive.org/details/programsforelect00wilk or https://en.wikipedia.org/wiki/Assembly_language. we still use some Assembly in all software but it's small these days compared to what we're about to do. I hope y'all are ready to glimpse history and do some writing with it. 
+
+So let's take a tour. 
+
+# <a id="assignments"></a>Assignments
+It's week 2 so we're beginning assignments.
+
 ## Stella
 Stella Debugger - https://stella-emu.github.io/docs/debugger.html
 ![](/images/StellaUI.png)
