@@ -2,9 +2,10 @@
 
 1. [Intro](#intro)
 2. [Assignments](#assignments)
-3. [TLDR](#tldr)
-4. [Day 1](#day1)
-5. [Day 2](#day2)
+3. IDE and More
+	1. [Stella](#stella)
+	2. [8-Bit Workshop](#8bws)
+	3. [Day 2](#day2)
 
 ---------------- Table of Contents ---------------- 
 
@@ -22,9 +23,32 @@ If you'd like more of a history, head over here: https://archive.org/details/pro
 So let's take a tour. 
 
 # <a id="assignments"></a>Assignments
-It's week 2 so we're beginning assignments.
+It's week 2 so we're beginning assignments. The first assignment is that of simply reading. We will be reading the first 2 chapters of Racing the Beam as well as Chapter 1 of your main textbook. 
 
-## Stella
+I've asked for, "500 words" but this is just a number. What am I actually looking for?
+
+Well, this first assignment has you reading *Racing the Beam* about Stella (the Atari 2600's development codename) and Combat. It's about 42 pages and should take anyone around 30 minutes or so. 
+
+With the Hugg book, this is a series of exercises and content that should help you with reference material when you're actually working. I've tried to arrange the class around the topics in this textbook. 
+
+An example response is this. I just wrote it and it is very stream of consciousness: 
+```I grew up in a home that mostly leaned in to video games. It was the 80s though, so my exposure to games was first a Magnavox pong machine we had for a tiny black and white television. We played Pong for hours, days, all the time. It is a weird thing to be able to do that at home. We had an arcade at the mall but we weren’t allowed to go because it the was early 80s and arcades were places of ill reupute at that point.
+
+In reading this, I’ve been astounded by just how much work went into this machine. Beginning with the pinball industry and building on this was super interesting. I’ve seen the Spacewar machine at the Strong and I’ve played it a few times over the years in Arcades. It’s also fascinating to see just how much of an impact what Atari did had on games as a whole.
+
+One aspect of this console is that we see it now as primitive, as terrible, and yet in reading it, the idea that 128 bytes of RAM and 2k of ROM, later expanded to 4k is interesting when the Fairchild Channel F or Magnavox Odyssey are less than half the power of this behemoth. I’m also interested in the development of the RIOT chip and wonder just how much finagling happens with chipsets like they did with the 8080/6502/6507.
+
+I also love that I can buy a 6502 on Amazon for about $10-15 dollars or 6507 chips for even less. It is an enduring legacy for a chip to be used constantly for decades when the 486 infrastructure is harder to find. I am anxious to dig into this more.
+
+With regard to Combat, I have long been curious about the relationship between War and Video Games. We owe a lot of gaming to the machinery of war. To see this laid bare in Combat being the archetype for all other games on the system is certainly fascinating. More than that though, there’s some interesting consequences of bringing games home. On a single screen, you have the possibility of 2 people playing against each other in a symmetrical space, this was simple with pong or tennis for 2. However, it was more difficult at the time since the basis of a lot of arcade games was pinball games.
+
+Score attack is a constant feature of pinball and it wasn’t a surprise to see it in early video games. To see Combat become a prototype for what the Atari could do while simultaneously providing a canvas for what video games could be is fascinating.
+```
+
+It is more for you, than me. I want to force you to read and this is how I can do that. My apologies.
+
+With that said, let's head in to the IDE and operating environment. 
+## <a id="stella"></a>Stella
 Stella Debugger - https://stella-emu.github.io/docs/debugger.html
 ![](/images/StellaUI.png)
 **Upper Right** = RAM + location of the scan line and what cycle it's on. This is important as all your registers are there (PC, SP, A, X, Y, PS) and what is currently in them. We'll talk more about them when we get into [[Process Flags]] and [[Registers]]. In the case of the PS line, this is [Processor Status](http://www.6502.org/users/obelisk/6502/registers.html). We'll get into those soon but know CAPS = Negative, lower case = Positive.
@@ -47,7 +71,7 @@ One thing to note about how this debugger works. Mostly, we'll work backward as 
 
 Original Guide is at: https://atarihq.com/danb/files/stella.pdf
 
-## 8 Bit Workshop
+## <a id="8bws"></a>8-Bit Workshop
 We're going to be using [8-bit Workshop's IDE](https://8bitworkshop.com/v3.11.0/) for a lot of in-class demos and work so I don't have to figure out the legality of installing Stella or any of the other emulators for the Atari. It has everything you'll need to write, compile, and debug your code. It also has a variety of amazing features like Github Integration as well as being an IDE for just about all older systems including early Computers like the Apple ]\[+  and Commodore 64. So, it can be of use elsewhere which is something i'll try and make sure we do with most of our tools.
 
 I'm going to go through the IDE and the various tools that are available to us. For documentation, please refer to Hugg's growing documentation page: https://8bitworkshop.com/docs/docs.html
@@ -100,5 +124,8 @@ From the documentation, we learned that this tool, "Shows a list of symbols, wit
 From the documentation, we learned that this tool, "Parses assets (like bitmaps and palettes) and allows editing." But what does that mean?
 
 We won't use this a lot as we don't actually have assets to manage. However, it will sometimes show the memory allocation of named entities like missiles and balls that we'll be able to adjust manually. Over time, we might end up coming back to this depending on if I can figure out how to force assets to end up there.
-# Terms
+# Terms to Remember
+At the end of each file, I intend to place a relevant list of things to remember, terms to note. We will begin them here. 
+
+
 

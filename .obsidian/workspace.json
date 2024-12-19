@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - IDE and Getting Started/02 - Bones.md",
-                "mode": "preview",
+                "file": "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 - Bones"
+              "title": "01 - IDE and Getting Started"
             }
           }
         ]
@@ -164,13 +164,15 @@
   },
   "active": "5ba5339bd0308bae",
   "lastOpenFiles": [
+    "Administration/banner.png",
+    "Administration/~$ - Syllabus.docx",
+    "02 - IDE and Getting Started/02 - Bones.md",
     "Administration/Ads/ad3.pdf",
     "Background Readings/IEEE - Atari 2600 Retrospective.pdf",
     "Administration/Ads/ad1.pdf",
     "Administration/Ads/ad2.pdf",
     "Administration/Ads",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "02 - IDE and Getting Started/02 - Bones.md",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "images/consoles/pong.png",
@@ -194,8 +196,6 @@
     "PPTs/~$01 - Day 1.pptx",
     "Source Code Examples/Adventure/Adventure.asm.md",
     "Source Code Examples/Pac Man/PacMan4k/pacman4K_1_2 copy.asm",
-    "Source Code Examples/Pac Man/pacman4K_1_2.asm",
-    "Source Code Examples/Halo 2600/halo2600 - organized.asm",
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
