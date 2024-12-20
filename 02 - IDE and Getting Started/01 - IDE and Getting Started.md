@@ -130,9 +130,14 @@ We won't use this a lot as we don't actually have assets to manage. However, it 
 # Terms to Remember
 At the end of each file, I intend to place a relevant list of things to remember, terms to note. We will begin them here. 
 
-**6502/8080**:
-**6507**:
-**6532/RIOT**:
-**TIA**:
+1. **6502/8080**:
+2. **6507**:
+3. **6532/RIOT**:
+4. **TIA**:
+5. DASM:
+6. **Stella**:
+7. **Condition Flags**:
+8. **Scanline**:
+9. 
 
 
