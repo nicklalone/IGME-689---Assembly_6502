@@ -39,7 +39,7 @@ In this section, we''ll talk about the early attempts at games, early video game
 ### Early Attempts at Games
 The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by Christopher Strachy. This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a Checkers playing program from Arthur Samuel in 1959. While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
 
-![](/images/consoles/drivemobile.png)
+![](drivemobile.png)
 I should also note here that a certain important game company also got its start here. Nintendo's toy lines had evolved to include light gun technology similar to these early arcade games. This would become their entry into games soon after the popularity of this line: 
 ![](/images/nintendolightgun.png)
 #### Tennis for Two (1958)

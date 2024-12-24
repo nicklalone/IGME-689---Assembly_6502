@@ -1,5 +1,17 @@
 These files are mostly for me as I go around and look for good resources. While a lot of this stuff will be tangential, it's mostly for folks who want a lot more in depth information. 
 
+For this week, I was mostly concerned with learn how and why the machine works the way it works. I also wanted to begin to set up a variety of arguments related to having to adjust how the code you are writing is interacting with the hardware since you're essentially doing this directly. 
+
+I also wanted to find a few small things that would be mentioned now and come up later. For example, the Registers, the RIOT chip, and tiny bits.
+
+First, let's note some important files for where you'll type up your code. Here's some syntax highlighting for a variety of text.
+
+- Syntax highlight package for Visual Studio Code: [https://marketplace.visualstudio.com/items?itemName=chunkypixel.atari-dev-studio](https://marketplace.visualstudio.com/items?itemName=chunkypixel.atari-dev-studio)
+- Syntax highlight package for Notepad++: [https://github.com/tragicmuffin/6502-npp-syntax](https://github.com/tragicmuffin/6502-npp-syntax)
+- Syntax highlight package for Atom: [https://atom.io/packages/language-65asm](https://atom.io/packages/language-65asm)
+- Syntax highlight file for Vim: [https://www.vim.org/scripts/script.php?script_id=1314](https://www.vim.org/scripts/script.php?script_id=1314)
+- Syntax highlight package for Emacs: [http://www.tomseddon.plus.com/beeb/6502-mode.html](http://www.tomseddon.plus.com/beeb/6502-mode.html)
+
 [[Registers]] and [[Process Flags]]
 ## The Registers
 
