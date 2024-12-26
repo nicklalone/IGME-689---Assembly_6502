@@ -30,7 +30,7 @@ The game will be a ROM and is the central part of the class. The rest is going t
 
 I'll provide templates and files to edit for proper sizing.
 # <a id="bones"></a>Bones
-So, there are a bunch of things we need to do when we are starting a project. Since the console itself has no firmware, we have to take care of that stuff as we begin. 
+So, there are a bunch of things we need to do when we are starting a project. Since the console itself has no firmware, we have to take care of that stuff as we begin. I have taken most of this from the Pikuma course as well as your textbook. That it replicates the same error is not a mistake, we need to make errors to discuss parts that won't be able to be noticed unless the mistake is made. In fact, i'd guess the order of operations will come up and you won't know why despite telling you this. 
 
 First, we need to take into account our IDE and this will be a part of just about everythiing we do. We have to call into being our processor and assemblers.
 
@@ -53,11 +53,53 @@ Next up, we have to tell the hardware where our memory addresses begin. This is 
 In this case, we're pointing to the very bottom of the stack. I found this useful slide that gives us the range of the memory: https://www.slideshare.net/slideshow/atari-2600programming/23550414
 
 ![](/images/memorymap.png)
+Or, we can see this mapped out for us in 8bitworkshop's memory map: 
 
-And I should probably mention here that you're going to need some way to shift between binary, hexadecimal, literal values. We're going to use a converter to keep track unless you want me to drill this knowledge into you.
+![](/images/memmap.png)
+
+
+And I should probably mention here that you're going to need some way to shift between binary, hexadecimal, literal values. We're going to use a converter to keep track unless you want me to drill this knowledge into you and I don't honestly know if we have time. 
+
+```asm6502
+Start:
+    sei             ; Disable interrupts
+    cld             ; Disable the BCD decimal math mode
+    ldx #$FF        ; Loads the X register with #$FF
+    txs             ; Transfer the X register to the (S)tack pointer
+```
+
+Next, we have to really get started. We've disabled interrupts (because the 6507 doesn't have that pin but we still have to account for it in 6502.) We're also disabling Binary Coded Decimals so we can write numbers without having to worry about them being used as numbbers: http://www.6502.org/tutorials/decimal_mode.html you can read more about it here.
+
+The easiest description is probably from that page: 
+
+	A byte has 256 possible values, ranging, in hex, from $00 to $FF. These values may represent numbers, characters, or other data. The most common way of representing numbers is as a binary number (or more specifically, an unsigned binary integer), where $00 to $FF represents 0 to 255. In BCD, a byte represents a number from 0 to 99, where $00 to $09 represents 0 to 9, $10 to $19 represents 10 to 19, and so on, all the way up to $90 to $99, which represents 90 to 99. In other words, the upper digit (0 to 9) of the BCD number is stored in the upper 4 bits of the byte, and the lower digit is stored in the lower 4 bits. These 100 values are called valid BCD numbers. The other 156 possible values of a byte (i.e. where either or both hex digits are A to F) are called invalid BCD numbers. By contrast, all 256 possible values of a byte are valid binary numbers.
+
+So we've now gotten all our ducks in a row. Let's start thinking about some things. We need to start pushing information through the hardware. We will do something simple to begin like call into being a couple of  : 
+
+```asm6502
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Clear the Page Zero region ($00 to $FF)
+; Meaning the entire RAM and also the entire TIA registers
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    lda #0          ; A = 0
+    ldx #$FF        ; X = #$FF
+MemLoop:            ; Why is this wrong? 
+    sta $0,X        ; Store the value of A inside memory address $0 + X
+    dex             ; X--
+    bne MemLoop     ; Loop until X is equal to zero (z-flag is set)
+```
 
 
 
+```asm6502
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Fill the ROM size to exactly 4KB
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    org $FFFC
+    .word Start     ; Reset vector at $FFFC (where the program starts)
+    .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
+```
 
 All together, it looks like this: 
 ```asm6502
@@ -97,6 +139,7 @@ MemLoop:            ; Why is this wrong?
 ```
 
 # Terms
+- Registers
 - Directives
 - Labels
 - OpCodes

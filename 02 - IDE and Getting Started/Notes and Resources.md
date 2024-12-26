@@ -162,6 +162,12 @@ And that was the main reason we manually went to ROM address $FFFC and loaded tw
 And just as a final note, the 6507 CPU of the Atari VCS has **no** IRQ pin and cannot perform interrupt requests. Therefore, the IRQ interrupt vector at $FFFE will never be used by the VCS.
 
 ![[literal.png]]
-![[Pasted image 20241114161107.png]]Just to put things into context and give you an example, if we are _reading_ the instructions from the cartridge ROM, the R/W pin of the processor will be set to "reading" from the address. On the other hand, if we are performing an STA (store accumulator) to a RAM memory address, then the R/W pin will be set to "writing" to that address.
+
+
+Just to put things into context and give you an example, if we are _reading_ the instructions from the cartridge ROM, the R/W pin of the processor will be set to "reading" from the address. On the other hand, if we are performing an STA (store accumulator) to a RAM memory address, then the R/W pin will be set to "writing" to that address.
 
 https://www.rapidtables.com/convert/number/decimal-to-hex.html?x=82
+
+https://www.atarimax.com/freenet/freenet_material/12.AtariLibrary/2.MiscellaneousTextFiles/showarticle.php?129
+
+https://problemkaputt.de/2k6specs.htm
