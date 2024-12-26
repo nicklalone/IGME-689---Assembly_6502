@@ -135,7 +135,92 @@ MemLoop:            ; Why is this wrong?
     org $FFFC
     .word Start     ; Reset vector at $FFFC (where the program starts)
     .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
+```
 
+But all this does is create a silly black screen. What would it look like to use this a bit more? And what exactly is that macro.h? Well, it may surprise you but our START code could actually be a bit cleaner. We can use some super in-depth knowledge of how Assembly works in order to lower the total space required by the commands and we can do this during compiling. This is what MACRO.H does, it helps us squeeze more space out of the ROMs. So, let's take a look. 
+
+```asm6502
+
+; Assembler should use basic 6502 instructions
+	processor 6502
+	
+; Include files for Atari 2600 constants and handy macro routines
+	include "vcs.h"
+	include "macro.h"
+	
+; Here we're going to introduce the 6502 (the CPU) and
+; the TIA (the chip that generates the video signal).
+; There's no frame buffer, so you have to program the TIA
+; before (or during) each scanline.
+; We're just going to initialize the system and put some
+; color on the TV.
+
+; 4K Atari 2600 ROMs usually start at address $F000
+	org  $f000
+
+; Let's define a variable to hold the starting color
+; at memory address $81
+BGColor	equ $81
+
+; The CLEAN_START macro zeroes RAM and registers
+Start	CLEAN_START
+
+NextFrame
+; Enable VBLANK (disable output)
+	lda #2
+        sta VBLANK
+; At the beginning of the frame we set the VSYNC bit...
+	lda #2
+	sta VSYNC
+; And hold it on for 3 scanlines...
+	sta WSYNC
+	sta WSYNC
+	sta WSYNC
+        
+; Now we turn VSYNC off.
+	lda #0
+	sta VSYNC
+
+; Now we need 37 lines of VBLANK...
+	ldx #37
+LVBlank	sta WSYNC	; accessing WSYNC stops the CPU until next scanline
+	dex		; decrement X
+	bne LVBlank	; loop until X == 0
+
+; Re-enable output (disable VBLANK)
+	lda #0
+        
+        sta VBLANK
+; 192 scanlines are visible
+; We'll draw some rainbows
+	ldx #192
+	lda BGColor	; load the background color out of RAM
+ScanLoop
+	adc #1		; add 1 to the current background color in A
+	sta COLUBK	; set the background color
+	sta WSYNC	; WSYNC doesn't care what value is stored
+	dex
+	bne ScanLoop
+
+; Enable VBLANK again
+	lda #2
+        sta VBLANK
+; 30 lines of overscan to complete the frame
+	ldx #30
+LVOver	sta WSYNC
+	dex
+	bne LVOver
+	
+; The next frame will start with current color value - 1
+; to get a downwards scrolling effect
+	dec BGColor
+
+; Go back and do another frame
+	jmp NextFrame
+	
+	org $fffc
+	.word Start
+	.word Start
 ```
 
 # Terms

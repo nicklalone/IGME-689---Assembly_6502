@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Administration/Source Code Assignment.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Source Code Assignment"
+              "title": "01 - Playfields"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Administration/Source Code Assignment.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Source Code Assignment"
+              "title": "Backlinks for 01 - Playfields"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Administration/Source Code Assignment.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Source Code Assignment"
+              "title": "Outgoing links from 01 - Playfields"
             }
           },
           {
@@ -164,22 +164,27 @@
   },
   "active": "bd46156bc40cbdf1",
   "lastOpenFiles": [
+    "images/resolution.png",
+    "images/processor.png",
+    "images/mobo.jpg",
+    "images/macvsas.png",
+    "images/TIA-1.jpg",
+    "images/TIA.jpg",
+    "images/consoles/TIA.jpg",
+    "images/StellaUI.png",
+    "images/MOS6502.png",
+    "images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif",
+    "images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
+    "images/Atari 2600 Motherboard Schematic.tif",
+    "images/6507.gif",
+    "images/2600_wires.jpg",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
     "Administration/Reading Assignments.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "Administration/Source Code Assignment.md",
     "02 - IDE and Getting Started/Notes and Resources.md",
     "Background Readings/Atari 2600 Specifications.pdf",
-    "02 - IDE and Getting Started/02 - Bones.md",
-    "images/memmap.png",
-    "images/memorymap.png",
-    "images/literal.png",
-    "images/drivemobile.png",
-    "images/8bit/8bitwork-memmap.png",
-    "images/8bit/8bitwork-membrowse.png",
-    "images/8bit/8bitwork-memprobe.png",
-    "images/8bit/8bitwork-probelog.png",
-    "images/8bit/8bitwork-scanline.png",
-    "images/8bit/8bitwork-symprof.png",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "README.md",
     "images/8bit",
     "images/38bit",
@@ -187,16 +192,12 @@
     "Administration/Ads/ad3.pdf",
     "Background Readings/IEEE - Atari 2600 Retrospective.pdf",
     "Administration/Ads/ad1.pdf",
-    "Administration/Ads/ad2.pdf",
-    "Administration/Ads",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
     "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
     "03 - Playfields and Asymmetry/Combat Source.asm.md",
     "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
     "Pasted.md",
-    "IMG_9636.heic",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
     "Source Code Examples/Adventure/Adventure.asm.md",
     "05 - Player Input/01 - Player Sprites.md",
@@ -208,7 +209,6 @@
     "10 - Lives/01 - Player Sprites 2.md",
     "10 - Lives/01 - Player Sprites.md",
     "09 - Intersecting 2/01 - Player Sprites 2.md",
-    "09 - Intersecting 2/01 - Player Sprites.md",
-    "08 - Intersecting/01 - Player Sprites 2.md"
+    "09 - Intersecting 2/01 - Player Sprites.md"
   ]
 }

@@ -13,6 +13,7 @@
 So let's think about this image again: 
 ![](/images/resolution.png)
 
+We're going to take a piece of a tutorial from a youtuber named 8blit and work on it a bit. 
 
 ```asm6502
 	processor 6502		; We need to call into being the 6502 on our IDE.
