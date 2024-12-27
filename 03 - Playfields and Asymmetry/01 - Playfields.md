@@ -13,8 +13,7 @@
 So let's think about this image again: 
 ![](/images/resolution.png)
 
-We messed with this a little because of last week where we literally set up our frame and started making 3 pixel high lines and made a gentle rainbow. This is all background and so we will be moving from background to playfield in this lesson. 
-
+We messed with this a little because of last week where we literally set up our frame and started making 3 scanlines and made a gentle rainbow. This is all background and so we will be moving from background to playfield in this lesson. 
 # <a id="background"></a>Background
 The background dictates the color of certain things. For example. Consider how colors in the 2600 work. We know that it can display a total of 128 colors and they can be displayed at the same time but below each other or in each individual scanline. 
 
