@@ -6,6 +6,8 @@
 	1. [Stella](#stella)
 	2. [8-Bit Workshop](#8bws)
 	3. [Day 2](#day2)
+4. [Modes](#modes)
+5. [Terms](#terms)
 
 ---------------- Table of Contents ---------------- 
 
@@ -127,7 +129,19 @@ From the documentation, we learned that this tool, "Shows a list of symbols, wit
 From the documentation, we learned that this tool, "Parses assets (like bitmaps and palettes) and allows editing." But what does that mean?
 
 We won't use this a lot as we don't actually have assets to manage. However, it will sometimes show the memory allocation of named entities like missiles and balls that we'll be able to adjust manually. Over time, we might end up coming back to this depending on if I can figure out how to force assets to end up there.
-# Terms to Remember
+# <a id="modes"></a>Modes
+For the most part, we're going to have to be able to move from literal to memory addresses to hexadecimal to binary all the time. 
+![Pasted image 20241226151322.png](/images/modes.png)
+We can also use literal hexadecimal as well. For example, what is: `LDA #$80`? 
+
+This requires us to have understood what number we're looking for. We can use a chart to answer this this:
+
+![hexchart.png](/images/hexchart.png)
+While this chart is useful, you can always keep this tab open in your browser for easier reference: https://www.rapidtables.com/convert/number/hex-to-decimal.html.
+
+Mention signed and unsigned here. 
+
+# <a id="terms"></a>Terms to Remember
 At the end of each file, I intend to place a relevant list of things to remember, terms to note. We will begin them here. 
 
 1. **6502/8080**:

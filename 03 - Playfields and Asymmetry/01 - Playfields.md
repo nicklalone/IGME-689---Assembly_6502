@@ -13,6 +13,49 @@
 So let's think about this image again: 
 ![](/images/resolution.png)
 
+We messed with this a little because of last week where we literally set up our frame and started making 3 pixel high lines and made a gentle rainbow. This is all background and so we will be moving from background to playfield in this lesson. 
+
+# <a id="background"></a>Background
+The background dictates the color of certain things. For example. Consider how colors in the 2600 work. We know that it can display a total of 128 colors and they can be displayed at the same time but below each other or in each individual scanline. 
+
+This allows for our rainbow to appear though we were not going with all 128! Next, each scanline can only have 4 colors displayed at any given time. 
+
+Finally, it is important to remember that some stuff shares colors. So: 
+* Playfield and Ball 
+* Player0 and missile0 
+* Player1 and missile1 
+
+This leaves us with 7 distinct game elements. Those elements are: 
+1. Background 
+2. Playfield 
+3. Player 1 
+4. Player 2 
+5. Missile 1 
+6. Missile 2 
+7. Ball
+
+While this doesn't seem like a lot, we got to keep all of this in mind while we work on our games. For example, while the playfield and ball have the same color, we need to be mindful of player0 and player1's color difference, especially as it relates to both the background and playfield. Should these things match, you may have some issues! 
+
+First, let's mess a bit with some background colors. 
+
+```asm6502
+	processor 6502
+	include "vcs.h"
+    include "macro.h"
+    include "xmacro.h"
+START: CLEAN_START
+
+lda #$1E
+sta COLUBK
+
+jmp START
+
+org $FFFC
+.word START
+.word START
+
+```
+
 We're going to take a piece of a tutorial from a youtuber named 8blit and work on it a bit. 
 
 ```asm6502
@@ -23,12 +66,12 @@ We're going to take a piece of a tutorial from a youtuber named 8blit and work o
 
 PFCOLOR equ #$F9 
 
-; ------------------------- Start of main segment ---------------------------------
+; --------------- Start of main segment ------------------
 
 				seg	main
 				org 	$F000
 
-; ------------------------- Start of program execution ----------------------------
+; -------------- Start of program execution -------------
 
 reset: 	ldx #0 		; Clear RAM and all TIA registers
 	lda #0 

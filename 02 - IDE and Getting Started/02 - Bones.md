@@ -3,7 +3,9 @@
 1. [Welcome](#welcome)
 2. [Logistics](#logistics)
 3. [Bones](#bones)
-4. [Terms](#terms)
+	1. [An Error?](#anerr)
+4. [More Bones](#morebones)
+5. [Terms](#terms)
 
 ---------------- Table of Contents ---------------- 
 # <a id = "welcoime"></a>Welcome
@@ -74,7 +76,16 @@ The easiest description is probably from that page:
 
 	A byte has 256 possible values, ranging, in hex, from $00 to $FF. These values may represent numbers, characters, or other data. The most common way of representing numbers is as a binary number (or more specifically, an unsigned binary integer), where $00 to $FF represents 0 to 255. In BCD, a byte represents a number from 0 to 99, where $00 to $09 represents 0 to 9, $10 to $19 represents 10 to 19, and so on, all the way up to $90 to $99, which represents 90 to 99. In other words, the upper digit (0 to 9) of the BCD number is stored in the upper 4 bits of the byte, and the lower digit is stored in the lower 4 bits. These 100 values are called valid BCD numbers. The other 156 possible values of a byte (i.e. where either or both hex digits are A to F) are called invalid BCD numbers. By contrast, all 256 possible values of a byte are valid binary numbers.
 
-So we've now gotten all our ducks in a row. Let's start thinking about some things. We need to start pushing information through the hardware. We will do something simple to begin like call into being a couple of  : 
+So we've now gotten all our ducks in a row. Let's start thinking about some things. We need to start pushing information through the hardware. We will do something simple to begin like call into being a couple of registers (x and a). So, we'll first load something into a with `lda #0` or, "Load into A the number 0." Next, we have to do something with X since we did `ldx #$FF`. This is the X register's maximum value. And so, we want to start to lower it, why?
+
+Well, the model for this is relatively simple. I'll call it out in a list: 
+1. Load 0 into A
+2. Load #$FF into X.
+3. Create a loop called `MemLoop`
+4. Inside that memloop, store 0 and add to it, the current value of X. 
+5. then decrement X by 1 and restart the loop.
+
+For X, then, it would look like `#$FF` and then after decrementing, `#$FE` and then after decrementing `#$FD` and so on and so forth until it gets to the lowest value. 
 
 ```asm6502
 
@@ -90,7 +101,7 @@ MemLoop:            ; Why is this wrong?
     bne MemLoop     ; Loop until X is equal to zero (z-flag is set)
 ```
 
-
+We then make sure to tell the assembler to make the space for our code exactly 4k and stop operations. 
 
 ```asm6502
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -101,7 +112,9 @@ MemLoop:            ; Why is this wrong?
     .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
 ```
 
-All together, it looks like this: 
+So, it does...stuff? I guess? If we look at the 8bit workshop, we can see it is basically filling a single scanline with nothing. 
+
+All together, it looks like this and you can copy and paste this into 8bitworkshop and click around. 
 ```asm6502
     processor 6502
     include "vcs.h"
@@ -137,10 +150,58 @@ MemLoop:            ; Why is this wrong?
     .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
 ```
 
-But all this does is create a silly black screen. What would it look like to use this a bit more? And what exactly is that macro.h? Well, it may surprise you but our START code could actually be a bit cleaner. We can use some super in-depth knowledge of how Assembly works in order to lower the total space required by the commands and we can do this during compiling. This is what MACRO.H does, it helps us squeeze more space out of the ROMs. So, let's take a look. 
+But all this does is create a silly black screen. Or does it?
 
+If we look at the memory browser, it does seem like something is happening but ....what? It's just a black screen?
+
+So is it working right? Let's take a look at it in process. Instead of `#$FF` let's set X to `08`.
+
+It seems like it is kind of, but it could be better because essentially we're not counting down from FF but from FE. What does that mean? 
+## <a id="anerr"></a>An Error?
 ```asm6502
+    processor 6502
+    include "vcs.h"
+    include "macro.h"
+    include "xmacro.h"
+    
+    seg code
+    org $F000       ; Define the code origin at $F000
 
+Start:
+    sei             ; Disable interrupts
+    cld             ; Disable the BCD decimal math mode
+    ldx #$FF        ; Loads the X register with #$FF
+    txs             ; Transfer the X register to the (S)tack pointer
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Clear the Page Zero region ($00 to $FF)
+; Meaning the entire RAM and also the entire TIA registers
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    lda #0          ; A = 0
+    ldx #$FF        ; X = #$FF
+    sta $FF         ; Store $FF is zeroed before the loop starts.
+    
+MemLoop:            ; Why is this wrong? 
+    dex             ; X--
+    sta $0,X        ; Store the value of A inside memory address $0 + X
+    bne MemLoop     ; Loop until X is equal to zero (z-flag is set)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Fill the ROM size to exactly 4KB
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    org $FFFC
+    .word Start     ; Reset vector at $FFFC (where the program starts)
+    .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
+```
+
+So essentially, we didn't actually load the EXACT memory position that we wanted and this resulted in being slightly off by 1. As a result, we have a potentially life threatening bug that is creeping into our code at the start. What this code does is highlight some of the finickyness of Assembly but also tells us that folks have been fighting over if programming languages should begin with 0 or 1 for ages. 
+
+But it's still a black screen!
+
+What would it look like to use this a bit more? And what exactly is that macro.h? Well, it may surprise you but our START code could actually be a bit cleaner. We can use some super in-depth knowledge of how Assembly works in order to lower the total space required by the commands and we can do this during compiling. This is what MACRO.H does, it helps us squeeze more space out of the ROMs. So, let's take a look and get some more bones together.
+# <a id="morebones"></a>More Bones
+So, we have a script that's kinda boring, hurray? I guess? No, it's boring. Let's DO something more. This is a script from your textbook from Hugg. Let's do some work with it. In particular, I want to point out something from the intro. 
+```asm6502
 ; Assembler should use basic 6502 instructions
 	processor 6502
 	
@@ -164,14 +225,77 @@ BGColor	equ $81
 
 ; The CLEAN_START macro zeroes RAM and registers
 Start	CLEAN_START
+```
 
-NextFrame
+So, we've basically done what we've written for the basic code block; however, at the end instead of writing: 
+```asm6502
+Start:
+    sei             ; Disable interrupts
+    cld             ; Disable the BCD decimal math mode
+    ldx #$FF        ; Loads the X register with #$FF
+    txs             ; Transfer the X register to the (S)tack pointer
+```
+
+We write `Start     CLEAN_START`. What is that? This is where `macro.h` comes in! If we head over to the `macro.h` webpage at: https://github.com/munsie/dasm/blob/master/machines/atari2600/macro.h we can see that `CLEAN_START` is meant to `set machine to known state on startup`. But what does that mean?
+
+Well, `CLEAN_START` looks like this:
+```asm6502
+; CLEAN_START
+; Original author: Andrew Davie
+; Standardised start-up code, clears stack, all TIA registers and RAM to 0
+; Sets stack pointer to $FF, and all registers to 0
+; Sets decimal mode off, sets interrupt flag (kind of un-necessary)
+; Use as very first section of code on boot (ie: at reset)
+; Code written to minimise total ROM usage - uses weird 6502 knowledge :)
+
+            MAC CLEAN_START
+                sei
+                cld
+            
+                ldx #0
+                txa
+                tay
+.CLEAR_STACK    dex
+                txs
+                pha
+                bne .CLEAR_STACK     ; SP=$FF, X = A = Y = 0
+
+            ENDM
+```
+
+So, `CLEAN_START` essentially does what we need to to clear everything out and reset the machine to a new state. Note also that it clears everything, gets us ready to start counting, and essentially clears up that example from earlier. We won't dig too much into it and you can begin either way. 
+
+```asm6502
+; Assembler should use basic 6502 instructions
+	processor 6502
+	
+; Include files for Atari 2600 constants and handy macro routines
+	include "vcs.h"
+	include "macro.h"
+	
+; Here we're going to introduce the 6502 (the CPU) and the TIA (the chip that generates the video signal).
+; There's no frame buffer, so you have to program the TIA before (or during) each scanline. 
+; What we'll do here is create a rainbow pattern by having the machine draw a color for about 3 lines.
+
+; 4K Atari 2600 ROMs usually start at address $F000
+	org  $f000
+
+; Let's define a variable to hold the starting color
+; at memory address $81
+BGColor	equ $81 ; this is our first variable!
+
+; The CLEAN_START macro zeroes RAM and registers
+Start	CLEAN_START ; check out macro.h for this. 
+
+NextFrame ; here we're defining a loop that is essentially creating a frame. 
 ; Enable VBLANK (disable output)
 	lda #2
-        sta VBLANK
+        sta VBLANK ; VBLANK basically says that we need to reset the scanline
+        
 ; At the beginning of the frame we set the VSYNC bit...
 	lda #2
 	sta VSYNC
+        
 ; And hold it on for 3 scanlines...
 	sta WSYNC
 	sta WSYNC
@@ -189,8 +313,8 @@ LVBlank	sta WSYNC	; accessing WSYNC stops the CPU until next scanline
 
 ; Re-enable output (disable VBLANK)
 	lda #0
-        
         sta VBLANK
+        
 ; 192 scanlines are visible
 ; We'll draw some rainbows
 	ldx #192
@@ -205,6 +329,7 @@ ScanLoop
 ; Enable VBLANK again
 	lda #2
         sta VBLANK
+
 ; 30 lines of overscan to complete the frame
 	ldx #30
 LVOver	sta WSYNC
@@ -213,10 +338,11 @@ LVOver	sta WSYNC
 	
 ; The next frame will start with current color value - 1
 ; to get a downwards scrolling effect
-	dec BGColor
+	dec BGColor ; dec basically means, "Decrease by 1" and so 
 
-; Go back and do another frame
-	jmp NextFrame
+; Go back and do another frame. If we don't do this, we will just keep overlaying the same frame again and again.
+	jmp NextFrame        
+
 	
 	org $fffc
 	.word Start

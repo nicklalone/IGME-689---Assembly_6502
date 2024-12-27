@@ -171,3 +171,79 @@ https://www.rapidtables.com/convert/number/decimal-to-hex.html?x=82
 https://www.atarimax.com/freenet/freenet_material/12.AtariLibrary/2.MiscellaneousTextFiles/showarticle.php?129
 
 https://problemkaputt.de/2k6specs.htm
+
+We are starting to write our first lines of code in _6502 assembly language_, therefore I think it is important that we speak a little bit about some important code terminology and code layout.
+
+**Directives**
+
+_Directives_ are commands that we can send to the _assembler_ to do things like locating code in memory or inserting raw bytes into the ROM. Directives should be always indented to the right, and some programmers also like to add a "**.**" at the beginning of these directives. Some programmers use _tabs_, other _spaces_; I personally like to use 4 spaces as you just saw in the previous lectures. One example of a directive is the .org ("origin"), that we used to tell the assembler to put the code starting at memory location $F000, which is the start of the VCS ROM cartridge area:     
+
+```
+    .org $F000
+```
+
+  
+
+**Labels**
+
+_Labels_ are aligned to the far left of the code, and usually have a "**:**" at the end. The label is just something you use to organize your code and make it easier to read. The assembler will translate the label _into an address_. For example, the example below is a label that is basically just an alias to a memory address in ROM:
+
+```
+MemLoop:
+```
+
+  
+
+**OpCodes**
+
+_Opcodes_ are the instructions that the processor will run, and they are indented like the directives. In this example, _JMP_ is the opcode that tells the processor to jump to the _MemLoop_ label:
+
+```
+    jmp MemLoop
+```
+
+  
+
+**Operands**
+
+_Operands_ are additional information for the opcode. 6502 opcodes can have between one and three operands. In this example the _#$80_ is the operand:
+
+```
+    lda #$80
+```
+
+  
+
+**Comments**
+
+_Comments_ can be added to your code to help you understand what the code is doing. We do not need a comment on every line, but since this is a course for beginners, I will go out of my way to try adding comments to every line (at least in the beginning lectures). Comments start with a "**;**" and are completely ignored by the assembler. They can be put anywhere horizontally and will persist until the end of the line.
+
+```
+    lda #$80 ; load the value $80 into the accumulator
+```
+
+  
+
+I will probably use these names a lot in the following lectures, so I thought it was important to stop and make sure we all know what I mean when I start saying things like "opcodes", "labels", or "directives."
+
+  
+
+And just before we resume our course, let me also clarify one common point of confusion for many students, which are the _interrupt vectors_ at the end of our ROM.
+
+  
+
+**Interrupt Vectors**
+
+The addresses we added in ROM position $FFFC and $FFFE are called “_Interrupt Vectors_”, and they instruct the 6502 CPU where to jump to when certain events happen. For example, the 6502 processor was designed to always look at position $FFFC when it is **reset**.
+
+![](https://files.cdn.thinkific.com/file_uploads/167815/images/086/db2/5c0/6507-reset.jpg)
+
+When we power-up or reset the Atari 2600, it sets the **RESET pin** on the 6507 processor. The 6507 processor is designed to always initialize and load the **PC** register (program counter) with the address that is in inside memory positions $FFFC and $FFFD (two bytes).
+
+That makes sense, right? Since the **PC** register is what dictates what is the next 16-bit ROM address to be executed by the CPU, loading the PC register with the value that is in $FFFC/$FFFD is all that is needed for the 6502 processor to load its _reset address_.
+
+Keep in mind that this is not something we can change! This is how the 6502 and 6507 processors were designed and manufactured. They will always look at the reset interrupt vector at memory positions $FFFC and $FFFD.
+
+And that was the main reason we manually went to ROM address $FFFC and loaded two bytes there. Those are the two bytes that tell the processor what is the address that we should execute when the Atari 2600 starts (or resets). In our case, we are using the label **Start**, which is just an alias to ROM address $F000 at the start of our ROM. And that is all it takes for the Atari 2600 to know where to begin its execution. The Atari 2600 will power up and poke the reset pin of the 6507 processor; the CPU will read from memory position $FFFC and $FFFD and set the Program Counter register to **Start** (same as $F000). And the 6502 is now ready to begin executing our code!
+
+And just as a final note, the 6507 CPU of the Atari VCS has **no** IRQ pin and cannot perform interrupt requests. Therefore, the IRQ interrupt vector at $FFFE will never be used by the VCS.

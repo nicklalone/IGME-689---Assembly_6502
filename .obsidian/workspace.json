@@ -164,6 +164,12 @@
   },
   "active": "bd46156bc40cbdf1",
   "lastOpenFiles": [
+    "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
+    "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
+    "02 - IDE and Getting Started/00 - Notes and Resources.md",
+    "Background Readings/example asms",
+    "images/hexchart.png",
+    "images/modes.png",
     "images/resolution.png",
     "images/processor.png",
     "images/mobo.jpg",
@@ -172,12 +178,9 @@
     "images/TIA.jpg",
     "images/consoles/TIA.jpg",
     "images/StellaUI.png",
-    "images/MOS6502.png",
     "images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif",
     "images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
     "images/Atari 2600 Motherboard Schematic.tif",
-    "images/6507.gif",
-    "images/2600_wires.jpg",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
     "02 - IDE and Getting Started/02 - Bones.md",
     "Administration/Reading Assignments.md",
@@ -191,7 +194,6 @@
     "Administration/~$ - Syllabus.docx",
     "Administration/Ads/ad3.pdf",
     "Background Readings/IEEE - Atari 2600 Retrospective.pdf",
-    "Administration/Ads/ad1.pdf",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
@@ -207,8 +209,6 @@
     "11 - Polish/01 - Player Sprites 2.md",
     "11 - Polish/01 - Player Sprites.md",
     "10 - Lives/01 - Player Sprites 2.md",
-    "10 - Lives/01 - Player Sprites.md",
-    "09 - Intersecting 2/01 - Player Sprites 2.md",
-    "09 - Intersecting 2/01 - Player Sprites.md"
+    "10 - Lives/01 - Player Sprites.md"
   ]
 }
