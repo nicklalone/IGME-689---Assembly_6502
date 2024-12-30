@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "share",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +73,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -145,12 +146,12 @@
               "title": "Outline of 02 - Bones"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -164,8 +165,15 @@
   },
   "active": "bd46156bc40cbdf1",
   "lastOpenFiles": [
-    "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
     "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
+    "03 - Playfields and Asymmetry/Combat Source.asm.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "PPTs/~$01 - Day 1.pptx",
+    "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
+    "images/timing.png",
+    "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
     "02 - IDE and Getting Started/00 - Notes and Resources.md",
     "Background Readings/example asms",
     "images/hexchart.png",
@@ -177,14 +185,10 @@
     "images/TIA-1.jpg",
     "images/TIA.jpg",
     "images/consoles/TIA.jpg",
-    "images/StellaUI.png",
     "images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif",
     "images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
     "images/Atari 2600 Motherboard Schematic.tif",
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
-    "02 - IDE and Getting Started/02 - Bones.md",
     "Administration/Reading Assignments.md",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "Administration/Source Code Assignment.md",
     "02 - IDE and Getting Started/Notes and Resources.md",
     "Background Readings/Atari 2600 Specifications.pdf",
@@ -193,11 +197,8 @@
     "images/38bit",
     "Administration/~$ - Syllabus.docx",
     "Administration/Ads/ad3.pdf",
-    "Background Readings/IEEE - Atari 2600 Retrospective.pdf",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
-    "03 - Playfields and Asymmetry/Combat Source.asm.md",
     "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
     "Pasted.md",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
@@ -208,7 +209,6 @@
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
     "11 - Polish/01 - Player Sprites 2.md",
     "11 - Polish/01 - Player Sprites.md",
-    "10 - Lives/01 - Player Sprites 2.md",
-    "10 - Lives/01 - Player Sprites.md"
+    "10 - Lives/01 - Player Sprites 2.md"
   ]
 }

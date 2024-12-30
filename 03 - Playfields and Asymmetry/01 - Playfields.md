@@ -1,16 +1,48 @@
 ---------------- Table of Contents ---------------- 
 
-1. [Welcome](#welcome)
-2. [Logistics](#logistics)
-3. [TLDR](#tldr)
-4. [Day 1](#day1)
-5. [Day 2](#day2)
+1. [Admin](#admin)
+2. [Assignments](#assignment)
+3. [Getting Started](#getstart)
+4. [Backgrounds](#background)
+	1. [Background Code Example](#backcode)
+5. [Playfields](#playfields)
+	1. [Playfield Code Example](#playfield)
+6. [Combined](#combo)
 
 ---------------- Table of Contents ---------------- 
 
-# <a id = "day1"></a>Day 1
+# <a id='admin'></a>Admin
+I have gone through most of the reading assignments. We are starting coding this week, let's take an inventory of coding capacity in class and who might be more helpful.
+# <a id='assignment'></a>Assignment
+This week, we're doing Source Code reading. This will probably be insanely difficult at first but I just want you to try your best. As we move forward, it will get easier as you'll be exposed to more stuff. 
+
+The assignment is simple, I want the labels that check for missile collision with walls and the playfield and I want you to tell me how they work, what the logic is, and why. 
+# <a id = "getstart"></a>Getting Started and Admin
+
+The Atari 2600 has a chip that processes game logic and a Television Interface Adapter that sends that logic to the television screen. It literally paints the screen in real time as the processor goes through the logic. This is why we tie everything to our frame as we count the various scanlines. 
+
+There are a variety of things we need to keep track of here. First, let's think about this: 
+
+The background dictates the color of certain things. For example. Consider how colors in the 2600 work. We know that it can display a total of 128 colors and they can be displayed at the same time but below each other or in each individual scanline. 
+
+This allows for our rainbow to appear though we were not going with all 128! Next, each scanline can only have 4 colors displayed at any given time. 
+
+Finally, it is important to remember that some stuff shares colors. So, these share colors: 
+* Playfield and Ball 
+* Player0 and missile0 
+* Player1 and missile1 
+
+And to that end, we have 7 distinct game elements. Those elements are: 
+1. Background 
+2. Playfield 
+3. Player 1 
+4. Player 2 
+5. Missile 1 
+6. Missile 2 
+7. Ball
 
 So let's think about this image again: 
+
 ![](/images/resolution.png)
 
 We messed with this a little because of last week where we literally set up our frame and started making 3 scanlines and made a gentle rainbow. This is all background and so we will be moving from background to playfield in this lesson. 
@@ -54,6 +86,8 @@ org $FFFC
 .word START
 
 ```
+
+# <a id='playfield'></a>Playfield
 
 We're going to take a piece of a tutorial from a youtuber named 8blit and work on it a bit. 
 
@@ -150,4 +184,4 @@ irqvectors:
 ; -------------------------- End of main segment ----------------------------------
 ```
 
-# <a id = "day2"></a>Day 2
+

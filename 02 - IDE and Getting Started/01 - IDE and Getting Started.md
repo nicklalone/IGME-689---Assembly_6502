@@ -8,6 +8,7 @@
 	3. [Day 2](#day2)
 4. [Modes](#modes)
 5. [Terms](#terms)
+6. [OpCodes](#opcodes)
 
 ---------------- Table of Contents ---------------- 
 
@@ -23,11 +24,12 @@ We're going to take a bit of a tour of tools now. Each of these pieces of techno
 If you'd like more of a history, head over here: https://archive.org/details/programsforelect00wilk or https://en.wikipedia.org/wiki/Assembly_language. we still use some Assembly in all software but it's small these days compared to what we're about to do. I hope y'all are ready to glimpse history and do some writing with it. 
 
 So let's take a tour. 
-
 # <a id="assignments"></a>Assignments
 It's week 2 so we're beginning assignments. The first assignment is that of simply reading. We will be reading the first 2 chapters of Racing the Beam as well as Chapter 1 of your main textbook. 
 
-I've asked for, "500 words" but this is just a number. What am I actually looking for?
+You might ask, "WHY?1? GOD I HATE READING." And you've answered your own question. STEM students tend to eschew reading while those in the humanities try to carry humanity's knowledge forward with fewer and fewer resources. This is a course that is applied history. It contains a lot of ways of thinking that do not exist anymore. It contains a lot of ways of designing that do not exist anymore. As a result, we have to read about them to glimpse at those things. 
+
+Now,. i've asked for, "500 words" but this is just a number. If you write to the number, it's a pointless exercise. i'm asking you to learn, not asking you to scratch 500 words for fun. Bbut still, you all are trained to think in terms of doing *exactly* what I ask. So in that vein, what am I actually looking for?
 
 Well, this first assignment has you reading *Racing the Beam* about Stella (the Atari 2600's development codename) and Combat. It's about 42 pages and should take anyone around 30 minutes or so. 
 
@@ -74,8 +76,9 @@ The more important thing, or perhaps the thing that is often missing in literall
 
 One thing to note about how this debugger works. Mostly, we'll work backward as we begin at 0 and work up to maximum. So, look at the RAM and how the lower right is FF whereas the upper left is 08. 
 
-Original Guide is at: https://atarihq.com/danb/files/stella.pdf
+Original Stella development guide is at: https://atarihq.com/danb/files/stella.pdf.
 
+The above document is a retyped version of the original.
 ## <a id="8bws"></a>8-Bit Workshop
 We're going to be using [8-bit Workshop's IDE](https://8bitworkshop.com/v3.11.0/) for a lot of in-class demos and work so I don't have to figure out the legality of installing Stella or any of the other emulators for the Atari. It has everything you'll need to write, compile, and debug your code. It also has a variety of amazing features like Github Integration as well as being an IDE for just about all older systems including early Computers like the Apple ]\[+  and Commodore 64. So, it can be of use elsewhere which is something i'll try and make sure we do with most of our tools.
 
@@ -130,7 +133,9 @@ From the documentation, we learned that this tool, "Parses assets (like bitmaps 
 
 We won't use this a lot as we don't actually have assets to manage. However, it will sometimes show the memory allocation of named entities like missiles and balls that we'll be able to adjust manually. Over time, we might end up coming back to this depending on if I can figure out how to force assets to end up there.
 # <a id="modes"></a>Modes
-For the most part, we're going to have to be able to move from literal to memory addresses to hexadecimal to binary all the time. 
+For the most part, we're going to have to be able to move from literal to memory addresses to hexadecimal to binary all the time. We'll also sometimes work with machine code, especially when we're debugging. 
+
+As a result, we need to get intimately aware of how all of that functions within our particular game. There are 3 distinct modes: 
 ![Pasted image 20241226151322.png](/images/modes.png)
 We can also use literal hexadecimal as well. For example, what is: `LDA #$80`? 
 
@@ -139,8 +144,8 @@ This requires us to have understood what number we're looking for. We can use a 
 ![hexchart.png](/images/hexchart.png)
 While this chart is useful, you can always keep this tab open in your browser for easier reference: https://www.rapidtables.com/convert/number/hex-to-decimal.html.
 
-Mention signed and unsigned here. 
-
+### Signed vs Unsigned Bytes
+On page 3 of the Hugg book, you'll see a discussion of signed vs unsigned bytes or positive vs negative numbers. For the moment, we're going to assume that all values are unsigned but at some point, we're going to have to get into the two's compliment space.
 # <a id="terms"></a>Terms to Remember
 At the end of each file, I intend to place a relevant list of things to remember, terms to note. We will begin them here. 
 
@@ -148,10 +153,17 @@ At the end of each file, I intend to place a relevant list of things to remember
 2. **6507**:
 3. **6532/RIOT**:
 4. **TIA**:
-5. DASM:
-6. **Stella**:
-7. **Condition Flags**:
-8. **Scanline**:
-9. 
+5. PIA:
+6. DASM:
+7. **Stella**:
+8. **Condition Flags**:
+9. **Scanline**:
+10. 
+# <a id='opcodes'></a>OpCodes
+Over the course of this class, we'll be talking about OpCodes or precursors to things like Reserved Words or Built-in Functions (e.g. print(), etc.)
 
+Rather than list them out, i'll include this section in our various daily notes, links to OpCodes:  
+* https://www.atarimax.com/jindroush.atari.org/aopc.html
+* https://www.atariarchives.org/creativeatari/Display_List_Opcodes.php
+* https://user.xmission.com/~trevin/atari/6502_insn_set.html
 

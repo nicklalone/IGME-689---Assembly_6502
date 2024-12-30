@@ -1,14 +1,18 @@
 ---------------- Table of Contents ---------------- 
 
-1. [Welcome](#welcome)
-2. [Logistics](#logistics)
-3. [TLDR](#tldr)
-4. [Day 1](#day1)
-5. [Day 2](#day2)
+1. [Admin](#admin)
+2. [Getting Started](#getstart)
+3. [Hello World](#helloworld)
+4. [Hell World](#hellworld)
 
 ---------------- Table of Contents ---------------- 
 
-# <a id = "day1"></a>Day 1
+# <a id = "Admin"></a>Admin
 Hello World and the Playfield
 
-# <a id = "day2"></a>Day 2
+# <a id='getstart'></a>Getting Started
+![](/images/timing.png)
+
+# <a id = "helloworld"></a>Hello, World
+
+# <a id="hellworld"></a>Hell World

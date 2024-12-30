@@ -1,4 +1,4 @@
-These files are mostly for me as I go around and look for good resources. While a lot of this stuff will be tangential, it's mostly for folks who want a lot more in depth information. 
+These files are mostly for me as I go around and look for good resources. While a lot of this stuff will be tangential, it's mostly for folks who want a lot more in depth information. It's also help for me because i'll be teaching this stuff and so I have to learn a new thing in order to teach it and that's a very different level of learning to just do stuff.
 
 https://forums.atariage.com/topic/169128-what-is-the-atari-2600-screen-resolution/
 	This is an excellent question, but a complicated one to answer, because the answer can vary, and it can also depend on the terminology used. I'll keep my explanations as simple as I can while still being reasonably accurate and complete! [![:)](https://forums.atariage.com/uploads/emoticons/atariage_icon_smile.gif)](https://forums.atariage.com/uploads/emoticons/atariage_icon_smile.gif "Enlarge image")
