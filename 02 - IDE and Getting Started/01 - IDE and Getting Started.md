@@ -11,7 +11,6 @@
 6. [OpCodes](#opcodes)
 
 ---------------- Table of Contents ---------------- 
-
 # <a id = "intro"></a>Introduction
 So we're writing code for a 50 year old console that is 4kb at most without memory banking. How hard can it be? Well, instead of writing game logic for a translator or compiler, we're essentially writing machine code directly to a chip set. This means that you're going to have to translate your game loop for the limits and then translate your translation for Assembly. You can also read the actual machine language should you wish.
 
@@ -52,7 +51,6 @@ An example response is this. I just wrote it and it is very stream of consciousn
 It is more for you, than me. I want to force you to read and this is how I can do that. My apologies.
 
 With that said, let's head in to the IDE and operating environment. 
-
 # <a id="idem"></a>IDEs and More
 
 ## <a id="stella"></a>Stella

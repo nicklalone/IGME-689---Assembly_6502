@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "share",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -165,6 +165,7 @@
   },
   "active": "bd46156bc40cbdf1",
   "lastOpenFiles": [
+    "Registers.md",
     "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
     "03 - Playfields and Asymmetry/Combat Source.asm.md",
     "02 - IDE and Getting Started/02 - Bones.md",

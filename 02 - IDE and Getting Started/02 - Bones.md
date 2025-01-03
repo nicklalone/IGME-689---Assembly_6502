@@ -35,6 +35,8 @@ I'll provide templates and files to edit for proper sizing.
 # <a id="bones"></a>Bones
 So, there are a bunch of things we need to do when we are starting a project. Since the console itself has no firmware, we have to take care of that stuff as we begin. I have taken most of this from the Pikuma course as well as your textbook. That it replicates the same error is not a mistake, we need to make errors to discuss parts that won't be able to be noticed unless the mistake is made. In fact, i'd guess the order of operations will come up and you won't know why despite telling you this. 
 
+If you want to play around with op-codes and what they do, you can use: https://skilldrick.github.io/easy6502/ to muck about.
+
 First, we need to take into account our IDE and this will be a part of just about everythiing we do. We have to call into being our processor and assemblers.
 
 ```asm6502
@@ -57,7 +59,6 @@ In this case, we're pointing to the very bottom of the stack. I found this usefu
 
 ![](/images/memorymap.png)
 Or, we can see this mapped out for us in 8bitworkshop's memory map: 
-
 ![](/images/memmap.png)
 
 And I should probably mention here that you're going to need some way to shift between binary, hexadecimal, literal values. We're going to use a converter to keep track unless you want me to drill this knowledge into you and I don't honestly know if we have time. 
@@ -539,10 +540,24 @@ I like this bit because the author comments everything to a ridiculous degree. F
 
 And there we go, our first day coding!
 # Terms
-- Registers
+- Registers - X, and Y. A is commonly used for arithmetic, whereas X and Y is used for counting.
 - Directives
 - Labels
 - OpCodes
+	- Many of these will be covered here: 
+		- http://www.6502.org/tutorials/6502opcodes.html#WRAP
+	- In this lesson: 
+		- SEG - Pseudo op-code that designates the start of ROM
+		- ORG - Using this, we set the origin of code in memory.
+		- SEI - Interrupt code is disabled. We don't have the ability to interrupt because it's not a pin on the 6507 but we do it anyway.
+		- CLD - Using this, we shut off decimal mode.
+		- LDX - We use this to store things in the X-register.
+		- TXS
+		- LDA
+		- STA
+		- DEX
+		- BNE
+		- .word
 - Operands
 - Comments
 - Interrupt Vectors
@@ -551,4 +566,4 @@ And there we go, our first day coding!
 	- Absolute Mode (Zero Page)
 	- Literal Hexadecimal
 
-Let's talk about HEX
+
