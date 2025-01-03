@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "37ac3a6a8bdc4d7f",
+        "id": "acbfc44d48e3de13",
         "type": "tabs",
         "children": [
           {
-            "id": "26a125ff55b24108",
+            "id": "825a152c21ed4e0c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -159,8 +159,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "26a125ff55b24108",
+  "active": "825a152c21ed4e0c",
   "lastOpenFiles": [
+    "2025-01-03.md",
+    "Source Code Examples/Adventure/Adventure.asm.md",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
     "Other Examples/Toledo Text/README.md",
     "Other Examples/Toledo Text/atari_palette_pal.png",
@@ -200,12 +202,10 @@
     "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
     "Pasted.md",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
-    "Source Code Examples/Adventure/Adventure.asm.md",
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
-    "11 - Polish/01 - Player Sprites 2.md",
-    "11 - Polish/01 - Player Sprites.md"
+    "11 - Polish/01 - Player Sprites 2.md"
   ]
 }

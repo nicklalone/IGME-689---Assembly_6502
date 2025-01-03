@@ -11,7 +11,7 @@
 
 ---------------- Table of Contents ---------------- 
 # <a id='admin'></a>Admin
-I have gone through most of the reading assignments. We are starting coding this week, let's take an inventory of coding capacity in class and who might be more helpful.
+I have gone through most of the reading assignments. We are starting coding this week, let's take an inventory of coding capacity in class and who might be more helpful. lkjhl
 # <a id='assignment'></a>Assignment
 This week, we're doing Source Code reading. This will probably be insanely difficult at first but I just want you to try your best. As we move forward, it will get easier as you'll be exposed to more stuff. 
 
@@ -76,7 +76,6 @@ First, let's mess a bit with some background colors. Let's go ahead and set up o
         
 	seg	main
 	org 	$F000
-
     
 START: CLEAN_START
 
@@ -91,7 +90,8 @@ We're going to take a piece of a tutorial from a youtuber named 8blit and work o
 
 ```asm6502
 	processor 6502		; We need to call into being the 6502 on our IDE.
-	include	 "vcs.h"	
+	include	 "vcs.h"
+    include "macro.h"
 
 ; For this task, we're going to actually use some memory to mess around with the TIA PF0, PF1, PF2, and CTLRPF Registers. Along the way, we'll explore the issues of overscanning and safe areas to draw in the safe visual area of the screen with the the recommended number of VBLANK's
 
@@ -104,10 +104,9 @@ PFCOLOR equ #$F9
 
 ; ----- Start of program execution -----
 
-reset: 	ldx 	#0 		; Clear RAM and all TIA registers
-	lda 	#0 
+start CLEAN_START
   
-clear:	sta 	0,x 	; $0 to $7F (0-127) reserved OS page zero, $80 to $FF (128-255) user zero page ram.
+clear:	sta 	0,X 	; $0 to $7F (0-127) reserved OS page zero, $80 to $FF (128-255) user zero page ram.
 	inx 
 	bne 	clear
 
@@ -176,10 +175,9 @@ overscan:
 
 	org 	$FFFA
 	
-irqvectors:
-	.word 	reset         	; NMI
-	.word 	reset         	; RESET
-	.word 	reset         	; IRQ
+	.word 	start         	; NMI
+	.word 	start         	; RESET
+	.word 	start         	; IRQ
 
 ; ----- End of main segment -----
 ```
