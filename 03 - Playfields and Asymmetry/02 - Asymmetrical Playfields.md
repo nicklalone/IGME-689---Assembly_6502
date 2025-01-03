@@ -6,10 +6,9 @@
 4. [Hell World](#hellworld)
 
 ---------------- Table of Contents ---------------- 
-
+as
 # <a id = "Admin"></a>Admin
 Hello World and the Playfield
-
 # <a id='getstart'></a>Getting Started
 ![](/images/timing.png)
 

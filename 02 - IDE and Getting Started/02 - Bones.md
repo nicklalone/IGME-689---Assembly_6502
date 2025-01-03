@@ -71,11 +71,13 @@ Start:
     txs             ; Transfer the X register to the (S)tack pointer
 ```
 
-Next, we have to really get started. We've disabled interrupts (because the 6507 doesn't have that pin but we still have to account for it in 6502.) We're also disabling Binary Coded Decimals so we can write numbers without having to worry about them being used as numbbers: http://www.6502.org/tutorials/decimal_mode.html you can read more about it here.
+Next, we have to really get started. We've disabled interrupts (because the 6507 doesn't have that pin but we still have to account for it in 6502.) We're also disabling Binary Coded Decimals so we can write numbers without having to worry about them being used as numbers: http://www.6502.org/tutorials/decimal_mode.html you can read more about it here.
 
 The easiest description is probably from that page: 
 
 	A byte has 256 possible values, ranging, in hex, from $00 to $FF. These values may represent numbers, characters, or other data. The most common way of representing numbers is as a binary number (or more specifically, an unsigned binary integer), where $00 to $FF represents 0 to 255. In BCD, a byte represents a number from 0 to 99, where $00 to $09 represents 0 to 9, $10 to $19 represents 10 to 19, and so on, all the way up to $90 to $99, which represents 90 to 99. In other words, the upper digit (0 to 9) of the BCD number is stored in the upper 4 bits of the byte, and the lower digit is stored in the lower 4 bits. These 100 values are called valid BCD numbers. The other 156 possible values of a byte (i.e. where either or both hex digits are A to F) are called invalid BCD numbers. By contrast, all 256 possible values of a byte are valid binary numbers.
+
+There will be times when we need to do math, and that's fine. We will do that when we get there in a couple weeks. For now, we'll mostly just work with `BNE` or `Branch if Not Equal` and `DEC` or `Decrement`. You may find this a weird concept given this particular code but accumulators are inherently numeric entities.
 
 So we've now gotten all our ducks in a row. Let's start thinking about some things. We need to start pushing information through the hardware. We will do something simple to begin like call into being a couple of registers (x and a). So, we'll first load something into a with `lda #0` or, "Load into A the number 0." Next, we have to do something with X since we did `ldx #$FF`. This is the X register's maximum value. And so, we want to start to lower it, why?
 
@@ -96,7 +98,7 @@ For X, then, it would look like `#$FF` and then after decrementing, `#$FE` and t
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     lda #0          ; A = 0
     ldx #$FF        ; X = #$FF
-MemLoop:            ; Why is this wrong? 
+MemLoop:            ; 
     sta $0,X        ; Store the value of A inside memory address $0 + X
     dex             ; X--
     bne MemLoop     ; Loop until X is equal to zero (z-flag is set)
@@ -138,7 +140,7 @@ Start:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     lda #0          ; A = 0
     ldx #$FF        ; X = #$FF
-MemLoop:            ; Why is this wrong? 
+MemLoop:            ; 
     sta $0,X        ; Store the value of A inside memory address $0 + X
     dex             ; X--
     bne MemLoop     ; Loop until X is equal to zero (z-flag is set)
@@ -184,7 +186,7 @@ Start:
     
 MemLoop:            ; Why is this wrong? 
     dex             ; X--
-    sta $0,X        ; Store the value of A inside memory address $0 + X
+    sta $0,X        ; Store the value of A inside memory address $0 + current value of X
     bne MemLoop     ; Loop until X is equal to zero (z-flag is set)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
