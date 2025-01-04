@@ -161,6 +161,9 @@
   },
   "active": "825a152c21ed4e0c",
   "lastOpenFiles": [
+    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "images/Combat-Screen.png",
+    "images/colorhexmap.jpg",
     "2025-01-03.md",
     "Source Code Examples/Adventure/Adventure.asm.md",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
@@ -185,8 +188,6 @@
     "images/resolution.png",
     "images/processor.png",
     "images/mobo.jpg",
-    "images/macvsas.png",
-    "images/TIA-1.jpg",
     "images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif",
     "images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
     "images/Atari 2600 Motherboard Schematic.tif",
@@ -205,7 +206,6 @@
     "05 - Player Input/01 - Player Sprites.md",
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
-    "11 - Polish/01 - Player Sprites 2.md"
+    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md"
   ]
 }

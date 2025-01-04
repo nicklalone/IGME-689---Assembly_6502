@@ -267,6 +267,96 @@ This is where `macro.h` comes in! If we head over to the `macro.h` webpage at: h
 
 So, `CLEAN_START` essentially does what we need to to clear everything out and reset the machine to a new state. Note also that it clears everything, gets us ready to start counting, and essentially clears up that example from earlier. We won't dig too much into it and you can begin either way. 
 
+We're going to set up 2 ways of thinking about this. First, we'll simply subtract from BG Colors and make a rainbow. Then we're going to load `COLUBK` into the accumulator and have some fun.
+
+```asm6502
+	PROCESSOR 6502
+        INCLUDE "vcs.h"
+        INCLUDE "macro.h"
+        INCLUDE "xmacro.h"
+        
+        seg code
+        org $F000
+        
+Start	CLEAN_START
+
+;```````````````````````````````
+;	Start new Frame
+;```````````````````````````````
+
+NextFrame: 
+	lda %00000010	; We need to load something in our accumulator and this bit is what activates it.
+        sta VBLANK	; Turn on VBLANK
+        sta VSYNC	; Turn on VSYNC
+        
+;```````````````````````````````
+;	We need 3 lines of VSYNC to start our frame.
+;```````````````````````````````
+
+	sta WSYNC
+        sta WSYNC
+        sta WSYNC
+        
+        lda #0		; Deactivate the accumulator and in doing that, we now have the ability to turn off VSYNC
+        sta VSYNC	; Turn off VSYNC
+        
+        ldx #$0E
+        stx COLUBK 
+        
+;```````````````````````````````
+;	We need to now output 37 Scanlines to get to the drawable part of the screen.
+;```````````````````````````````
+
+	ldx #37		; Literally the number 37
+
+LoopVBlank:
+	sta WSYNC	; hit Wsync and wait for the next scanline.
+        dex
+        bne LoopVBlank
+
+	lda #0
+        sta VBLANK
+
+;```````````````````````````````
+;	Will now start doing stuff with the visible screen. We have 192 scanlines. This is sometimes called our kernal.
+;```````````````````````````````
+        ldx #192	; counter for 192 scanlines
+
+LoopVis: 		; We will keep drawing 192 colors so we need to loop and decrement
+	stx COLUBK	; Set the background color
+        sta WSYNC	; wait for the next scanline
+        dex 		; x--
+        bne LoopVis	;  Loop while X!=0
+        
+
+;```````````````````````````````
+;	Output 30 more lines for our Overscan period.
+;```````````````````````````````
+
+	lda #2		; hit and turn on VBLANK again
+        sta VBLANK
+        
+        ldx #30		; Counter for 30 scanlines
+LoOver: 
+	sta WSYNC	; Wait for next Scanline
+        dex
+        bne LoOver	; Loop while X!=0
+
+	jmp NextFrame
+        
+;```````````````````````````````
+;	Complete ROM size to 4k
+;`````````
+
+	org $FFFC
+        .word Start
+        .word Start
+
+        
+```
+
+Now let's see about loading it into the accumulator.
+
 ```asm6502
 ; Assembler should use basic 6502 instructions
 	processor 6502
@@ -299,9 +389,9 @@ NextFrame ; here we're defining a loop that is essentially creating a frame.
 	sta VSYNC
         
 ; And hold it on for 3 scanlines...
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
+	sta WSYNC	;wait for the next scanline
+	sta WSYNC	;wait for the next scanline
+	sta WSYNC	;wait for the next scanline
         
 ; Now we turn VSYNC off.
 	lda #0
@@ -315,37 +405,38 @@ LVBlank	sta WSYNC	; accessing WSYNC stops the CPU until next scanline
 
 ; Re-enable output (disable VBLANK)
 	lda #0
-        sta VBLANK
+	sta VBLANK
         
 ; 192 scanlines are visible
 ; We'll draw some rainbows
 	ldx #192
-	lda BGColor	; load the background color out of RAM
+	lda BGColor	; load the BGColor into the accumulator.
 ScanLoop
-	adc #1		; add 1 to the current background color in A
-	sta COLUBK	; set the background color
-	sta WSYNC	; WSYNC doesn't care what value is stored
-	dex
-	bne ScanLoop
+	adc #1		; add 1 to BGColor in A
+	sta COLUBK	; set the background color as the current value of A
+	sta WSYNC	; wait for the next scanline
+	dex		; move down 1 scanline
+	bne ScanLoop	; Continue looping until x == 0 or while x != 0
 
 ; Enable VBLANK again
-	lda #2
-        sta VBLANK
+	lda #2		; Remember, we're turning on the accumulator again
+        sta VBLANK	; And turning on VBlank
 
 ; 30 lines of overscan to complete the frame
-	ldx #30
+	ldx #30		; Then we have to load 30 into x to accompodate overscan.
 LVOver	sta WSYNC
 	dex
 	bne LVOver
 	
 ; The next frame will start with current color value - 1
 ; to get a downwards scrolling effect
-	dec BGColor ; dec basically means, "Decrease by 1" and so 
+	dec BGColor ; dec basically means, "Decrease by 1" and so and with the next frame, we begin again.
 
 ; Go back and do another frame. If we don't do this, we will just keep overlaying the same frame again and again.
 	jmp NextFrame        
 
-	
+
+;  And we finish up by making sure our file is exactly 4k.
 	org $fffc
 	.word Start
 	.word Start

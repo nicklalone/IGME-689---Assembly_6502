@@ -13,6 +13,8 @@ First, let's note some important files for where you'll type up your code. Here'
 - Syntax highlight package for Emacs: [http://www.tomseddon.plus.com/beeb/6502-mode.html](http://www.tomseddon.plus.com/beeb/6502-mode.html)
 
 [[Registers]] and [[Process Flags]]
+
+https://www.masswerk.at/rc2018/04/ - This blog chronicles someone's working on a game for a contest.
 ## The Registers
 
 The 6502 has only a small number of registers compared to other processor of the same era. This makes it especially challenging to program as algorithms must make efficient use of both registers and memory.

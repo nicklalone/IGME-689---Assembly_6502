@@ -11,7 +11,6 @@ as
 Hello World and the Playfield
 # <a id='getstart'></a>Getting Started
 ![](/images/timing.png)
-
 # <a id = "helloworld"></a>Hello, World
 ```asm6502
 ;
@@ -69,6 +68,7 @@ Scanline:
     tay             ;   For division by two we use (A-only) right-shift
     lda Phrase,y    ; "Phrase,Y" = mem(Phrase+Y) (Y-th address after Phrase)
     sta PF1         ; Put the value on PF bits 4-11 (0-3 is PF0, 12-15 is PF2)
+    
 ScanlineEnd:
     sta WSYNC       ; Wait for scanline end
     inx             ; Increase counter; repeat untill we got all kernel scanlines
