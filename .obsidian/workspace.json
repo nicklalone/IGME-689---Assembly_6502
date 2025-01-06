@@ -1,48 +1,20 @@
 {
   "main": {
-    "id": "2fc5cf0df464c928",
+    "id": "e145068a16814473",
     "type": "split",
     "children": [
       {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        "id": "acbfc44d48e3de13",
+        "id": "7170ab478af3a1b2",
         "type": "tabs",
         "children": [
           {
-            "id": "825a152c21ed4e0c",
+            "id": "d7f2a188da8766f3",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {},
               "icon": "lucide-file",
               "title": "New tab"
-=======
-        "id": "365096eb1ac24773",
-        "type": "tabs",
-        "children": [
-          {
-=======
-        "id": "365096eb1ac24773",
-        "type": "tabs",
-        "children": [
-          {
->>>>>>> Stashed changes
-            "id": "2ea3062f492da80d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "01 - Player Sprites"
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             }
           }
         ]
@@ -51,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "9bed14ccd1ada4f7",
+    "id": "1bf116dfd156dcba",
     "type": "split",
     "children": [
       {
-        "id": "3ca8eb65718184ab",
+        "id": "38b01be512dcd67b",
         "type": "tabs",
         "children": [
           {
-            "id": "cb0ada1fc762006b",
+            "id": "74e33594488c1d09",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -71,7 +43,7 @@
             }
           },
           {
-            "id": "f4b41701de6b02ef",
+            "id": "8e2278229da21030",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -88,7 +60,7 @@
             }
           },
           {
-            "id": "599f567a5069e0ce",
+            "id": "a264a0b88473c866",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -97,28 +69,26 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
     "width": 300
   },
   "right": {
-    "id": "31bfe3f8703ed748",
+    "id": "397e7571a6c001f6",
     "type": "split",
     "children": [
       {
-        "id": "3b3bc4b1dc44b34e",
+        "id": "f2867f6850c26d48",
         "type": "tabs",
         "children": [
           {
-            "id": "70f9f5378af5389c",
+            "id": "670f010ed248eec3",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,25 +98,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 01 - Playfields"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "f1349003849594db",
+            "id": "2fbda428a4a3bd9a",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 01 - Playfields"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "43b9e22f2a0b586d",
+            "id": "8e3e1f78f970126e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -159,22 +128,20 @@
             }
           },
           {
-            "id": "39c47f22fa2d5bcc",
+            "id": "6ff6999f4bf149b4",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "02 - IDE and Getting Started/02 - Bones.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of 02 - Bones"
+              "title": "Outline"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
@@ -187,140 +154,6 @@
       "command-palette:Open command palette": false
     }
   },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  "active": "825a152c21ed4e0c",
-  "lastOpenFiles": [
-    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
-    "images/Combat-Screen.png",
-    "images/colorhexmap.jpg",
-    "2025-01-03.md",
-    "Source Code Examples/Adventure/Adventure.asm.md",
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
-=======
-  "active": "2ea3062f492da80d",
-  "lastOpenFiles": [
-    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
-=======
-  "active": "2ea3062f492da80d",
-  "lastOpenFiles": [
-    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
->>>>>>> Stashed changes
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
-    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-    "02 - IDE and Getting Started/02 - Bones.md",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
-    "images/Combat-Screen.png",
-    "Registers.md",
-    "2025-01-03.md",
-    "images/colorhexmap.jpg",
-    "02 - IDE and Getting Started/00 - Notes and Resources.md",
-    "02 - IDE and Getting Started/Combat Source.asm.md",
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-    "Other Examples/Toledo Text/README.md",
-    "Other Examples/Toledo Text/atari_palette_pal.png",
-    "Other Examples/Toledo Text/atari_palette.png",
-    "Other Examples/Toledo Text",
-    "Other Examples",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    "Registers.md",
-    "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
-    "03 - Playfields and Asymmetry/Combat Source.asm.md",
-    "02 - IDE and Getting Started/02 - Bones.md",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "PPTs/~$01 - Day 1.pptx",
-    "03 - Playfields and Asymmetry/02 - Asymmetrical Playfields.md",
-    "images/timing.png",
-    "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
-    "02 - IDE and Getting Started/00 - Notes and Resources.md",
-    "Background Readings/example asms",
-    "images/hexchart.png",
-    "images/modes.png",
-    "images/resolution.png",
-    "images/processor.png",
-    "images/mobo.jpg",
-    "images/Atari 2600A Motherboard Schematic - Rev 16 and up.tif",
-    "images/Atari 2600A Motherboard Schematic - Rev 1-13.tif",
-    "images/Atari 2600 Motherboard Schematic.tif",
-    "Administration/Reading Assignments.md",
-    "Administration/Source Code Assignment.md",
-    "02 - IDE and Getting Started/Notes and Resources.md",
-    "Background Readings/Atari 2600 Specifications.pdf",
-    "README.md",
-    "images/8bit",
-    "images/38bit",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
-    "Pasted.md",
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
-    "05 - Player Input/01 - Player Sprites.md",
-    "05 - Player Input/02 - Hello World Attacks.md",
-    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md"
-=======
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
-    "images/timing.png",
-    "images/Pasted image 20241227123030.png",
-    "Pasted image 20241227123030.png",
-    "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
-    "Background Readings/example asms/BallDemo.asm",
-    "Background Readings/example asms",
-    "Background Readings/example asms for reference/BallDemo.asm",
-    "Background Readings/example asms for reference",
-    "images/hexchart.png",
-    "images/modes.png",
-    "images/resolution.png",
-    "Background Readings/Atari 2600 Specifications.pdf",
-    "images/8bit",
-    "images/38bit",
-    "Administration/Ads/banner.psd",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "Administration/Source Code Assignment.md",
-    "Administration/Reading Assignments.md",
-    "03 - Playfields and Asymmetry/Combat Source.asm.md",
-    "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
-    "Pasted.md",
-    "Source Code Examples/Adventure/Adventure.asm.md",
-    "05 - Player Input/01 - Player Sprites.md",
-    "05 - Player Input/02 - Hello World Attacks.md",
-    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
-    "11 - Polish/01 - Player Sprites 2.md"
->>>>>>> Stashed changes
-=======
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
-    "images/timing.png",
-    "images/Pasted image 20241227123030.png",
-    "Pasted image 20241227123030.png",
-    "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
-    "Background Readings/example asms/BallDemo.asm",
-    "Background Readings/example asms",
-    "Background Readings/example asms for reference/BallDemo.asm",
-    "Background Readings/example asms for reference",
-    "images/hexchart.png",
-    "images/modes.png",
-    "images/resolution.png",
-    "Background Readings/Atari 2600 Specifications.pdf",
-    "images/8bit",
-    "images/38bit",
-    "Administration/Ads/banner.psd",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "Administration/Source Code Assignment.md",
-    "Administration/Reading Assignments.md",
-    "03 - Playfields and Asymmetry/Combat Source.asm.md",
-    "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
-    "Pasted.md",
-    "Source Code Examples/Adventure/Adventure.asm.md",
-    "05 - Player Input/01 - Player Sprites.md",
-    "05 - Player Input/02 - Hello World Attacks.md",
-    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
-    "11 - Polish/01 - Player Sprites 2.md"
->>>>>>> Stashed changes
-  ]
+  "active": "d7f2a188da8766f3",
+  "lastOpenFiles": []
 }
