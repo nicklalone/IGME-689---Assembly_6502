@@ -4,6 +4,7 @@
     "type": "split",
     "children": [
       {
+<<<<<<< Updated upstream
         "id": "acbfc44d48e3de13",
         "type": "tabs",
         "children": [
@@ -15,6 +16,23 @@
               "state": {},
               "icon": "lucide-file",
               "title": "New tab"
+=======
+        "id": "365096eb1ac24773",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2ea3062f492da80d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01 - Player Sprites"
+>>>>>>> Stashed changes
             }
           }
         ]
@@ -159,6 +177,7 @@
       "command-palette:Open command palette": false
     }
   },
+<<<<<<< Updated upstream
   "active": "825a152c21ed4e0c",
   "lastOpenFiles": [
     "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
@@ -167,11 +186,29 @@
     "2025-01-03.md",
     "Source Code Examples/Adventure/Adventure.asm.md",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
+=======
+  "active": "2ea3062f492da80d",
+  "lastOpenFiles": [
+    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
+    "images/Combat-Screen.png",
+    "Registers.md",
+    "2025-01-03.md",
+    "images/colorhexmap.jpg",
+    "02 - IDE and Getting Started/00 - Notes and Resources.md",
+    "02 - IDE and Getting Started/Combat Source.asm.md",
+>>>>>>> Stashed changes
     "Other Examples/Toledo Text/README.md",
     "Other Examples/Toledo Text/atari_palette_pal.png",
     "Other Examples/Toledo Text/atari_palette.png",
     "Other Examples/Toledo Text",
     "Other Examples",
+<<<<<<< Updated upstream
     "Registers.md",
     "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
     "03 - Playfields and Asymmetry/Combat Source.asm.md",
@@ -207,5 +244,34 @@
     "05 - Player Input/02 - Hello World Attacks.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md"
+=======
+    "01 - On Racing the Beam/00 - Notes and Resources.md",
+    "images/timing.png",
+    "images/Pasted image 20241227123030.png",
+    "Pasted image 20241227123030.png",
+    "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
+    "Background Readings/example asms/BallDemo.asm",
+    "Background Readings/example asms",
+    "Background Readings/example asms for reference/BallDemo.asm",
+    "Background Readings/example asms for reference",
+    "images/hexchart.png",
+    "images/modes.png",
+    "images/resolution.png",
+    "Background Readings/Atari 2600 Specifications.pdf",
+    "images/8bit",
+    "images/38bit",
+    "Administration/Ads/banner.psd",
+    "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "Administration/Source Code Assignment.md",
+    "Administration/Reading Assignments.md",
+    "03 - Playfields and Asymmetry/Combat Source.asm.md",
+    "03 - Playfields and Asymmetry/01 - Playfields (GCIS-NJLIGM-M1's conflicted copy 2024-11-23).md",
+    "Pasted.md",
+    "Source Code Examples/Adventure/Adventure.asm.md",
+    "05 - Player Input/01 - Player Sprites.md",
+    "05 - Player Input/02 - Hello World Attacks.md",
+    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
+    "11 - Polish/01 - Player Sprites 2.md"
+>>>>>>> Stashed changes
   ]
 }
