@@ -22,12 +22,18 @@ Again, these can all be found:
 The basic idea of making an Atari game is that for each scanline from the top left to bottom right, we have to configure the Television Interface Adaptor or TIA registers for each object JUST before the beam reaches its intended position.
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 There are sprite editors out there: 
 * https://www.masswerk.at/rc2018/04/TinySpriteEditor/
 * 
 * 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # <a id='classexample'></a>Class Example
 ```asm6502
