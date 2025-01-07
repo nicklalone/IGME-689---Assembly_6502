@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - IDE and Getting Started/00 - Notes and Resources.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00 - Notes and Resources"
+              "title": "01 - Playfields"
             }
           }
         ]
@@ -160,9 +160,13 @@
   },
   "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
-    "Administration/VC - Syllabus.pdf",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "02 - IDE and Getting Started/02 - Bones.md",
+    "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
+    "02 - IDE and Getting Started/00 - Notes and Resources.md",
+    "Administration/VC - Syllabus.pdf",
     "11 - Polish/00 - Notes and Resources.md",
     "11 - Polish/02 - MORE JUICE.md",
     "11 - Polish/01 - JUICE.md",
@@ -184,9 +188,6 @@
     "05 - Player Input/01 - Making Movement Happen.md",
     "05 - Player Input/00 - Notes and Resources.md",
     "Administration/~$ - Syllabus.docx",
-    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
-    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
     "Background Readings/Atari 2600 Specifications.pdf",
     "Background Readings/Atari 2600 Field Service Manual 2024 (USA).pdf",
     "Background Readings/Atari 2600 Field Service Manual 2024.pdf",

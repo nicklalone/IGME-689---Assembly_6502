@@ -10,7 +10,6 @@
 
 ---------------- Table of Contents ---------------- 
 # <a id = "welcoime"></a>Welcome
-
 Today is when we start coding. We'll take it slowly as I wanted to make sure folks who aren't used to this type of programming can actually start digging in. 
 
 The point of today is to give you everything you need to start painting. It might be a bit boring but it's important to get this level of finicky out of the way but also as an important part of what you'll be doing. It is finicky, it's weird! It's...maybe fun?
