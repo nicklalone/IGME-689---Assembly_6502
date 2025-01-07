@@ -38,23 +38,19 @@ So, there are a bunch of things we need to do when we are starting a project. Si
 If you want to play around with op-codes and what they do, you can use: https://skilldrick.github.io/easy6502/ to muck about.
 
 First, we need to take into account our IDE and this will be a part of just about everythiing we do. We have to call into being our processor and assemblers.
-
 ```asm6502
     processor 6502
     include "vcs.h"
     include "macro.h"
     include "xmacro.h"
 ```
-
 If you're curious abbout these, go to: https://github.com/munsie/dasm/tree/master and start reading. This is the DASM community's repo with DASM. If you want a bit less of a burden to read, try this: https://forums.atariage.com/topic/27221-session-9-6502-and-dasm-assembling-the-basics/
 
 Next up, we have to tell the hardware where our memory addresses begin. This is important because we basically have to tell the hardware where to point its initial register. Basically, we're saying to the Assembler (DASM) that we are actually beginning our code now and that the memory unit
-
 ```asm6502
     seg code
     org $F000       ; Define the code origin at $F000
 ```
-
 In this case, we're pointing to the very bottom of the stack. I found this useful slide that gives us the range of the memory: https://www.slideshare.net/slideshow/atari-2600programming/23550414
 
 ![](/images/memorymap.png)
@@ -62,7 +58,6 @@ Or, we can see this mapped out for us in 8bitworkshop's memory map:
 ![](/images/memmap.png)
 
 And I should probably mention here that you're going to need some way to shift between binary, hexadecimal, literal values. We're going to use a converter to keep track unless you want me to drill this knowledge into you and I don't honestly know if we have time. 
-
 ```asm6502
 Start:
     sei             ; Disable interrupts
@@ -70,7 +65,6 @@ Start:
     ldx #$FF        ; Loads the X register with #$FF
     txs             ; Transfer the X register to the (S)tack pointer
 ```
-
 Next, we have to really get started. We've disabled interrupts (because the 6507 doesn't have that pin but we still have to account for it in 6502.) We're also disabling Binary Coded Decimals so we can write numbers without having to worry about them being used as numbers: http://www.6502.org/tutorials/decimal_mode.html you can read more about it here.
 
 The easiest description is probably from that page: 
@@ -89,7 +83,6 @@ Well, the model for this is relatively simple. I'll call it out in a list:
 5. then decrement X by 1 and restart the loop.
 
 For X, then, it would look like `#$FF` and then after decrementing, `#$FE` and then after decrementing `#$FD` and so on and so forth until it gets to the lowest value. 
-
 ```asm6502
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -114,7 +107,6 @@ We then make sure to tell the assembler to make the space for our code exactly 4
     .word Start     ; Reset vector at $FFFC (where the program starts)
     .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
 ```
-
 So, it does...stuff? I guess? If we look at the 8bit workshop, we can see it is basically filling a single scanline with nothing. 
 
 All together, it looks like this and you can copy and paste this into 8bitworkshop and click around. 
@@ -152,7 +144,6 @@ MemLoop:            ;
     .word Start     ; Reset vector at $FFFC (where the program starts)
     .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
 ```
-
 But all this does is create a silly black screen. Or does it?
 
 If we look at the memory browser, it does seem like something is happening but ....what? It's just a black screen?
@@ -206,7 +197,6 @@ What would it look like to use this a bit more? And what exactly is that macro.h
 So, we have a script that's kinda boring, hurray? I guess? No, it's boring. Let's DO something more. This is a script from your textbook from Hugg (page 35 is where this starts). 
 
 Let's do some work with it. In particular, I want to point out something from the intro. 
-
 ```asm6502
 ; Assembler should use basic 6502 instructions
 	processor 6502
@@ -227,9 +217,7 @@ BGColor	equ $81
 ; The CLEAN_START macro zeroes RAM and registers
 Start	CLEAN_START
 ```
-
 So, we've basically done with `clean_start` what we've written for the basic code block from the first example; however, `CLEAN_START` does a bit more than what we've previously done. Last time, we did: 
-
 ```asm6502
 Start:
     sei             ; Disable interrupts
@@ -237,7 +225,6 @@ Start:
     ldx #$FF        ; Loads the X register with #$FF
     txs             ; Transfer the X register to the (S)tack pointer
 ```
-
 This is where `macro.h` comes in! If we head over to the `macro.h` webpage at: https://github.com/munsie/dasm/blob/master/machines/atari2600/macro.h we can see that `CLEAN_START` is meant to `set machine to known state on startup`. But what does that mean?
 
 `CLEAN_START` looks like this:
@@ -264,11 +251,9 @@ This is where `macro.h` comes in! If we head over to the `macro.h` webpage at: h
 
             ENDM
 ```
-
 So, `CLEAN_START` essentially does what we need to to clear everything out and reset the machine to a new state. Note also that it clears everything, gets us ready to start counting, and essentially clears up that example from earlier. We won't dig too much into it and you can begin either way. 
 
 We're going to set up 2 ways of thinking about this. First, we'll simply subtract from BG Colors and make a rainbow. Then we're going to load `COLUBK` into the accumulator and have some fun.
-
 ```asm6502
 	PROCESSOR 6502
         INCLUDE "vcs.h"
@@ -354,9 +339,7 @@ LoOver:
 
         
 ```
-
 Now let's see about loading it into the accumulator.
-
 ```asm6502
 ; Assembler should use basic 6502 instructions
 	processor 6502

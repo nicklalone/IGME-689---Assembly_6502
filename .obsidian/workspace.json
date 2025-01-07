@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "06 - Enemy Behaviors/02 - Reverse Direction.md",
+                "file": "02 - IDE and Getting Started/00 - Notes and Resources.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 - Reverse Direction"
+              "title": "00 - Notes and Resources"
             }
           }
         ]
@@ -158,20 +158,35 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "74e33594488c1d09",
+  "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
+    "Administration/VC - Syllabus.pdf",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
+    "11 - Polish/00 - Notes and Resources.md",
+    "11 - Polish/02 - MORE JUICE.md",
+    "11 - Polish/01 - JUICE.md",
+    "10 - Lives/00 - Notes and Resources.md",
+    "10 - Lives/02- Danger Beeps.md",
+    "10 - Lives/01 - I Need Food.md",
+    "09 - Intersecting 2/02 - Other Types.md",
+    "09 - Intersecting 2/01 - Editing and Debugging.md",
+    "08 - Intersecting/00 - Notes and Resources.md",
+    "08 - Intersecting/02 - Is that a tank?.md",
+    "08 - Intersecting/01 - Is that a wall?.md",
+    "07 - Score Keeping/00 - Notes and Resources.md",
+    "07 - Score Keeping/02 - Timers.md",
+    "07 - Score Keeping/01 - Score Keeping.md",
+    "06 - Enemy Behaviors/02 - Reverse Direction.md",
     "06 - Enemy Behaviors/01 - Drop Down 1 Line.md",
     "05 - Player Input/02 - Hell World RUN.md",
     "06 - Enemy Behaviors/00 - Notes and Resources.md",
     "05 - Player Input/01 - Making Movement Happen.md",
     "05 - Player Input/00 - Notes and Resources.md",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "Administration/~$ - Syllabus.docx",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
-    "02 - IDE and Getting Started/02 - Bones.md",
     "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
-    "02 - IDE and Getting Started/00 - Notes and Resources.md",
     "Background Readings/Atari 2600 Specifications.pdf",
     "Background Readings/Atari 2600 Field Service Manual 2024 (USA).pdf",
     "Background Readings/Atari 2600 Field Service Manual 2024.pdf",
