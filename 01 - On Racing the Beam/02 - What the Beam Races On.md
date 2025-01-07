@@ -22,7 +22,7 @@ Tech is constantly changing, not advancing or heading somewhere. Sometimes we ha
 Today we will spend a bunch of time talking about the tech specs of the Atari 2600. While this often does not matter for our courses here in GCCIS, we'll be directly interfacing with the hardware (know emulated software). A lot of what we'll be doing isn't dictating what part of a cartesian graph to illuminate with sprites or graphics, but telling an electron beam travelling across the screen when to show certain kinds of pixels. Much of this will be in binary though at times we'll be using hexadecimal or literal numbers.
 
 We must prepare ourselves for this journey then, so we'll be concentrating on the chipset inside the original 2600. To that end, take a look. We'll show you a picture of the board, a diagram of the board, and mention the old issues around NTSC and PAL: 
-![](mobo.jpg)
+![](/images/mobo.jpg)
 So, we have a lot going on here. The power supply does what it does, that much should make logical sense. However, we then have a bunch of switches ranging from dictating channel, joystick inputs, difficulty switches, video out, and the ROM/Cartridge reader. 
 
 But then we have things like the Microprocessor, RIOT, TIA, Sound adjustors, and color adjustors. What do those do?
@@ -31,7 +31,7 @@ But then we have things like the Microprocessor, RIOT, TIA, Sound adjustors, and
 	* This is the processor for the Atari itself. It is based, as the name of the language might imply, on the 6502 Processor. Chuck Pebble, who designed the original 6502 chip for Motorola, went to a new company called MOS and redesigned the chip and tried to make it cheaper. The 6507 was an even cheaper version of the chip and came it at around $20 per chip. This decreased the price point of the console by quite a lot.
 		* The 6507 compared to the 6502 checklist: 
 28 pins instead of 40 
-![](MOS6502.png) ![](6507.gif)
+![](/images/MOS6502.png) ![](/images/6507.gif)
 
 Price point comparisons (at the time of release)
 * the 6502 was $25 a chip. This was too expensive, and so Chuck Pebble designed the 6507 and paired it with the 6532 (RIOT chip) at $12 dollars a piece. 
@@ -45,9 +45,9 @@ Price point comparisons (at the time of release)
 * TIA
 
 
-![](2600_wires.jpg)
+![](/images/2600_wires.jpg)
 
-![](TIA.jpg)
+![](/images/TIA.jpg)
 
 That is a pretty in depth overview. Let's take a bit of a lower level look at the physical aspects of the chips. Here is a list of specs we'll be working on and expanding on: 
 
@@ -79,7 +79,7 @@ So, we're going to be working mostly in the world of Assembly as it is in the pr
 
 Let's take a bit more inventory of what we'll be working with in a way that most game makers will be used to: 
 ## Resolution 
-![](resolution.png)
+![](/images/resolution.png)
 What do these terms mean?
 * Clock Counts
 * Vertical Sync
