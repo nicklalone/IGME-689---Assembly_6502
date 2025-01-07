@@ -36,6 +36,9 @@ This course owes a tremendous amount of thanks to:
 4. [8Blit](https://8blit.com/)
 5. [Retro Game Mechanics Explained](https://www.youtube.com/c/RetroGameMechanicsExplained)
 6. [Ian Bogost and Nick Montfort](https://mitpress.mit.edu/series/platform-studies/)
+7. [mass:werk](https://www.masswerk.at/6502/6502_instruction_set.html)
+8. [Visual6502](http://www.visual6502.org/)
+9. [6502 Resource - if you need for more than just Atari](http://6502.org/)
 
 ...And so many more.
 
