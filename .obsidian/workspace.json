@@ -11,10 +11,14 @@
             "id": "d7f2a188da8766f3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "06 - Enemy Behaviors/02 - Reverse Direction.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "02 - Reverse Direction"
             }
           }
         ]
@@ -154,6 +158,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d7f2a188da8766f3",
-  "lastOpenFiles": []
+  "active": "74e33594488c1d09",
+  "lastOpenFiles": [
+    "06 - Enemy Behaviors/01 - Drop Down 1 Line.md",
+    "05 - Player Input/02 - Hell World RUN.md",
+    "06 - Enemy Behaviors/00 - Notes and Resources.md",
+    "05 - Player Input/01 - Making Movement Happen.md",
+    "05 - Player Input/00 - Notes and Resources.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "Administration/~$ - Syllabus.docx",
+    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
+    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "02 - IDE and Getting Started/00 - Notes and Resources.md",
+    "Background Readings/Atari 2600 Specifications.pdf",
+    "Background Readings/Atari 2600 Field Service Manual 2024 (USA).pdf",
+    "Background Readings/Atari 2600 Field Service Manual 2024.pdf",
+    "Background Readings/atari2600_fsm.pdf",
+    "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
+    "Background Readings/IEEE - Atari 2600 Retrospective.pdf",
+    "Background Readings/IEEE Spectrum - Atari 2600.pdf"
+  ]
 }
