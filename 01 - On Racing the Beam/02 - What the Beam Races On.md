@@ -30,7 +30,9 @@ But then we have things like the Microprocessor, RIOT, TIA, Sound adjustors, and
 * 6507
 	* This is the processor for the Atari itself. It is based, as the name of the language might imply, on the 6502 Processor. Chuck Pebble, who designed the original 6502 chip for Motorola, went to a new company called MOS and redesigned the chip and tried to make it cheaper. The 6507 was an even cheaper version of the chip and came it at around $20 per chip. This decreased the price point of the console by quite a lot.
 		* The 6507 compared to the 6502 checklist: 
-28 pins instead of 40 
+28 pins instead of 40
+
+
 ![](/images/MOS6502.png) ![](/images/6507.gif)
 
 Price point comparisons (at the time of release)
@@ -99,5 +101,3 @@ And so that's the screen of the machine. There are also reservations and dictate
 * Requirements: run "Combat" and "Pong"
 
 **Next week:** The elements of the screen, IDEs, and Getting Started - pipeline and experimentation, other places to practice.
-
-**Week 03 - Hello World**
