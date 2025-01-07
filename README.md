@@ -1,9 +1,11 @@
-This is a course devoted to making the development of games on the Atari 2600 into a semester's worth of content. For the first 12 weeks, we will:
+This is a course devoted to making the development of games on the Atari 2600 into a semester's worth of content. It's a tough ask! But I think we can get started pretty well. 
 
-* go through source code and annotate it, 
-* read [Racing the Beam](https://www.amazon.com/Racing-Beam-Computer-Platform-Studies/dp/0262539764/)
-* develop a prototype and coding assignments
-* spend the last five weeks alone or in a group making your own game
+For the first 12 weeks, we will:
+
+* Go through various components of Atari 2600's requirements for Assembly, 
+* Read [Racing the Beam](https://www.amazon.com/Racing-Beam-Computer-Platform-Studies/dp/0262539764/) and a textbook from the enthusiast community.
+* Examine source code for released games in order to deepen our knowledge.
+* Spend the last five weeks alone or in a group making your own game
 
 By the end of class, if you are happy with your game, I will pay for you to: 
 * Print your game to cartridge (If I can get the equipment, i'll do this for you but I need to practice soldering a bit more)
