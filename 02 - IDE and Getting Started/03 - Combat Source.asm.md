@@ -1,3 +1,7 @@
+This is the game that kicked off the console industry into a successful space filled with competitors and replicable attempts at home entertainment. We've seen quite a few folks attempt to unite PC and Console gaming, mostly because they were either home entertainment companies like Sony who wanted to try and find ways to combine monitors and televisions or they were a PC company that wanted to combine their operating system and hardware divisions with home entertainment. 
+
+Games have taken all sorts of paths but we tend to come back here. So, let's give it a read. This particular source file is from the very early in the enthusiast community's formation. You can read an interview with the original disassembler: https://www.gooddealgames.com/interviews/int_Harry%20Dodgson.html. 
+
 ```asm6502
 ; Combat for Atari by Larry Wagner
 ;

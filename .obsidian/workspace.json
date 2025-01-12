@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08 - Intersecting/02 - Is that a tank.md",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 - Is that a tank"
+              "title": "02 - What the Beam Races On"
             }
           }
         ]
@@ -160,6 +160,15 @@
   },
   "active": "74e33594488c1d09",
   "lastOpenFiles": [
+    "images/crt.gif",
+    "Pasted image 20250112173705.png",
+    "PPTs/~$01 - Day 1.pptx",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "02 - IDE and Getting Started/03 - Combat Source.asm.md",
+    "01 - On Racing the Beam/03 - Source Code Notes.md",
+    "09 - Intersecting 2/02 - Other Types.md",
+    "09 - Intersecting 2/01 - Editing and Debugging.md",
+    "08 - Intersecting/02 - Is that a tank.md",
     "Other Examples/Toledo Text/demo code/atari_palette_pal.png",
     "Other Examples/Toledo Text/demo code/atari_palette.png",
     "Other Examples/Toledo Text/demo code/README.md",
@@ -168,8 +177,6 @@
     "images/atari_palette.png",
     "04 - Players, Missiles, and Balls/03 - Adventure.asm.md",
     "03 - Playfields and Asymmetry/03 - Combat Source.asm.md",
-    "02 - IDE and Getting Started/03 - Combat Source.asm.md",
-    "01 - On Racing the Beam/03 - Source Code Notes.md",
     "09 - Intersecting 2/00 - Notes and Resources.md",
     "08 - Intersecting/01 - Is that a wall.md",
     "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
@@ -177,21 +184,16 @@
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
     "README.md",
     "02 - IDE and Getting Started/00 - Notes and Resources.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "PPTs/~$01 - Day 1.pptx",
     "02 - IDE and Getting Started/02 - Bones.md",
     "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
     "Administration/VC - Syllabus.pdf",
     "11 - Polish/00 - Notes and Resources.md",
     "11 - Polish/02 - MORE JUICE.md",
-    "11 - Polish/01 - JUICE.md",
-    "10 - Lives/00 - Notes and Resources.md",
-    "10 - Lives/02- Danger Beeps.md",
     "Administration/~$ - Syllabus.docx",
     "Background Readings/Atari 2600 Specifications.pdf",
     "Background Readings/Atari 2600 Field Service Manual 2024 (USA).pdf",

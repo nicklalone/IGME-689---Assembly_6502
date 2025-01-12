@@ -15,13 +15,17 @@ The Atari 2600 was a real mess. It's a good thing that we don't try to program m
 
 The Atari 2600 was released in 1977, 1 year before I was born. It existed as an active system up until around 1991 (5 years before I graduated high school). In 2023, the Atari 2600 got a new release for modern televisions - aptly named the Atari 2600+. Or in other words, a thing from my childhood is new again for folks who never got to play these now legendary games.
 
+You can read about it's developer and development here: 
+* [New Atlas Preview](https://newatlas.com/games/plaion-atari-2600-plus-console/)
+* [CNN Mention](https://www.cnn.com/2023/09/30/tech/atari-2600-plus-wade-rosen-nintendo-playstation/index.html)
+* [Games Radar](https://www.gamesradar.com/atari-2600-plus-review/)
 But it's not like the Atari 2600 hasn't had an active development scene since the 80s. Learning about that enthusiast community, the company that birthed the video game console, and where all those employees went in the great crash in the 80s will teach us a lot about what we think video games are, how we've learned to make video games, and how we've learned to develop games. 
 
 We owe Atari a ton; in fact, we owe the 2600 for just about everything (good and bad) from developers actually being named to crunch to 3rd party developers to innumerable facets of the video game industry that exist to this day. There are so many folks who owe their careers to Atari. We know some of them.
 
 We could point to Steve Jobs getting his start in software development at Atari (really it was Woz but that's a long story). We could point to Mark Cerny, the current Sony system architect, as employee 16,000 of Atari at the age of 17 where he would create Marble Madness and push the envelope of 3-D design. 
 
-We have pornographic games, super racist games, pirated games, games that reportedly destroyed the game industry, edugames, exercise games, and much, much more. 
+We have pornographic games, racist games, pirated games, games that reportedly destroyed the game industry, edugames, exercise games, and much, much more. 
 
 It's a vast, complex ecosystem that has never truly stopped expanding. 
 
