@@ -30,8 +30,8 @@ But then we have things like the Microprocessor, RIOT, TIA, Sound adjustors, and
 * 6507
 	* This is the processor for the Atari itself. It is based, as the name of the language might imply, on the 6502 Processor. Chuck Pebble, who designed the original 6502 chip for Motorola, went to a new company called MOS and redesigned the chip and tried to make it cheaper. The 6507 was an even cheaper version of the chip and came it at around $20 per chip. This decreased the price point of the console by quite a lot.
 		* The 6507 compared to the 6502 checklist: 
-28 pins instead of 40
 
+28 pins instead of 40
 
 ![](/images/MOS6502.png) ![](/images/6507.gif)
 
@@ -78,6 +78,8 @@ As a result, a designer has to design a game around the idea that you need to te
 This is called "Racing the beam" and is the general reason that programming for the 2600 is obtuse and complicated.
 #### On Bankswitching
 So, we're going to be working mostly in the world of Assembly as it is in the present. We're going to be working with exactly 4k space on carts. You can do more but i'll leave that with you as the Atari existed at least 4 years until memory banking was figured out. Rather than do the most complex stuff first, we'll be talking and working on exactly 4k of space (as opposed to the original 2k for *Combat*). If you want to explore bankswitching and get yourself somewhere in the vicinity of the 64k the 6502 was capable of, you're welcome to (but outside of class as I will not support it).
+
+In class, i'll go through what this means but if you're reading this, check out Pac Man's original port vs 4k and 8k versions. While we didn't really know what a video game was when the 2600 came out, we have done a ton of refinements over the years to extend that.
 
 Let's take a bit more inventory of what we'll be working with in a way that most game makers will be used to: 
 ## Resolution 

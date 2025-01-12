@@ -30,6 +30,10 @@ Hello World and the Playfield
 
     ORG $F000       ; Start of "cart area" (see Atari memory map)
 
+;=============================================================
+; Alright, let's do our normal thing. We have to get our kernel in order.
+;=============================================================
+
 StartFrame:
     lda #%00000010  ; Vertical sync is signaled by VSYNC's bit 1...
     sta VSYNC
@@ -192,3 +196,8 @@ Phrase:
 ```
 
 # <a id="hellworld"></a>Hell World
+So, I wanted to make a game which basically resulted in this course. But all that prompt was, was, "I want to make a game."
+
+And so...what?
+
+Well, one of the biggest hurdles for me is that I've been in and around video games for a number of years but I've never had a game ship. 

@@ -2,6 +2,11 @@ These files are mostly for me as I go around and look for good resources. While 
 
 For this week, I was mostly concerned with learn how and why the machine works the way it works. I also wanted to begin to set up a variety of arguments related to having to adjust how the code you are writing is interacting with the hardware since you're essentially doing this directly. 
 
+Note about commands: 
+* JMP is like Goto command in basic
+* JSR is like to Gosub command in basic
+* RTS is like Return command in basic.
+
 I also wanted to find a few small things that would be mentioned now and come up later. For example, the Registers, the RIOT chip, and tiny bits.
 
 First, let's note some important files for where you'll type up your code. Here's some syntax highlighting for a variety of text.

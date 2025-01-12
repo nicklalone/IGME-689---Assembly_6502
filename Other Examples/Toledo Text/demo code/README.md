@@ -5,6 +5,7 @@
 All of the source code from my book *Programming Games for Atari 2600*.
 
 There is a bonus program here *palette.asm* that displays the Atari 2600 palette, and a file *atari_palette.png* containing a reference of colors because the book is black and white.
+
 ### ERRATA FOR THE BOOK:
 
 Page 15, it should say 36 to 61, instead of 37 to 62.

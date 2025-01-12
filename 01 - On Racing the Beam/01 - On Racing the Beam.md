@@ -13,17 +13,17 @@ The Atari 2600 was a real mess. It's a good thing that we don't try to program m
 
 ---------------- Table of Contents ---------------- 
 
-The Atari 2600 was released in 1977, 1 year before I was born. It existed as an active system up until around 1991 and just last year, 2023, it got a release for modern televisions. Or in other words, a thing from my childhood is new again.
+The Atari 2600 was released in 1977, 1 year before I was born. It existed as an active system up until around 1991 (5 years before I graduated high school). In 2023, the Atari 2600 got a new release for modern televisions - aptly named the Atari 2600+. Or in other words, a thing from my childhood is new again for folks who never got to play these now legendary games.
 
-Fortunately, there has been an active development community for the Atari 2600 since the machine was new. Learning about that enthusiast community, the company that birthed the video game console, and where all those employees went in the great crash in the 80s will teach us a lot about how we've learned to make games, but also how we've learned to develop games. 
+But it's not like the Atari 2600 hasn't had an active development scene since the 80s. Learning about that enthusiast community, the company that birthed the video game console, and where all those employees went in the great crash in the 80s will teach us a lot about what we think video games are, how we've learned to make video games, and how we've learned to develop games. 
 
-We owe Atari a ton; in fact, we owe the 2600 for just about everything (good and bad) from developers actually being named to crunch to 3rd party developers to innumerable facets of the video game industry that exist to this day. 
+We owe Atari a ton; in fact, we owe the 2600 for just about everything (good and bad) from developers actually being named to crunch to 3rd party developers to innumerable facets of the video game industry that exist to this day. There are so many folks who owe their careers to Atari. We know some of them.
 
 We could point to Steve Jobs getting his start in software development at Atari (really it was Woz but that's a long story). We could point to Mark Cerny, the current Sony system architect, as employee 16,000 of Atari at the age of 17 where he would create Marble Madness and push the envelope of 3-D design. 
 
 We have pornographic games, super racist games, pirated games, games that reportedly destroyed the game industry, edugames, exercise games, and much, much more. 
 
-It's a vast, complex ecosystem that has never truly stopped learning. 
+It's a vast, complex ecosystem that has never truly stopped expanding. 
 
 So, where do we begin? How? Why?
 
@@ -40,7 +40,9 @@ In this section, we''ll talk about the early attempts at games, early video game
 The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by Christopher Strachy. This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a Checkers playing program from Arthur Samuel in 1959. While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
 
 ![](drivemobile.png)
+
 I should also note here that a certain important game company also got its start here. Nintendo's toy lines had evolved to include light gun technology similar to these early arcade games. This would become their entry into games soon after the popularity of this line: 
+
 ![](/images/nintendolightgun.png)
 #### Tennis for Two (1958)
 The Manhattan Project gave us the Atomic Bomb but almost immediately after using it, the sheer magnitude of what had been done began to weigh heavily on many. Spacewar! from William Higgenbotham was born out of the guilty associated with the bomb. This was not only one of the first video games, but was also a piece of software that used graphic displays, a novelty at the time. 
@@ -84,13 +86,13 @@ So for many of you, you might have heard some myths and legends here and there. 
 ## Not the origin but where we started
 So, the Atari 2600 is not the first game console, not the first video game, not the first game company, and is not the first at really...well, anything. However, it was the moment in time where the home game console moved from extremely expensive curiosity to novel, relatively cheap home entertainment system. 
 ### The General Loop
-So how did this console work? Well, remember that back then we didn't have individual pixels we could color quickly. We had to wait for an electron beam to go across a screen and then go down. Additionally, we had to deal with very tiny amounts of space. All of these limits provided an endless array of possibility. If I were to call into being a metaphor for what the Atari was like, consider Vine before Tik Tok. 
+So how did this console work? Well, remember that back then we didn't have individual pixels we could color quickly. We had to wait for an electron beam to go across a screen and then go down. Additionally, we had to deal with very tiny amounts of space. All of these limits provided an endless array of possibility. If I were to call into being a metaphor for what the Atari was like, consider Vine before Tik Tok.
 
 At its most basic, using terminology that should be familiar to you now, look at the picture below: 
 ![](/images/resolution.png)
-This will be covered more in depth on the enxt time we meet. However, what we essentially have is a number of pixels to start processing as the electron beam starts at the upper left and slowly goes down to the bottom right. All of your programming with require a bit of mathing out clock cycles to beam positions to a final resolution of about 160x192 pixels.  
+This will be covered more in depth on the next time we meet. However, what we essentially have is a number of pixels to start processing as the electron beam starts at the upper left and slowly goes down to the bottom right. All of your programming with require a bit of mathing out clock cycles to beam positions to a final resolution of about 160x192. 
 
-Here's a brief glimpse of the specs you'll be working with. 
+Are these pixels? Not really! It's a combination of scanlines, pixels, and computer cycles. Here's a brief glimpse of the specs you'll be working with. 
 
 **Hardware:** 
 * MOS 6507
@@ -136,7 +138,7 @@ One of the most high profile moments due to this issue came with a gang of 4 dev
 ## Lawsuits, the founding of *Activision*, and 3rd party games
 The history of tech is often a battlefield waged in courtrooms around the world. Lawfare is a sometimes dirty business but at least we can typically see the strategies and rhetoric involved. One such court case mostly focuses on a collection of 4 individuals getting fed up with Atari, leaving the company, and starting their own company. 
 
-This resulted in Atari suing for breach of NDA but in court, Atari essentially lost and eventually settled out of court. This resulted in the birth of a small company called Activision which you may have heard of. Atari would also get into the lawfare game wherein once the NES was released, they reverse engineered the 10NES Chip (for a good read on 10NES and the birth of DRM, I suggest [this article](https://journals.sagepub.com/doi/10.1177/1555412010377319)).
+This resulted in Atari suing for breach of NDA but in court, Atari essentially lost and eventually settled out of court. This resulted in the birth of a small company called Activision which you may have heard of. Atari would also get into the lawfare game wherein once the NES was released, they reverse engineered the 10NES Chip (for a good read on 10NES and the birth of DRM, I suggest [this article](https://journals.sagepub.com/doi/10.1177/1555412010377319)). If you've ever heard of a company called *Tengen* then you may understand.
 
 There's all manner of lawsuit to read about and each one will give you a far different picture of the what the game industry is and how it came to be that way. 
 ## Pipelines (and Crunch)
@@ -183,13 +185,13 @@ I wrote this course for 3 reasons:
 2. I wanted to get into Assembly and Vintage Computing because of my actual work.
 3. Teach another programming course that isn't python or anything practical.
 
-I will warn you now that the course will be an intense dungeon but we'll try and structure it so it's not so time consuming. One thing to keep in mind is that we're going to go extremely slowly through the basics of how an atari game works. At just 2-4KB, that's not a lot. 
+I will warn you now that the course will be an intense dungeon but we'll try and structure it so it's not so time consuming. One thing to keep in mind is that we're going to go extremely slowly through the basics of how an Atari game works. At just 2-4KB, that's not a lot. 
 
 So, grades and things. How will it work? The general loop of the course is this: 
 
 **11 weeks - Instruction** in person
 1. Read something - Usually chasing the beam, your textbook, and something else.
-2. Watch something - Usually a post mortem
+2. Watch something - Usually a post mortem (*these will never be required*)
 3. Annotate a source file - from the 2600's past.
 4. Write something - typically it'll be a brief response, a design doc, or a coding exercise. 
 

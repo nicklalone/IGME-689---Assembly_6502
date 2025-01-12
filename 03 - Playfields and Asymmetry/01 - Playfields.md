@@ -50,9 +50,9 @@ We messed with this a little because of last week where we literally set up our 
 
 For reference, here's a Hex value color chart: 
 ![colorhexmap.jpg](/images/colorhexmap.jpg)
+Additionally, we're going 
 
 We're going to mess around with a number of OpCodes today. Namely, we'll be mucking about with: 
-
 * `COLUBK` or Color of the Background.
 * `COLUPF` or Color of the Playfield.
 * `CTRLPF` or Control Playfield, Ball
@@ -105,7 +105,6 @@ START: CLEAN_START
 	.word START
 	.word START
 ```
-
 # <a id ='classpf'></a>Playfield example from class 
 This is the code I wanted to demo in class as it introduces a TON of concepts. 
 

@@ -1,4 +1,5 @@
-      processor 6502                                                                                               
+```asm6502
+	  processor 6502                                                                                               
 ;Default 2600 Constants set up by dissasembler..                                                                   
 VSYNC   =  $00                                                                                                     
 VBLANK  =  $01                                                                                                     
@@ -2794,3 +2795,4 @@ LFFEF: .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
 LFFFA:  .byte $00,$F0                                                                                               
 LFFFC:  .byte $00,$F0                                                                                               
 LFFFE:  .byte $00,$F0                                                                                               
+```
