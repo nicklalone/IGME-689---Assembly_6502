@@ -1152,3 +1152,22 @@ IRQ:            WORD    ROMStart
 
 
 ```
+
+# .byte DS and other things.
+So, it gets kind of confusing here because the way atari games are made now is a combination of DASM codes, Assembly, and these sort of faux tricks. I will need to deal with these at some point. And so I think here, with the example from below from Pikuma, there's a good chance here to deal with a lot of it. 
+
+	One of the first things we are doing is to start an _uninitialized segment_ called _“Variables”_ and proceed to _define spaces_ in RAM for our variables. We know we are in RAM because we changed the origin to point to $80, and we are using **DS** to **define a space** of 1 byte for each RAM position.
+	
+	**DS** is used to define an uninitialized chunk of space. So, we are basically saying we want one space of 1 byte at position $80, and another space of 1 byte at position $81. Since **.ds** does not initialize those space, I took the liberty of declaring our _Variables_ segment as uninitialized (using **seg.u**).
+	
+	**.BYTE** is used to put data into memory. We can use either **byte** or **.byte**, as they are equivalent. This will add 1 byte of data at a certain address in memory. Therefore, if we want to declare and initialize a variable with some value, we can use .**byte** to instruct our assembler to put 1 byte of data at that memory position.
+	
+	We have been using **.byte** to define bitmap data and graphics. You'll also see that instead of writing multiple lines with **.byte** statements, it is very common to see **.byte** listing several values one after the other with commas. For example, our smiley face bitmap could be defined in one line.
+	
+	    _.byte #$7E,#$FF,#$99,#$FF,#$FF,#$FF,#$BD,#$C3,#$FF,#$7E_
+	
+	**.WORD** is also used for data, and it can be used to directly initialize 16 bits (2 bytes) of data in memory. Again, **word** and **.word** are equivalent for the assembler and can be used interchangeably.
+	
+	One very common use of **.word** is when we are dealing with a value of a _memory address_. Since addresses are 16 bits long for the 6502, we can take advantage of using **.word** to add 2 bytes into memory directly. This is the case of those two lines that contain “**.word Start**” at the end of our code. Since _Start_ is a label representing the memory address $F000, we simply used **.word** twice to put 4 bytes of data (two address values) at the end of our ROM.
+	
+	And that’s pretty much what we need to know for now! I hope this clarifies when we should use **.BYTE**, **.WORD**, and **DS** in our 6502 code. There are some other declaration options that we can use with DASM (for example using **.long** to put 4 bytes of data in memory), but the ones I covered here will be the most useful ones for us.

@@ -19,3 +19,4 @@ Again, these can all be found:
 * `BL` - Ball and it uses the Playfield Foreground color.
 * ``
 The basic idea of making an Atari game is that for each scanline from the top left to bottom right, we have to configure the Television Interface Adaptor or TIA registers for each object JUST before the beam reaches its intended position.
+

@@ -42,12 +42,15 @@ The basic idea of making an Atari game is that for each scanline from the top le
     include "macro.h"
 
 ;=============================================================
-;; Start an uninitialized segment at $80 for var declaration.
+;; Here, we can define a few different dependencies / variables.
+;; In this case, we're basically defining where some variables can live.
+;; in memory. Here, we're basically making a 1-byte variable for player height.
+;; You can use ds or .byte.
 ;=============================================================
 
     seg.u Variables
     org $80
-P0Height .byte     ; defines one byte for player 0 height
+P0Height ds 1     ; defines one byte for player 0 height
 P1Height .byte     ; defines one byte for player 1 height
 
 ;=============================================================
@@ -135,6 +138,11 @@ ScoreboardLoop:
     iny
     cpy #10
     bne ScoreboardLoop
+
+;=============================================================
+; We've rendered our number and so we need to disable the loop and the playfield.
+; In this way, we'll finish it. Try commenting the below out to see what happens.
+;=============================================================
 
     lda #0
     sta PF1        ; disable playfield
