@@ -19,11 +19,12 @@ You can read about it's developer and development here:
 * [New Atlas Preview](https://newatlas.com/games/plaion-atari-2600-plus-console/)
 * [CNN Mention](https://www.cnn.com/2023/09/30/tech/atari-2600-plus-wade-rosen-nintendo-playstation/index.html)
 * [Games Radar](https://www.gamesradar.com/atari-2600-plus-review/)
-But it's not like the Atari 2600 hasn't had an active development scene since the 80s. Learning about that enthusiast community, the company that birthed the video game console, and where all those employees went in the great crash in the 80s will teach us a lot about what we think video games are, how we've learned to make video games, and how we've learned to develop games. 
+
+But it's not like the Atari 2600 hasn't had an active development scene since the 80s. Learning about that [enthusiast community](https://atariage.com/), the company that birthed the video game console, and where all those employees went in the great crash in the 80s will teach us a lot about what we think video games are, how we've learned to make video games, and how we've learned to develop games. 
 
 We owe Atari a ton; in fact, we owe the 2600 for just about everything (good and bad) from developers actually being named to crunch to 3rd party developers to innumerable facets of the video game industry that exist to this day. There are so many folks who owe their careers to Atari. We know some of them.
 
-We could point to Steve Jobs getting his start in software development at Atari (really it was Woz but that's a long story). We could point to Mark Cerny, the current Sony system architect, as employee 16,000 of Atari at the age of 17 where he would create Marble Madness and push the envelope of 3-D design. 
+We could point to [Steve Jobs](https://www.youtube.com/watch?v=17eUExffa5w&ab_channel=GameInformer) getting his start in software development at Atari (really it was Woz but that's a long story). We could point to [Mark Cerny](https://www.youtube.com/watch?v=klPs3KrXiJE&t=1480s&ab_channel=GDC2025), the current Sony system architect, as employee 16,000 of Atari at the age of 17 where he would create Marble Madness and push the envelope of 3-D design. 
 
 We have pornographic games, racist games, pirated games, games that reportedly destroyed the game industry, edugames, exercise games, and much, much more. 
 
@@ -41,7 +42,7 @@ To begin, I think it's important to talk about the software of the console and t
 
 In this section, we''ll talk about the early attempts at games, early video game consoles, the legacy of the 2600, and games of note on the system. We'll even talk about a few recent games of note released within the past 5-10 years for the 2600. 
 ### Early Attempts at Games
-The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by Christopher Strachy. This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a Checkers playing program from Arthur Samuel in 1959. While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
+The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by [Christopher Strachy](https://historyofinformation.com/detail.php?entryid=3731). This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a [Checkers playing program from Arthur Samuel in 1959](http://incompleteideas.net/book/first/ebook/node109.html). While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
 
 ![](drivemobile.png)
 
