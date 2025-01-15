@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+                "file": "02 - IDE and Getting Started/03 - Combat Source.asm.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 - Asymmetric Playfields"
+              "title": "03 - Combat Source.asm"
             }
           }
         ]
@@ -160,21 +160,23 @@
   },
   "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
-    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "PPTs/~$01 - Day 1.pptx",
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "02 - IDE and Getting Started/03 - Combat Source.asm.md",
+    "01 - On Racing the Beam/00 - Notes and Resources.md",
+    "images/resolution.png",
+    "images/processor.png",
     "02 - IDE and Getting Started/02 - Bones.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "02 - IDE and Getting Started/00 - Notes and Resources.md",
+    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "PPTs/~$01 - Day 1.pptx",
     "11 - Polish/02 - MORE JUICE.md",
     "11 - Polish/01 - JUICE.md",
     "12 - 16 - As Needed/Notes and Resources.md",
     "images/asym-cycles.png",
     "Pasted image 20250112173705.png",
-    "02 - IDE and Getting Started/03 - Combat Source.asm.md",
     "01 - On Racing the Beam/03 - Source Code Notes.md",
     "images/crt.gif",
     "09 - Intersecting 2/02 - Other Types.md",
