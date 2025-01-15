@@ -44,7 +44,7 @@ In this section, we''ll talk about the early attempts at games, early video game
 ### Early Attempts at Games
 The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by [Christopher Strachy](https://historyofinformation.com/detail.php?entryid=3731). This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a [Checkers playing program from Arthur Samuel in 1959](http://incompleteideas.net/book/first/ebook/node109.html). While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
 
-![](drivemobile.png)
+![](/images/drivemobile.png)
 
 I should also note here that a certain important game company also got its start here. Nintendo's toy lines had evolved to include light gun technology similar to these early arcade games. This would become their entry into games soon after the popularity of this line: 
 
@@ -59,7 +59,8 @@ Spacewar! has long been considered the first videogame though Higgenbotham's wor
 ![](/images/consoles/spacewar.png)
 #### Pong!
 So, Pong! was a whole phenomenon. It was a shock to folks in the arcade business, primarily pinball at that time, that this simple collection of wires could generate so much revenue. This game offered a glimpse at what was about to happen with regard to the arcade movement. While this movement would crash and burn much like the home video game movement that started with the Magnavox Odyssey, it remains as a moment in time that we need to pay attention to for what it did do and what it neglected to do.
-![](pong.png)
+
+![[images/pong.png]]
 A thing that I at least find fascinating for this game is that it has no software. It is a collection of wires and circuits without any sort of software at all. It's hard to wrap your head around this now but given the above light gun games, they were essentially combining the two spaces into extremely (what we at the time would call simple) complex ways. Alan Allcorn designed the initial prototype and then the Magnavox Odyssey would release it for their system followed quickly by Atari releasing newer versions of it, getting sued by Magnavox, and then pushing their engineers to disconnect from Pong entirely. 
 
 So let's head to other spaces.
