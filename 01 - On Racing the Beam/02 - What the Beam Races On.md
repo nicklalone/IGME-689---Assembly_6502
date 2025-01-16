@@ -3,6 +3,7 @@
 1. [Day 2 - Tech Specs and More](#day2)
 	1. [On Bankswitching](#banks)
 	2. [Resolution](#res)
+	3. [On Racing the Beam](#onracing)
 2. [Logistics](#logistics)
 3. [TLDR](#tldr)
 4. [Day 1](#day1)
@@ -44,7 +45,7 @@ Price point comparisons (at the time of release)
 		* RAM = 128 bytes of RAM
 		* I/O = 2 (1 for switches, 1 for controllers)
 		* Timer
-* TIA
+* TIA - Television Interface Adaptor
 
 ![](/images/2600_wires.jpg)
 
@@ -69,6 +70,7 @@ That is a pretty in depth overview. Let's take a bit of a lower level look at th
 			* I/O = 2 (1 for switches, 1 for controllers)
 			* Timer
 
+### <a id ='onracing'></a>On Racing the Beam
 Finally, I want to note something with regard to the book we'll be reading here, "Racing the Beam." This refers to the literal way the Atari 2600 assembles the pieces above. 
 
 Unlike many of the pieces of software we make today for televisions now where we draw graphics frame by frame using the frame buffer, the Atari 2600 didn't have access to that because it wouldn't be developed until slightly after the 2600's release. You can read about it on the [wikipedia page about Framebuffers](https://en.wikipedia.org/wiki/Framebuffer#:~:text=In%20the%20early%201970s%2C%20the,framebuffers%20capable%20of%20holding%20a). 
@@ -76,6 +78,9 @@ Unlike many of the pieces of software we make today for televisions now where we
 As a result, they didn't have things like sprite sheets or ways to call up preformed graphics. This is slightly inverse to arcade gaming where memory was often used to supplement hardware through storing bitmaps and recalling them as needed. Game carts being the ROM of the system would be developed and developed through subsequent generations of game console with no one console being any more or less developed than the past gen.
 
 The result is that a screen is drawn line by line. To save memory, if nothing is changed, the next line is drawn like the one before it. This means there also aren't any X,Y coordinate systems as there are no registers for Y-components. We simply wait until the electron beam gets there. 
+
+To give you a better example, here's a fun animation:
+![crt.gif](/images/crt.gif)
 
 As a result, a designer has to design a game around the idea that you need to tell the TIA what to show each line while it is actually creating that line. 
 
@@ -97,9 +102,6 @@ What do these terms mean?
 * Actual TV Picture - 
 * Overscan - Mostly this was a feature of older CRTs and meant to align picture. Because no frame buffer, they had to deal with this manually.
 * Scanlines - Electron beam goes from upper left to bottom right constantly. 
-
-To give you a better example, here's a fun animation:
-![crt.gif](/images/crt.gif)
 
 And so that's the screen of the machine. There are also reservations and dictated memory allocations for certain things. For example: 
 

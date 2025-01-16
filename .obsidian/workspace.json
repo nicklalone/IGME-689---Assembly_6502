@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - IDE and Getting Started/03 - Combat Source.asm.md",
+                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03 - Combat Source.asm"
+              "title": "02 - What the Beam Races On"
             }
           }
         ]
@@ -160,11 +160,11 @@
   },
   "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "01 - On Racing the Beam/00 - Notes and Resources.md",
+    "02 - IDE and Getting Started/03 - Combat Source.asm.md",
     "images/pong.png",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "02 - IDE and Getting Started/03 - Combat Source.asm.md",
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
     "images/resolution.png",
     "images/processor.png",
     "02 - IDE and Getting Started/02 - Bones.md",

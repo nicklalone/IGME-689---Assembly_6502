@@ -44,6 +44,8 @@ In this section, we''ll talk about the early attempts at games, early video game
 ### Early Attempts at Games
 The earliest video game many of us have been able to find is a game called Draughts (Checkers) in 1951 by [Christopher Strachy](https://historyofinformation.com/detail.php?entryid=3731). This game was written in 1951 but not fully run until 1952. It is a notable piece of technology because the origin of Machine Learning in the computer sciences are based in and around a [Checkers playing program from Arthur Samuel in 1959](http://incompleteideas.net/book/first/ebook/node109.html). While Samuel had been working on the concept for almost a decade at that point, it was in 59 that this game playing software or new attempt at what would become Game AI would appear. In other spaces, we'd see games here and there but most of them were parlor games or weird hybrids like light games like Drive-Mobile below. 
 
+These electromechanical games are neat and you can make them at home still with a few sheets of paper and some sensors.
+
 ![](/images/drivemobile.png)
 
 I should also note here that a certain important game company also got its start here. Nintendo's toy lines had evolved to include light gun technology similar to these early arcade games. This would become their entry into games soon after the popularity of this line: 
@@ -133,7 +135,7 @@ And so, with a programmable ROM in the form of a cartridge and enough RAM to sto
 
 Shooters, platformers, adventure games, point and click adventure games, and all sorts of other types of games found a home here. At its core though was a super interesting thing - Lopsided play or Asymmetry. Consider this quote from one of your textbooks.
 
-![](asymmetry.png)
+![](/images/asymmetry.png)
 This is a significant shift for games. At the time, nearly all games were based in and around symmetry (think Pong) or just 1 player. By making a game for 2-players at the same time, we had a moment where skill against players became just as possible as skill against yourself or an engine. 
 ## Credits for Designers
 Warren Robinett, who wrote *Adventure* was irked by the fact that Atari wouldn't actually allow them to have credit for their creations. This was why he inserted his name deep in the code and then promptly quit Atari to go into a different tech industry. At the time, Atari execs told the game programmers that, "They were worth as much as the man on the assembly line who put the game into the cardboard box."
@@ -248,8 +250,8 @@ I've used and collected a number of resources for this course. I'll put a bunch 
 # <a id = "tldr"></a>TLDR
 Old machine is old, but it contains all the building blocks we still use in the industry to this day. While it has extreme limitations (4k bytes of memory total (which can be augmented with memory banking but we'll not cover that in this course)), that limitation is reinforced by being able to interact with the hardware as directly as possible. As such, programming for this newly re-released system can show you on a very intimate level how your code and the hardware interact.
 
-Another reason this is useful is that the video game industry had to learn how to make games, D&D existed but was not incorporated immediately into the world of games in the home arcades because of the limitations. 
+Another reason this is useful is that the video game industry had to learn how to make games, D&D existed but was not incorporated immediately into the world of games in the home arcades because of the limitations.
 
 Over the course, we will learn about the games, their history, and more.
 # <a id = "nexttime"></a>Next Time
-We'll talk about the technical nature of the Atari 2600 and just how ~~little~~ much you'll be working with. Be prepared to be amazed!!!
+We'll talk about the technical nature of the Atari 2600 and just how ~~little~~ much you'll be working with. Be prepared to be amazed!
