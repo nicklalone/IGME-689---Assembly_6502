@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - On Racing the Beam/02 - What the Beam Races On.md",
+                "file": "Source Code Examples/DFIRE.ASM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 - What the Beam Races On"
+              "title": "DFIRE.ASM"
             }
           }
         ]
@@ -160,14 +160,18 @@
   },
   "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
+    "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
+    "Background Readings/Atari 2600 Field Service Manual 2024.pdf",
+    "Administration/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
+    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
+    "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
     "02 - IDE and Getting Started/03 - Combat Source.asm.md",
     "images/pong.png",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "images/resolution.png",
     "images/processor.png",
-    "02 - IDE and Getting Started/02 - Bones.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "02 - IDE and Getting Started/00 - Notes and Resources.md",
     "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
@@ -194,16 +198,13 @@
     "09 - Intersecting 2/00 - Notes and Resources.md",
     "08 - Intersecting/01 - Is that a wall.md",
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
-    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
     "README.md",
     "Administration/VC - Syllabus.pdf",
     "Administration/~$ - Syllabus.docx",
     "Background Readings/Atari 2600 Specifications.pdf",
     "Background Readings/Atari 2600 Field Service Manual 2024 (USA).pdf",
-    "Background Readings/Atari 2600 Field Service Manual 2024.pdf",
     "Background Readings/atari2600_fsm.pdf",
-    "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
     "Background Readings/IEEE - Atari 2600 Retrospective.pdf"
   ]
 }

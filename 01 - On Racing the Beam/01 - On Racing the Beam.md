@@ -46,11 +46,11 @@ The earliest video game many of us have been able to find is a game called Draug
 
 These electromechanical games are neat and you can make them at home still with a few sheets of paper and some sensors.
 
-![](/images/drivemobile.png)
+![](images/drivemobile.png)
 
 I should also note here that a certain important game company also got its start here. Nintendo's toy lines had evolved to include light gun technology similar to these early arcade games. This would become their entry into games soon after the popularity of this line: 
 
-![](/images/nintendolightgun.png)
+![](images/nintendolightgun.png)
 #### Tennis for Two (1958)
 The Manhattan Project gave us the Atomic Bomb but almost immediately after using it, the sheer magnitude of what had been done began to weigh heavily on many. Spacewar! from William Higgenbotham was born out of the guilty associated with the bomb. This was not only one of the first video games, but was also a piece of software that used graphic displays, a novelty at the time. 
 
@@ -71,7 +71,7 @@ This is often considered the first console. It was kind of a weird thing in that
 
 At current, Magnavox (now Phillips Magnavox after its purchase in 1974 and then later would develop the laserdisc with Sony and then even later become a part of the company Raytheon) is mostly owned by a Japanese company called Funai but that company is in trouble.
 
-![](/images/consoles/odyssey.png)
+![](images/consoles/odyssey.png)
 ### Fairchild Channel F
 The Fairchild Channel F (F for fun!) was an important console to the history of games but one that got decimated by the popularity of the Atari 2600. It is a notable console as it contains: 
 * origin of the video game cartridge.
@@ -82,11 +82,11 @@ If you get a chance, give the games a shot. It is a bit weird to see games with 
 
 Fairchild was owned by Lockheed Martin for a while until it was sold off to the Carlye Group when they were buying things before and during the tech bust in 2000. At the moment, the company doesn't really exist anymore but is considered property of BAE Systems, a defense contractor. You may wonder why so many of these companies end up in defense spaces and this is because of the origin of games from defense technologies. While they may have been born because of war and many games originating from the war gaming tabletop space via Dungeons and Dragons and Stat-o-matic games, their legacy has surprassed their violent origin. 
 
-![](/images/consoles/channelf.png)
+![](images/consoles/channelf.png)
 # <a id="2600"></a>The Atari 2600 and its Legacy
 So, the Atari 2600 turns 50 this year. There's a whole lot of activity in and around the console. So much so that they sat down and re-released a new version of the console (the Atari 2600+) that can hook up to an HDMI signal. The only real tradeoffs are that instead of reading the game cart in real time, it dumps the ROM and reads it internally. It makes a more stable game experience but also makes the first failure to boot (so we gotta blow on the carts) take more time as it needs to load Stella to load the ROM it dumps. 
 
-![](/images/consoles/2600plus.png)
+![](images/consoles/2600plus.png)
 
 You can buy one if you like! They are around $130. 
 
@@ -97,7 +97,7 @@ So, the Atari 2600 is not the first game console, not the first video game, not 
 So how did this console work? Well, remember that back then we didn't have individual pixels we could color quickly. We had to wait for an electron beam to go across a screen and then go down. Additionally, we had to deal with very tiny amounts of space. All of these limits provided an endless array of possibility. If I were to call into being a metaphor for what the Atari was like, consider Vine before Tik Tok.
 
 At its most basic, using terminology that should be familiar to you now, look at the picture below: 
-![](/images/resolution.png)
+![](images/resolution.png)
 This will be covered more in depth on the next time we meet. However, what we essentially have is a number of pixels to start processing as the electron beam starts at the upper left and slowly goes down to the bottom right. All of your programming with require a bit of mathing out clock cycles to beam positions to a final resolution of about 160x192. 
 
 Are these pixels? Not really! It's a combination of scanlines, pixels, and computer cycles. Here's a brief glimpse of the specs you'll be working with. 
@@ -135,7 +135,7 @@ And so, with a programmable ROM in the form of a cartridge and enough RAM to sto
 
 Shooters, platformers, adventure games, point and click adventure games, and all sorts of other types of games found a home here. At its core though was a super interesting thing - Lopsided play or Asymmetry. Consider this quote from one of your textbooks.
 
-![](/images/asymmetry.png)
+![](images/asymmetry.png)
 This is a significant shift for games. At the time, nearly all games were based in and around symmetry (think Pong) or just 1 player. By making a game for 2-players at the same time, we had a moment where skill against players became just as possible as skill against yourself or an engine. 
 ## Credits for Designers
 Warren Robinett, who wrote *Adventure* was irked by the fact that Atari wouldn't actually allow them to have credit for their creations. This was why he inserted his name deep in the code and then promptly quit Atari to go into a different tech industry. At the time, Atari execs told the game programmers that, "They were worth as much as the man on the assembly line who put the game into the cardboard box."

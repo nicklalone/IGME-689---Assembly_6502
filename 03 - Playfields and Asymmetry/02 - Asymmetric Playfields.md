@@ -10,10 +10,10 @@ This week we're mostly going to play a selection of games that are asymmetric. W
 # <a id = "Admin"></a>Admin
 Hello World and the Playfield
 # <a id='getstart'></a>Getting Started
-![](/images/timing.png)
+![](images/timing.png)
 
 Or another version of this from 8blit: 
-![asym-cycles.png](/images/asym-cycles.png)
+![asym-cycles.png](images/asym-cycles.png)
 
 # <a id='classexp'></a>Class Example
 We'll be going through this in class. My hope here is to show you how the above examples work and in doing so, prepare you for your time if you want asymmetry in your life. Note here that it is not easy. I'll come up with some interesting examples for you at some point in the semester: 

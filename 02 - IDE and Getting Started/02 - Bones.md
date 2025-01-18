@@ -18,7 +18,7 @@ But in any case, if you're ahead of this, go to town. You can start making your 
 
 It is why i've arranged for the assignments and things to be unrelated to prototyping and coding but centered on what has been made.
 # <a id="logistics"></a>Logistics and End of Semester Thoughts
-So, we're going to be busy for around 11 weeks in talking about games, playing them, doing some coding exercises, and just sort of thinking about how the game world of atari works. 
+So, we're going to be busy for around 11 weeks in talking about games, playing them, doing some coding exercises, and just sort of thinking about how the game world of Atari works. 
 
 In no way are you banned or barred from working on your game now. Just know that the last 5ish weeks are devoted to letting you work on your game. I will be available via Discord for debugging and error testing, so will all of you.
 
@@ -43,18 +43,18 @@ First, we need to take into account our IDE and this will be a part of just abou
     include "macro.h"
     include "xmacro.h"
 ```
-If you're curious abbout these, go to: https://github.com/munsie/dasm/tree/master and start reading. This is the DASM community's repo with DASM. If you want a bit less of a burden to read, try this: https://forums.atariage.com/topic/27221-session-9-6502-and-dasm-assembling-the-basics/
+If you're curious abbout these, go to: https://github.com/munsie/dasm/tree/master and start reading. This is the DASM community's repo with DASM. If you want a bit less of a burden to read, try this: https://forums.atariage.com/topic/27221-session-9-6502-and-dasm-assembling-the-basics/.
 
-Next up, we have to tell the hardware where our memory addresses begin. This is important because we basically have to tell the hardware where to point its initial register. Basically, we're saying to the Assembler (DASM) that we are actually beginning our code now and that the memory unit
+Next up, we have to tell the hardware where our memory addresses begin. This is important because we basically have to tell the hardware where to point its initial register. Basically, we're saying to the Assembler (DASM) that we are actually beginning our code now and that the memory unit.
 ```asm6502
     seg code
     org $F000       ; Define the code origin at $F000
 ```
-In this case, we're pointing to the very bottom of the stack. I found this useful slide that gives us the range of the memory: https://www.slideshare.net/slideshow/atari-2600programming/23550414
+In this case, we're pointing to the very bottom of the stack. I found this useful slide that gives us the range of the memory: https://www.slideshare.net/slideshow/atari-2600programming/23550414.
 
-![](/images/memorymap.png)
+![](images/memorymap.png)
 Or, we can see this mapped out for us in 8bitworkshop's memory map: 
-![](/images/memmap.png)
+![](images/memmap.png)
 
 And I should probably mention here that you're going to need some way to shift between binary, hexadecimal, literal values. We're going to use a converter to keep track unless you want me to drill this knowledge into you and I don't honestly know if we have time. 
 ```asm6502

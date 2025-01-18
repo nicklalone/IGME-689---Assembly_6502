@@ -23,7 +23,7 @@ Tech is constantly changing, not advancing or heading somewhere. Sometimes we ha
 Today we will spend a bunch of time talking about the tech specs of the Atari 2600. While this often does not matter for our courses here in GCCIS, we'll be directly interfacing with the hardware (know emulated software). A lot of what we'll be doing isn't dictating what part of a cartesian graph to illuminate with sprites or graphics, but telling an electron beam travelling across the screen when to show certain kinds of pixels. Much of this will be in binary though at times we'll be using hexadecimal or literal numbers.
 
 We must prepare ourselves for this journey then, so we'll be concentrating on the chipset inside the original 2600. To that end, take a look. We'll show you a picture of the board, a diagram of the board, and mention the old issues around NTSC and PAL: 
-![](/images/mobo.jpg)
+![](images/mobo.jpg)
 So, we have a lot going on here. The power supply does what it does, that much should make logical sense. However, we then have a bunch of switches ranging from dictating channel, joystick inputs, difficulty switches, video out, and the ROM/Cartridge reader. 
 
 But then we have things like the Microprocessor, RIOT, TIA, Sound adjustors, and color adjustors. What do those do?
@@ -34,7 +34,7 @@ But then we have things like the Microprocessor, RIOT, TIA, Sound adjustors, and
 
 28 pins instead of 40
 
-![](/images/MOS6502.png) ![](/images/6507.gif)
+![](images/MOS6502.png) ![](images/6507.gif)
 
 Price point comparisons (at the time of release)
 * the 6502 was $25 a chip. This was too expensive, and so Chuck Pebble designed the 6507 and paired it with the 6532 (RIOT chip) at $12 dollars a piece. 
@@ -47,9 +47,9 @@ Price point comparisons (at the time of release)
 		* Timer
 * TIA - Television Interface Adaptor
 
-![](/images/2600_wires.jpg)
+![](images/2600_wires.jpg)
 
-![](/images/TIA.jpg)
+![](images/TIA.jpg)
 
 That is a pretty in depth overview. Let's take a bit of a lower level look at the physical aspects of the chips. Here is a list of specs we'll be working on and expanding on: 
 
@@ -80,7 +80,7 @@ As a result, they didn't have things like sprite sheets or ways to call up prefo
 The result is that a screen is drawn line by line. To save memory, if nothing is changed, the next line is drawn like the one before it. This means there also aren't any X,Y coordinate systems as there are no registers for Y-components. We simply wait until the electron beam gets there. 
 
 To give you a better example, here's a fun animation:
-![crt.gif](/images/crt.gif)
+![crt.gif](images/crt.gif)
 
 As a result, a designer has to design a game around the idea that you need to tell the TIA what to show each line while it is actually creating that line. 
 
@@ -92,7 +92,7 @@ In class, i'll go through what this means but if you're reading this, check out 
 
 Let's take a bit more inventory of what we'll be working with in a way that most game makers will be used to: 
 ## <a id='res'></a>Resolution 
-![](/images/resolution.png)
+![](images/resolution.png)
 What do these terms mean?
 * Clock Counts - this mostly means how many cycles your processor can have per scanline. In this case, we have 76 cycles per scanline which can be found via: 
 	* 76 cycles per scanline. There are around 262 scanlines per frame. If we calculate this directly, we can get to our mitigating hardware limitation (processor speed). This means that 76 cycles * 262 total scanlines = around 19912 cycles per frame. If we then multiply that by the NTSC frame rate of 59.94Hz you get … 1193525.28.

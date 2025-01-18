@@ -43,13 +43,13 @@ And to that end, we have 7 distinct game elements. Those elements are:
 
 So let's think about this image again: 
 
-![](/images/resolution.png)
+![](images/resolution.png)
 We messed with this a little because of last week where we literally set up our frame and started making 3 scanlines and made a gentle rainbow. This is all background and so we will be moving from background to playfield in this lesson. As a refresher: 
 
-![Combat-Screen.png](/images/Combat-Screen.png)
+![Combat-Screen.png](images/Combat-Screen.png)
 
 For reference, here's a Hex value color chart: 
-![colorhexmap.jpg](/images/colorhexmap.jpg)
+![colorhexmap.jpg](images/colorhexmap.jpg)
 Additionally, we're going 
 
 We're going to mess around with a number of OpCodes today. Namely, we'll be mucking about with: 
