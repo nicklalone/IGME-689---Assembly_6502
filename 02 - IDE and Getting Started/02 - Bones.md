@@ -9,6 +9,7 @@
 6. [Terms](#terms)
 
 ---------------- Table of Contents ---------------- 
+
 # <a id = "welcoime"></a>Welcome
 Today is when we start coding. We'll take it slowly as I wanted to make sure folks who aren't used to this type of programming can actually start digging in. 
 

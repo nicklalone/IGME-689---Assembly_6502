@@ -10,6 +10,7 @@
 5. [Day 2](#day2)
 
 ---------------- Table of Contents ---------------- 
+
 Before we get into the technology we'll be working with, I wanted to take some time to talk about the directionality of tech. We tend to use terms that imply direction with regard to technology; for example, progressed, advanced, cutting edge, and more.
 
 While these terms imply "new," they don't really do much for us outside of knowing that there's something new and there always will be as the word design can also be replaced with criticism. After all, if things were newer and therefore better, we wouldn't be constantly striving for some new, new thing.
