@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Source Code Examples/DFIRE.ASM.md",
+                "file": "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DFIRE.ASM"
+              "title": "01 - IDE and Getting Started"
             }
           }
         ]
@@ -160,13 +160,14 @@
   },
   "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
+    "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "Source Code Examples/DFIRE.ASM.md",
     "Background Readings/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
     "Background Readings/Atari 2600 Field Service Manual 2024.pdf",
     "Administration/How to compile assembly code for games on the Atari 2600 _ by Johni Douglas Marangon _ Medium.pdf",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "02 - IDE and Getting Started/02 - Bones.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "01 - On Racing the Beam/00 - Notes and Resources.md",
     "02 - IDE and Getting Started/03 - Combat Source.asm.md",
     "images/pong.png",
@@ -204,7 +205,6 @@
     "Administration/~$ - Syllabus.docx",
     "Background Readings/Atari 2600 Specifications.pdf",
     "Background Readings/Atari 2600 Field Service Manual 2024 (USA).pdf",
-    "Background Readings/atari2600_fsm.pdf",
-    "Background Readings/IEEE - Atari 2600 Retrospective.pdf"
+    "Background Readings/atari2600_fsm.pdf"
   ]
 }
