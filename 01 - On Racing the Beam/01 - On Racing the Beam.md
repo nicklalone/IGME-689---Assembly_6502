@@ -54,11 +54,11 @@ I should also note here that a certain important game company also got its start
 #### Tennis for Two (1958)
 The Manhattan Project gave us the Atomic Bomb but almost immediately after using it, the sheer magnitude of what had been done began to weigh heavily on many. Spacewar! from William Higgenbotham was born out of the guilty associated with the bomb. This was not only one of the first video games, but was also a piece of software that used graphic displays, a novelty at the time. 
 
-![](/images/consoles/tennis42.png)
+![](images/consoles/tennis42.png)
 #### Spacewar! (1962)
 Spacewar! has long been considered the first videogame though Higgenbotham's work is more recently being given recognition. Whereas Higgenbotham was working at Brookhaven, Spacewar!'s creators,  Steve Russell in collaboration with Martin Graetz, Wayne Wiitanen, Bob Saunders, Steve Piner, and a few others associated with the railroad club at MIT and a lab at Harvard, were all working at MIT. Much like the game Draughts, mentioned above, there were a variety of games that had been designed but had mostly been novelty games like Checkers or Tic-Tac-Toe. Notably, this game was [written in Assembly](https://www.masswerk.at/spacewar/sources/). 
 
-![](/images/consoles/spacewar.png)
+![](images/consoles/spacewar.png)
 #### Pong!
 So, Pong! was a whole phenomenon. It was a shock to folks in the arcade business, primarily pinball at that time, that this simple collection of wires could generate so much revenue. This game offered a glimpse at what was about to happen with regard to the arcade movement. While this movement would crash and burn much like the home video game movement that started with the Magnavox Odyssey, it remains as a moment in time that we need to pay attention to for what it did do and what it neglected to do.
 
