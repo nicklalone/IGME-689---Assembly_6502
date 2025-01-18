@@ -2,13 +2,14 @@
 
 1. [Intro](#intro)
 2. [Assignments](#assignments)
-3. [IDE and More](#idem)
+3. [Links, Bits, and Bobs](#links)
+4. [IDE and More](#idem)
 	1. [Stella](#stella)
 	2. [8-Bit Workshop](#8bws)
-	3. [Day 2](#day2)
-4. [Modes](#modes)
-5. [Terms](#terms)
-6. [OpCodes](#opcodes)
+5. [Modes](#modes)
+	1. [Signed vs Unsigned](#signun)
+6. [Terms](#terms)
+7. [OpCodes](#opcodes)
 
 ---------------- Table of Contents ---------------- 
 # <a id = "intro"></a>Introduction
@@ -56,7 +57,22 @@ An example response is this. I just wrote it and it is very stream of consciousn
 
 It is more for you, than me. I want to force you to read and this is how I can do that. My apologies.
 
-With that said, let's head in to the IDE and operating environment. 
+Let's take a moment to find things we can play.
+# <a id = "links"></a>Links, Bits, and Bobs
+One thing I should cover is where to find games. Most of the 2600 games have been mostly sourced out or otherwise covered. There's some ROMS, manuals and things. 
+
+* Games: [Use Archive to find games, manuals, and more.](https://archive.org/details/Atari2600FullRomCollectionReuploadByDataghost "https://archive.org/details/Atari2600FullRomCollectionReuploadByDataghost")
+* Homebrew: [Atari Age has a variety of collections.](https://forums.atariage.com/topic/144662-atari-2600-hacks-and-homebrews-rom-collection-v12/)
+* Manuals: https://atariage.com/system_items.php?SystemID=2600&itemTypeID=MANUAL 
+* Big ole PDF of all manuals: http://www.westg8.com/atari.html
+
+Also, I need to include this in more markdown files but here are some templates: 
+
+* Fonts for Atari: https://www.atariage.com/2600/archives/AtariFonts/index.html?SystemID=2600
+* Label Maker: https://www.labelmaker2600.com/
+* Manual dimensions: https://forums.atariage.com/topic/300644-homebrew-manuals/
+
+We'll talk more about the art required for the carts, manuals, and boxes in the near future. With that said, let's head in to the IDE and operating environment. 
 # <a id="idem"></a>IDEs and More
 
 ## <a id="stella"></a>Stella
@@ -65,11 +81,6 @@ Stella is an emulator that uses the same codename of the 2600 or VCS when it was
 * Main Website: https://stella-emu.github.io/
 * Source Code: https://github.com/stella-emu/stella
 * User Guide: https://stella-emu.github.io/docs/index.html
-
-One thing I should cover is where to find games. Most of the 2600 games have been mostly sourced out or otherwise covered. There's some ROMS, manuals and things. 
-
-* Games: [Use Archive to find games, manuals, and more.](https://archive.org/details/Atari2600FullRomCollectionReuploadByDataghost "https://archive.org/details/Atari2600FullRomCollectionReuploadByDataghost")
-* Homebrew: [Atari Age has a variety of collections.](https://forums.atariage.com/topic/144662-atari-2600-hacks-and-homebrews-rom-collection-v12/)
 
 Stella Debugger - https://stella-emu.github.io/docs/debugger.html
 ![](/images/StellaUI.png)
@@ -158,8 +169,7 @@ This requires us to have understood what number we're looking for. We can use a 
 
 ![hexchart.png](images/hexchart.png)
 While this chart is useful, you can always keep this tab open in your browser for easier reference: https://www.rapidtables.com/convert/number/hex-to-decimal.html.
-
-### Signed vs Unsigned Bytes
+### <a id="signun"></a>Signed vs Unsigned Bytes
 On page 3 of the Hugg book, you'll see a discussion of signed vs unsigned bytes or positive vs negative numbers. For the moment, we're going to assume that all values are unsigned but at some point, we're going to have to get into the two's compliment space.
 # <a id="terms"></a>Terms to Remember
 At the end of each file, I intend to place a relevant list of things to remember, terms to note. We will begin them here. 
