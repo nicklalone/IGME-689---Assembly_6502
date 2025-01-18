@@ -119,19 +119,19 @@ To the right of that is our actual render. Right now, i've got a simple "Hello W
 
 Let's take a tour of the debugging tools next. 
 ### Disassembly
-![](images/8bit/8bitwork-disas.png)
+![](/images/8bit/8bitwork-disas.png)
 From the documentation, we learned that this tool, "Disassembles the program at the current Program Counter." But what does that mean?
 ### Memory Browser
-![](images/8bit/8bitwork-membrowse.png)
+![](/images/8bit/8bitwork-membrowse.png)
 From the documentation, we learned that this tool, "Displays a dump of all CPU memory." But what does that mean?
 ### Memory Map
 ![](images/8bit/8bitwork-memmap.png)
 From the documentation, we learned that this tool, "Displays a handy memory map of the system. Certain tools (like linkers) will give additional segment info here.." But what does that mean?
 ### Memory Probe
-![](images/8bit/8bitwork-memprobe.png)
+![](/images/8bit/8bitwork-memprobe.png)
 From the documentation, we learned that this tool, "Shows a bitmap representing read/write activity across system memory" But what does that mean?
 ### CRT Probe
-![](images/8bit/8bitwork-crtprobe.png)
+![](/images/8bit/8bitwork-crtprobe.png)
 From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
 ### Probe Log
 ![](images/8bit/8bitwork-probelog.png)
@@ -140,10 +140,10 @@ From the documentation, we learned that this tool, "Shows a textual log of CPU/m
 ![](images/8bit/8bitwork-scanline.png)
 From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
 ### Symbol Profiler
-![](images/8bit/8bitwork-symprof.png)
+![](/images/8bit/8bitwork-symprof.png)
 From the documentation, we learned that this tool, "Shows a list of symbols, with read/write counts." But what does that mean?
 ### Asset Editor
-![](images/8bit/8bitwork-asset.png)
+![](/images/8bit/8bitwork-asset.png)
 From the documentation, we learned that this tool, "Parses assets (like bitmaps and palettes) and allows editing." But what does that mean?
 
 We won't use this a lot as we don't actually have assets to manage. However, it will sometimes show the memory allocation of named entities like missiles and balls that we'll be able to adjust manually. Over time, we might end up coming back to this depending on if I can figure out how to force assets to end up there.
