@@ -18,6 +18,7 @@ Or another version of this from 8blit:
 # <a id='classexp'></a>Class Example
 We'll be going through this in class. My hope here is to show you how the above examples work and in doing so, prepare you for your time if you want asymmetry in your life. Note here that it is not easy. I'll come up with some interesting examples for you at some point in the semester: 
 ```asm6502
+;========================================
 ; A Simple Asymmetrical Title Screen Playfield
 ;
 ; this is a simple kernal meant to be usable for a title screen.
@@ -37,12 +38,13 @@ We'll be going through this in class. My hope here is to show you how the above 
 ; to draw the playfield
 ;
 ; It uses no RAM, but all Registers when it's drawing the title 
-
+;========================================
 
 	processor 6502
 	include vcs.h
 	include macro.h
 	org $F000
+	
 Start
 	CLEAN_START
 
@@ -51,23 +53,28 @@ Start
 	lda #33    
 	sta COLUPF  ;colored playfield
 
+;========================================
 ;MainLoop starts with usual VBLANK code,
 ;and the usual timer seeding
+;========================================
+
 MainLoop
 	VERTICAL_SYNC
 	lda #43	
 	sta TIM64T
-;
+	
+;========================================
 ; lots of logic can go here, obviously,
 ; and then we'll get to the point where we're waiting
 ; for the timer to run out
+;========================================
 
 WaitForVblankEnd
-	lda INTIM	
+	lda INTIM	; So, we've written to a the 64-timer. What this does is basically wait for the timer to end. We can really only use this when we're dealing with TIM64T
 	bne WaitForVblankEnd	
 	sta VBLANK  	
 
-
+;========================================
 ;so, scanlines. We have three loops; 
 ;TitlePreLoop , TitleShowLoop, TitlePostLoop
 ;
@@ -77,14 +84,19 @@ WaitForVblankEnd
 ; The trick is, the middle loop is 
 ; how many pixels are in the playfield,
 ; times how many scanlines you want per "big" letter pixel 
+;========================================
 
 pixelHeightOfTitle = #6
 scanlinesPerTitlePixel = #6
 
+;========================================
 ; ok, that's a weird place to define constants, but whatever
 
 ;just burning scanlines....you could do something else
+;========================================
+
 	ldy #20
+	
 TitlePreLoop
 	sta WSYNC	
 	dey
@@ -93,9 +105,10 @@ TitlePreLoop
 	ldx #pixelHeightOfTitle ; X will hold what letter pixel we're on
 	ldy #scanlinesPerTitlePixel ; Y will hold which scan line we're on for each pixel
 
-;
+;========================================
 ;the next part is careful cycle counting from those 
 ;who have gone before me....
+;========================================
 
 TitleShowLoop
 	sta WSYNC 	
@@ -119,7 +132,9 @@ TitleShowLoop
 	;PF2 rewrite must begin at exactly cycle 45!!, no more, no less
 	sta PF2			;[45]+2 = *47*  ; >
 
+;========================================
 
+;========================================
 
 	dey ;ok, we've drawn one more scaneline for this 'pixel'
 	bne NotChangingWhatTitlePixel ;go to not changing if we still have more to do for this pixel
@@ -128,6 +143,11 @@ TitleShowLoop
 	beq DoneWithTitle ; ...unless we're done, of course
 	
 	ldy #scanlinesPerTitlePixel ;...so load up Y with the count of how many scanlines for THIS pixel...
+
+;========================================
+;
+;========================================
+
 NotChangingWhatTitlePixel
 	
 	jmp TitleShowLoop
@@ -154,12 +174,14 @@ OverScanWait
 	sta WSYNC
 	dex
 	bne OverScanWait
-	jmp  MainLoop      
-;
+	jmp  MainLoop  
+
+;========================================
 ; the graphics!
 ; I suggest my online javascript tool, 
 ;PlayfieldPal at http://alienbill.com/vgames/playerpal/
 ;to draw these things. Just rename 'em left and right
+;========================================
 
 PFData0Left
         .byte #%00000000
@@ -210,6 +232,7 @@ PFData2Right
         .byte #%00010101
         .byte #%00011000
         .byte #%00000000
+
 	org $FFFC
 	.word Start
 	.word Start

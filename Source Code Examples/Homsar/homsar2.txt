@@ -1,0 +1,790 @@
+1 rem smartbranching on
+2 rem based on Strong Bad email number 2
+3 rem (spaghetti) code by Thomas Krug
+5 goto 1400
+10 a = 0 : b = 0 : d = 0 : m = 0 : n = 0 : l = 3
+12 p = 2 : q = 1 : j = 0 : k = 0 : h = 0 : z = 0 : y = 0
+13 score = 0
+20 player0:
+ %00111000
+ %01000100
+ %11111110
+ %11111110
+ %11010110
+ %11111110
+ %11101110
+ %01010100
+ %00111000
+end
+25 player1:
+ %01100110
+ %01000010
+ %01000010
+ %11111111
+ %11111111
+ %10101001
+ %10001001
+ %10111111
+ %11111111
+ %11111111
+ %01111110
+ %01111110
+ %00101010
+ %00011100
+ %00001111
+ %00001111
+ %00000110
+ %00000110
+end
+30 player0x = 40
+32 player0y = 10
+35 missile0height = 2
+36 missile0x = 40
+37 missile0y = 50
+41 player1x = 90
+42 player1y = 60
+45 pfvline 0 1 11 on
+46 pfvline 30 1 11 on
+48 if l < 1 then goto 1000
+50 drawscreen
+51 if switchreset then pfpixel p q off : goto 10
+52 if switchbw then drawscreen : goto 52
+53 if z > 1 then 55
+54 if y > 254 then y = 0 : goto 1100
+55 if z > 2 then 57
+56 if y > 254 then y = 0 : goto 1200
+57 if z > 3 then 64
+58 if y > 254 then y = 0 : z = z + 1
+60 if z = 40 then goto 1300
+64 COLUPF = 0 : COLUBK = 196
+65 COLUP0 = 51 : COLUP1 = 26 : scorecolor = 10
+66 if missile0x > 150 then m = 1 - m
+67 if missile0x < 40 then m = 1 - m
+68 if missile0y > 88 then n = 1 - n
+69 if missile0y < 20 then n = 1 - n
+71 if m = 1 then missile0x = missile0x + 1
+72 if m = 0 then missile0x = missile0x - 1
+73 if n = 0 then missile0y = missile0y + 1
+74 if n = 1 then missile0y = missile0y - 1
+75 if joy0up then goto 500
+80 if joy0down then goto 600
+90 if joy0left then goto 700
+100 if joy0right then goto 800
+150 if player0x < 38 then a = 0
+160 if player0x > 140 then a = 0
+200 if a = 0 then b = 1 - b
+205 if a = 0 then a = rand
+210 if b = 0 then player0x = player0x - 1
+220 if b = 1 then player0x = player0x + 1
+230 a = a - 1
+240 d = d + 1 : if d < 6 then goto 340
+260 pfpixel p q off
+270 q = q + 1
+280 pfpixel p q on
+283 d = 0
+284 if q < 11 then goto 50
+285 if q > 11 then score = score + 10
+287 if q > 11 then y = y + 1
+290 if q > 11 then q = 1
+295 j = 2
+297 if player0x > 46 then j = j + 2
+298 if player0x > 52 then j = j + 2
+299 if player0x > 58 then j = j + 2
+300 if player0x > 64 then j = j + 2
+301 if player0x > 70 then j = j + 2
+302 if player0x > 76 then j = j + 2
+303 if player0x > 82 then j = j + 2
+304 if player0x > 88 then j = j + 2
+305 if player0x > 94 then j = j + 2
+306 if player0x > 100 then j = j + 2
+307 if player0x > 106 then j = j + 2
+308 if player0x > 112 then j = j + 2
+309 if player0x > 118 then j = j + 2
+330 p = j
+340 if collision(player1,missile0) then goto 350
+345 goto 900
+350 if collision(player1,playfield) then goto 50
+400 goto 900
+500 if player1y > 40 then player1y = player1y - 1
+510 goto 80
+600 if player1y < 88 then player1y = player1y + 1
+650 goto 90
+700 if player1x > 36 then player1x = player1x - 1
+750 goto 100
+800 if player1x < 143 then player1x = player1x + 1
+850 goto 150
+900 rem lose a man
+903 l = l - 1
+905 player1:
+ %00000000
+ %11111111
+ %11111111
+ %00000000
+end
+906 pfpixel p q off
+907 p = 2
+908 q = 2
+909 AUDF0 = 0
+910 k = k + 1
+953 AUDC0 = 14
+956 AUDF0 = k + 3
+957 AUDV0 = 7
+980 drawscreen
+985 if k < 25 then goto 910
+986 k = 0 : AUDV0 = 0
+990 goto 25
+1000 rem game over
+1050 pfpixel p q off
+1010 COLUBK = 174
+1020 drawscreen
+1030 if switchreset then goto 10
+1040 goto 1010
+1100 rem first Animation scene for 2550 points
+1110 player0:
+ %01110111
+ %00110110
+ %00010100
+ %00010100
+ %00111111
+ %00111111
+ %00111111
+ %00101101
+ %00110011
+ %00100001
+ %00110011
+ %00111111
+ %00111111
+ %00111111
+ %00010101
+ %00001110
+end
+1120 player1:
+ %00001111
+ %00001000
+ %00001000
+ %00001000
+ %11110000
+ %10010000
+ %10010000
+ %11110000
+ %00001111
+ %00001001
+ %00001001
+ %00001111
+ %11110000
+ %10000000
+ %10000000
+ %11110000
+end
+1130 player0x = 80 : player0y = 60 : player1x = 100 : player1y = 60
+1140 k = 0
+1150 z = 1
+1153 AUDC0 = 10 : AUDF0 = 0
+1155 k = k + 1 : COLUP0 = 68 : COLUP1 = 43
+1156 AUDF0 = k + 3
+1157 AUDV0 = 4
+1160 drawscreen
+1165 if k < 200 then goto 1155
+1170 k = 0
+1175 AUDV0 = 0
+1180 goto 20
+1200 rem second Animation scene for 5100 points
+1210 player0:
+ %10111111
+ %01111110
+ %11011110
+ %10110010
+ %11111110
+ %01101010
+ %11111111
+end
+1220 player1:
+ %00001001
+ %00001001
+ %00001111
+ %00001001
+ %00001001
+ %11110000
+ %10000000
+ %11110000
+ %10000000
+ %11110000
+ %00010001
+ %00010001
+ %00010101
+ %00011011
+end
+1230 player0x = 60 : player0y = 60 : player1x = 80 : player1y = 60
+1250 z = 2
+1255 k = k + 1 : COLUP0 = 43 : COLUP1 = 67
+1257 if k = 50 then player0x = player0x + 1
+1258 if k = 100 then player0x = player0x + 1
+1259 if k = 150 then player0x = player0x + 1
+1260 drawscreen
+1265 if k < 200 then goto 1255
+1270 k = 0
+1280 goto 20
+1300 rem third animation sequence  TROGDOR
+1310 player0:
+ %00000001
+ %00000001
+ %00000001
+ %00000001
+ %00000111
+ %00111111
+ %00111111
+ %00001011
+ %00000001
+ %00000000
+ %00000000
+ %00000000
+ %01111000
+ %11111000
+ %11111000
+ %11110000
+ %11100111
+ %11101111
+ %11111111
+ %01111111
+ %00011111
+ %00011111
+ %00001111
+ %00000111
+ %00001111
+ %00011011
+ %00110001
+ %01100000
+ %00000000
+ %00000000
+ %00000000
+end
+1320 player1:
+ %10110000
+ %00100000
+ %00100000
+ %00100000
+ %11110000
+ %11111100
+ %11111100
+ %11111110
+ %10111111
+ %01011111
+ %00011111
+ %00001111
+ %00001111
+ %00011111
+ %00111111
+ %01111111
+ %11111110
+ %11111100
+ %11000000
+ %11001110
+ %11111111
+ %11111110
+ %11111111
+ %11111111
+ %11100111
+ %00000000
+ %10010100
+ %11000000
+ %00001000
+ %00010100
+ %00000000
+end
+1330 player0x = 70 : player0y = 70 : player1x = 78 : player1y = 70
+1350 z = 3
+1355 k = k + 1 : COLUP0 = 192 : COLUP1 = 192 : COLUPF = 66
+1357 pfpixel 15 6 flip
+1358 pfpixel 16 7 flip
+1359 pfpixel 17 8 flip
+1360 pfpixel 18 8 flip
+1361 pfpixel 19 7 flip
+1364 drawscreen
+1365 if k < 200 then goto 1355
+1370 k = 0
+1399 goto 20
+1400 rem title screen
+1405 COLUPF = 177
+1410 pfvline 2 3 2 flip : pfpixel 3 4 flip : pfvline 4 4 1 flip
+1412 pfvline 7 4 1 flip : pfvline 8 4 1 flip
+1414 pfvline 11 4 1 flip : pfpixel 12 4 flip : pfvline 13 4 1 flip
+1415 pfpixel 14 4 flip : pfvline 15 4 1 flip
+1416 pfvline 18 3 2 flip : pfvline 19 5 2 flip : pfpixel 19 3 flip : pfpixel 18 7 flip
+1417 pfvline 23 3 3 flip : pfpixel 22 3 flip : pfvline 22 5 1 flip
+1418 pfvline 26 3 2 flip : pfpixel 27 3 flip
+1419 gosub 2000
+1425 if joy0fire then 1441
+1428 COLUPF = 177
+1430 drawscreen
+1440 goto 1425
+1441 pfvline 2 3 2 flip : pfpixel 3 4 flip : pfvline 4 4 1 flip
+1442 pfvline 7 4 1 flip : pfvline 8 4 1 flip
+1444 pfvline 11 4 1 flip : pfpixel 12 4 flip : pfvline 13 4 1 flip
+1445 pfpixel 14 4 flip : pfvline 15 4 1 flip
+1446 pfvline 18 3 2 flip : pfvline 19 5 2 flip : pfpixel 19 3 flip : pfpixel 18 7 flip
+1447 pfvline 23 3 3 flip : pfpixel 22 3 flip : pfvline 22 5 1 flip
+1448 pfvline 26 3 2 flip : pfpixel 27 3 flip
+1450 player0:
+ %00001111
+ %00001001
+ %00001011
+ %00001000
+ %00001111
+ %00000000
+ %00001001
+ %00001011
+ %00001101
+ %00001001
+ %00000000
+ %00001111
+ %00001001
+ %00001001
+ %00001111
+ %00000000
+ %00001001
+ %00001001
+ %00001110
+ %00001001
+ %00001110
+ %00000000
+ %00000010
+ %00000010
+ %00000010
+ %00001111
+ %00000000
+ %00001111
+ %00000001
+ %00001111
+ %00001000
+ %00001111
+ %00000000
+ %01000000
+ %01000000
+ %01000000
+ %01000000
+ %00000000
+ %10010000
+ %10010000
+ %11110000
+ %10010000
+end
+1451 player1:
+ %00000010
+ %00000001
+ %00000011
+ %00000011
+ %11100000
+ %10010000
+ %10010000
+ %11100000
+ %00000000
+ %10010000
+ %10010000
+ %11110000
+ %10010000
+ %01100000
+ %00000000
+ %11100000
+ %10010000
+ %11100000
+ %10010000
+ %11100000
+end
+1453 a = 0
+1454 a = a + 1
+1456 player0x = 20 : player0y = 50 : player1x = 40 : player1y = 40
+1457 COLUP1 = 176 : COLUP0 = 176
+1458 if a > 250 then 1550
+1459 drawscreen
+1460 goto 1454
+1550 player0:
+ %11110000
+ %10000000
+ %11100000
+ %10000000
+ %11110000
+ %00000000
+ %01000000
+ %01000000
+ %01000000
+ %11110000
+ %00000000
+ %10010000
+ %11110000
+ %10010000
+ %01100000
+ %00000000
+ %10010000
+ %10010000
+ %11110000
+ %10010000
+ %00000000
+ %00000000
+ %00001111
+ %00001001
+ %00001001
+ %00001001
+ %00000000
+ %00001111
+ %00001001
+ %00001001
+ %00001111
+ %00000000
+ %00000100
+ %00000100
+ %00000110
+ %00001001
+ %00000000
+ %00000000
+ %10000000
+ %11100000
+ %10000000
+ %11110000
+ %00000000
+ %01000000
+ %01000000
+ %01000000
+ %01000000
+end
+1551 player1:
+ %10010000
+ %11110000
+ %10010000
+ %00000000
+ %11110000
+ %10000000
+ %10000000
+ %11110000
+ %00000000
+ %11110000
+ %10010000
+ %10010000
+ %10010000
+ %00000000
+ %10001000
+ %10001000
+ %10101000
+ %11011000
+ %00001111
+ %00001001
+ %00001001
+ %00001111
+ %00000000
+ %00001111
+ %00000001
+ %10001111
+ %10001000
+ %10001111
+ %11100000
+ %00000000
+ %11110000
+ %10010000
+ %11110000
+ %00010000
+ %11110000
+ %00000000
+ %11110000
+ %00010000
+ %11110000
+ %10000000
+ %11110000
+ %00000000
+ %10001000
+ %10001000
+ %10101000
+ %11011000
+ %00000000
+ %11110000
+ %10010000
+ %10010000
+ %11110000
+ %00000000
+ %10010000
+ %10010000
+ %11110000
+ %10010000
+end
+1553 a = 0
+1554 a = a + 1
+1556 player0x = 30 : player0y = 50 : player1x = 50 : player1y = 80
+1557 COLUP1 = 176 : COLUP0 = 176
+1558 if a > 250 then 1650
+1559 drawscreen
+1560 goto 1554
+1650 player0:
+ %11110000
+ %10010000
+ %10010000
+ %10010000
+ %00000000
+ %11110000
+ %10010000
+ %10010000
+ %11110000
+ %00000000
+ %01000000
+ %01000000
+ %01000000
+ %10010000
+ %00000000
+ %00000000
+ %00000100
+ %00000100
+ %00000100
+ %00001111
+ %00000000
+ %00001001
+ %00001011
+ %00001101
+ %00001001
+ %00000000
+ %00001111
+ %00001001
+ %00001001
+ %00001111
+ %00000000
+ %00001110
+ %00001001
+ %00001001
+ %00001110
+ %00000000
+ %00000000
+ %01000000
+ %01000000
+ %01100000
+ %10010000
+ %00000000
+ %10010000
+ %10010000
+ %11110000
+ %10010000
+ %00000000
+ %01010000
+ %10101000
+ %10101000
+ %10001000
+end
+1651 player1:
+ %00100000
+ %00000000
+ %00100000
+ %00100000
+ %00100000
+ %10010000
+ %01100000
+ %00000000
+ %00010001
+ %00010001
+ %00010101
+ %00011011
+ %00000000
+ %00000100
+ %00000100
+ %00000100
+ %00000100
+ %00000000
+ %00001001
+ %00001001
+ %00001111
+ %00001001
+ %00000000
+ %00000000
+ %11110000
+ %10000000
+ %10000000
+ %10000000
+ %00000000
+ %11110000
+ %10000000
+ %10000000
+ %10000000
+ %00000000
+ %01000000
+ %01000000
+ %01000000
+ %01000000
+ %00000000
+ %10010000
+ %10100000
+ %11100000
+ %10010000
+end
+1653 a = 0
+1654 a = a + 1
+1656 player0x = 40 : player0y = 60 : player1x = 60 : player1y = 60
+1657 COLUP1 = 176 : COLUP0 = 176
+1658 if a > 250 then 1750
+1659 drawscreen
+1660 goto 1654
+1750 player0:
+ %11110011
+ %10000011
+ %10000000
+ %11110000
+ %00000000
+ %00000000
+ %11110000
+ %10000000
+ %11110000
+ %10000000
+ %11110000
+ %00000000
+ %01000000
+ %01000000
+ %01000000
+ %01000000
+ %00000000
+ %10010000
+ %10110000
+ %11010000
+ %10010000
+ %00000000
+ %10010000
+ %10110000
+ %11010000
+ %10010000
+ %00000000
+ %00100000
+ %00100000
+ %00100000
+ %00100000
+ %00000000
+ %01100000
+ %10010000
+ %10010000
+ %10010000
+end
+1751 player1:
+ %00111100
+ %00111100
+end
+1753 a = 0
+1754 a = a + 1
+1756 player1x = 60 : player1y = 50 : player0x = 80 : player0y = 80
+1757 COLUP1 = 176 : COLUP0 = 176
+1758 if a > 250 then 10
+1759 drawscreen
+1760 goto 1754
+2000 rem title music
+2010 AUDC0 = 1
+2015 rem first note
+2020 k = 0
+2040 k = k + 1
+2060 drawscreen
+2063 AUDF0 = 31 : AUDV0 = 5
+2070 if k < 10 then 2040
+2080 k = 0
+20100 AUDV0 = 0
+2110 rem first pause
+2140 k = k + 1
+2160 drawscreen
+2170 if k < 3 then 2140
+2180 k = 0
+2220 rem second note
+2340 k = k + 1
+2360 drawscreen
+2363 AUDF0 = 30 : AUDV0 = 5
+2370 if k < 10 then 2340
+2380 k = 0 : AUDV0 = 0
+2410 rem second pause
+2440 k = k + 1
+2460 drawscreen
+2470 if k < 3 then 2440
+2480 k = 0
+2510 rem third note
+2640 k = k + 1
+2660 drawscreen
+2663 AUDF0 = 29 : AUDV0 = 5
+2670 if k < 10 then 2640
+2680 k = 0 : AUDV0 = 0
+2710 rem third pause
+2740 k = k + 1
+2760 drawscreen
+2770 if k < 3 then 2740
+2780 k = 0
+2810 rem fourth note
+2840 k = k + 1
+2860 drawscreen
+2863 AUDF0 = 28 : AUDV0 = 5
+2870 if k < 15 then 2840
+2880 k = 0 : AUDV0 = 0
+2910 rem fourth pause
+2940 k = k + 1
+2960 drawscreen
+2963 AUDF0 = 0 : AUDV0 = 0
+2970 if k < 30 then 2940
+2980 k = 0
+3010 rem fifth note
+3040 k = k + 1
+3060 drawscreen
+3063 AUDF0 = 27 : AUDV0 = 5
+3070 if k < 10 then 3040
+3080 k = 0 : AUDV0 = 0
+3110 rem fifth pause
+3140 k = k + 1
+3160 drawscreen
+3170 if k < 3 then 3140
+3180 k = 0
+3210 rem sixth note
+3240 k = k + 1
+3260 drawscreen
+3263 AUDF0 = 28 : AUDV0 = 5
+3270 if k < 12 then 3240
+3280 k = 0 : AUDV0 = 0
+3310 rem sixth pause
+3340 k = k + 1
+3360 drawscreen
+3370 if k < 3 then 3340
+3380 k = 0
+3410 rem seventh note
+3440 k = k + 1
+3460 drawscreen
+3463 AUDF0 = 29 : AUDV0 = 5
+3470 if k < 15 then 3440
+3480 k = 0 : AUDV0 = 0
+3510 rem seventh pause
+3540 k = k + 1
+3560 drawscreen
+3570 if k < 40 then 3540
+3580 k = 0
+3610 rem eighth note
+3640 k = k + 1
+3660 drawscreen
+3663 AUDF0 = 28 : AUDV0 = 5
+3670 if k < 10 then 3640
+3680 k = 0 : AUDV0 = 0
+3710 rem eight pause
+3740 k = k + 1
+3760 drawscreen
+3770 if k < 3 then 3740
+3780 k = 0
+3810 rem ninth note
+3820 player0x = 50 : player0y = 50
+3840 k = k + 1
+3860 drawscreen
+3863 AUDF0 = 29 : AUDV0 = 5
+3870 if k < 14 then 3840
+3880 k = 0 : AUDV0 = 0
+3910 rem ninth pause
+3940 k = k + 1
+3960 drawscreen
+3970 if k < 3 then 3940
+3980 k = 0
+4010 rem tenth note
+4040 k = k + 1
+4060 drawscreen
+4063 AUDF0 = 30 : AUDV0 = 5
+4070 if k < 10 then 4040
+4080 k = 0 : AUDV0 = 0
+4110 rem tenth pause
+4140 k = k + 1
+4160 drawscreen
+4170 if k < 3 then 4140
+4180 k = 0
+4210 rem eleventh note
+4240 k = k + 1
+4260 drawscreen
+4263 AUDF0 = 31 : AUDV0 = 5
+4270 if k < 25 then 4240
+4280 k = 0 : AUDV0 = 0
+4500 return

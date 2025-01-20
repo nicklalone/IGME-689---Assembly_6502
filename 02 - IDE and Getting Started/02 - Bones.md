@@ -35,7 +35,7 @@ I'll provide templates and files to edit for proper sizing.
 # <a id="bones"></a>Bones
 So, there are a bunch of things we need to do when we are starting a project. Since the console itself has no firmware, we have to take care of that stuff as we begin. I have taken most of this from the Pikuma course as well as your textbook. That it replicates the same error is not a mistake, we need to make errors to discuss parts that won't be able to be noticed unless the mistake is made. In fact, i'd guess the order of operations will come up and you won't know why despite telling you this. 
 
-If you want to play around with op-codes and what they do, you can use: https://skilldrick.github.io/easy6502/ to muck about.
+If you want to play around with op-codes and what they do, you can use: https://skilldrick.github.io/easy6502/ to muck about or this to find them quickly: 
 
 First, we need to take into account our IDE and this will be a part of just about everythiing we do. We have to call into being our processor and assemblers.
 ```asm6502
@@ -47,15 +47,16 @@ First, we need to take into account our IDE and this will be a part of just abou
 If you're curious abbout these, go to: https://github.com/munsie/dasm/tree/master and start reading. This is the DASM community's repo with DASM. If you want a bit less of a burden to read, try this: https://forums.atariage.com/topic/27221-session-9-6502-and-dasm-assembling-the-basics/.
 
 Next up, we have to tell the hardware where our memory addresses begin. This is important because we basically have to tell the hardware where to point its initial register. Basically, we're saying to the Assembler (DASM) that we are actually beginning our code now and that the memory unit.
+
 ```asm6502
     seg code
     org $F000       ; Define the code origin at $F000
 ```
 In this case, we're pointing to the very bottom of the stack. I found this useful slide that gives us the range of the memory: https://www.slideshare.net/slideshow/atari-2600programming/23550414.
 
-![](images/memorymap.png)
+![](/images/memorymap.png)
 Or, we can see this mapped out for us in 8bitworkshop's memory map: 
-![](images/memmap.png)
+![](/images/memmap.png)
 
 And I should probably mention here that you're going to need some way to shift between binary, hexadecimal, literal values. We're going to use a converter to keep track unless you want me to drill this knowledge into you and I don't honestly know if we have time. 
 ```asm6502
@@ -85,10 +86,11 @@ Well, the model for this is relatively simple. I'll call it out in a list:
 For X, then, it would look like `#$FF` and then after decrementing, `#$FE` and then after decrementing `#$FD` and so on and so forth until it gets to the lowest value. 
 ```asm6502
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
 ; Clear the Page Zero region ($00 to $FF)
 ; Meaning the entire RAM and also the entire TIA registers
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
+
     lda #0          ; A = 0
     ldx #$FF        ; X = #$FF
 MemLoop:            ; 
@@ -100,9 +102,9 @@ MemLoop:            ;
 We then make sure to tell the assembler to make the space for our code exactly 4k and stop operations. 
 
 ```asm6502
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
 ; Fill the ROM size to exactly 4KB
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
     org $FFFC
     .word Start     ; Reset vector at $FFFC (where the program starts)
     .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
@@ -126,10 +128,10 @@ Start:
     ldx #$FF        ; Loads the X register with #$FF
     txs             ; Transfer the X register to the (S)tack pointer
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
 ; Clear the Page Zero region ($00 to $FF)
 ; Meaning the entire RAM and also the entire TIA registers
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
     lda #0          ; A = 0
     ldx #$FF        ; X = #$FF
 MemLoop:            ; 
@@ -137,9 +139,10 @@ MemLoop:            ;
     dex             ; X--
     bne MemLoop     ; Loop until X is equal to zero (z-flag is set)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
 ; Fill the ROM size to exactly 4KB
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
+    
     org $FFFC
     .word Start     ; Reset vector at $FFFC (where the program starts)
     .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
@@ -157,6 +160,8 @@ It seems like it is kind of, but it could be better because essentially we're no
     include "vcs.h"
     include "macro.h"
     include "xmacro.h"
+
+;
     
     seg code
     org $F000       ; Define the code origin at $F000
@@ -167,10 +172,11 @@ Start:
     ldx #$FF        ; Loads the X register with #$FF
     txs             ; Transfer the X register to the (S)tack pointer
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
 ; Clear the Page Zero region ($00 to $FF)
 ; Meaning the entire RAM and also the entire TIA registers
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
+
     lda #0          ; A = 0
     ldx #$FF        ; X = #$FF
     sta $FF         ; Store $FF is zeroed before the loop starts.
@@ -180,9 +186,10 @@ MemLoop:            ; Why is this wrong?
     sta $0,X        ; Store the value of A inside memory address $0 + current value of X
     bne MemLoop     ; Loop until X is equal to zero (z-flag is set)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
 ; Fill the ROM size to exactly 4KB
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;========================================
+
     org $FFFC
     .word Start     ; Reset vector at $FFFC (where the program starts)
     .word Start     ; Interrupt vector at $FFFE (unused in the VCS)
@@ -198,23 +205,40 @@ So, we have a script that's kinda boring, hurray? I guess? No, it's boring. Let'
 
 Let's do some work with it. In particular, I want to point out something from the intro. 
 ```asm6502
+;========================================
 ; Assembler should use basic 6502 instructions
+;========================================
+
 	processor 6502
 	
+;========================================
 ; Include files for Atari 2600 constants and handy macro routines
+;========================================
+
 	include "vcs.h"
 	include "macro.h"
-	
-; Here we're going to introduce the 6502 (the CPU) and the TIA (the chip that generates the video signal). There's no frame buffer. In fact, we actually have to build it. To do this, we have have to program the TIA before (or during) each scanline. (This is the "Racing the Beam" we keep talking about." To start, we're just going to initialize the system and put some color on the TV.
 
+;========================================
+; Here we're going to introduce the 6502 (the CPU) and the TIA (the chip that generates the video signal). There's no frame buffer. In fact, we actually have to build it. To do this, we have have to program the TIA before (or during) each scanline. (This is the "Racing the Beam" we keep talking about." To start, we're just going to initialize the system and put some color on the TV.
+;========================================
+
+;========================================
 ; 4K Atari 2600 ROMs usually start at address $F000
+;========================================
+
 	org  $f000
 
+;========================================
 ; Let's define a variable to hold the starting color
 ; at memory address $81
+;========================================
+
 BGColor	equ $81
 
+;========================================
 ; The CLEAN_START macro zeroes RAM and registers
+;========================================
+
 Start	CLEAN_START
 ```
 So, we've basically done with `clean_start` what we've written for the basic code block from the first example; however, `CLEAN_START` does a bit more than what we've previously done. Last time, we did: 
@@ -229,6 +253,7 @@ This is where `macro.h` comes in! If we head over to the `macro.h` webpage at: h
 
 `CLEAN_START` looks like this:
 ```asm6502
+
 ; CLEAN_START
 ; Original author: Andrew Davie
 ; Standardised start-up code, clears stack, all TIA registers and RAM to 0
@@ -265,18 +290,18 @@ We're going to set up 2 ways of thinking about this. First, we'll simply subtrac
         
 Start	CLEAN_START
 
-;```````````````````````````````
+;========================================
 ;	Start new Frame
-;```````````````````````````````
+;========================================
 
 NextFrame: 
 	lda %00000010	; We need to load something in our accumulator and this bit is what activates it.
         sta VBLANK	; Turn on VBLANK
         sta VSYNC	; Turn on VSYNC
         
-;```````````````````````````````
+;========================================
 ;	We need 3 lines of VSYNC to start our frame.
-;```````````````````````````````
+;========================================
 
 	sta WSYNC
         sta WSYNC
@@ -288,9 +313,9 @@ NextFrame:
         ldx #$0E
         stx COLUBK 
         
-;```````````````````````````````
+;========================================
 ;	We need to now output 37 Scanlines to get to the drawable part of the screen.
-;```````````````````````````````
+;========================================
 
 	ldx #37		; Literally the number 37
 
@@ -302,9 +327,10 @@ LoopVBlank:
 	lda #0
         sta VBLANK
 
-;```````````````````````````````
+;========================================
 ;	Will now start doing stuff with the visible screen. We have 192 scanlines. This is sometimes called our kernal.
-;```````````````````````````````
+;========================================
+
         ldx #192	; counter for 192 scanlines
 
 LoopVis: 		; We will keep drawing 192 colors so we need to loop and decrement
@@ -314,9 +340,9 @@ LoopVis: 		; We will keep drawing 192 colors so we need to loop and decrement
         bne LoopVis	;  Loop while X!=0
         
 
-;```````````````````````````````
+;========================================
 ;	Output 30 more lines for our Overscan period.
-;```````````````````````````````
+;========================================
 
 	lda #2		; hit and turn on VBLANK again
         sta VBLANK
@@ -329,9 +355,9 @@ LoOver:
 
 	jmp NextFrame
         
-;```````````````````````````````
+;========================================
 ;	Complete ROM size to 4k
-;`````````
+;========================================
 
 	org $FFFC
         .word Start
@@ -341,59 +367,99 @@ LoOver:
 ```
 Now let's see about loading it into the accumulator.
 ```asm6502
+;========================================
 ; Assembler should use basic 6502 instructions
+;========================================
+
 	processor 6502
 	
+;========================================
 ; Include files for Atari 2600 constants and handy macro routines
+;========================================
+
 	include "vcs.h"
 	include "macro.h"
-	
+
+;========================================	
 ; Here we're going to introduce the 6502 (the CPU) and the TIA (the chip that generates the video signal).
 ; There's no frame buffer, so you have to program the TIA before (or during) each scanline. 
 ; What we'll do here is create a rainbow pattern by having the machine draw a color for about 3 lines.
+;========================================
 
+;========================================
 ; 4K Atari 2600 ROMs usually start at address $F000
+;========================================
+
 	org  $f000
 
+;========================================
 ; Let's define a variable to hold the starting color
 ; at memory address $81
+;========================================
+
 BGColor	equ $81 ; this is our first variable!
 
+;========================================
 ; The CLEAN_START macro zeroes RAM and registers
+;========================================
+
 Start	CLEAN_START ; check out macro.h for this. 
 
+;========================================
 NextFrame ; here we're defining a loop that is essentially creating a frame. 
 ; Enable VBLANK (disable output)
+;========================================
+
 	lda #2
-        sta VBLANK ; VBLANK basically says that we need to reset the scanline
-        
+    sta VBLANK ; VBLANK basically says that we need to reset the scanline
+
+;========================================
 ; At the beginning of the frame we set the VSYNC bit...
+;========================================
+
 	lda #2
 	sta VSYNC
-        
+	
+;========================================
 ; And hold it on for 3 scanlines...
+;========================================
 	sta WSYNC	;wait for the next scanline
 	sta WSYNC	;wait for the next scanline
 	sta WSYNC	;wait for the next scanline
         
+;========================================
 ; Now we turn VSYNC off.
+;========================================
+
 	lda #0
 	sta VSYNC
-
+	
+;========================================
 ; Now we need 37 lines of VBLANK...
+;========================================
+
 	ldx #37
-LVBlank	sta WSYNC	; accessing WSYNC stops the CPU until next scanline
+LVBlank	
+	
+	sta WSYNC	; accessing WSYNC stops the CPU until next scanline
 	dex		; decrement X
 	bne LVBlank	; loop until X == 0
 
+;========================================
 ; Re-enable output (disable VBLANK)
+;========================================
+
 	lda #0
 	sta VBLANK
-        
+
+;========================================
 ; 192 scanlines are visible
 ; We'll draw some rainbows
+;========================================
+
 	ldx #192
 	lda BGColor	; load the BGColor into the accumulator.
+	
 ScanLoop
 	adc #1		; add 1 to BGColor in A
 	sta COLUBK	; set the background color as the current value of A
@@ -401,25 +467,39 @@ ScanLoop
 	dex		; move down 1 scanline
 	bne ScanLoop	; Continue looping until x == 0 or while x != 0
 
+;========================================
 ; Enable VBLANK again
+;========================================
+
 	lda #2		; Remember, we're turning on the accumulator again
         sta VBLANK	; And turning on VBlank
 
+;========================================
 ; 30 lines of overscan to complete the frame
+;========================================
+
 	ldx #30		; Then we have to load 30 into x to accompodate overscan.
 LVOver	sta WSYNC
 	dex
 	bne LVOver
-	
+
+;========================================
 ; The next frame will start with current color value - 1
 ; to get a downwards scrolling effect
+;========================================
+
 	dec BGColor ; dec basically means, "Decrease by 1" and so and with the next frame, we begin again.
 
+;========================================
 ; Go back and do another frame. If we don't do this, we will just keep overlaying the same frame again and again.
+;========================================
+
 	jmp NextFrame        
 
-
+;========================================
 ;  And we finish up by making sure our file is exactly 4k.
+;========================================
+
 	org $fffc
 	.word Start
 	.word Start
