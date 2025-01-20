@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+                "file": "01 - On Racing the Beam/01 - On Racing the Beam.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 - IDE and Getting Started"
+              "title": "01 - On Racing the Beam"
             }
           }
         ]
@@ -158,19 +158,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "74e33594488c1d09",
+  "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
-    "02 - IDE and Getting Started/images/crt.gif",
-    "02 - IDE and Getting Started/images/pong.png",
-    "02 - IDE and Getting Started/images/asym-cycles.png",
-    "02 - IDE and Getting Started/images/consoles/spacewar.png",
-    "02 - IDE and Getting Started/images/nintendolightgun.png",
-    "02 - IDE and Getting Started/images/8bit/8bitwork-disas.png",
-    "02 - IDE and Getting Started/images/8bit/8bitwork-scanline.png",
-    "02 - IDE and Getting Started/images/8bit/8bitwork-probelog.png",
-    "02 - IDE and Getting Started/images/8bit/8bitwork-ide.png",
-    "02 - IDE and Getting Started/images/8bit/8bitwork-crtprobe.png",
-    "02 - IDE and Getting Started/images/8bit/8bitwork-symprof.png",
+    "01 - On Racing the Beam/00 - Notes and Resources.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "01 - On Racing the Beam/images/crt.gif",
+    "01 - On Racing the Beam/images/pong.png",
+    "01 - On Racing the Beam/images/consoles/spacewar.png",
+    "01 - On Racing the Beam/images/nintendolightgun.png",
+    "01 - On Racing the Beam/images/consoles/channelf.png",
+    "01 - On Racing the Beam/images/consoles/pong.png",
+    "01 - On Racing the Beam/images/atari_palette_pal.png",
+    "01 - On Racing the Beam/images/drivemobile.png",
+    "01 - On Racing the Beam/images/consoles/odyssey.png",
+    "01 - On Racing the Beam/images/2600_wires.jpg",
+    "01 - On Racing the Beam/images/consoles",
+    "01 - On Racing the Beam/images",
     "02 - IDE and Getting Started/images/consoles",
     "02 - IDE and Getting Started/images/8bit",
     "02 - IDE and Getting Started/images",
@@ -179,19 +182,15 @@
     "Templates/Atari2600BoxSet10-kd9d/vanguard2600.pdf",
     "Templates/Atari2600BoxSet10-kd9d/starmaster2600.PDF",
     "Templates/Atari2600BoxSet10-kd9d/pokerplus2600.PDF",
-    "Templates/Atari2600BoxSet10-kd9d/mspacman2600.pdf",
-    "Templates/Atari2600BoxSet10-kd9d/memorymatch2600.PDF",
     "02 - IDE and Getting Started/02 - Bones.md",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
     "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
     "02 - IDE and Getting Started/03 - Combat Source.asm.md",
     "02 - IDE and Getting Started/00 - Notes and Resources.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
     "Source Code Examples/DFIRE.ASM.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
     "11 - Polish/02 - MORE JUICE.md",
     "11 - Polish/01 - JUICE.md",
     "12 - 16 - As Needed/Notes and Resources.md",
