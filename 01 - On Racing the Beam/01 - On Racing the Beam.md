@@ -135,7 +135,7 @@ And so, with a programmable ROM in the form of a cartridge and enough RAM to sto
 
 Shooters, platformers, adventure games, point and click adventure games, and all sorts of other types of games found a home here. At its core though was a super interesting thing - Lopsided play or Asymmetry. Consider this quote from one of your textbooks.
 
-![](images/asymmetry.png)
+![](/images/asymmetry.png)
 This is a significant shift for games. At the time, nearly all games were based in and around symmetry (think Pong) or just 1 player. By making a game for 2-players at the same time, we had a moment where skill against players became just as possible as skill against yourself or an engine. 
 ## Credits for Designers
 Warren Robinett, who wrote *Adventure* was irked by the fact that Atari wouldn't actually allow them to have credit for their creations. This was why he inserted his name deep in the code and then promptly quit Atari to go into a different tech industry. At the time, Atari execs told the game programmers that, "They were worth as much as the man on the assembly line who put the game into the cardboard box."
