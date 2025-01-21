@@ -83,7 +83,6 @@ The list we'll go over today is:
 * macro.h / xmacro.h - https://8bitworkshop.com/docs/platforms/vcs/
 ## <a id="stella"></a>Stella
 Stella is an emulator that uses the same codename of the 2600 or VCS when it was in development. The emulator has been open source for quite some time so you can edit it, debug it, and view the source code as you see fit. Here are the links you need for Stella: 
-
 * Main Website: https://stella-emu.github.io/
 * Source Code: https://github.com/stella-emu/stella
 * User Guide: https://stella-emu.github.io/docs/index.html
@@ -149,37 +148,39 @@ To the right of that is our actual render. Right now, i've got a simple "Hello W
 Let's take a tour of the debugging tools next. 
 ### Disassembly
 ![](images/8bit/8bitwork-disas.png)
-From the documentation, we learned that this tool, "Disassembles the program at the current Program Counter." But what does that mean?
+From the documentation, we learned that this tool, "Disassembles the program at the current Program Counter." 
 ### Memory Browser
 ![](images/8bit/8bitwork-membrowse.png)
-From the documentation, we learned that this tool, "Displays a dump of all CPU memory." But what does that mean?
+From the documentation, we learned that this tool, "Displays a dump of all CPU memory." 
 ### Memory Map
 ![](images/8bit/8bitwork-memmap.png)
-From the documentation, we learned that this tool, "Displays a handy memory map of the system. Certain tools (like linkers) will give additional segment info here.." But what does that mean?
+From the documentation, we learned that this tool, "Displays a handy memory map of the system. Certain tools (like linkers) will give additional segment info here.." 
 ### Memory Probe
 ![](images/8bit/8bitwork-memprobe.png)
-From the documentation, we learned that this tool, "Shows a bitmap representing read/write activity across system memory" But what does that mean?
+From the documentation, we learned that this tool, "Shows a bitmap representing read/write activity across system memory" 
 ### CRT Probe
 ![](images/8bit/8bitwork-crtprobe.png)
-From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
+From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" 
 ### Probe Log
 ![8bitwork-probelog](images/8bit/8bitwork-probelog.png)
-From the documentation, we learned that this tool, "Shows a textual log of CPU/memory activity." But what does that mean?
+From the documentation, we learned that this tool, "Shows a textual log of CPU/memory activity." 
 ### Scanline I/O
 ![width](images/8bit/8bitwork-scanline.png)
-From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
+From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" 
 ### Symbol Profiler
 ![](images/8bit/8bitwork-symprof.png)
-From the documentation, we learned that this tool, "Shows a list of symbols, with read/write counts." But what does that mean?
+From the documentation, we learned that this tool, "Shows a list of symbols, with read/write counts." 
 ### Asset Editor
 ![](images/8bit/8bitwork-asset.png)
-From the documentation, we learned that this tool, "Parses assets (like bitmaps and palettes) and allows editing." But what does that mean?
+From the documentation, we learned that this tool, "Parses assets (like bitmaps and palettes) and allows editing." 
 
 We won't use this a lot as we don't actually have assets to manage. However, it will sometimes show the memory allocation of named entities like missiles and balls that we'll be able to adjust manually. Over time, we might end up coming back to this depending on if I can figure out how to force assets to end up there.
 # DASM
 This is our assembler and more. For the most part, we'll only use this toward the end of class but i'll try and talk about it when we get a chance. You may never even notice you're using it UNTIL you need a .bin. Then life becomes interesting. 
 
 One thing to note is that DASM's size allows for us to take interesting shortcuts as we write games. We'll encounter this more often than not but for now know that when I mention things like `REPEAT`, `REPEND`, `DS`, and some faux IF statements, this is part of the DASM process. The first 3 won't break Assembly whereas the IF statements will if they are game logic. More on this when we get to playfields.
+
+Finally, we'll talk briefly about macro and x.macro.
 # <a id="modes"></a>Modes
 For the most part, we're going to have to be able to move from literal to memory addresses to hexadecimal to binary all the time. We'll also sometimes work with machine code, especially when we're debugging. 
 
