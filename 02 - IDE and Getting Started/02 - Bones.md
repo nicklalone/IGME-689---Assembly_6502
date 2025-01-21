@@ -44,7 +44,7 @@ First, we need to take into account our IDE and this will be a part of just abou
     include "macro.h"
     include "xmacro.h"
 ```
-If you're curious abbout these, go to: https://github.com/munsie/dasm/tree/master and start reading. This is the DASM community's repo with DASM. If you want a bit less of a burden to read, try this: https://forums.atariage.com/topic/27221-session-9-6502-and-dasm-assembling-the-basics/.
+If you're curious about these, go to: https://github.com/munsie/dasm/tree/master and start reading. This is the DASM community's repo with DASM. If you want a bit less of a burden to read, try this: https://forums.atariage.com/topic/27221-session-9-6502-and-dasm-assembling-the-basics/.
 
 Next up, we have to tell the hardware where our memory addresses begin. This is important because we basically have to tell the hardware where to point its initial register. Basically, we're saying to the Assembler (DASM) that we are actually beginning our code now and that the memory unit.
 
@@ -57,6 +57,142 @@ In this case, we're pointing to the very bottom of the stack. I found this usefu
 ![](/images/memorymap.png)
 Or, we can see this mapped out for us in 8bitworkshop's memory map: 
 ![](/images/memmap.png)
+
+One thing I need to remember to do is constantly say where RAM begins in memory. This is at position `org $80` where we'll probably store a bunch of variables. In fact, I'd expect to see in most of your games something that looks like: 
+
+```asm6502
+;===========================================================
+; Start an uninitialized segment at $80 for var declaration.
+; We have memory from $80 to $FF to work with, minus a few at
+; the end if we use the stack.
+;===========================================================
+
+    seg.u Variables
+    org $80
+
+P0Height   byte    ; player sprite height
+PlayerYPos byte    ; player sprite Y coordinate
+```
+But we'll get to what this means in the near future. Refer to the commented description and we'll move forward. For reference, here's that same stuff from Combat: 
+
+```asm6502
+BINvar  =     $80 ; Master Game Variation Control (binary)
+                  ; (When BINvar is reset or incremented,
+                  ; BCDvar is reset or BCD-imcremented and
+                  ; GAMVAR flag is read from VARMAP+BINvar)
+                  
+BCDvar  =     $81 ; Game Variation in BCD
+;
+;\\\///
+;
+; $82 thru $85 contain flags built from GAMVAR for quick testing via BIT. 
+;
+PF_PONG =     $82 ; bit 7 DIS-able playfield flag
+;                 ; bit 6 Pong missiles (bounce off playfield)
+GUIDED  =     $83 ; bit 7 = guided missile game
+;                 ; bit 6 = machine gun game
+BILLIARD =    $84 ; Just bit 6 = billiard hit game (missiles can't
+;                 ; hit tank until at least 1 bounce off playfield)
+GAMSHP  =     $85 ; Shape of player and game type
+;                 ; 0 = Tank
+;                 ; 1 = Biplane
+;                 ; 2 = Jet Fighter
+;
+CLOCK  =      $86 ; Master timer inc'd every frame during VSYNC
+;                 ; in NBCOMBAT this was misleadingly labelled GTIMER
+SHOWSCR =     $87 ; Show/hide RIGHT player score (left only is used
+;                 ; to indicate game selection in attract mode)  To
+;                 ; inhibit both scores, KLskip is set to $0E vs. $02
+GameOn  =     $88 ; $00=attract mode, $FF=game going on.  Bits 7, 1,
+;                 ; and "all" tested in various places.  Incorrectly set
+;                 ; to $10 at START, but must not be a problem :-)
+;\\\///
+;
+SelDbnce =    $89 ; Select Switch Debounce flag which prevents a
+;                 ; hold-down from registering as 60 presses/second
+StirTimer =   $8A ; Bit 0 = identity of loser during tank stir
+;                 ; Bits 2-7 = countdown timer controlling stir after loss
+Vtemp     =   $8B ; Temp storage for current velocity
+FwdTimer  =   $8D ; FwdTimer must count $F0 to $00 between changes in
+;        thru $8E ; forward motion control; also used for momentum pacing
+;             $8F ; ...
+;        thru $90 ; seem to be reserved too (missiles?) but not used
+LastTurn =    $91 ; Flag indicating direction of last turn, used
+;        thru $92 ; to inhibit whipsaw direction changes (may
+;                 ; have been intended for rotational momentum)
+TurnTimer =   $93 ; Countdown timer between 22.5-degree rotates
+;        thru $94 ; for P0 and P1
+DIRECTN =     $95 ; Players and missiles' current bearing.
+;        thru $98 ; (4 bytes P0,P1,M0,M1)
+MisLife =     $99 ; Missile Lifetime down-counters
+;        thru $9A
+BounceCount = $9B ; (1) Billiard bounced-once flag, via any value other
+;        thru $9C ; than $1F init value; (2) Pong sound tone freq, which
+;                 ; ascends in tone as BounceCount DECed with each bounce
+MxPFcount =   $9D ; During Pong bounce, count of collision duration in
+;        thru $9E ; frames, used to try different heading adjustments
+;                 ; until "desired" reflection achieved
+AltSnd  =     $9F ; Alt Player Sound flag/counter; 0=normal motor sound,
+;        thru $A0 ; else counts up to $04 to time Pong sound
+SCORE   =     $A1 ; Player scores in BCD.
+;        thru $A2 ;
+;
+;\\\/// Addresses beyond here aren't ever cleared by ClearMem.
+;
+GAMVAR  =     $A3 ; Game Variation bitwise descriptor via VARMAP
+TankY0  =     $A4 ; Tank 0's Y-position
+TankY1  =     $A5 ; and tank 1
+MissileY0 =   $A6 ; Missile 0's Y-position
+MissileY1 =   $A7 ; and missile 1
+MVadjA  =     $A8 ; First-half FwdTimer-Velocity adjustments
+;        thru $A9 ; for each player.  By an amazing coincidence
+;                 ; in all games these seem to be the same as
+;                 ; the *current* velocity.
+MVadjB  =     $AA ; Second-half FwdTimer-Velocity adjustments,
+;        thru $AB ; which seem to be the same as the *final* velocity.
+MPace   =     $AC ; Pacing counter; never initialized!  INC'd and
+;                 ; masked to pace certain actions slower than
+;        thru $AF ; once/frame, for each player & missile
+XOFFS   =     $B0 ; X-offset for pending Hmove.
+XoffBase =    $B1 ; $0, $10, $20, or $30 offset into X-offset tbl
+OldMisDir =   $B2 ; Missile bearing before a Pong-bounce began
+;        thru $B3 ;
+ScanLine =    $B4 ; Current scanline on the playfield.
+LORES   =     $B5 ; lo-res indirect addresses.
+;        thru $BA ; 6 bytes / 3 16-bit pointers
+SHAPES  =     $BB ; Pointer to player sprites
+HIRES   =     $BD ; Hi-res (sprite) shape buffer.  Left player's shape
+;        thru $CC ; stored in even bytes, right player's in odd.
+TEMP1   =     $D1 ; Temp storage for several quick save/math operations
+TEMP    =     $D2 ; "score conversion temporary"
+TMPSTK  =     $D3 ; Temporary storage for stack.
+DIFSWCH =     $D5 ; Hold & shift temp for console switches
+Color0  =     $D6 ; Colors loaded from ColorTbl for player 0 and 1
+Color1  =     $D7 ; These may be changed e.g. invisible tanks
+XColor0 =     $D8 ; Repeated P0 and P1 Colors for reference, used
+XColor1 =     $D9 ; to restore ColorX after a change
+ColorPF =     $DA ; BK and PF colors loaded in same block as XColorX.
+ColorBK =     $DB ; Never changed, so no reference versions are kept.
+KLskip  =     $DC ; Kernal lines to skip before score, or main w/o score
+;                 ; (Also used in Kernal as flag whether to show score)
+GameTimer =   $DD ; Master game timer set to $80 when game starts,
+;                 ; incremented until overflow at $FF-->$00 ends game
+;                 ; Bit 7 indicates game in play, also used w/GameOn to
+;                 ; flash score.  During attract mode GameTimer is used
+;                 ; to cycle colors; this is OK since it only assumes
+;                 ; its game-timing function if GameOn != $00.
+NUMG0   =     $DE ; Storage for current byte
+NUMG1   =     $DF ; of score number graphics.
+SCROFF  =     $E0 ; Score pattern offsets (4 bytes)
+;        thru $E3 ; lo nibble 0, lo 1, hi 0, hi 1
+COLcount =    $E4 ; Counter keeps tank-tank and tank-PF collisions from
+;        thru $E5 ; affecting a stationary tank's bearing unless the
+;                 ; collision lasts at least 4 cycles
+;
+StkTop  =     $FF ; Top of stack (which IS used, at least 8 bytes)
+;
+; So much for the RAM.  Here's the ROM:
+```
 
 And I should probably mention here that you're going to need some way to shift between binary, hexadecimal, literal values. We're going to use a converter to keep track unless you want me to drill this knowledge into you and I don't honestly know if we have time. 
 ```asm6502

@@ -19,17 +19,17 @@ It is a very weird way to code at the beginning. Structured programming allowing
 
 IDEs and Ways to Code help us with our work. Televisions are no longer something to write around, but are automatically included as a coordinate system. Everything we make now is infinitely easier unless we're writing something like Dwarf Fortress or some game that pushes the limits of logic.
 
-We use the phrase **Racing the Beam** a lot and I know I've mentioned it a few times but it will matter here moving forward. The easiest way to talk about this is the basics of coding: 
+We use the phrase **[[Racing the Beam]]** a lot and I know I've mentioned it a few times but it will matter here moving forward. The easiest way to talk about this is the basics of coding: 
 
 	The basic idea of making an Atari game is that for each scanline from the top left to bottom right, we have to configure the Television Interface Adaptor or TIA registers for each object JUST before the beam reaches its intended position.
 
-So we will be using an IDE that has a built in Assembler that attempts to assemble every time you type. Because the Assembler is so tiny, we can use it like an interpreter (e.g. Python or Lua).  In addition, we'll be working just on the 2600 but Assembly 6502 is used by the Intellivision, Tamagotchi, NES, and more. It is just a matter of figuring out the structure to use.
+So we will be using an [[IDE]] that has a built in Assembler that attempts to assemble every time you type. Because the Assembler is so tiny, we can use it like an interpreter (e.g. Python or Lua).  In addition, we'll be working just on the 2600 but Assembly 6502 is used by the Intellivision, Tamagotchi, NES, and more. It is just a matter of figuring out the structure to use, dependencies, and more.
 
 We're going to take a bit of a tour of tools now. Each of these pieces of technology are open source and free given just how long ago this console was live. They are all also mostly developed through the help and guidance of reserved words, built-in functions, and more. In Assembly, we have some of those things since it was the first language to simplify machine language, but we've built so much on that foundation. 
 
 If you'd like more of a history, head over here: https://archive.org/details/programsforelect00wilk or https://en.wikipedia.org/wiki/Assembly_language. we still use some Assembly in all software but it's small these days compared to what we're about to do. I hope y'all are ready to glimpse history and do some writing with it. 
 
-So let's take a tour. 
+Before we take a tour, let's talk about the assignment due this Sunday.
 # <a id="assignments"></a>Assignments
 It's week 2 so we're beginning assignments. The first assignment is that of simply reading. We will be reading the first 2 chapters of Racing the Beam as well as Chapter 1 of your main textbook. 
 
@@ -37,7 +37,7 @@ You might ask, "WHY?1? GOD I HATE READING." And you've answered your own questio
 
 Now, I've asked for, "500 words" but this is just a number. If you write to the number, it's a pointless exercise. I'm asking you to learn, not asking you to scratch 500 words for fun. But still, you all are trained to think in terms of doing *exactly* what I ask. So in that vein, what am I actually looking for?
 
-Well, this first assignment has you reading *Racing the Beam* about Stella (the Atari 2600's development codename) and Combat. It's about 42 pages and should take anyone around 30 minutes or so. 
+Well, this first assignment has you reading *[[Racing the Beam]]* about Stella (the Atari 2600's development codename) and Combat. It's about 42 pages and should take anyone around 30 minutes or so. 
 
 With the Hugg book, this is a series of exercises and content that should help you with reference material when you're actually working. I've tried to arrange the class around the topics in this textbook. The big thing with this is what we're going to do in class. Just getting ourselves situated with some OpCodes and some loop structures. 
 
@@ -74,7 +74,12 @@ Also, I need to include this in more markdown files but here are some templates 
 
 We'll talk more about the art required for the carts, manuals, and boxes in the near future. With that said, let's head in to the IDE and operating environment. 
 # <a id="idem"></a>IDEs and More
+There are a number of tools that anyone in this space will use to develop. Interestingly, many of these tools can be used for more than just the 2600 and i'll do my best to mention these (outside of Stella which is ONLY a 2600 emulator). 
 
+The list we'll go over today is: 
+* Stella - https://stella-emu.github.io/
+* 8-bit Workshop - https://8bitworkshop.com/redir.html?
+* DASM / macro.h / x-macro.h - https://dasm-assembler.github.io/
 ## <a id="stella"></a>Stella
 Stella is an emulator that uses the same codename of the 2600 or VCS when it was in development. The emulator has been open source for quite some time so you can edit it, debug it, and view the source code as you see fit. Here are the links you need for Stella: 
 
@@ -92,143 +97,7 @@ Stella Debugger Documentation - https://stella-emu.github.io/docs/debugger.html
 * This atari age post: https://forums.atariage.com/topic/320280-using-stellas-debugger-to-analyze-vsync/
 
 ![/images/StellaUI.png](images/StellaUI.png)
-Here is the main window of the Stella debugger. You can reach it at any time when playing a game by pressing the \` key. 
-
-One thing I need to remember to do is constantly say where RAM begins in memory. This is at position `org $80` where we'll probably store a bunch of variables. In fact, I'd expect to see in most of your games something that looks like: 
-
-```asm6502
-;===========================================================
-; Start an uninitialized segment at $80 for var declaration.
-; We have memory from $80 to $FF to work with, minus a few at
-; the end if we use the stack.
-;===========================================================
-
-    seg.u Variables
-    org $80
-
-P0Height   byte    ; player sprite height
-PlayerYPos byte    ; player sprite Y coordinate
-```
-But we'll get to what this means in the near future. Refer to the commented description and we'll move forward. For reference, here's that same stuff from Combat: 
-
-```asm6502
-BINvar  =     $80 ; Master Game Variation Control (binary)
-                  ; (When BINvar is reset or incremented,
-                  ; BCDvar is reset or BCD-imcremented and
-                  ; GAMVAR flag is read from VARMAP+BINvar)
-                  
-BCDvar  =     $81 ; Game Variation in BCD
-;
-;\\\///
-;
-; $82 thru $85 contain flags built from GAMVAR for quick testing via BIT. 
-;
-PF_PONG =     $82 ; bit 7 DIS-able playfield flag
-;                 ; bit 6 Pong missiles (bounce off playfield)
-GUIDED  =     $83 ; bit 7 = guided missile game
-;                 ; bit 6 = machine gun game
-BILLIARD =    $84 ; Just bit 6 = billiard hit game (missiles can't
-;                 ; hit tank until at least 1 bounce off playfield)
-GAMSHP  =     $85 ; Shape of player and game type
-;                 ; 0 = Tank
-;                 ; 1 = Biplane
-;                 ; 2 = Jet Fighter
-;
-CLOCK  =      $86 ; Master timer inc'd every frame during VSYNC
-;                 ; in NBCOMBAT this was misleadingly labelled GTIMER
-SHOWSCR =     $87 ; Show/hide RIGHT player score (left only is used
-;                 ; to indicate game selection in attract mode)  To
-;                 ; inhibit both scores, KLskip is set to $0E vs. $02
-GameOn  =     $88 ; $00=attract mode, $FF=game going on.  Bits 7, 1,
-;                 ; and "all" tested in various places.  Incorrectly set
-;                 ; to $10 at START, but must not be a problem :-)
-;\\\///
-;
-SelDbnce =    $89 ; Select Switch Debounce flag which prevents a
-;                 ; hold-down from registering as 60 presses/second
-StirTimer =   $8A ; Bit 0 = identity of loser during tank stir
-;                 ; Bits 2-7 = countdown timer controlling stir after loss
-Vtemp     =   $8B ; Temp storage for current velocity
-FwdTimer  =   $8D ; FwdTimer must count $F0 to $00 between changes in
-;        thru $8E ; forward motion control; also used for momentum pacing
-;             $8F ; ...
-;        thru $90 ; seem to be reserved too (missiles?) but not used
-LastTurn =    $91 ; Flag indicating direction of last turn, used
-;        thru $92 ; to inhibit whipsaw direction changes (may
-;                 ; have been intended for rotational momentum)
-TurnTimer =   $93 ; Countdown timer between 22.5-degree rotates
-;        thru $94 ; for P0 and P1
-DIRECTN =     $95 ; Players and missiles' current bearing.
-;        thru $98 ; (4 bytes P0,P1,M0,M1)
-MisLife =     $99 ; Missile Lifetime down-counters
-;        thru $9A
-BounceCount = $9B ; (1) Billiard bounced-once flag, via any value other
-;        thru $9C ; than $1F init value; (2) Pong sound tone freq, which
-;                 ; ascends in tone as BounceCount DECed with each bounce
-MxPFcount =   $9D ; During Pong bounce, count of collision duration in
-;        thru $9E ; frames, used to try different heading adjustments
-;                 ; until "desired" reflection achieved
-AltSnd  =     $9F ; Alt Player Sound flag/counter; 0=normal motor sound,
-;        thru $A0 ; else counts up to $04 to time Pong sound
-SCORE   =     $A1 ; Player scores in BCD.
-;        thru $A2 ;
-;
-;\\\/// Addresses beyond here aren't ever cleared by ClearMem.
-;
-GAMVAR  =     $A3 ; Game Variation bitwise descriptor via VARMAP
-TankY0  =     $A4 ; Tank 0's Y-position
-TankY1  =     $A5 ; and tank 1
-MissileY0 =   $A6 ; Missile 0's Y-position
-MissileY1 =   $A7 ; and missile 1
-MVadjA  =     $A8 ; First-half FwdTimer-Velocity adjustments
-;        thru $A9 ; for each player.  By an amazing coincidence
-;                 ; in all games these seem to be the same as
-;                 ; the *current* velocity.
-MVadjB  =     $AA ; Second-half FwdTimer-Velocity adjustments,
-;        thru $AB ; which seem to be the same as the *final* velocity.
-MPace   =     $AC ; Pacing counter; never initialized!  INC'd and
-;                 ; masked to pace certain actions slower than
-;        thru $AF ; once/frame, for each player & missile
-XOFFS   =     $B0 ; X-offset for pending Hmove.
-XoffBase =    $B1 ; $0, $10, $20, or $30 offset into X-offset tbl
-OldMisDir =   $B2 ; Missile bearing before a Pong-bounce began
-;        thru $B3 ;
-ScanLine =    $B4 ; Current scanline on the playfield.
-LORES   =     $B5 ; lo-res indirect addresses.
-;        thru $BA ; 6 bytes / 3 16-bit pointers
-SHAPES  =     $BB ; Pointer to player sprites
-HIRES   =     $BD ; Hi-res (sprite) shape buffer.  Left player's shape
-;        thru $CC ; stored in even bytes, right player's in odd.
-TEMP1   =     $D1 ; Temp storage for several quick save/math operations
-TEMP    =     $D2 ; "score conversion temporary"
-TMPSTK  =     $D3 ; Temporary storage for stack.
-DIFSWCH =     $D5 ; Hold & shift temp for console switches
-Color0  =     $D6 ; Colors loaded from ColorTbl for player 0 and 1
-Color1  =     $D7 ; These may be changed e.g. invisible tanks
-XColor0 =     $D8 ; Repeated P0 and P1 Colors for reference, used
-XColor1 =     $D9 ; to restore ColorX after a change
-ColorPF =     $DA ; BK and PF colors loaded in same block as XColorX.
-ColorBK =     $DB ; Never changed, so no reference versions are kept.
-KLskip  =     $DC ; Kernal lines to skip before score, or main w/o score
-;                 ; (Also used in Kernal as flag whether to show score)
-GameTimer =   $DD ; Master game timer set to $80 when game starts,
-;                 ; incremented until overflow at $FF-->$00 ends game
-;                 ; Bit 7 indicates game in play, also used w/GameOn to
-;                 ; flash score.  During attract mode GameTimer is used
-;                 ; to cycle colors; this is OK since it only assumes
-;                 ; its game-timing function if GameOn != $00.
-NUMG0   =     $DE ; Storage for current byte
-NUMG1   =     $DF ; of score number graphics.
-SCROFF  =     $E0 ; Score pattern offsets (4 bytes)
-;        thru $E3 ; lo nibble 0, lo 1, hi 0, hi 1
-COLcount =    $E4 ; Counter keeps tank-tank and tank-PF collisions from
-;        thru $E5 ; affecting a stationary tank's bearing unless the
-;                 ; collision lasts at least 4 cycles
-;
-StkTop  =     $FF ; Top of stack (which IS used, at least 8 bytes)
-;
-; So much for the RAM.  Here's the ROM:
-```
+Here is the main window of the Stella debugger. You can reach it at any time when playing a game by pressing the \` key.
 ##### **Upper Right** 
 RAM + location of the scan line and what cycle it's on. This is important as all your registers are there (PC, SP, A, X, Y, PS) and what is currently in them. We'll talk more about them when we get into [[Process Flags]] and [[Registers]]. 
 
@@ -237,13 +106,10 @@ In the case of the PS line, this is [Processor Status](http://www.6502.org/users
 * SP = Stack Pointer or the thing that points to the memory positions. 
 * A = Accumulator
 * X/Y = Registers
-
 ##### **Upper Left**
-Current position of the scanline.
-
+Current position of the scanline. This is important mostly because as a bit is written, it needs to be drawn and most mistakes will happen because you're writing at the wrong time. If you go through debugging and see something not being drawn correctly, you can look at the graphic registers and see where things are meant to be. 
 ##### **Lower Right**
 Disassembly or what is being stored everywhere. Not that at the start, we disable interrupts (sei) and then define the code origin, followed by then disabling the HCD decimal math mode, load X with a register, then send it to the stack pointer. You can walk through this with the "STEP" on the upper right. 
-
 ##### **Lower left**
 Your log but also you can  look at the TIA chip as well as the RIOT and Audio portions of your machine.
 
@@ -267,7 +133,6 @@ This course is also available for you to fork via Github so you can have the con
 
 ![](images/8bit/8bitwork-git.png)
 And it will walk you through everything you need. In this way, you can work on the code in your editor of choice, push and pull and publish as needed. Learning how to do this stuff is important as file maintenance is a very necessary skill for all game development projects and you can't just rely on a different IDE like Unity or Unreal to do it for you. 
-
 ### User Interface
 Let's walk through this user interface. We'll situate it below: 
 
@@ -285,7 +150,6 @@ Let's take a tour of the debugging tools next.
 ![](images/8bit/8bitwork-disas.png)
 From the documentation, we learned that this tool, "Disassembles the program at the current Program Counter." But what does that mean?
 ### Memory Browser
-
 ![](images/8bit/8bitwork-membrowse.png)
 From the documentation, we learned that this tool, "Displays a dump of all CPU memory." But what does that mean?
 ### Memory Map
@@ -298,23 +162,23 @@ From the documentation, we learned that this tool, "Shows a bitmap representing 
 ![](images/8bit/8bitwork-crtprobe.png)
 From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
 ### Probe Log
-
 ![8bitwork-probelog](images/8bit/8bitwork-probelog.png)
 From the documentation, we learned that this tool, "Shows a textual log of CPU/memory activity." But what does that mean?
 ### Scanline I/O
-
 ![width](images/8bit/8bitwork-scanline.png)
 From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
 ### Symbol Profiler
-
 ![](images/8bit/8bitwork-symprof.png)
 From the documentation, we learned that this tool, "Shows a list of symbols, with read/write counts." But what does that mean?
 ### Asset Editor
-
 ![](images/8bit/8bitwork-asset.png)
 From the documentation, we learned that this tool, "Parses assets (like bitmaps and palettes) and allows editing." But what does that mean?
 
 We won't use this a lot as we don't actually have assets to manage. However, it will sometimes show the memory allocation of named entities like missiles and balls that we'll be able to adjust manually. Over time, we might end up coming back to this depending on if I can figure out how to force assets to end up there.
+# DASM
+This is our assembler and more. For the most part, we'll only use this toward the end of class but i'll try and talk about it when we get a chance. You may never even notice you're using it UNTIL you need a .bin. Then life becomes interesting. 
+
+One thing to note is that DASM's size allows for us to take interesting shortcuts as we write games. We'll encounter this more often than not but for now know that when I mention things like `REPEAT`, `REPEND`, `DS`, and some faux IF statements, this is part of the DASM process. The first 3 won't break Assembly whereas the IF statements will if they are game logic. More on this when we get to playfields.
 # <a id="modes"></a>Modes
 For the most part, we're going to have to be able to move from literal to memory addresses to hexadecimal to binary all the time. We'll also sometimes work with machine code, especially when we're debugging. 
 
@@ -332,16 +196,15 @@ On page 3 of the Hugg book, you'll see a discussion of signed vs unsigned bytes 
 # <a id="terms"></a>Terms to Remember
 At the end of each file, I intend to place a relevant list of things to remember, terms to note. We will begin them here. 
 
-1. **6502/8080**:
-2. **6507**:
-3. **6532/RIOT**:
-4. **TIA**:
-5. PIA:
+1. **6502**: Chuck Peddle created chip that is still active today. By itself it isn't a full on computer but it's been used to make some of the originals. It set the stage for cheaper electronics which helped move the computer from work to home. 
+2. **6507**: is Chuck Peddle's chip he designed to make the 6502 far cheaper. 
+3. **6532/RIOT**: This is a chip for RAM, I/O, and Timers. 
+4. **TIA**: Took the most to develop for the 2600. It does everything a frame buffer does now but without, y'know, buffering the frame. 
+5. PIA: 
 6. DASM:
 7. **Stella**:
 8. **Condition Flags**:
 9. **Scanline**:
-10. 
 # <a id='opcodes'></a>OpCodes
 Over the course of this class, we'll be talking about OpCodes or precursors to things like Reserved Words or Built-in Functions (e.g. print(), etc.)
 
