@@ -1,0 +1,114 @@
+	;
+	; Atari palette viewer
+	;
+	; by Oscar Toledo G.
+	; https://nanochess.org/
+	;
+	; Creation date: Nov/04/2022.
+	; Revision date: Nov/13/2022. Added NTSC definition to choose NTSC/PAL.
+	;
+
+	PROCESSOR 6502
+	INCLUDE "vcs.h"
+
+NTSC		= 1	; Define to 1 for NTSC, 0 for PAL
+
+FRAME_LOW	= $0080
+FRAME_HIGH	= $0081
+COLUMN		= $0082
+
+	ORG $F000
+START:
+	SEI
+	CLD
+	LDX #$FF
+	TXS
+	LDA #$00
+CLEAR:
+	STA 0,X
+	DEX
+	BNE CLEAR
+
+SHOW_FRAME:
+	LDA #$88
+	STA COLUBK
+
+	STA WSYNC
+	LDA #2
+	STA VSYNC
+	STA WSYNC
+	STA WSYNC
+	STA WSYNC
+	LDA #0
+	STA VSYNC
+
+    IF NTSC
+	LDX #36
+    ELSE
+	LDX #61
+    ENDIF
+TOP:
+	STA WSYNC
+	DEX
+	BNE TOP
+	LDA #0
+	STA VBLANK
+
+	LDA FRAME_HIGH
+	ASL
+	AND #$0E
+	STA COLUMN
+
+	LDX #0
+VISIBLE:
+	STA WSYNC
+	LDA #$0F
+	STA PF1
+	TXA
+	CLC
+	ADC COLUMN
+	STA COLUPF
+
+	STA WSYNC
+	STA WSYNC
+	STA WSYNC
+
+	STA WSYNC
+	STA WSYNC
+	STA WSYNC
+	STA WSYNC
+
+	STA WSYNC
+	STA WSYNC
+	LDA #$00
+	STA PF1
+	STA WSYNC
+	STA WSYNC
+
+	TXA
+	CLC
+	ADC #$10
+	TAX
+	BCC VISIBLE
+
+	LDA #2
+	STA VBLANK
+    IF NTSC
+	LDX #30
+    ELSE
+	LDX #55
+    ENDIF
+BOTTOM:
+	STA WSYNC
+	DEX
+	BNE BOTTOM
+
+	INC FRAME_LOW
+	BNE L1
+	INC FRAME_HIGH
+L1:
+	JMP SHOW_FRAME
+
+	ORG $FFFC
+	.word START
+	.word START

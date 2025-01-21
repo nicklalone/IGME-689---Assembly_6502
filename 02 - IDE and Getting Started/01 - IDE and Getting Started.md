@@ -19,7 +19,7 @@ It is a very weird way to code at the beginning. Structured programming allowing
 
 IDEs and Ways to Code help us with our work. Televisions are no longer something to write around, but are automatically included as a coordinate system. Everything we make now is infinitely easier unless we're writing something like Dwarf Fortress or some game that pushes the limits of logic.
 
-We use the phrase **Racing the Beam** a lot and I know i've mentioned it a few times but it will matter here moving forward. The easiest way to talk about this is the basics of coding: 
+We use the phrase **Racing the Beam** a lot and I know I've mentioned it a few times but it will matter here moving forward. The easiest way to talk about this is the basics of coding: 
 
 	The basic idea of making an Atari game is that for each scanline from the top left to bottom right, we have to configure the Television Interface Adaptor or TIA registers for each object JUST before the beam reaches its intended position.
 
@@ -33,15 +33,15 @@ So let's take a tour.
 # <a id="assignments"></a>Assignments
 It's week 2 so we're beginning assignments. The first assignment is that of simply reading. We will be reading the first 2 chapters of Racing the Beam as well as Chapter 1 of your main textbook. 
 
-You might ask, "WHY?1? GOD I HATE READING." And you've answered your own question. STEM students tend to eschew reading while those in the humanities try to carry humanity's knowledge forward with fewer and fewer resources. This is a course that is applied history. It contains a lot of ways of thinking that do not exist anymore. It contains a lot of ways of designing that do not exist anymore. As a result, we have to read about them to glimpse at those things. 
+You might ask, "WHY?1? GOD I HATE READING." And you've answered your own question. STEM students tend to eschew reading while those in the humanities try to carry humanity's knowledge forward with fewer and fewer resources. This is a course that is applied history. It contains a lot of ways of thinking that do not exist anymore. It contains a lot of ways of designing that do not exist anymore. As a result, we have to read about them to glimpse at those things. Think of the readings as primer for painting.
 
-Now,. i've asked for, "500 words" but this is just a number. If you write to the number, it's a pointless exercise. i'm asking you to learn, not asking you to scratch 500 words for fun. Bbut still, you all are trained to think in terms of doing *exactly* what I ask. So in that vein, what am I actually looking for?
+Now, I've asked for, "500 words" but this is just a number. If you write to the number, it's a pointless exercise. I'm asking you to learn, not asking you to scratch 500 words for fun. But still, you all are trained to think in terms of doing *exactly* what I ask. So in that vein, what am I actually looking for?
 
 Well, this first assignment has you reading *Racing the Beam* about Stella (the Atari 2600's development codename) and Combat. It's about 42 pages and should take anyone around 30 minutes or so. 
 
-With the Hugg book, this is a series of exercises and content that should help you with reference material when you're actually working. I've tried to arrange the class around the topics in this textbook. 
+With the Hugg book, this is a series of exercises and content that should help you with reference material when you're actually working. I've tried to arrange the class around the topics in this textbook. The big thing with this is what we're going to do in class. Just getting ourselves situated with some OpCodes and some loop structures. 
 
-An example response is this. I just wrote it and it is very stream of consciousness: 
+So in that way, let's see an example response. I just wrote it and it is very stream of consciousness: 
 
 	I grew up in a home that mostly leaned in to video games. It was the 80s though, so my exposure to games was first a Magnavox pong machine we had for a tiny black and white television. We played Pong for hours, days, all the time. It is a weird thing to be able to do that at home. We had an arcade at the mall but we weren’t allowed to go because it the was early 80s and arcades were places of ill reupute at that point.
 	
@@ -66,7 +66,7 @@ One thing I should cover is where to find games. Most of the 2600 games have bee
 * Manuals: https://atariage.com/system_items.php?SystemID=2600&itemTypeID=MANUAL 
 * Big ole PDF of all manuals: http://www.westg8.com/atari.html
 
-Also, I need to include this in more markdown files but here are some templates: 
+Also, I need to include this in more markdown files but here are some templates for the physical components of games (cartridge, manual, box): 
 
 * Fonts for Atari: https://www.atariage.com/2600/archives/AtariFonts/index.html?SystemID=2600
 * Label Maker: https://www.labelmaker2600.com/
@@ -82,21 +82,170 @@ Stella is an emulator that uses the same codename of the 2600 or VCS when it was
 * Source Code: https://github.com/stella-emu/stella
 * User Guide: https://stella-emu.github.io/docs/index.html
 
-Stella Debugger - https://stella-emu.github.io/docs/debugger.html
+We won't specifically use this in class often as it's an end-state, not an IDE. However, let's take a bit of a walkthrough through the debugger. 
+
+Stella Debugger Documentation - https://stella-emu.github.io/docs/debugger.html
+
+**Other Tours:** 
+* 8Blit: https://www.youtube.com/watch?v=HzsH-p1fNxI&ab_channel=8Blit-ATARI2600GameProgramming
+* Community Member tutorial: https://www.youtube.com/watch?v=YESegXGO2ik&ab_channel=tschak909
+* This atari age post: https://forums.atariage.com/topic/320280-using-stellas-debugger-to-analyze-vsync/
 
 ![/images/StellaUI.png](images/StellaUI.png)
+Here is the main window of the Stella debugger. You can reach it at any time when playing a game by pressing the \` key. 
 
-**Upper Right** = RAM + location of the scan line and what cycle it's on. This is important as all your registers are there (PC, SP, A, X, Y, PS) and what is currently in them. We'll talk more about them when we get into [[Process Flags]] and [[Registers]]. In the case of the PS line, this is [Processor Status](http://www.6502.org/users/obelisk/6502/registers.html). We'll get into those soon but know CAPS = Negative, lower case = Positive.
-PC = Program Counter
-SP = Stack Pointer or the thing that points to the memory positions. 
-A = Accumulator
-X/Y = Registers
+One thing I need to remember to do is constantly say where RAM begins in memory. This is at position `org $80` where we'll probably store a bunch of variables. In fact, I'd expect to see in most of your games something that looks like: 
 
-**Upper Left** = Current position of the scanline.
+```asm6502
+;===========================================================
+; Start an uninitialized segment at $80 for var declaration.
+; We have memory from $80 to $FF to work with, minus a few at
+; the end if we use the stack.
+;===========================================================
 
-**Lower Right** = Disassembly or what is being stored everywhere. Not that at the start, we disable interrupts (sei) and then define the code origin, followed by then disabling the HCD decimal math mode, load X with a register, then send it to the stack pointer. You can walk through this with the "STEP" on the upper right. 
+    seg.u Variables
+    org $80
 
-**Lower left** = your log but also you can  look at the TIA chip as well as the RIOT and Audio portions of your machine.
+P0Height   byte    ; player sprite height
+PlayerYPos byte    ; player sprite Y coordinate
+```
+But we'll get to what this means in the near future. Refer to the commented description and we'll move forward. For reference, here's that same stuff from Combat: 
+
+```asm6502
+BINvar  =     $80 ; Master Game Variation Control (binary)
+                  ; (When BINvar is reset or incremented,
+                  ; BCDvar is reset or BCD-imcremented and
+                  ; GAMVAR flag is read from VARMAP+BINvar)
+                  
+BCDvar  =     $81 ; Game Variation in BCD
+;
+;\\\///
+;
+; $82 thru $85 contain flags built from GAMVAR for quick testing via BIT. 
+;
+PF_PONG =     $82 ; bit 7 DIS-able playfield flag
+;                 ; bit 6 Pong missiles (bounce off playfield)
+GUIDED  =     $83 ; bit 7 = guided missile game
+;                 ; bit 6 = machine gun game
+BILLIARD =    $84 ; Just bit 6 = billiard hit game (missiles can't
+;                 ; hit tank until at least 1 bounce off playfield)
+GAMSHP  =     $85 ; Shape of player and game type
+;                 ; 0 = Tank
+;                 ; 1 = Biplane
+;                 ; 2 = Jet Fighter
+;
+CLOCK  =      $86 ; Master timer inc'd every frame during VSYNC
+;                 ; in NBCOMBAT this was misleadingly labelled GTIMER
+SHOWSCR =     $87 ; Show/hide RIGHT player score (left only is used
+;                 ; to indicate game selection in attract mode)  To
+;                 ; inhibit both scores, KLskip is set to $0E vs. $02
+GameOn  =     $88 ; $00=attract mode, $FF=game going on.  Bits 7, 1,
+;                 ; and "all" tested in various places.  Incorrectly set
+;                 ; to $10 at START, but must not be a problem :-)
+;\\\///
+;
+SelDbnce =    $89 ; Select Switch Debounce flag which prevents a
+;                 ; hold-down from registering as 60 presses/second
+StirTimer =   $8A ; Bit 0 = identity of loser during tank stir
+;                 ; Bits 2-7 = countdown timer controlling stir after loss
+Vtemp     =   $8B ; Temp storage for current velocity
+FwdTimer  =   $8D ; FwdTimer must count $F0 to $00 between changes in
+;        thru $8E ; forward motion control; also used for momentum pacing
+;             $8F ; ...
+;        thru $90 ; seem to be reserved too (missiles?) but not used
+LastTurn =    $91 ; Flag indicating direction of last turn, used
+;        thru $92 ; to inhibit whipsaw direction changes (may
+;                 ; have been intended for rotational momentum)
+TurnTimer =   $93 ; Countdown timer between 22.5-degree rotates
+;        thru $94 ; for P0 and P1
+DIRECTN =     $95 ; Players and missiles' current bearing.
+;        thru $98 ; (4 bytes P0,P1,M0,M1)
+MisLife =     $99 ; Missile Lifetime down-counters
+;        thru $9A
+BounceCount = $9B ; (1) Billiard bounced-once flag, via any value other
+;        thru $9C ; than $1F init value; (2) Pong sound tone freq, which
+;                 ; ascends in tone as BounceCount DECed with each bounce
+MxPFcount =   $9D ; During Pong bounce, count of collision duration in
+;        thru $9E ; frames, used to try different heading adjustments
+;                 ; until "desired" reflection achieved
+AltSnd  =     $9F ; Alt Player Sound flag/counter; 0=normal motor sound,
+;        thru $A0 ; else counts up to $04 to time Pong sound
+SCORE   =     $A1 ; Player scores in BCD.
+;        thru $A2 ;
+;
+;\\\/// Addresses beyond here aren't ever cleared by ClearMem.
+;
+GAMVAR  =     $A3 ; Game Variation bitwise descriptor via VARMAP
+TankY0  =     $A4 ; Tank 0's Y-position
+TankY1  =     $A5 ; and tank 1
+MissileY0 =   $A6 ; Missile 0's Y-position
+MissileY1 =   $A7 ; and missile 1
+MVadjA  =     $A8 ; First-half FwdTimer-Velocity adjustments
+;        thru $A9 ; for each player.  By an amazing coincidence
+;                 ; in all games these seem to be the same as
+;                 ; the *current* velocity.
+MVadjB  =     $AA ; Second-half FwdTimer-Velocity adjustments,
+;        thru $AB ; which seem to be the same as the *final* velocity.
+MPace   =     $AC ; Pacing counter; never initialized!  INC'd and
+;                 ; masked to pace certain actions slower than
+;        thru $AF ; once/frame, for each player & missile
+XOFFS   =     $B0 ; X-offset for pending Hmove.
+XoffBase =    $B1 ; $0, $10, $20, or $30 offset into X-offset tbl
+OldMisDir =   $B2 ; Missile bearing before a Pong-bounce began
+;        thru $B3 ;
+ScanLine =    $B4 ; Current scanline on the playfield.
+LORES   =     $B5 ; lo-res indirect addresses.
+;        thru $BA ; 6 bytes / 3 16-bit pointers
+SHAPES  =     $BB ; Pointer to player sprites
+HIRES   =     $BD ; Hi-res (sprite) shape buffer.  Left player's shape
+;        thru $CC ; stored in even bytes, right player's in odd.
+TEMP1   =     $D1 ; Temp storage for several quick save/math operations
+TEMP    =     $D2 ; "score conversion temporary"
+TMPSTK  =     $D3 ; Temporary storage for stack.
+DIFSWCH =     $D5 ; Hold & shift temp for console switches
+Color0  =     $D6 ; Colors loaded from ColorTbl for player 0 and 1
+Color1  =     $D7 ; These may be changed e.g. invisible tanks
+XColor0 =     $D8 ; Repeated P0 and P1 Colors for reference, used
+XColor1 =     $D9 ; to restore ColorX after a change
+ColorPF =     $DA ; BK and PF colors loaded in same block as XColorX.
+ColorBK =     $DB ; Never changed, so no reference versions are kept.
+KLskip  =     $DC ; Kernal lines to skip before score, or main w/o score
+;                 ; (Also used in Kernal as flag whether to show score)
+GameTimer =   $DD ; Master game timer set to $80 when game starts,
+;                 ; incremented until overflow at $FF-->$00 ends game
+;                 ; Bit 7 indicates game in play, also used w/GameOn to
+;                 ; flash score.  During attract mode GameTimer is used
+;                 ; to cycle colors; this is OK since it only assumes
+;                 ; its game-timing function if GameOn != $00.
+NUMG0   =     $DE ; Storage for current byte
+NUMG1   =     $DF ; of score number graphics.
+SCROFF  =     $E0 ; Score pattern offsets (4 bytes)
+;        thru $E3 ; lo nibble 0, lo 1, hi 0, hi 1
+COLcount =    $E4 ; Counter keeps tank-tank and tank-PF collisions from
+;        thru $E5 ; affecting a stationary tank's bearing unless the
+;                 ; collision lasts at least 4 cycles
+;
+StkTop  =     $FF ; Top of stack (which IS used, at least 8 bytes)
+;
+; So much for the RAM.  Here's the ROM:
+```
+##### **Upper Right** 
+RAM + location of the scan line and what cycle it's on. This is important as all your registers are there (PC, SP, A, X, Y, PS) and what is currently in them. We'll talk more about them when we get into [[Process Flags]] and [[Registers]]. 
+
+In the case of the PS line, this is [Processor Status](http://www.6502.org/users/obelisk/6502/registers.html). We'll get into those soon but know CAPS = Negative, lower case = Positive.
+* PC = Program Counter
+* SP = Stack Pointer or the thing that points to the memory positions. 
+* A = Accumulator
+* X/Y = Registers
+
+##### **Upper Left**
+Current position of the scanline.
+
+##### **Lower Right**
+Disassembly or what is being stored everywhere. Not that at the start, we disable interrupts (sei) and then define the code origin, followed by then disabling the HCD decimal math mode, load X with a register, then send it to the stack pointer. You can walk through this with the "STEP" on the upper right. 
+
+##### **Lower left**
+Your log but also you can  look at the TIA chip as well as the RIOT and Audio portions of your machine.
 
 Red also means something changed whereas remaining white means it did not.
 
@@ -133,7 +282,6 @@ To the right of that is our actual render. Right now, i've got a simple "Hello W
 
 Let's take a tour of the debugging tools next. 
 ### Disassembly
-
 ![](images/8bit/8bitwork-disas.png)
 From the documentation, we learned that this tool, "Disassembles the program at the current Program Counter." But what does that mean?
 ### Memory Browser
@@ -141,15 +289,12 @@ From the documentation, we learned that this tool, "Disassembles the program at 
 ![](images/8bit/8bitwork-membrowse.png)
 From the documentation, we learned that this tool, "Displays a dump of all CPU memory." But what does that mean?
 ### Memory Map
-
 ![](images/8bit/8bitwork-memmap.png)
 From the documentation, we learned that this tool, "Displays a handy memory map of the system. Certain tools (like linkers) will give additional segment info here.." But what does that mean?
 ### Memory Probe
-
 ![](images/8bit/8bitwork-memprobe.png)
 From the documentation, we learned that this tool, "Shows a bitmap representing read/write activity across system memory" But what does that mean?
 ### CRT Probe
-
 ![](images/8bit/8bitwork-crtprobe.png)
 From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
 ### Probe Log
@@ -158,7 +303,7 @@ From the documentation, we learned that this tool, "Like the Memory Probe, but f
 From the documentation, we learned that this tool, "Shows a textual log of CPU/memory activity." But what does that mean?
 ### Scanline I/O
 
-![](images/8bit/8bitwork-scanline.png)
+![width](images/8bit/8bitwork-scanline.png)
 From the documentation, we learned that this tool, "Like the Memory Probe, but follows the sweep of the electron beam (for raster displays)" But what does that mean?
 ### Symbol Profiler
 
