@@ -79,7 +79,8 @@ There are a number of tools that anyone in this space will use to develop. Inter
 The list we'll go over today is: 
 * Stella - https://stella-emu.github.io/
 * 8-bit Workshop - https://8bitworkshop.com/redir.html?
-* DASM / macro.h / x-macro.h - https://dasm-assembler.github.io/
+* DASM  - https://dasm-assembler.github.io/
+* macro.h / xmacro.h - https://8bitworkshop.com/docs/platforms/vcs/
 ## <a id="stella"></a>Stella
 Stella is an emulator that uses the same codename of the 2600 or VCS when it was in development. The emulator has been open source for quite some time so you can edit it, debug it, and view the source code as you see fit. Here are the links you need for Stella: 
 
