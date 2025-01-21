@@ -12,24 +12,6 @@
 7. [OpCodes](#opcodes)
 
 ---------------- Table of Contents ---------------- 
-# <a id = "intro"></a>Introduction
-So we're writing code for a 50 year old console that is 4kb at most without memory banking. How hard can it be? Well, instead of writing game logic for a translator or compiler, we're essentially writing machine code directly to a chip set. This means that you're going to have to translate your game loop for the limits and then translate your translation for Assembly. You can also read the actual machine language should you wish.
-
-It is a very weird way to code at the beginning. Structured programming allowing for things like stable programming languages wouldn't come until a bit later. And so, we're talking about the wild west here. Going back to this is a little awkward and even a bit maddening because there are no helpers
-
-IDEs and Ways to Code help us with our work. Televisions are no longer something to write around, but are automatically included as a coordinate system. Everything we make now is infinitely easier unless we're writing something like Dwarf Fortress or some game that pushes the limits of logic.
-
-We use the phrase **[[Racing the Beam]]** a lot and I know I've mentioned it a few times but it will matter here moving forward. The easiest way to talk about this is the basics of coding: 
-
-	The basic idea of making an Atari game is that for each scanline from the top left to bottom right, we have to configure the Television Interface Adaptor or TIA registers for each object JUST before the beam reaches its intended position.
-
-So we will be using an [[IDE]] that has a built in Assembler that attempts to assemble every time you type. Because the Assembler is so tiny, we can use it like an interpreter (e.g. Python or Lua).  In addition, we'll be working just on the 2600 but Assembly 6502 is used by the Intellivision, Tamagotchi, NES, and more. It is just a matter of figuring out the structure to use, dependencies, and more.
-
-We're going to take a bit of a tour of tools now. Each of these pieces of technology are open source and free given just how long ago this console was live. They are all also mostly developed through the help and guidance of reserved words, built-in functions, and more. In Assembly, we have some of those things since it was the first language to simplify machine language, but we've built so much on that foundation. 
-
-If you'd like more of a history, head over here: https://archive.org/details/programsforelect00wilk or https://en.wikipedia.org/wiki/Assembly_language. we still use some Assembly in all software but it's small these days compared to what we're about to do. I hope y'all are ready to glimpse history and do some writing with it. 
-
-Before we take a tour, let's talk about the assignment due this Sunday.
 # <a id="assignments"></a>Assignments
 It's week 2 so we're beginning assignments. The first assignment is that of simply reading. We will be reading the first 2 chapters of Racing the Beam as well as Chapter 1 of your main textbook. 
 
@@ -58,6 +40,24 @@ So in that way, let's see an example response. I just wrote it and it is very st
 It is more for you, than me. I want to force you to read and this is how I can do that. My apologies.
 
 Let's take a moment to find things we can play.
+# <a id = "intro"></a>Introduction
+So we're writing code for a 50 year old console that is 4kb at most without memory banking. How hard can it be? Well, instead of writing game logic for a translator or compiler, we're essentially writing machine code directly to a chip set. This means that you're going to have to translate your game loop for the limits and then translate your translation for Assembly. You can also read the actual machine language should you wish.
+
+It is a very weird way to code at the beginning. Structured programming allowing for things like stable programming languages wouldn't come until a bit later. And so, we're talking about the wild west here. Going back to this is a little awkward and even a bit maddening because there are no helpers
+
+IDEs and Ways to Code help us with our work. Televisions are no longer something to write around, but are automatically included as a coordinate system. Everything we make now is infinitely easier unless we're writing something like Dwarf Fortress or some game that pushes the limits of logic.
+
+We use the phrase **[[Racing the Beam]]** a lot and I know I've mentioned it a few times but it will matter here moving forward. The easiest way to talk about this is the basics of coding: 
+
+	The basic idea of making an Atari game is that for each scanline from the top left to bottom right, we have to configure the Television Interface Adaptor or TIA registers for each object JUST before the beam reaches its intended position.
+
+So we will be using an [[IDE]] that has a built in Assembler that attempts to assemble every time you type. Because the Assembler is so tiny, we can use it like an interpreter (e.g. Python or Lua).  In addition, we'll be working just on the 2600 but Assembly 6502 is used by the Intellivision, Tamagotchi, NES, and more. It is just a matter of figuring out the structure to use, dependencies, and more.
+
+We're going to take a bit of a tour of tools now. Each of these pieces of technology are open source and free given just how long ago this console was live. They are all also mostly developed through the help and guidance of reserved words, built-in functions, and more. In Assembly, we have some of those things since it was the first language to simplify machine language, but we've built so much on that foundation. 
+
+If you'd like more of a history, head over here: https://archive.org/details/programsforelect00wilk or https://en.wikipedia.org/wiki/Assembly_language. we still use some Assembly in all software but it's small these days compared to what we're about to do. I hope y'all are ready to glimpse history and do some writing with it. 
+
+Before we take a tour, let's talk about the assignment due this Sunday.
 # <a id = "links"></a>Links, Bits, and Bobs
 One thing I should cover is where to find games. Most of the 2600 games have been mostly sourced out or otherwise covered. There's some ROMS, manuals and things. 
 
