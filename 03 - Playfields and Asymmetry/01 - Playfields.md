@@ -13,7 +13,7 @@
 
 ---------------- Table of Contents ---------------- 
 # <a id='admin'></a>Admin
-I have gone through most of the reading assignments. We are starting coding this week, let's take an inventory of coding capacity in class and who might be more helpful. 
+I have gone through most of the reading assignments and made comments. 
 # <a id='assignment'></a>Assignment
 This week, we're doing Source Code reading. This will probably be a bit difficult at first but I just want you to try your best. As we move forward, it will get easier as you'll be exposed to more stuff. The point of assignments like these is to get you used to looking through source files for inspiration and fixes for things. 
 

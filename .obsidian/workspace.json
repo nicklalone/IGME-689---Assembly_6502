@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 - IDE and Getting Started"
+              "title": "01 - Playfields"
             }
           }
         ]
@@ -161,8 +161,8 @@
   },
   "active": "79e9da2799610755",
   "lastOpenFiles": [
-    "02 - IDE and Getting Started/02 - Bones.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "01 - On Racing the Beam/03 - Source Code Notes.md",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",

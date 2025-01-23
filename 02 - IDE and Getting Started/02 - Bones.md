@@ -1,4 +1,4 @@
----------------- Table of Contents ---------------- 
+st---------------- Table of Contents ---------------- 
 
 1. [Welcome](#welcome)
 2. [Logistics](#logistics)
@@ -210,7 +210,13 @@ The easiest description is probably from that page:
 
 There will be times when we need to do math, and that's fine. We will do that when we get there in a couple weeks. For now, we'll mostly just work with `BNE` or `Branch if Not Equal` and `DEC` or `Decrement`. You may find this a weird concept given this particular code but accumulators are inherently numeric entities.
 
-So we've now gotten all our ducks in a row. Let's start thinking about some things. We need to start pushing information through the hardware. We will do something simple to begin like call into being a couple of registers (x and a). So, we'll first load something into a with `lda #0` or, "Load into A the number 0." Next, we have to do something with X since we did `ldx #$FF`. This is the X register's maximum value. And so, we want to start to lower it, why?
+So we've now gotten all our ducks in a row. Let's start thinking about some things. We need to start pushing information through the hardware. In this case, we're going to do something mega simple which is to clear the `page zero region`. Here is a term that we probably won't use often but our bytes often have pages. 
+
+The easiest way to think about this is that memory goes from $0000-$FFFF. In the case of "pages" we can say that the first two hex digits represent the "page" you're working with. And so, $0000-$00FF is the "zero page", $0100-$01FF is the first page, etc.  A lot of the 6502 commands take up less memory when you use the special mode that deals with the zero page, where a lot of the action in atari land takes place. This should make more sense as we move forward. One thing to think about is that:
+* `$00` to `$79` is memory reserved for the TIA
+* `$80` to `$FF` is memory reserved for RAM.
+
+We will do something simple to begin like call into being a couple of registers (x and a). So, we'll first load something into a with `lda #0` or, "Load into A the number 0." Next, we have to do something with X since we did `ldx #$FF`. This is the X register's maximum value. And so, we want to start to lower it, why?
 
 Well, the model for this is relatively simple. I'll call it out in a list: 
 1. Load 0 into A
@@ -221,7 +227,6 @@ Well, the model for this is relatively simple. I'll call it out in a list:
 
 For X, then, it would look like `#$FF` and then after decrementing, `#$FE` and then after decrementing `#$FD` and so on and so forth until it gets to the lowest value. 
 ```asm6502
-
 ;========================================
 ; Clear the Page Zero region ($00 to $FF)
 ; Meaning the entire RAM and also the entire TIA registers
@@ -501,7 +506,9 @@ LoOver:
 
         
 ```
+
 Now let's see about loading it into the accumulator.
+
 ```asm6502
 ;========================================
 ; Assembler should use basic 6502 instructions
