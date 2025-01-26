@@ -13,15 +13,17 @@
 
 ---------------- Table of Contents ---------------- 
 # <a id='admin'></a>Admin
-I have gone through most of the reading assignments and made comments. 
+I have gone through most of the reading assignments and made comments. I will reiterate that it is important for you to get these in sooner rather than later as it can help me know how you're doing, what you don't get, what you need to learn. If you don't make suggestions or responses, then i'll just keep focusing on what i need to learn. 
 # <a id='assignment'></a>Assignment
 This week, we're doing Source Code reading. This will probably be a bit difficult at first but I just want you to try your best. As we move forward, it will get easier as you'll be exposed to more stuff. The point of assignments like these is to get you used to looking through source files for inspiration and fixes for things. 
 
 The first assignment is simple, I want the labels that check for missile collision with walls and the playfield and I want you to tell me how they work and what the logic is. I want you to speculate a little as this is the first time so you probably won't exactly know but this source is VERY well commented and is the prototype of everything for the console.
-# <a id = "getstart"></a>Getting Started and Admin
+# <a id = "getstart"></a>Getting Started with Graphics
 The Atari 2600 has a chip that processes game logic and a Television Interface Adapter that sends that logic to the television screen. It literally paints the screen in real time as the processor goes through the logic. This is why we tie everything to our frame as we count the various scanlines. 
 
-There are a variety of things we need to keep track of here. First, let's think about this: 
+I have tried to say this as often as I can and i'm hoping you're sick of hearing about it because it means you've heard me. So now, we're going to move forward and actually do something with it.
+
+You're looking through [[Combat]] this week and reading some source code. I'm doing this to sort of force the idea of thinking about code, reading code, poaching code, and just sort of getting familiar with it all. There are a variety of things we need to keep track of here. First, let's think about this: 
 
 	The background dictates the color of certain things. For example. Consider how colors in the 2600 work. We know that it can display a total of 128 colors and they can be displayed at the same time but below each other or in each individual scanline. 
 

@@ -4,21 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "f8586f5805136496",
+        "id": "7170ab478af3a1b2",
         "type": "tabs",
         "children": [
           {
-            "id": "79e9da2799610755",
+            "id": "d7f2a188da8766f3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
+                "file": "03 - Playfields and Asymmetry/00 - Notes and Resources.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 - Playfields"
+              "title": "00 - Notes and Resources"
+            }
+          },
+          {
+            "id": "9386b5820f8b537a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/modes.png"
+              },
+              "icon": "lucide-image",
+              "title": "modes"
             }
           }
         ]
@@ -150,61 +162,62 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "publish:Publish changes...": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "publish:Publish changes...": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "79e9da2799610755",
+  "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "02 - IDE and Getting Started/02 - Bones.md",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "01 - On Racing the Beam/03 - Source Code Notes.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "01 - On Racing the Beam/00 - Notes and Resources.md",
-    "Other Examples/Toledo Text/demo code/atari_palette.png",
-    "Other Examples/Toledo Text/demo code/atari_palette_pal.png",
-    "Other Examples/Toledo Text/README.md",
-    "Other Examples/Toledo Text/demo code/README.md",
-    "Other Examples/Toledo Text/demo code/README copy.md",
-    "Other Examples/Toledo Text/demo code/atari_palette copy.png",
-    "Other Examples/Toledo Text/demo code/atari_palette_pal copy.png",
-    "Other Examples/Toledo Text/demo code/palette.bin",
-    "Other Examples/Toledo Text/demo code/palette.asm",
-    "Other Examples/Toledo Text/demo code/demo10_4.bin",
-    "Other Examples/Toledo Text/demo code/demo10_4_2.bin",
-    "Other Examples/Toledo Text/demo code/demo10_4_2.asm",
-    "Other Examples/Toledo Text/demo code/demo10_4_1.bin",
-    "Other Examples/Toledo Text/demo code/demo10_4_1.asm",
-    "Other Examples/Toledo Text/demo code/demo10_3.bin",
-    "Other Examples/Toledo Text/demo code/demo10_3.asm",
-    "Other Examples/Toledo Text/demo code/demo10_2.bin",
-    "Source Code Examples/DFIRE.ASM.md",
-    "02 - IDE and Getting Started/images/timing.png",
-    "02 - IDE and Getting Started/images/resolution.png",
-    "02 - IDE and Getting Started/images/processor.png",
-    "02 - IDE and Getting Started/images/pong.png",
-    "02 - IDE and Getting Started/images/nintendolightgun.png",
-    "02 - IDE and Getting Started/images/modes.png",
-    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
-    "02 - IDE and Getting Started/03 - Combat Source.asm.md",
-    "02 - IDE and Getting Started/00 - Notes and Resources.md",
-    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "README.md",
+    "Source Code Examples/A-Team/a-team.asm.md",
+    "Source Code Examples/River Raid/riverraid.asm.md",
+    "Source Code Examples/River Raid/riverraid copy.asm",
+    "Source Code Examples/Haunted House/Haunted House (decomp, inc).asm.md",
+    "Source Code Examples/Haunted House/Haunted House (decomp, inc) copy.asm",
+    "Source Code Examples/Yars Revenge/Yars_Revenge.asm.md",
+    "Source Code Examples/Yars Revenge/Yars_Revenge copy.asm",
+    "Source Code Examples/Pitfall/Pitfall! (decomp).asm.md",
+    "Source Code Examples/Pitfall/Pitfall! (decomp) copy.asm",
+    "Source Code Examples/Halo 2600/halo2600 - organized.asm.md",
+    "Source Code Examples/Halo 2600/halo2600 - organized copy.asm",
+    "Source Code Examples/Dragonfire/Dragonfire (modified to be compiled with dasm).asm.md",
+    "Source Code Examples/Dragonfire/Dragonfire (modified to be compiled with dasm) copy.asm",
+    "Source Code Examples/Combat/Combat (decomp).asm.md",
+    "Source Code Examples/Asteroids/asteroids.asm.md",
+    "Source Code Examples/Asteroids/asteroids copy.asm",
+    "Source Code Examples/Air-Sea Battle/Air Sea Battle (decomp).asm.md",
+    "Source Code Examples/Air-Sea Battle/Air Sea Battle (decomp) copy.asm",
+    "Source Code Examples/Adventure/Adventure.asm.md",
+    "Source Code Examples/A-Team/a-team copy.asm",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "images/resolution.png",
+    "Administration/~$ - Syllabus.docx",
+    "images/atari_palette.png",
+    "02 - IDE and Getting Started/02 - Bones.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "02 - IDE and Getting Started/00 - Notes and Resources.md",
+    "01 - On Racing the Beam/02 - What the Beam Races On.md",
+    "images/modes.png",
+    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "Source Code Examples/DFIRE.ASM.md",
+    "01 - On Racing the Beam/01 - On Racing the Beam.md",
+    "Other Examples/Toledo Text/demo code/README.md",
+    "01 - On Racing the Beam/00 - Notes and Resources.md",
+    "01 - On Racing the Beam/images/crt.gif",
+    "01 - On Racing the Beam/images/pong.png",
+    "01 - On Racing the Beam/images/consoles/spacewar.png",
+    "01 - On Racing the Beam/images/nintendolightgun.png",
+    "01 - On Racing the Beam/images/consoles/channelf.png",
+    "01 - On Racing the Beam/images/consoles/pong.png",
+    "01 - On Racing the Beam/images/atari_palette_pal.png",
+    "02 - IDE and Getting Started/03 - Combat Source.asm.md",
+    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "11 - Polish/02 - MORE JUICE.md",
-    "11 - Polish/01 - JUICE.md",
-    "12 - 16 - As Needed/Notes and Resources.md",
-    "09 - Intersecting 2/02 - Other Types.md",
-    "09 - Intersecting 2/01 - Editing and Debugging.md",
-    "08 - Intersecting/02 - Is that a tank.md",
-    "04 - Players, Missiles, and Balls/03 - Adventure.asm.md",
-    "03 - Playfields and Asymmetry/03 - Combat Source.asm.md",
-    "09 - Intersecting 2/00 - Notes and Resources.md",
-    "08 - Intersecting/01 - Is that a wall.md"
+    "11 - Polish/01 - JUICE.md"
   ]
 }
