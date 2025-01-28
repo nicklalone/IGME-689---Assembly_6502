@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - IDE and Getting Started/02 - Bones.md",
+                "file": "03 - Playfields and Asymmetry/01 - Playfields.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 - Bones"
+              "title": "01 - Playfields"
             }
           }
         ]
@@ -161,6 +161,9 @@
   },
   "active": "79e9da2799610755",
   "lastOpenFiles": [
+    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
     "Source Code Examples/Yars Revenge/Yars_Revenge.asm.md",
     "Source Code Examples/River Raid/riverraid.asm.md",
     "Source Code Examples/Pitfall/Pitfall! (decomp).asm.md",
@@ -171,9 +174,7 @@
     "Source Code Examples/Asteroids/asteroids.asm.md",
     "Source Code Examples/Air-Sea Battle/Air Sea Battle (decomp).asm.md",
     "Source Code Examples/A-Team/a-team.asm.md",
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "02 - IDE and Getting Started/02 - Bones.md",
     "01 - On Racing the Beam/02 - What the Beam Races On.md",
     "01 - On Racing the Beam/03 - Source Code Notes.md",
     "01 - On Racing the Beam/01 - On Racing the Beam.md",
@@ -205,7 +206,6 @@
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "02 - IDE and Getting Started/03 - Combat Source.asm.md",
     "02 - IDE and Getting Started/00 - Notes and Resources.md",
-    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
     "11 - Polish/02 - MORE JUICE.md"
   ]
 }

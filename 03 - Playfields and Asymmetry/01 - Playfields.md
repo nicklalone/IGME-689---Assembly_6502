@@ -4,10 +4,10 @@
 2. [Assignments](#assignment)
 3. [Getting Started](#getstart)
 4. [Backgrounds](#background)
-	1. [Background Code Example](#backcode)
-5. [Class Playfield Example](#classpf)
+	* [Background Code Example](#backcode)
+5. [Playfield Example](#classpf)
 6. [Playfields](#playfields)
-	1. [Playfield Code Example](#playfield)
+	* [Playfield Code Example](#playfield)
 7. [Combined](#combo)
 8. [One Last Example](#masswerk)
 
@@ -27,12 +27,13 @@ You're looking through [[Combat]] this week and reading some source code. I'm do
 
 	The background dictates the color of certain things. For example. Consider how colors in the 2600 work. We know that it can display a total of 128 colors and they can be displayed at the same time but below each other or in each individual scanline. 
 
-This allows for our rainbow to appear though we were not going with all 128! Next, each scanline can only have 4 colors displayed at any given time. 
+This allows for our rainbow to appear though we were not going with all 128! Next, each scanline can only have 4 colors displayed at any given time.
 
-Finally, it is important to remember that some stuff shares colors. So, these share colors: 
+Finally, it is important to remember that some stuff shares colors. So, these share colors:
 * Playfield and Ball 
 * Player0 and missile0 
 * Player1 and missile1 
+	* Of these, score will also share player0/1 color as well.
 
 And to that end, we have 7 distinct game elements. Those elements are: 
 1. Background 
@@ -42,6 +43,8 @@ And to that end, we have 7 distinct game elements. Those elements are:
 5. Missile 1 
 6. Missile 2 
 7. Ball
+
+There can also be score but this is also part of the playfield. 
 
 So let's think about this image again: 
 
@@ -107,156 +110,358 @@ START: CLEAN_START
 	.word START
 	.word START
 ```
-# <a id ='classpf'></a>Playfield example from class 
+
+# Background Example
+We can also try and do some stuff from Oscar Toledo: https://github.com/nanochess/book-Atari
+
+We won't do this example in class but here's just a straight up background example.
+```asm6502
+;==========================
+; Like always, let's get ourselves into 6502.
+;==========================
+	
+	PROCESSOR 6502
+	INCLUDE "vcs.h"
+	INCLUDE "macro.h"
+
+	ORG $F000
+
+;==========================
+; We start ourselves in memory slot F000 and use macro.h
+;==========================
+
+START: CLEAN_START
+
+;==========================
+; Like always, let's get ourselves into 6502.
+;==========================
+
+SHOW_FRAME:
+	LDA #$88
+	STA COLUBK
+
+	STA WSYNC
+	LDA #2
+	STA VSYNC
+	STA WSYNC
+	STA WSYNC
+	STA WSYNC
+	LDA #0
+	STA VSYNC
+
+	LDX #36
+
+TOP:
+	STA WSYNC
+	DEX
+	BNE TOP
+	LDA #0
+	STA VBLANK
+
+	LDX #192
+	
+VISIBLE:
+	STA WSYNC
+	DEX
+	BNE VISIBLE
+
+	LDA #2
+	STA VBLANK
+	LDX #30
+
+BOTTOM:
+	STA WSYNC
+	DEX
+	BNE BOTTOM
+
+	JMP SHOW_FRAME
+
+	ORG $FFFC
+	.word START
+	.word START
+```
+
+and we can augment this a bit. 
+
+```ASM6502
+;==========================
+; Like always, let's get ourselves into 6502.
+;==========================
+	
+	PROCESSOR 6502
+	INCLUDE "vcs.h"
+	INCLUDE "macro.h"
+
+	SEG Code
+	ORG $F000
+
+;==========================
+; We start ourselves in memory slot F000 and use macro.h
+;==========================
+
+START: CLEAN_START
+
+;==========================
+; Let's get started with our frame.
+;==========================
+
+SHOW_FRAME:
+	LDA #$88	; this is a blueish color
+	STA COLUBK	; and we set it to background
+
+	STA WSYNC	; Wait a line.
+	LDA #2
+	STA VSYNC	; Turn on VSYNC
+	STA WSYNC	; Wait.
+	STA WSYNC	; Wait.
+	STA WSYNC	; Wait.
+	LDA #0		; Load 0 into A
+	STA VSYNC	; Turn off VSYNC
+
+;==========================
+; Waiting for VBLANK so we can get to drawable space.
+;==========================
+
+	LDX #36		; Now we get ready for VBLANK!
+	
+TOP:
+	STA WSYNC	; Here, we're basically waiting for 36
+	DEX
+	BNE TOP
+	LDA #0
+	STA VBLANK	; And turning off VBLANK
+
+;==========================
+; Now we setting up halvsies. 192/2 = 96
+; Do you think we could do 192/3? Try it!!!
+;==========================
+
+	LDX #96		; Now we get ready for 96 lines!
+	
+VISIBLE:
+	STA WSYNC	; And wait.
+	DEX		; What we're doing is waiting 96 lines.
+	BNE VISIBLE
+
+	LDA #$F9	; Now it's time to load something else
+	STA COLUBK	; Into the background. 
+
+;==========================
+; So we set with the top half and loaded A with the new value. We can do this because the math works out.
+; The line starts drawing AS the value changes.
+;==========================
+
+	LDX #96		; More of the same but with a new color.
+	
+VISIBLE2:	
+	STA WSYNC	; And we wait 96 lines.
+	DEX		; That's 92!
+	BNE VISIBLE2	; Try setting it to thirds?
+
+	LDA #2		; Now we turn on VBLANK
+	STA VBLANK	
+	LDX #30
+
+;==========================
+; And we end up rounding it out. 
+;==========================
+
+BOTTOM:
+	STA WSYNC	; And get our VBLANK to get to top.
+	DEX
+	BNE BOTTOM	
+
+	JMP SHOW_FRAME	; And restart.
+
+	ORG $FFFC	; Don't forget this! 
+	.word START	
+	.word START
+
+```
+
+# <a id ='classpf'></a>Playfield example 
 This is the code I wanted to demo in class as it introduces a TON of concepts. 
 
 ```asm6502
-; Assembler should use basic 6502 instructions
+
+;==========================
+; Assembler should use basic 6502
+;==========================
+
 	processor 6502
 	
+;==========================
 ; Include files for Atari 2600 constants and handy macro routines
+;==========================
+	
 	include "vcs.h"
 	include "macro.h"
 
+;==========================
 ; 4K Atari 2600 ROMs usually start at address $F000
+;==========================
+
 	org  $f000
 
+;==========================
 ; The CLEAN_START macro zeroes RAM and registers
+;==========================
+
 Start	CLEAN_START 	; check out macro.h for this. 
 
-	ldx #$80	; This is the hex code for a dark blue.
-        stx COLUBK	; This will set the Color of the background, Blue.
-        
-        lda #$1C	; This is the hex value for a bright yellow.
-        sta COLUPF	; This will store the hex value as the color of the playfield.
+;==========================
+; What we got here is not variables or dependencies.
+; Instead, we're setting up the colors and things
+; Background and Playfield colors here
+;==========================
 
-; ``````````````````````````````````````````````````````````
-;	As usual, we need to take care of our start frames and blanks.
-;```````````````````````````````````````````````````````````
+	ldx #$80	; This is the hex code for a dark blue.
+    stx COLUBK	; This will set the background blue.
+    lda #$1C	; This is the hex for bright yellow.
+    sta COLUPF	; This will store the hex value as the color of the playfield.
+
+;==========================
+; As usual, we need to take care of our start frames and blanks.
+;==========================
 
 StartFrame:
 	lda #02		; we need to send a bit that turns on something.
-        sta VBLANK	; In this case, we're turning on VBLANK and VSYNC
-        sta VSYNC	; MAIN SCREEN, TURN ON
+    sta VBLANK	; In this case, we're turning on VBLANK and VSYNC
+    sta VSYNC	; MAIN SCREEN, TURN ON
 
-;```````````````````````````````````
-;	We gonna do something funky here with DASM codes instead of OPCODES
-;```````````````````````````````````
+;==========================
+;We gonna do something funky here with DASM codes instead of OPCODES.
+;==========================
+
 	REPEAT 3	; Repeat 3 times
 	sta WSYNC	; 3 Scanlines of WSYNC
-        REPEND		; Repeat Ends 
+    REPEND		; Repeat Ends 
         
-        ; We then need to turn those things off so we can move into the next part above the drawable area.
-        
-        lda #0		; Load byte of 0
-        sta VSYNC	; Store that byte as VSYNC, thus turning it off. 
+;==========================
+; We then need to turn those things off so we can move into the next part above the drawable area.
+;==========================
 
-;````````````````````````````````````
+    lda #0		; Load byte of 0
+    sta VSYNC	; Store that byte as VSYNC, thus turning it off. 
+
+;==========================
 ;	Now we have to get ourselves down 37 lines to get to the drawable area. 
-;````````````````````````````````````
+;==========================
 
 	REPEAT 37	; Repeat this 37 times.
-        sta WSYNC	; Wait for the next scanline.
-        REPEND		; Repeat ends after 37 times.
+    sta WSYNC	; Wait for the next scanline.
+    REPEND		; Repeat ends after 37 times.
         
-        lda #0		; Load byte of 0
-        sta VBLANK	; Store that byte as VSYNC, thus turning it off. 
+    lda #0		; Load byte of 0
+    sta VBLANK	; Store that byte as VSYNC, thus turning it off. 
 
-; Note here that we've now sufficiently gotten ourselves down to the start of 192 lines of drawable space.
-; We turn on VSYNC and VBLANK to do this and get ourselves set up to DO STUFF and DRAW. 
-; So now we have to start dealing with other content like the background and playfield.
+;==========================
+; We turn off VSYNC and VBLANK to do this and get ourselves set up to DO STUFF and DRAW. 
+;Let's set up the playfield and deal with CTLPF
+;==========================
 
-;````````````````````````````````````
-;	Let's set up the playfield and deal with CTLPF
-;````````````````````````````````````
 	ldx #%00000001	; CTRLPF of D0 means reflect. Try setting this to 0 and see what happens. 
 	stx CTRLPF 	; Load this bit 
         
-;````````````````````````````````````
+;==========================
 ;	Now it's time to do stuff with our 192 lines. We have to deal with it mathematically. 
-;````````````````````````````````````
+;==========================
 
-; 192 total lines, 10 lines down, playfield begins, playfield is 8 lines tall. So, let's math it out. 10 + 8 + 8 + 10 = 156
+;==========================
+; 192 total lines, 10 lines down, playfield begins, playfield is 8 lines tall. 
+;So, let's math it out. 10 + 8 + 8 + 10 = 156
+;==========================
 
 	ldx #0		; We load a value that is blank
-        stx PF0		; this basically disables the PF0 Playfield Register.
-        stx PF1		; this basically disables the PF1 Playfield Register.
-        stx PF2		; this basically disables the PF2 Playfield Register.
+    stx PF0		; this disables the PF0 Playfield Register.
+    stx PF1		; this disables the PF1 Playfield Register.
+    stx PF2		; this disables the PF2 Playfield Register.
         
-        REPEAT 10
-        sta WSYNC
-        REPEND
+    REPEAT 10
+	sta WSYNC   ; We're waiting for the next scanline
+    REPEND
+;==========================
+; Now we'll load the top line.
+;==========================
+
+    ldx #%11100000	; PF0 is just 4 bits and they're the high bits so 1110 for not computers is 0111 or "Skip a line then do it." However, DASM expects us to account for all 8 bytes.
+    
+    stx PF0
+    ldx #%11111111	; This is the whole border line here and not just the corner.
+    stx PF1		; We then load this binary data into the register for playfield 1	
+    stx PF2		; We then load this binary data into the register for playfield 2
         
-        ; Now we'll load the top line.
-        
-        ldx #%11100000	; PF0 is just 4 bits and they're the high bits so 1110 for not computers is 0111 or "Skip a line then do it." However, DASM expects us to account for all 8 bytes.
-        stx PF0
-        ldx #%11111111	; This is the whole border line here and not just the corner.
-        stx PF1		; We then load this binary data into the register for playfield 1	
-        stx PF2		; We then load this binary data into the register for playfield 2
-        
-        REPEAT 8	; we need to make it 8 lines high.
-        sta WSYNC	; So basically wait for 8 lines running that.
-        REPEND		; and then end.
-        
-        ; Then deal with the middle.
-        
-        ldx #%00100000	; We need to skip 2 clock cycles and then draw a pixel then skip another clock cycle. Remember, DASM expects us to account for all 8 bytes.
+    REPEAT 8	; we need to make it 8 lines high.
+    sta WSYNC	; So basically wait for 8 lines running that.
+    REPEND		; and then end.
+
+;==========================		
+; Then deal with the middle.
+;==========================
+
+    ldx #%00100000	; We need to skip 2 clock cycles and then draw a pixel then skip another clock cycle. Remember, DASM expects us to account for all 8 bytes.
+    
 	stx PF0		; we can store this data into the PF0 register which will basically allow us to create our corners.
-        ldx #0		; Then we load a 0 into X
-        stx PF1		; store that 0 into PF1
-        stx PF2		; store that 0 into PF2
+    ldx #0		; Then we load a 0 into X
+    stx PF1		; store that 0 into PF1
+    stx PF2		; store that 0 into PF2
         
-        REPEAT 156	; If you go outside of the drawable area, all hell breaks loose.
-        sta WSYNC	; Wait 156 lines.
-        REPEND	
-        
-        ; Now, we have to deal with the bottom.
-        
-        ldx #%11100000	; PF0 is just 4 bits and they're the high bits so 1110 for not computers is 0111 or "Skip a line then do it." However, DASM expects us to account for all 8 bytes.
-        stx PF0
-        ldx #%11111111	; This is the whole border line here and not just the corner.
-        stx PF1		; We then load this binary data into the register for playfield 1	
-        stx PF2		; We then load this binary data into the register for playfield 2
+    REPEAT 156	; If you go outside of the drawable area, all hell breaks loose.
+    sta WSYNC	; Wait 156 lines.
+    REPEND	
 
-        REPEAT 8	; we need to make it 8 lines high.
-        sta WSYNC	; So basically wait for 8 lines running that.
-        REPEND		; and then end.
-
-	; and then the end of the playfield screen. 
+;==========================
+; Now, we have to deal with the bottom.
+;==========================
         
-        ldx #0		; We load a value that is blank
-        stx PF0		; this basically disables the PF0 Playfield Register.
-        stx PF1		; this basically disables the PF1 Playfield Register.
-        stx PF2		; this basically disables the PF2 Playfield Register.
-        
-        REPEAT 10
-        sta WSYNC
-        REPEND
+    ldx #%11100000	; PF0 is just 4 bits and they're the high bits so 1110 for not computers is 0111 or "Skip a line then do it." However, DASM expects us to account for all 8 bytes.
+    stx PF0
+    ldx #%11111111	; This is the whole border line here and not just the corner.
+    stx PF1		; We then load this binary data into the register for playfield 1	
+    stx PF2		; We then load this binary data into the register for playfield 2
 
-;````````````````````````````````````
-;	And so now our logic and drawing is done. We have an overscan space of 30 lines. So, let's do that.
-;````````````````````````````````````
+	REPEAT 8	; we need to make it 8 lines high.
+    sta WSYNC	; So basically wait for 8 lines running that.
+    REPEND		; and then end.
+
+;==========================
+; and then the end of the playfield screen. 
+;==========================
+
+    ldx #0		; We load a value that is blank
+    stx PF0		; this basically disables the PF0 Playfield Register.
+    stx PF1		; this basically disables the PF1 Playfield Register.
+    stx PF2		; this basically disables the PF2 Playfield Register.
+        
+    REPEAT 10
+    sta WSYNC
+    REPEND
+
+;==========================
+; And so now our logic and drawing is done. We have an overscan space of 30 lines. So, let's do that.
+;==========================
+
 	lda #2		; A value of 2 turns on VBLANK
 	sta VBLANK	; Turn on VBLANK
         
-        REPEAT 30	; Repeat this 30 times.
-        sta WSYNC	; Wait for the next scanline.
-        REPEND		; Repeat ends after 30 times.
+    REPEAT 30	; Repeat this 30 times.
+    sta WSYNC	; Wait for the next scanline.
+    REPEND		; Repeat ends after 30 times.
 
-;````````````````````````````````````
-;	Let's jump to the next frame. 
-;````````````````````````````````````
+;==========================
+; Let's jump to the next frame. 
+;==========================
+
 	jmp StartFrame	; What happens if, after processing a frame, we skip to the START instead of the frame/kernel?
 
-;````````````````````````````````````
-;  And we finish up by making sure our file is exactly 4k.
-;````````````````````````````````````
+;==========================
+; And we making sure our file is exactly 4k.
+;==========================
 	org $fffc
 	.word Start
 	.word Start
 ```
-# <a id='playfield'></a>Playfield
+# <a id='playfield'></a>Playfield Example 2
 
 We're going to take a piece of a tutorial from a youtuber named 8blit and work on it a bit. You can find this on his github repository at: https://github.com/kreiach/8Blit
 
@@ -353,257 +558,4 @@ overscan:
 
 ; ----- End of main segment -----
 ```
-
-We can also try and do some stuff from Oscar Toledo: https://github.com/nanochess/book-Atari
-
-```asm6502
-	PROCESSOR 6502
-	INCLUDE "vcs.h"
-
-	ORG $F000
-	
-START:
-	SEI
-	CLD
-	LDX #$FF
-	TXS
-	LDA #$00
-CLEAR:
-	STA 0,X
-	DEX
-	BNE CLEAR
-
-SHOW_FRAME:
-	LDA #$88
-	STA COLUBK
-
-	STA WSYNC
-	LDA #2
-	STA VSYNC
-	STA WSYNC
-	STA WSYNC
-	STA WSYNC
-	LDA #0
-	STA VSYNC
-
-	LDX #36
-TOP:
-	STA WSYNC
-	DEX
-	BNE TOP
-	LDA #0
-	STA VBLANK
-
-	LDX #192
-	
-VISIBLE:
-	STA WSYNC
-	DEX
-	BNE VISIBLE
-
-	LDA #2
-	STA VBLANK
-	LDX #30
-BOTTOM:
-	STA WSYNC
-	DEX
-	BNE BOTTOM
-
-	JMP SHOW_FRAME
-
-	ORG $FFFC
-	.word START
-	.word START
-
-```
-
-and we can augment this a bit. 
-
-```asm6502
-	PROCESSOR 6502
-	INCLUDE "vcs.h"
-
-	ORG $F000
-START:
-	SEI
-	CLD
-	LDX #$FF
-	TXS
-	LDA #$00
-CLEAR:
-	STA 0,X
-	DEX
-	BNE CLEAR
-
-SHOW_FRAME:
-	LDA #$88
-	STA COLUBK
-
-	STA WSYNC
-	LDA #2
-	STA VSYNC
-	STA WSYNC
-	STA WSYNC
-	STA WSYNC
-	LDA #0
-	STA VSYNC
-
-	LDX #36
-TOP:
-	STA WSYNC
-	DEX
-	BNE TOP
-	LDA #0
-	STA VBLANK
-
-	LDX #96
-VISIBLE:
-	STA WSYNC
-	DEX
-	BNE VISIBLE
-
-	LDA #$F8
-	STA COLUBK
-
-	LDX #96
-VISIBLE2:
-	STA WSYNC
-	DEX
-	BNE VISIBLE2
-
-	LDA #2
-	STA VBLANK
-	LDX #30
-BOTTOM:
-	STA WSYNC
-	DEX
-	BNE BOTTOM
-
-	JMP SHOW_FRAME
-
-	ORG $FFFC
-	.word START
-	.word START
-```
-
-But this is just the background.
-
-```ASM6502
-	;
-	; Playfield demo.
-	;
-	; by Oscar Toledo G.
-	; https://nanochess.org/
-	;
-	; Creation date: Jun/02/2022.
-	;
-
-	PROCESSOR 6502
-	INCLUDE "vcs.h"
-
-	ORG $F000
-START:
-	SEI		; Disable interrupts.
-	CLD		; Clear decimal mode.
-	LDX #$FF	; X = $ff
-	TXS		; S = $ff
-	LDA #$00	; A = $00
-
-CLEAR:
-	STA 0,X		; Clear memory.
-	DEX		; Decrement X.
-	BNE CLEAR	; Branch if not zero.
-
-SHOW_FRAME:
-	LDA #$88	; Blue.
-	STA COLUBK	; Background color.
-	LDA #$28	; White.
-	STA COLUPF	; Playfield color.
-	LDA #$40	; Red
-	STA COLUP0	; Player 0 color.
-	LDA #$c0	; Green
-	STA COLUP1	; Player 1 color.
-	LDA #$01	; Right side of playfield is reflected.
-	STA CTRLPF	
-
-	STA WSYNC
-	LDA #2		; Start of vertical retrace.
-	STA VSYNC
-	STA WSYNC
-	STA WSYNC
-	STA WSYNC
-	LDA #0		; End of vertical retrace.
-	STA VSYNC
-
-	LDX #36		; Remains 36 scanlines of top border
-
-TOP:
-	STA WSYNC
-        DEX
-        BNE TOP
-        LDA #0
-        STA VBLANK
-        
-	LDX #8
-
-PART1:
-	STA WSYNC
-        LDA #$F0
-        STA PF0
-        STA PF1
-        LDA #$FF
-        STA PF2
-        
-        DEX
-        BNE PART1
-
-	LDX #176
-
-PART2: 
-	STA WSYNC
-        LDA #$10
-        STA PF0
-        LDA #$00
-        STA PF1
-        LDA #$00
-        STA PF2
-        
-        DEX
-        BNE PART2
-        
-        LDX #8
-PART3:
-	STA WSYNC
-        LDA #$F0
-	STA PF0
-        LDA #$FF
-        STA PF1
-        LDA #$3F
-        STA PF2
-        
-        DEX
-        BNE PART3
-        
-	LDA #2
-        STA VBLANK
-        LDX #30
-
-BOTTOM:
-	STA WSYNC
-        LDA #0
-        STA PF0
-        STA PF1
-        STA PF2
-        
-        DEX
-        BNE BOTTOM
-        
-	JMP SHOW_FRAME
-
-	ORG $FFFC
-	.word START
-	.word START
-
-```
-
 # <a id ='masswerk'></a>
