@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -161,6 +161,7 @@
   },
   "active": "79e9da2799610755",
   "lastOpenFiles": [
+    "Source Code Examples.zip",
     "03 - Playfields and Asymmetry/images/macvsas.png",
     "03 - Playfields and Asymmetry/images/TIA.jpg",
     "03 - Playfields and Asymmetry/images/atari_palette_pal.png",
@@ -171,7 +172,6 @@
     "03 - Playfields and Asymmetry/images/consoles/tennis42.png",
     "03 - Playfields and Asymmetry/images/consoles/spacewar.png",
     "03 - Playfields and Asymmetry/images/consoles/pong.png",
-    "03 - Playfields and Asymmetry/images/consoles/odyssey.png",
     "03 - Playfields and Asymmetry/images/consoles",
     "03 - Playfields and Asymmetry/images/8bit",
     "03 - Playfields and Asymmetry/images",

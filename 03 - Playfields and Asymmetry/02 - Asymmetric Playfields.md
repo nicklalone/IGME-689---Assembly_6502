@@ -8,30 +8,13 @@
 ---------------- Table of Contents ---------------- 
 This week we're mostly going to play a selection of games that are asymmetric. We'll see if we can find the source code as COMBAT is not. 
 # <a id = "Admin"></a>Admin
-We're doing source code reading this week. One thing I want you to pay attention to is the structure of games. You'll have to decide what works for you. 
-
-# Clock Cycles
-If you notice on the resolution picture I keep showing, the x-axis isn't coordinates, but clock cycles. 68 cycles gets us over to the actual tv picture and then we have 160 clock counts that are viewable. 
-
-The 6507 CPU in the Atari 2600 performs its instructions to the rhythm of a system clock. Each tick of this system clock is referred to as a clock-cycle. 6507 instructions are often measured by how many clock cycles they take, since it's more convenient to say (for example) that an instruction takes 2 clock cycles, instead of saying the instruction takes 0.000001681 seconds.
-
-This gets into a particular issue, math. Note that there are around 76 cycles per scanline. So, you have 76 clock cycles as the CRT draws the line. From there, we have 262 scanlines per NTSC frame. From this, we can say that there are around 19912 cycles per frame. We get this by multiplying 76`*`262. IF we then consider that a NTSC have a frame rate of around 59.94Hz, we can then multiply that with 19912. This will result in 1193525.28. This number is the speed of the processor we're working on as our processing chip has a speed of 1.19MHz.
-
-So, we have to fit things into an ever tightening frame inside an ever tightening frame rate, inside of an ever tightening computation space.
-
-This is something we have to view on our own so we're going to work on a piece of code that demonstrates different ways to deal with the clock cycles. 
-![](/images/resolution.png)
+Hello World and the Playfield
 # <a id='getstart'></a>Getting Started
-So, we're taking the stuff we had from the original playfield exercise and now we're doing stuff asymmetrically. This increases our difficulty and processing space in ways that are complicated. Instead of just mirroring or repeating, we have to think across the whole screen. Note that in the above image, there's 228 clock cycles. We have to account for this as we only have 3 registers to write the screen to but we need to write 6 times. This means that we have to write and rewrite the screen. Just keep this image in mind: 
-
 ![](images/timing.png)
 
 Or another version of this from 8blit: 
 ![asym-cycles.png](images/asym-cycles.png)
-Let's get on with the example: 
 # Example
-This is an example that has been around for almost 30 years now. We're going to go through it and adjust some of this stuff. The goal of this code is to provide a way through which to build our games. It also introduces timers, a different model for organizing your game, and maths, so much maths.
-
 ```asm6502
 ; How to Draw A Playfield.
 ; by Nick Bensema  9:23PM  3/2/97
@@ -131,7 +114,6 @@ VerticalBlank
         STA  WSYNC
         STA  WSYNC
         STA  WSYNC
-        
         STA  VSYNC ;Begin vertical sync.
         STA  WSYNC ; First line of VSYNC
         STA  WSYNC ; Second line of VSYNC.
@@ -407,158 +389,6 @@ GameInit
 ; It will become necessary to write a program that makes this easier,
 ; because it is easy to become confused when dealing with this system.
 ;
-PFData0  ;H       4 5 6 7
-       .byte $00,$f0,$00,$A0,$A0,$E0,$A0,$A0
-PFData1  ;EL      7 6 5 4 3 2 1 0
-       .byte $00,$FF,$00,$77,$44,$64,$44,$74
-PFData2  ;LO      0 1 2 3 4 5 6 7
-       .byte $00,$FF,$00,$EE,$A2,$A2,$A2,$E2
-PFLColor ; Left side of screen
-       .byte $00,$FF,$00,$22,$26,$2A,$2C,$2E
-PFRColor ; Right side of screen
-       .byte $00,$1F,$00,$6E,$6C,$6A,$66,$62
-
-        org $FFFC
-        .word Start
-        .word Start
-```
-
-So this was how it was originally written. Let's take out some stuff and get ourselves into what we've been already learning. 
-
-```asm6502
-        processor 6502
-        include "vcs.h"
-        include "macro.h"
-
-		SEG Variables
-		org $80
-
-Temp       = $80
-PlayfieldY = $90
-
-		SEG Code
-        org $F000
-
-Temp       = $80
-PlayfieldY = $90
-
-Start CLEAN_START
-
-        JSR  GameInit
-
-MainLoop
-        JSR  VerticalBlank ;Execute the vertical blank.
-        JSR  CheckSwitches ;Check console switches.
-        JSR  GameCalc      ;Do calculations during Vblank
-        JSR  DrawScreen    ;Draw the screen
-        JSR  OverScan      ;Do more calculations during overscan
-        JMP  MainLoop      ;Continue forever.
-
-VerticalBlank
-        LDX  #0
-        LDA  #2
-        STA  WSYNC
-        STA  WSYNC
-        STA  WSYNC
-        
-        STA  VSYNC ;Begin vertical sync.
-        STA  WSYNC ; First line of VSYNC
-        STA  WSYNC ; Second line of VSYNC.
-
-        LDA  #44
-        STA  TIM64T
-
-        LDA #0
-        STA CXCLR
-
-        STA  WSYNC ; Third line of VSYNC.
-        STA  VSYNC ; (0)
-        RTS
-
-CheckSwitches
-       LDA #0
-       STA COLUBK  ; Background will be black.
-       RTS
-
-GameCalc
-        INC PlayfieldY   ;Inch up the playfield
-        RTS
-
-DrawScreen
-        LDA INTIM
-        BNE DrawScreen ; Whew!
-        STA WSYNC
-        STA VBLANK  ;End the VBLANK period with a zero.
-
-        LDA  #2
-        STA  CTRLPF
-
-		LDY #191
-
-ScanLoop
-; Result of the following math is:
-;  X = ( (Y-PlayfieldY) /4 ) mod 7
-        TYA
-        SEC
-        SBC PlayfieldY
-        LSR   ;Divide by 4
-        LSR
-        AND #7  ;modulo 8
-        TAX
-        LDA PFData0,X           ;Load ahead of time.
-        
-; WSYNC is placed BEFORE all of this action takes place.
-
-        STA WSYNC
-        STA PF0                 ;[0] +3 = *3*   < 23
-        LDA PFLColor,X          ;[3] +4
-        
-        ;In a real game, I wouldn't be this redundant.
-        
-        STA COLUP0              ;[7] +3 = *10*  < 23
-        STA COLUPF              ;[10]+3 = *13*  < 23
-        LDA PFData1,X           ;[13]+4
-        STA PF1                 ;[17]+3 = *20*  < 29
-        LDA PFRColor,X          ;[20]+4
-        STA COLUP1              ;[24]+3 = *27*  < 49
-        LDA PFData2,X           ;[27]+4
-        STA PF2                 ;[31]+3 = *34*  < 40
-        DEY
-        BNE ScanLoop
-;
-; Clear all registers here to prevent any possible bleeding.
-;
-        LDA #2
-        STA WSYNC  ;Finish this scanline.
-        STA VBLANK ; Make TIA output invisible,
-        ; Now we need to worry about it bleeding when we turn
-        ; the TIA output back on.
-        ; Y is still zero.
-        STY PF0
-        STY PF1
-        STY PF1
-        STY GRP0
-        STY GRP1
-        STY ENAM0
-        STY ENAM1
-        STY ENABL
-        RTS
-
-OverScan   ;We've got 30 scanlines to kill.
-        LDX #30
-KillLines
-         STA WSYNC
-         DEX
-         BNE KillLines
-        RTS
-
-GameInit
-        LDA #0
-        STA PlayfieldY
-        RTS
-
-        org $FF00
-
 PFData0  ;H       4 5 6 7
        .byte $00,$f0,$00,$A0,$A0,$E0,$A0,$A0
 PFData1  ;EL      7 6 5 4 3 2 1 0
