@@ -233,7 +233,7 @@ ScanLoop
         LSR
         AND #7  ;modulo 8
         TAX
-        LDA PFData0,X           ;Load ahead of time.
+        LDA PFData0,X         ;Load ahead of time.
         
 ; WSYNC is placed BEFORE all of this action takes place.
 
