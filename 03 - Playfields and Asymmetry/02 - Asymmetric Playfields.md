@@ -34,13 +34,11 @@ This is an example that has been around for almost 30 years now. We're going to 
 ```asm6502
 ; How to Draw A Playfield.
 ; by Nick Bensema  9:23PM  3/2/97
-;
-; Atari 2600 programming is different from any other kind of programming
-; in many ways.  Just one of these ways is the flow of the program.
-;
-; Since the CPU must hold tha TIA's hand through all graphical operations,
-; the flow ought to go like this:
-;
+
+; Atari 2600 programming is different from any other kind of programming in many ways.  Just one of these ways is the flow of the program.
+
+; Since the CPU must hold tha TIA's hand through all graphical operations, the flow ought to go like this:
+
 ; Clear memory and registers
 ; Set up variables
 ; Loop:
@@ -50,17 +48,13 @@ This is an example that has been around for almost 30 years now. We're going to 
 ;    Do more calculations during overscan
 ;    Wait for next vertical blank
 ; End Loop.
-;
-; What I will do is create an outline, and explain everything I can.
-; This program will display "HELLO" and scroll it down the screen.
-;
-; In writing this program, I will take the opportunity to show you
-; how a few simple modifications can completely change a program's
-; appearance or behavior.  I will invite you to comment out a few
-; lines of code, and alter others, so that you can observe the results.
-;
-; I will be using DASM for now.  Conversion to A65 should be trivial.
-;
+
+; What I will do is create an outline, and explain everything I can. This program will display "HELLO" and scroll it down the screen.
+
+; In writing this program, I will take the opportunity to show you how a few simple modifications can completely change a program's appearance or behavior.  I will invite you to comment out a few lines of code, and alter others, so that you can observe the results.
+
+; I will be using DASM for now. Conversion to A65 should be trivial.
+
         processor 6502
         include vcs.h
         
@@ -71,37 +65,33 @@ PlayfieldY = $90
 
 Start
 
-; The 2600 powers up in a completely random state, except for the PC which
-; is set to the location at $FFC.  Therefore the first thing we must do is
-; to set everything up inside the 6502.
+; The 2600 powers up in a completely random state, except for the PC which is set to the location at $FFC.  Therefore the first thing we must do is to set everything up inside the 6502.
 
         SEI  ; Disable interrupts, if there are any.
         CLD  ; Clear BCD math bit.
-;
+
 ; You may feel the need to use the stack, in which case:
-;
+
         LDX  #$FF
         TXS  ; Set stack to beginning.
-;
-; Now the memory and TIA registers must be cleared.  You may feel the
-; need to write a subroutine that only clears out a certain section of
-; memory, but for now a simple loop will suffice.
-;
+
+; Now the memory and TIA registers must be cleared.  You may feel the need to write a subroutine that only clears out a certain section of memory, but for now a simple loop will suffice.
+
 ; Since X is already loaded to 0xFF, our task becomes simply to count everything off.
-;
+
         LDA #0
 B1      STA 0,X
         DEX
         BNE B1
-;
+
 ; The above routine does not clear location 0, which is VSYNC.  We will take care of that later.
-;
+
 ; At this point in the code we would set up things like the data direction registers for the joysticks and such.
-;
+
         JSR  GameInit
-;
+
 ; Here is a representation of our program flow.
-;
+
 MainLoop
         JSR  VerticalBlank ;Vertical blank.
         JSR  CheckSwitches ;Console switches.
