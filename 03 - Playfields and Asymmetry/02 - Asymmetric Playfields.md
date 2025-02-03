@@ -216,15 +216,17 @@ DrawScreen
 ScanLoop
 ; Result of the following math is:
 ;  X = ( (Y-PlayfieldY) /4 ) mod 7
-        TYA
-        SEC
-        SBC PlayfieldY
-        LSR   ;Divide by 4
-        LSR
-        AND #7  ;modulo 8
-        TAX
-        LDA PFData0,X         ;Load ahead of time.
-        
+        TYA		; Transfer Y to the accumulator.
+        SEC		; turn on the carry flag.
+        SBC PlayfieldY	; subtract with carry.
+        LSR   		; shift right - Divide by 2
+        LSR		    ; shift right - Divide by 2
+        AND #7  	; Binary bitwise comparison 
+        TAX		    ; Transfers A to X
+        LDA PFData0,X   ;Load ahead of time.
+
+; So what is the K.I.S.S. of this part? We are basically loading 191 into Y. We then transfer Y into A, turn on the carry flag (basically make it so math can happen), subtract the current value of PlayfieldY (it starts around 30), divide by 2, divide by 2, then take the binary of that number and compare it to the binary of 7. This number is then transferred to X and so then X will continue to read through the byte table starting with 7 on down as Y decreases. Note that we decrement Y before the loop begins again.
+
 ; WSYNC is placed BEFORE all of this action takes place.
 
         STA WSYNC
