@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
+                "file": "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 - Player Sprites"
+              "title": "02 - Asymmetric Playfields"
             }
           }
         ]
@@ -161,13 +161,13 @@
   },
   "active": "d7f2a188da8766f3",
   "lastOpenFiles": [
+    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
     "01 - On Racing the Beam/images/asym-cycles.png",
     "01 - On Racing the Beam/images/asymmetry.png",
     "01 - On Racing the Beam/images/atari_palette.png",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
     "03 - Playfields and Asymmetry/03 - Combat Source.asm.md",
-    "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "03 - Playfields and Asymmetry/images/timing.png",
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
     "03 - Playfields and Asymmetry/images/crt.gif",
