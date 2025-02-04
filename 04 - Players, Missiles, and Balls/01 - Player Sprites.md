@@ -27,13 +27,13 @@ Programming the Atari requires one to modify one's perceptions of space and time
 be executed in the amount of time it takes to draw the screen.  The unit of time we use is cycles.
 
 2.1. CPU CYCLES IN RELATION TO SCREEN PIXELS
-The CPU clock works at a somewhat slow pace compared to the TIA.  The TIA draws three pixels in the time it takes to execute one CPU cycle.  A WSYNC command will halt the processor until the horizontal blank, which lasts about 20 CPU cycles, after which the electron beam turns on and begins to draw the picture once again.  Therefore the X position of the electron beam is determined like this:
+The CPU clock works at a somewhat slow pace compared to the TIA.  The TIA draws three pixels in the time it takes to execute one CPU cycle.  A `WSYNC` command will halt the processor until the horizontal blank, which lasts about 20 CPU cycles, after which the electron beam turns on and begins to draw the picture once again.  Therefore the X position of the electron beam is determined like this:
 
-  X = (CYCLES - 20) * 3
+  `X = (CYCLES - 20) * 3`
 
-where CYCLES is the number of cycles that have elapsed since the horizontal blank.  But the text I have states that registers are only read every five cycles, so the equation must be adjusted to account for that.  For now, let's just assume that we round up to the next multiple of 15.  The examples we use will involve RESP0, because I know the rule applies to that register.
+where CYCLES is the number of cycles that have elapsed since the horizontal blank.  But the text I have states that registers are only read every five cycles, so the equation must be adjusted to account for that.  For now, let's just assume that we round up to the next multiple of 15.  The examples we use will involve `RESP0`, because I know the rule applies to that register.
 
-If X is a negative number, a RESP0 will put player 0 on the left
+If X is a negative number, a `RESP0` will put player 0 on the left
 edge of the screen.
 
 Let's look at a sample nonsense routine.
@@ -49,12 +49,11 @@ BEGIN:
 	DEY             ; 21+2 = \[23]    (Weenie)
 	BNE BEGIN       ; 23+3 = \[26]    (Branch)
 ```
+The number on the left is the number of cycles that have elapsed since `WSYNC` at the beginning of each instruction, it is only there to illustrate the addition of cycles.  The number in brackets is the number of cycles that have elapsed at the end of each instruction.  It is better to keep track of this number because writes to TIA registers occur on this cycle.
 
-The number on the left is the number of cycles that have elapsed since WSYNC at the beginning of each instruction, it is only there to illustrate the addition of cycles.  The number in brackets is the number of cycles that have elapsed at the end of each instruction.  It is better to keep track of this number because writes to TIA registers occur on this cycle.
+Note the number 22 next to `RESP0` is in asterisks, signifying a write to a TIA register. (22-20)*3 == 6, and since it is `RESP0` we round up to 15 and that is where Player 0 goes.
 
-Note the number 22 next to RESP0 is in asterisks, signifying a write to a TIA register. (22-20)*3 == 6, and since it is RESP0 we round up to 15 and that is where Player 0 goes.
-
-The cycle count is especially important to RESP0, but almost all writes to TIA registers are affected in some way by the cycle count.  A player or missile modification too late in the scanline will cause the player to shift up one scanline as it moves away from the left side of the screen.  Writes to the playfield must be timed to occur in the center of the screen if one wishes to produce an asymmetrical playfield.  The number between these asterisks is very important to the program, and you may find yourself spending hours getting that number to be just what you need it to be for  your particular application.
+The cycle count is especially important to `RESP0`, but almost all writes to TIA registers are affected in some way by the cycle count.  A player or missile modification too late in the scanline will cause the player to shift up one scanline as it moves away from the left side of the screen.  Writes to the playfield must be timed to occur in the center of the screen if one wishes to produce an asymmetrical playfield.  The number between these asterisks is very important to the program, and you may find yourself spending hours getting that number to be just what you need it to be for  your particular application.
 
 I usually put relevant comment outside the counting column, but this isn't relevant code so I decided to illustrate the mnemonic device I used to determine the cycles for each instruction.
 
@@ -62,15 +61,15 @@ I usually put relevant comment outside the counting column, but this isn't relev
 One cannot be expected to look at a table for every instruction they use, lest they go mad.  Many instructions, however, have similar characteristics, and so general rules can be followed in order to estimate the time of each instruction.
 
 3.1. BRANCHING INSTRUCTIONS
-Branching instructions like BNE and BCC are easier than they seem. All branch instructions take two cycles, plus one extra cycle if the branch is taken, plus another extra cycle if said branch crosses the page boundary.
+>[!tip] A note about branching instructions to remember.
+>Branching instructions like `BNE` and `BCC` are easier than they seem. All branch instructions take two cycles, plus one extra cycle if the branch is taken, plus another extra cycle if said branch crosses the page boundary.
 
-When writing time-sensitive code, I recommend that branch instructions only be used at or near the end of a loop that begins in STA WSYNC, or in tight loops that are designed to waste a certain number of cycles. DEY-BNE loops, which are a common way of accomplishing this, will be covered later.
+When writing time-sensitive code, I recommend that branch instructions only be used at or near the end of a loop that begins in `STA WSYNC`, or in tight loops that are designed to waste a certain number of cycles. DEY-BNE loops, which are a common way of accomplishing this, will be covered later.
 
 Let's just say for now that the decision of whether to branch should be generally constant throughout at least the time-sensitive portions of your routine.  
 
 3.2. FAST MATH INSTRUCTIONS
-The 6502 has a family of "fast math" opcodes that have similar characteristics, and consequently they have the same cycle counts.  These fast math opcodes do little more than alter registers or flags using bits from memory.  This family consists of ADC, AND, BIT, CMP, CPX, CPY, EOR, LDA, LDX, LDY, ORA, and SBC.  Not all of these instructions have all of
-the following address modes, but these rules apply to whichever modes are available.  I will use ADC as an example.
+The 6502 has a family of "fast math" opcodes that have similar characteristics, and consequently they have the same cycle counts.  These fast math opcodes do little more than alter registers or flags using bits from memory.  This family consists of `ADC`, `AND`, `BIT`, `CMP`, `CPX, CPY`, `EOR`, `LDA`, `LDX`, `LDY`, `ORA`, and `SBC`.  Not all of these instructions have all of the following address modes, but these rules apply to whichever modes are available.  I will use `ADC` as an example.
 
         ADC #$01        ; +2    Immediate
         ADC $99         ; +3    Zero Page
@@ -82,17 +81,17 @@ the following address modes, but these rules apply to whichever modes are availa
 
 The asterisk \(\*) signifies that if the instruction indexes across a page boundary, add one cycle.  In some cases, just one cycle might not matter.  
 
-Also note that Zero Page,Y addressing is only available for LDX and STX.
+Also note that Zero Page,Y addressing is only available for `LDX` and `STX`.
 
 3.3. STORAGE INSTRUCTIONS
 The instructions STA, STX, and STY have the same timing as fast math instructions, but in the case of Absolute,XY and (Indirect),Y addressing, the extra cycle is always added.
 
 3.4. WEENIE INSTRUCTIONS
-These weenie instructions don't even alter memory, only registers and flags. They are CLC, CLD, CLI, CLV, DEX, DEY, INX, INY, NOP, SEC, SED, SEI, TAX, TAY, TSX, TXA, TXS, and TYA.  They take two cycles.  
+These weenie instructions don't even alter memory, only registers and flags. They are `CLC`, `CLD`, `CLI`, `CLV`, `DEX`, `DEY`, `INX`, `INY`, `NOP`, `SEC`, `SED`, `SEI`, `TAX`, `TAY`, `TSX`, `TXA`, `TXS`, and `TYA`.  They take two cycles.  
 
 3.5. SLOW MATH INSTRUCTIONS
 There are certain instructions that take more clock cycles than simple math instructions.  Some of these instructions can work with the accumulator, but when given an address to work with, they modify memory directly.  The slow 
-math instructions are ASL, DEC, INC, LSR, ROL, and ROR.
+math instructions are `ASL`, `DEC`, `INC`, `LSR`, `ROL`, and `ROR`.
 
         ROR A           ; +2  Accumulator
         ROR $99         ; +5  Zero Page
@@ -103,19 +102,18 @@ math instructions are ASL, DEC, INC, LSR, ROL, and ROR.
 Note that when these instructions work with the accumulator, they shrink down to two cycles and become Weenie Instructions.
 
 3.6. STACK INSTRUCTIONS
-The two push instructions, PHA and PHP, each take three cycles. The two pull instructions, PLA and PLP, each take four cycles.
+The two push instructions, `PHA` and `PHP`, each take three cycles. The two pull instructions, `PLA` and `PLP`, each take four cycles.
 
 3.7. OTHER INSTRUCTIONS
 a.k.a INSTRUCTIONS YOU HAVE NO BUSINESS USING IN TIME-SENSITIVE CODE
 
-JSR takes 6 cycles.  JMP takes 3 cycles in absolute mode, and 5 cycles in absolute indirect mode, but absolute indirect mode is for machines that have a kernel.  RTI and RTS take 6 cycles each.  But with only a few dozen instructions available per scanline, you don't have time to bounce all over the cartridge executing subroutines.
+`JSR` takes 6 cycles.  `JMP` takes 3 cycles in absolute mode, and 5 cycles in absolute indirect mode, but absolute indirect mode is for machines that have a kernel.  `RTI` and `RTS` take 6 cycles each.  But with only a few dozen instructions available per scanline, you don't have time to bounce all over the cartridge executing subroutines.
 
 4. CYCLE COUNTING IN PRACTICE
 
 4.1. MULTIPLE POSSIBILITIES
 
 This is how I would handle wishy-washy code that uses a branch.
-
 ```asm6502
 BEGIN   STA WSYNC       ;CYCLES...
         NOP             ; [0]   +2
@@ -133,16 +131,14 @@ STUPID  LDA $F0         ; [21]  +3   [8]  (BMI takes +3 now)
         LDA $F1         ; [27]  +3   [14]
         STA ENAM0       ; *30*  +3   *17*
         STA RESP0       ; *33*  +3   *20*
-        STA WSYNC
-```
+        STA WSYNC```
 
 I have to count both possibilities, side by side.  Perhaps there is a shorter way to do this, but this way if I have to keep track of a long list, I won't have to page up in the code to figure out what the difference is.
  
 If you can guess what this code does, congratulations.  If you can't, I'll tell you.  This code checks bit 8 of location $CC.  If it is set, it goes immediately to set player 0's registers, setting its position at cycle 20.  If it is clear, then the branch isn't taken so that saves us one cycle, but fourteen more cycles are taken by NOPs, making a net gain of 13 cycles.  Now it takes 33 cycles to reset player 0.
 
 4.2. HOW TO TAME THE MIGHTY (INDIRECT),Y
-Recall that if an (Indirect),Y instruction indexes across a page
-boundary, the CPU takes an extra cycle. This means that depending on the value of Y, the instruction might take four or five cycles.
+Recall that if an (Indirect),Y instruction indexes across a page boundary, the CPU takes an extra cycle. This means that depending on the value of Y, the instruction might take four or five cycles.
 
 In six-column or other high resolution display routines, as many as six (Indirect),Y instructions appear in one scanline.  This adds up to six extra cycles that may or may not be taken. This could throw off your timing unless your data is properly arranged.
 
@@ -168,9 +164,9 @@ LF867: DEY            ;When 8 (17), when 0 (52)  }
         ; End result: players are 42 CPU cycles apart.
 ```
 
-RESP0 occurs at 14 cycles, which is still within the horizontal blank, so player 0 appears at the left side of the screen.  RESP1 occurs at 56 cycles, and (56-20)\*3 = 108 pixels.  Stella.txt says I'm supposed to round that up to a multiple of 15, so that's.... 120.  If player 1 is in triple repeat mode, that would put it on the right edge of the screen.
+`RESP0` occurs at 14 cycles, which is still within the horizontal blank, so player 0 appears at the left side of the screen.  RESP1 occurs at 56 cycles, and (56-20)\*3 = 108 pixels.  Stella.txt says I'm supposed to round that up to a multiple of 15, so that's.... 120.  If player 1 is in triple repeat mode, that would put it on the right edge of the screen.
 
-And since this is the routine that sets the TIA up to display the number of  remaining lives and smart bombs in Defender, that's a distinct possibility.
+And since this is the routine that sets the `TIA` up to display the number of  remaining lives and smart bombs in Defender, that's a distinct possibility.
 
 You can see how I came to the above conclusion if we unroll the loop.
 
@@ -193,10 +189,9 @@ LF867: DEY           ; Y becomes 0          +2
        BNE    LF867  ; Branch is NOT taken. +2 } 4
 ```
 
-Each time through the loop where Y>0, DEY takes two cycles and BNE takes three cycles (due to the branch).  The last time through the loop, when Y=0, the branch is not taken so the BNE only takes two cycles.
+Each time through the loop where Y>0, `DEY` takes two cycles and `BNE` takes three cycles (due to the branch).  The last time through the loop, when Y=0, the branch is not taken so the `BNE` only takes two cycles.
 
 From this, we can build a model for the DEY-BNE loop.
-
 ```asm6502
        LDY #NUM ; +2
     ; extra code possible here
@@ -209,10 +204,9 @@ Note that each iteration takes 5 CPU cycles, or 15 pixels.  This is as close as 
 The X register can also be used to this end, but hey, it needs a name, doesn't it?
 
 CONCLUSION
-
 Keep your code clean and tight.  Make sure your display kernel routines use the same number of scanlines no matter what happens.
-
 # Player Sprite Makers and Sample Code
+
 
 # <a id='opcodes'></a>Opcodes of Interest
 Again, these can all be found: 
@@ -229,7 +223,7 @@ Again, these can all be found:
 	* `BL` - Ball and it uses the Playfield Foreground color.
 
 The basic idea of making an Atari game is that for each scanline from the top left to bottom right, we have to configure the Television Interface Adaptor or TIA registers for each object JUST before the beam reaches its intended position.
-# <a id='classexp'></a>Class Example
+# <a id='classexp'></a>Playfield, Sprite, and Score Example
 ```asm6502
     processor 6502
 
@@ -452,6 +446,222 @@ NumberBitmap:
     .word Reset
     .word Reset
 
+```
+# Example from the Community
+
+```asm6502
+	processor 6502
+	include "vcs.h"
+    include "macro.h"
+	
+	SEG Code
+	org $F000
+
+	SEG.u Variables
+	org $80
+
+YPosFromBot = $80;
+VisiblePlayerLine = $81;
+
+;generic start up stuff...
+Start CLEAN_START
+	
+	LDA #$00   ;start with a black background
+	STA COLUBK	
+	LDA #$1C   ;lets go for bright yellow, the traditional color for happyfaces
+	STA COLUP0
+;Setting some variables...
+	LDA #80
+	STA YPosFromBot	;Initial Y Position
+
+;; Let's set up the sweeping line. as Missile 1
+	
+	LDA #2
+	STA ENAM1  ;enable it
+	LDA #33
+	STA COLUP1 ;color it
+
+	LDA #$20	
+	STA NUSIZ1	;make it quadwidth (not so thin, that)
+
+	
+	LDA #$F0	; -1 in the left nibble
+	STA HMM1	; of HMM1 sets it to moving
+
+
+;VSYNC time
+MainLoop
+	LDA #2
+	STA VSYNC	
+	STA WSYNC	
+	STA WSYNC 	
+	STA WSYNC	
+	LDA #43	
+	STA TIM64T	
+	LDA #0
+	STA VSYNC 	
+
+
+;Main Computations; check down, up, left, right
+;general idea is to do a BIT compare to see if 
+;a certain direction is pressed, and skip the value
+;change if so
+
+;
+;Not the most effecient code, but gets the job done,
+;including diagonal movement
+;
+
+; for up and down, we INC or DEC
+; the Y Position
+
+	LDA #%00010000	;Down?
+	BIT SWCHA 
+	BNE SkipMoveDown
+	INC YPosFromBot
+        
+SkipMoveDown
+	LDA #%00100000	;Up?
+	BIT SWCHA 
+	BNE SkipMoveUp
+	DEC YPosFromBot
+        
+SkipMoveUp
+
+; for left and right, we're gonna 
+; set the horizontal speed, and then do
+; a single HMOVE.  We'll use X to hold the
+; horizontal speed, then store it in the 
+; appropriate register
+
+
+;assum horiz speed will be zero
+	LDX #0	
+
+	LDA #%01000000	;Left?
+	BIT SWCHA 
+	BNE SkipMoveLeft
+	LDX #$10	;a 1 in the left nibble means go left
+
+;; moving left, so we need the mirror image
+	LDA #%00001000   ;a 1 in D3 of REFP0 says make it mirror
+	STA REFP0
+
+SkipMoveLeft
+	LDA #%10000000	;Right?
+	BIT SWCHA 
+	BNE SkipMoveRight
+	LDX #$F0	;a -1 in the left nibble means go right...
+
+;; moving right, cancel any mirrorimage
+	LDA #%00000000
+	STA REFP0
+
+SkipMoveRight
+
+
+	STX HMP0	;set the move for player 0, not the missile like last time...
+
+
+
+; see if player and missile collide, and change the background color if so
+
+	;just a review...comparisons of numbers always seem a little backwards to me,
+	;since it's easier to load up the accumulator with the test value, and then
+	;compare that value to what's in the register we're interested.
+	;in this case, we want to see if D7 of CXM1P (meaning Player 0 hit
+	; missile 1) is on. So we put 10000000 into the Accumulator,
+	;then use BIT to compare it to the value in CXM1P
+
+	LDA #%10000000
+	BIT CXM1P		
+	BEQ NoCollision	;skip if not hitting...
+	LDA YPosFromBot	;must be a hit! load in the YPos...
+	STA COLUBK	;and store as the bgcolor
+NoCollision
+	STA CXCLR	;reset the collision detection for next time
+
+
+
+
+WaitForVblankEnd
+	LDA INTIM	
+	BNE WaitForVblankEnd	
+	LDY #191 	
+
+
+	STA WSYNC	
+	STA HMOVE 	
+	
+	STA VBLANK  	
+
+
+;main scanline loop...
+
+
+ScanLoop 
+	STA WSYNC 	
+
+; here the idea is that VisiblePlayerLine
+; is zero if the line isn't being drawn now,
+; otherwise it's however many lines we have to go
+
+CheckActivatePlayer
+	CPY YPosFromBot
+	BNE SkipActivatePlayer
+	LDA #8
+	STA VisiblePlayerLine 
+SkipActivatePlayer
+
+;set player graphic to all zeros for this line, and then see if 
+;we need to load it with graphic data
+	LDA #0		
+	STA GRP0  
+
+;
+;if the VisiblePlayerLine is non zero,
+;we're drawing it now!
+;
+	LDX VisiblePlayerLine	;check the visible player line...
+	BEQ FinishPlayer		;skip the drawing if its zero...
+IsPlayerOn	
+	LDA BigHeadGraphic-1,X	;otherwise, load the correct line from BigHeadGraphic
+				;section below... it's off by 1 though, since at zero
+				;we stop drawing
+	STA GRP0		;put that line as player graphic
+	DEC VisiblePlayerLine 	;and decrement the line count
+FinishPlayer
+
+
+	DEY		
+	BNE ScanLoop	
+
+	LDA #2		
+	STA WSYNC  	
+	STA VBLANK 	
+	LDX #30		
+OverScanWait
+	STA WSYNC
+	DEX
+	BNE OverScanWait
+	JMP  MainLoop      
+
+
+; here's the actual graphic! If you squint you can see its
+; upsidedown smiling self
+BigHeadGraphic
+	.byte #%00111100
+	.byte #%01111110
+	.byte #%11000001
+	.byte #%10111111
+	.byte #%11111111
+	.byte #%11101011
+	.byte #%01111110
+	.byte #%00111100
+
+	org $FFFC
+	.word Start
+	.word Start
 ```
 # <a id='otherexp'></a>Other Examples
 * This discussion is good for Input, Missiles, and Collisions: https://bumbershootsoft.wordpress.com/2024/09/07/atari-2600-input-missiles-and-collisions/
