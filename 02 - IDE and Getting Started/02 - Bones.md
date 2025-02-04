@@ -864,5 +864,78 @@ And there we go, our first day coding!
 	- Immediate Mode
 	- Absolute Mode (Zero Page)
 	- Literal Hexadecimal
+# Register List
+This is from: https://8bitworkshop.com/docs/platforms/vcs/index.html but basically, these are the registers (we call them reserved terms now) for the 6507 specifically. 
+
+| Hex     | Name     | Bit Mask   | Description                            |
+| ------- | -------- | ---------- | -------------------------------------- |
+| `00`    | `VSYNC`  | `......x.` | Vertical Sync                          |
+| `01`    | `VBLANK` | `xx....x.` | Vertical Blank / Latched Port Enable   |
+| `02`    | `WSYNC`  | `strobe`   | Wait for Horizontal Blank              |
+| `04`    | `NUSIZ0` | `..xx.xxx` | Number-size Player/Missile 0           |
+| `05`    | `NUSIZ1` | `..xx.xxx` | Number-size Player/Missile 1           |
+| `06`    | `COLUP0` | `xxxxxxx.` | Color – Player/Missile 0               |
+| `07`    | `COLUP1` | `xxxxxxx.` | Color – Player/Missile 1               |
+| `08`    | `COLUPF` | `xxxxxxx.` | Color – Playfield/Ball                 |
+| `09`    | `COLUBK` | `xxxxxxx.` | Color – Background                     |
+| `0A`    | `CTRLPF` | `..xx.xxx` | Control Playfield, Ball                |
+| `0B`    | `REFP0`  | `....x...` | Reflect Player 0                       |
+| `0C`    | `REFP1`  | `....x...` | Reflect Player 1                       |
+| `0D`    | `PF0`    | `xxxx....` | Playfield 0 (pixels 0-3)               |
+| `0E`    | `PF1`    | `xxxxxxxx` | Playfield 1 (pixels 4-11)              |
+| `0F`    | `PF2`    | `xxxxxxxx` | Playfield 2 (pixels 12-19)             |
+| `10`    | `RESP0`  | `strobe`   | Reset Player 0                         |
+| `11`    | `RESP1`  | `strobe`   | Reset Player 1                         |
+| `12`    | `RESM0`  | `strobe`   | Reset Missile 0                        |
+| `13`    | `RESM1`  | `strobe`   | Reset Missile 1                        |
+| `14`    | `RESBL`  | `strobe`   | Reset Ball                             |
+| `15`    | `AUDC0`  | `....xxxx` | Audio Control Channel 0                |
+| `16`    | `AUDC1`  | `....xxxx` | Audio Control Channel 1                |
+| `17`    | `AUDF0`  | `...xxxxx` | Audio Frequency Channel 0              |
+| `18`    | `AUDF1`  | `...xxxxx` | Audio Frequency Channel 1              |
+| `19`    | `AUDV0`  | `....xxxx` | Audio Volume Channel 0                 |
+| `1A`    | `AUDV1`  | `....xxxx` | Audio Volume Channel 1                 |
+| `1B`    | `GRP0`   | `xxxxxxxx` | Graphics Bitmap Player 0               |
+| `1C`    | `GRP1`   | `xxxxxxxx` | Graphics Bitmap Player 1               |
+| `1D`    | `ENAM0`  | `......x.` | Enable Missile 0                       |
+| `1E`    | `ENAM1`  | `......x.` | Enable Missile 1                       |
+| `1F`    | `ENABL`  | `......x.` | Enable Ball                            |
+| `20`    | `HMP0`   | `xxxx....` | Horizontal Motion Player 0             |
+| `21`    | `HMP1`   | `xxxx....` | Horizontal Motion Player 1             |
+| `22`    | `HMM0`   | `xxxx....` | Horizontal Motion Missile 0            |
+| `23`    | `HMM1`   | `xxxx....` | Horizontal Motion Missile 1            |
+| `24`    | `HMBL`   | `xxxx....` | Horizontal Motion Ball                 |
+| `25`    | `VDELP0` | `.......x` | Vertical Delay Player 0                |
+| `26`    | `VDELP1` | `.......x` | Vertical Delay Player 1                |
+| `27`    | `VDELBL` | `.......x` | Vertical Delay Ball                    |
+| `28`    | `RESMP0` | `......x.` | Reset Missile 0 to Player 0            |
+| `29`    | `RESMP1` | `......x.` | Reset Missile 1 to Player 1            |
+| `2A`    | `HMOVE`  | `strobe`   | Apply Horizontal Motion (fine offsets) |
+| `2B`    | `HMCLR`  | `strobe`   | Clear Horizontal Motion Registers      |
+| `2C`    | `CXCLR`  | `strobe`   | Clear Collision Latches                |
+| `30`    | `CXM0P`  | `xx......` | Collision M0-P1, M0-P0                 |
+| `31`    | `CXM1P`  | `xx......` | Collision M1-P0, M1-P1                 |
+| `32`    | `CXP0FB` | `xx......` | Collision P0-PF, P0-BL                 |
+| `33`    | `CXP1FB` | `xx......` | Collision P1-PF, P1-BL                 |
+| `34`    | `CXM0FB` | `xx......` | Collision M0-PF, M0-BL                 |
+| `35`    | `CXM1FB` | `xx......` | Collision M1-PF, M1-BL                 |
+| `36`    | `CXBLPF` | `x.......` | Collision BL-PF                        |
+| `37`    | `CXPPMM` | `xx......` | Collision P0-P1, M0-M1                 |
+| `38`    | `INPT0`  | `x.......` | Dumped Input Port 0                    |
+| `39`    | `INPT1`  | `x.......` | Dumped Input Port 1                    |
+| `3A`    | `INPT2`  | `x.......` | Dumped Input Port 2                    |
+| `3B`    | `INPT3`  | `x.......` | Dumped Input Port 3                    |
+| `3C`    | `INPT4`  | `x.......` | Latched Input Port 4                   |
+| `3D`    | `INPT5`  | `x.......` | Latched Input Port 5                   |
+| `80-FF` | –        | `xxxxxxxx` | 128 Bytes RAM                          |
+| `0280`  | `SWCHA`  | `xxxxxxxx` | Joysticks/Controllers                  |
+| `0281`  | `SWACNT` | `xxxxxxxx` | Port A DDR (Data Direction Register)   |
+| `0282`  | `SWCHB`  | `xxxxxxxx` | Console Switches                       |
+| `0283`  | `SWBCNT` | `xxxxxxxx` | Port B DDR (hardwired as input)        |
+| `0284`  | `INTIM`  | `xxxxxxxx` | Timer Output                           |
+| `0294`  | `TIM1T`  | `xxxxxxxx` | Set 1 Cycle Timer                      |
+| `0295`  | `TIM8T`  | `xxxxxxxx` | Set 8 Cycle Timer                      |
+| `0296`  | `TIM64T` | `xxxxxxxx` | Set 64 Cycle Timer                     |
+| `0297`  | `T1024T` | `xxxxxxxx` | Set 1024 Cycle Timer                   |
 
 
