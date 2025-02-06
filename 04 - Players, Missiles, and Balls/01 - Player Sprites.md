@@ -131,11 +131,11 @@ STUPID  LDA $F0         ; [21]  +3   [8]  (BMI takes +3 now)
         LDA $F1         ; [27]  +3   [14]
         STA ENAM0       ; *30*  +3   *17*
         STA RESP0       ; *33*  +3   *20*
-        STA WSYNC```
-
+        STA WSYNC
+```
 I have to count both possibilities, side by side.  Perhaps there is a shorter way to do this, but this way if I have to keep track of a long list, I won't have to page up in the code to figure out what the difference is.
  
-If you can guess what this code does, congratulations.  If you can't, I'll tell you.  This code checks bit 8 of location $CC.  If it is set, it goes immediately to set player 0's registers, setting its position at cycle 20.  If it is clear, then the branch isn't taken so that saves us one cycle, but fourteen more cycles are taken by NOPs, making a net gain of 13 cycles.  Now it takes 33 cycles to reset player 0.
+If you can guess what this code does, congratulations.  If you can't, I'll tell you.  This code checks bit 8 of location `$CC`.  If it is set, it goes immediately to set player 0's registers, setting its position at cycle 20.  If it is clear, then the branch isn't taken so that saves us one cycle, but fourteen more cycles are taken by `NOP`s, making a net gain of 13 cycles.  Now it takes 33 cycles to reset player 0.
 
 4.2. HOW TO TAME THE MIGHTY (INDIRECT),Y
 Recall that if an (Indirect),Y instruction indexes across a page boundary, the CPU takes an extra cycle. This means that depending on the value of Y, the instruction might take four or five cycles.
@@ -164,7 +164,7 @@ LF867: DEY            ;When 8 (17), when 0 (52)  }
         ; End result: players are 42 CPU cycles apart.
 ```
 
-`RESP0` occurs at 14 cycles, which is still within the horizontal blank, so player 0 appears at the left side of the screen.  RESP1 occurs at 56 cycles, and (56-20)\*3 = 108 pixels.  Stella.txt says I'm supposed to round that up to a multiple of 15, so that's.... 120.  If player 1 is in triple repeat mode, that would put it on the right edge of the screen.
+`RESP0` occurs at 14 cycles, which is still within the horizontal blank, so player 0 appears at the left side of the screen.  `RESP1` occurs at 56 cycles, and (56-20)\*3 = 108 pixels.  Stella.txt says I'm supposed to round that up to a multiple of 15, so that's.... 120.  If player 1 is in triple repeat mode, that would put it on the right edge of the screen.
 
 And since this is the routine that sets the `TIA` up to display the number of  remaining lives and smart bombs in Defender, that's a distinct possibility.
 
@@ -208,7 +208,7 @@ Keep your code clean and tight.  Make sure your display kernel routines use the 
 # Player Sprite Makers and Sample Code
 
 
-# <a id='opcodes'></a>Opcodes of Interest
+## <a id='opcodes'></a>Opcodes of Interest
 Again, these can all be found: 
 * https://www.masswerk.at/nowgobang/2021/6502-illegal-opcodes
 * https://www.masswerk.at/6502/6502_instruction_set.html
@@ -223,7 +223,7 @@ Again, these can all be found:
 	* `BL` - Ball and it uses the Playfield Foreground color.
 
 The basic idea of making an Atari game is that for each scanline from the top left to bottom right, we have to configure the Television Interface Adaptor or TIA registers for each object JUST before the beam reaches its intended position.
-# <a id='classexp'></a>Playfield, Sprite, and Score Example
+##  <a id='classexp'></a>Playfield, Sprite, and Score Example
 ```asm6502
     processor 6502
 
@@ -447,8 +447,7 @@ NumberBitmap:
     .word Reset
 
 ```
-# Example from the Community
-
+## Example from the Community
 ```asm6502
 	processor 6502
 	include "vcs.h"

@@ -1171,3 +1171,129 @@ So, it gets kind of confusing here because the way atari games are made now is a
 	One very common use of **.word** is when we are dealing with a value of a _memory address_. Since addresses are 16 bits long for the 6502, we can take advantage of using **.word** to add 2 bytes into memory directly. This is the case of those two lines that contain “**.word Start**” at the end of our code. Since _Start_ is a label representing the memory address $F000, we simply used **.word** twice to put 4 bytes of data (two address values) at the end of our ROM.
 	
 	And that’s pretty much what we need to know for now! I hope this clarifies when we should use **.BYTE**, **.WORD**, and **DS** in our 6502 code. There are some other declaration options that we can use with DASM (for example using **.long** to put 4 bytes of data in memory), but the ones I covered here will be the most useful ones for us.
+
+;;; --------------------------------------------------------------------------
+;;; *  LIGHTS OUT for the Atari 2600
+;;; *
+;;; *  Bumbershoot Software, 2018.
+;;; --------------------------------------------------------------------------
+
+        processor 6502
+        include "vcs.h"
+        include "macro.h"
+;;; --------------------------------------------------------------------------
+;;; * SYMBOLIC NAMES FOR REGISTERS
+;;; * Taken from the Stella Programmer's Guide
+;;; --------------------------------------------------------------------------
+
+
+        .org    $0080
+        ;; No variables yet!
+
+;;; --------------------------------------------------------------------------
+;;; * PROGRAM TEXT
+;;; --------------------------------------------------------------------------
+        .org    $F800           ; 2KB cartridge image
+        ;; RESET vector.
+reset:
+        sei
+        cld
+        ;; Zero out registers.
+        ldx     #$00
+        txa
+        tay
+        ;; Cycle through all possible stack pointers and push zeroes
+        ;; into it to clear out all of RAM. Does 2x as much work as
+        ;; needed, but the loop is smaller this way. This particular
+        ;; trick was taken from an old "macro.h" file for DASM that
+        ;; had this routine credited to one "Andrew Davie."
+a       dex
+        txs
+        pha
+        bne a
+        ;; The "bne" is testing the value of .X. When it's zero again,
+        ;; that will mean all our registers are zero again, and
+        ;; furthermore, we pushed a 0 into $100 (which is $80) which
+        ;; wrapped around the stack pointer to $FF, which is just
+        ;; where we want it.
+
+        ;; Initial setup code
+
+        ;; None yet!
+
+;;; --------------------------------------------------------------------------
+;;; * MAIN FRAME LOOP
+;;; --------------------------------------------------------------------------
+frame:
+        ;; 3 lines of VSYNC
+        lda     #$02
+        sta     WSYNC
+        sta     VSYNC
+        sta     WSYNC
+        sta     WSYNC
+        lsr
+        sta     WSYNC
+        sta     VSYNC
+
+        ;; Set timer for the remaining VBLANK period (37 lines).
+        ;; 37 lines * 76 cycles/line = 2,812 cycles
+        ;; $2B ticks * $40 cycles/tick = 2,752 cycles
+        lda     #$2b
+        sta     TIM64T
+
+        ;; Our actual frame-update logic
+
+        lda     #$40            ; Red background
+        sta     COLUBK
+        lda     #$00
+        sta     GRP0            ; Invisible Players
+        sta     GRP1
+        sta     ENAM0           ; Disable Missiles and Ball
+        sta     ENAM1           ; (TODO: GRP0-ENABL are contiguous)
+        sta     ENABL
+        sta     PF0             ; Invisible Playfield
+        sta     PF1
+        sta     PF2
+
+
+        ;; Wait for VBLANK to finish
+b       lda     INTIM
+        bne     b
+        ;; We're on the final VBLANK line now. Wait for it to finish,
+        ;; then turn it off. (.A is already zero from the branch.)
+        sta     WSYNC
+        sta     VBLANK
+
+;;; --------------------------------------------------------------------------
+;;; * DISPLAY KERNEL
+;;; --------------------------------------------------------------------------
+
+        ;; 192 lines of main display
+        ldy     #$c0
+c       sta     WSYNC
+        dey
+        bne     c
+
+        ;; Turn on VBLANK, do 30 lines of overscan
+        lda     #$02
+        sta     VBLANK
+        ldy     #$1e
+d       sta     WSYNC
+        dey
+        bne     d
+        ;; Now back to the frame loop
+        jmp frame
+
+;;; --------------------------------------------------------------------------
+;;; * SUPPORT ROUTINES
+;;; --------------------------------------------------------------------------
+
+        ;; None yet!
+
+;;; --------------------------------------------------------------------------
+;;; * INTERRUPT VECTORS
+;;; --------------------------------------------------------------------------
+        .ORG $FFFC
+        .word frame
+        .word frame
+
