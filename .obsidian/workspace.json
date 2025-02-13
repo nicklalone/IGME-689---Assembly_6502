@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7170ab478af3a1b2",
+        "id": "b11e6c17c8ed6700",
         "type": "tabs",
         "children": [
           {
-            "id": "d7f2a188da8766f3",
+            "id": "e22bd073ed0789e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+                "file": "05 - Player Input/01 - Making Movement Happen.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 - Asymmetric Playfields"
+              "title": "01 - Making Movement Happen"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -77,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 229.50271224975586
   },
   "right": {
     "id": "397e7571a6c001f6",
@@ -159,25 +160,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d7f2a188da8766f3",
+  "active": "e22bd073ed0789e6",
   "lastOpenFiles": [
-    "02 - IDE and Getting Started/02 - Bones.md",
-    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "05 - Player Input/02 - Hell World RUN.md",
+    "05 - Player Input/01 - Making Movement Happen.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
+    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
+    "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
+    "03 - Playfields and Asymmetry/01 - Playfields.md",
+    "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
+    "images/resolution.png",
+    "05 - Player Input/00 - Notes and Resources.md",
+    "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
+    "02 - IDE and Getting Started/02 - Bones.md",
     "01 - On Racing the Beam/images/asym-cycles.png",
     "01 - On Racing the Beam/images/asymmetry.png",
     "01 - On Racing the Beam/images/atari_palette.png",
-    "03 - Playfields and Asymmetry/01 - Playfields.md",
     "03 - Playfields and Asymmetry/03 - Combat Source.asm.md",
     "03 - Playfields and Asymmetry/images/timing.png",
-    "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
     "03 - Playfields and Asymmetry/images/crt.gif",
     "03 - Playfields and Asymmetry/images/pong.png",
     "03 - Playfields and Asymmetry/images/asym-cycles.png",
     "03 - Playfields and Asymmetry/images/consoles/spacewar.png",
     "03 - Playfields and Asymmetry/images/nintendolightgun.png",
-    "03 - Playfields and Asymmetry/images/8bit/8bitwork-disas.png",
     "03 - Playfields and Asymmetry/images/consoles",
     "03 - Playfields and Asymmetry/images/8bit",
     "03 - Playfields and Asymmetry/images",
@@ -202,9 +207,6 @@
     "Source Code Examples/Air-Sea Battle/Air Sea Battle (decomp).asm.md",
     "Source Code Examples/Adventure/Adventure.asm.md",
     "02 - IDE and Getting Started/00 - Notes and Resources.md",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md",
-    "Source Code Examples/DFIRE.ASM.md",
-    "01 - On Racing the Beam/01 - On Racing the Beam.md",
-    "Other Examples/Toledo Text/demo code/README.md"
+    "01 - On Racing the Beam/02 - What the Beam Races On.md"
   ]
 }

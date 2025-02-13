@@ -2,6 +2,8 @@ These files are mostly for me as I go around and look for good resources. While 
 
 Also, if you have any suggestions for resources, please let me know!
 
+http://yavar.naddaf.name/ale/
+
 https://www.biglist.com/lists/stella/archives/
 [Racing the beam review](https://graydefender.com/racing-the-beam-atari-vcs-2600-book-review/)
 [Special Report: Video Games Atari Headquarters Behind The Scenes 1982](https://www.youtube.com/watch?v=KZdlKC7JEvU)

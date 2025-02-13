@@ -13,7 +13,7 @@
 
 ---------------- Table of Contents ---------------- 
 # <a id='admin'></a>Admin
-I have gone through most of the reading assignments and made comments. I will reiterate that it is important for you to get these in sooner rather than later as it can help me know how you're doing, what you don't get, what you need to learn. If you don't make suggestions or responses, then i'll just keep focusing on what i need to learn. 
+I have gone through most of the reading assignments and made comments. I will reiterate that it is important for you to get these in sooner rather than later as it can help me know how you're doing, what you don't get, what you need to learn. If you don't make suggestions or responses, then I'll just keep focusing on what i need to learn. 
 # <a id='assignment'></a>Assignment
 This week, we're doing Source Code reading. This will probably be a bit difficult at first but I just want you to try your best. As we move forward, it will get easier as you'll be exposed to more stuff. The point of assignments like these is to get you used to looking through source files for inspiration and fixes for things. 
 
