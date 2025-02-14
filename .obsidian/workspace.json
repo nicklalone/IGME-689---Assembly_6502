@@ -11,14 +11,12 @@
             "id": "e22bd073ed0789e6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "05 - Player Input/01 - Making Movement Happen.md",
-                "mode": "source",
-                "source": false
+                "file": "images/resolution.png"
               },
-              "icon": "lucide-file",
-              "title": "01 - Making Movement Happen"
+              "icon": "lucide-image",
+              "title": "resolution"
             }
           }
         ]
@@ -162,8 +160,8 @@
   },
   "active": "e22bd073ed0789e6",
   "lastOpenFiles": [
-    "05 - Player Input/02 - Hell World RUN.md",
     "05 - Player Input/01 - Making Movement Happen.md",
+    "05 - Player Input/02 - Hell World RUN.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
     "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",

@@ -212,7 +212,7 @@ BOTTOM:
 So now we got a sprite on screen, let's think about moving it! How do...we do that?
 
 # Two's Compliment
-Two's complement and the way the 2600 affords for its expression is how you represent the numbners  0 to 255 as -128 to +127. We need negative numbers for things like movement schema and for other reasons we'll get to as time allows. 
+Two's complement and the way the 2600 affords for its expression is how you represent the numbers  0 to 255 as -128 to +127. We need negative numbers for things like movement schema and for other reasons we'll get to as time allows. 
 
 Now, the numbers 0->127 are represented the same way in binary / hex. So, if you only need to deal with positive numbers then there is not much of a space to get confused. Where problems begin is with negative numbers. This is weird!!! I know I say this a lot in this class. 
 
