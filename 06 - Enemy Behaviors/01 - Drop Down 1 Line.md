@@ -7,3 +7,11 @@
 5. [Day 2](#day2)
 
 ---------------- Table of Contents ---------------- 
+
+>[!Tip] OpCodes We Need to be mindful of.
+>What it is. 
+# What does it mean to have an opponent?
+
+
+# Code Example for this week
+

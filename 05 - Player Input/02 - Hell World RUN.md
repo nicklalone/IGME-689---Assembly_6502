@@ -11,7 +11,7 @@
 # Let's make More Things Move
 
 ```asm6502
-; I am adjusting Oscar Toledo's work in positioning here. You can find it at: https://github.com/nanochess/book-Atari
+; I am adjusting Oscar Toledo's work in positioning here. You can find it at: https://github.com/nanochess/book-Atari and around the chapter 3 exercises. 
 
 	PROCESSOR 6502
 	INCLUDE "vcs.h"

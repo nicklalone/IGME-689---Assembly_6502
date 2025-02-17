@@ -11,12 +11,14 @@
             "id": "e22bd073ed0789e6",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "images/resolution.png"
+                "file": "05 - Player Input/02 - Hell World RUN.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "resolution"
+              "icon": "lucide-file",
+              "title": "02 - Hell World RUN"
             }
           }
         ]
@@ -160,14 +162,17 @@
   },
   "active": "e22bd073ed0789e6",
   "lastOpenFiles": [
-    "05 - Player Input/01 - Making Movement Happen.md",
+    "Administration/VC - Syllabus.pdf",
+    "06 - Enemy Behaviors/01 - Drop Down 1 Line.md",
+    "06 - Enemy Behaviors/02 - Reverse Direction.md",
     "05 - Player Input/02 - Hell World RUN.md",
+    "05 - Player Input/01 - Making Movement Happen.md",
+    "images/resolution.png",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
     "04 - Players, Missiles, and Balls/02 - Missiles and Balls.md",
     "03 - Playfields and Asymmetry/02 - Asymmetric Playfields.md",
     "03 - Playfields and Asymmetry/01 - Playfields.md",
     "02 - IDE and Getting Started/01 - IDE and Getting Started.md",
-    "images/resolution.png",
     "05 - Player Input/00 - Notes and Resources.md",
     "04 - Players, Missiles, and Balls/00 - Notes and Resources.md",
     "02 - IDE and Getting Started/02 - Bones.md",
@@ -202,9 +207,6 @@
     "Source Code Examples/Dragonfire/Dragonfire (modified to be compiled with dasm).asm.md",
     "Source Code Examples/Combat/Combat (decomp).asm.md",
     "Source Code Examples/Asteroids/asteroids.asm.md",
-    "Source Code Examples/Air-Sea Battle/Air Sea Battle (decomp).asm.md",
-    "Source Code Examples/Adventure/Adventure.asm.md",
-    "02 - IDE and Getting Started/00 - Notes and Resources.md",
-    "01 - On Racing the Beam/02 - What the Beam Races On.md"
+    "Source Code Examples/Air-Sea Battle/Air Sea Battle (decomp).asm.md"
   ]
 }
