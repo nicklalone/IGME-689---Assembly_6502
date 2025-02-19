@@ -274,7 +274,7 @@ START: CLEAN_START
 ; 2 fewer pixels on either side will help us with 
 ; edge cases. 
 ; We'll talk about 2's compliment soon because we're setting a 1 to direction.
-; And by soon, I mean in this document.
+; And by soon, I mean in this program as we flesh it out.
 ;============================
 
 	LDA #76		; Center of screen
