@@ -225,7 +225,8 @@ So what the 2600 wants Instead is when we convert a number into its negative, yo
 This scheme is very clever as it does not require any extra hardware to cope with negative numbers, but can be a pain from a programming perspective.
 
 # Exercise - Movement Objects
-```asm6502
+
+```asm
 ;============================
 ; This will demonstrate how to get things moving.
 ; Over time, we'll mix and match with this to allow
@@ -490,4 +491,5 @@ fine_adjust:
 	.word START
 	.word START
 ```
+
 

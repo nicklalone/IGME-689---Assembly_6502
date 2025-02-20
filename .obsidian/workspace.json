@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b11e6c17c8ed6700",
+        "id": "909bb9928dc9e2ca",
         "type": "tabs",
         "children": [
           {
-            "id": "e22bd073ed0789e6",
+            "id": "f9525149260752d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Player Input/01 - Making Movement Happen.md",
+                "file": "changelog/2025-02-18.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 - Making Movement Happen"
+              "title": "2025-02-18"
             }
           }
         ]
@@ -94,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "changelog/2025-02-18.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 2025-02-18"
             }
           },
           {
@@ -137,17 +138,32 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "changelog/2025-02-18.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2025-02-18"
+            }
+          },
+          {
+            "id": "ea722b5bcbade707",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 203.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -161,18 +177,21 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e22bd073ed0789e6",
+  "active": "ea722b5bcbade707",
   "lastOpenFiles": [
+    "changelog/2025-02-19.md",
+    "changelog/2025-02-18.md",
+    "changelog",
+    "mario11.gif",
+    "05 - Player Input/01 - Making Movement Happen.md",
     "06 - Enemy Behaviors/01 - Drop Down 1 Line.md",
     "images/resolution.png",
     "05 - Player Input/03 - Core Loop.md",
-    "05 - Player Input/01 - Making Movement Happen.md",
     "05 - Player Input/02 - Hell World RUN.md",
     "Screenshot 2025-02-18 at 11.14.06 AM.png",
     "Screenshot 2025-02-18 at 11.14.02 AM.png",
     "Screenshot 2025-02-18 at 11.13.57 AM.png",
     "Screenshot 2025-02-18 at 11.13.52 AM.png",
-    "mario11.gif",
     "Administration/VC - Syllabus.pdf",
     "06 - Enemy Behaviors/02 - Reverse Direction.md",
     "04 - Players, Missiles, and Balls/01 - Player Sprites.md",
@@ -203,10 +222,8 @@
     "Source Code Examples/Yars Revenge/Yars_Revenge.asm.md",
     "Source Code Examples/Yars Revenge/Yars_Revenge copy.asm",
     "Source Code Examples/Pitfall/Pitfall! (decomp).asm.md",
-    "Source Code Examples/Pitfall/Pitfall! (decomp) copy.asm",
     "Source Code Examples/Halo 2600/halo2600 - organized.asm.md",
     "Source Code Examples/Dragonfire/Dragonfire (modified to be compiled with dasm).asm.md",
-    "Source Code Examples/Combat/Combat (decomp).asm.md",
-    "Source Code Examples/Asteroids/asteroids.asm.md"
+    "Source Code Examples/Combat/Combat (decomp).asm.md"
   ]
 }
