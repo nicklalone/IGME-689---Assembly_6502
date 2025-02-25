@@ -224,6 +224,54 @@ So what the 2600 wants Instead is when we convert a number into its negative, yo
 
 This scheme is very clever as it does not require any extra hardware to cope with negative numbers, but can be a pain from a programming perspective.
 
+# Rough Positioning
+So for the most part, we have to think about how the TIA works in order to really understand what positioning is actually doing. In this case, we're basically doing 2 operations: Rough or Brute Force Positioning and that is quickly followed by a fine positioning on the X-Axis. 
+
+Think about it this way. The TIA has a number of cycles and for every 3 TIA cycles, there is 1 CPU cycle. This works out in very weird and interesting ways. See the timing image below: 
+
+![[tiacpupf-timing.png]]
+
+So, think of it like this: 
+	1. We need to tell the TIA to wait for a new scanline with a `WSYNC`
+	2. Once that is done, we wait for the new scanline AND THEN have to wait cycles before that object can appear. 
+	3. Once we have blown through the desired cycles, we write to `RESP0` (or `RESP1`) for the correct position. 
+		* This is basically resetting the P0 register for the current value. 
+	4. This can be written: $$CPU Cycles to Wait for XpositionAfterWSYNC = \frac{(X+68)}{3}$$
+So, you might wonder why it's `X+68`. Note the image above. This `HBLANK` space is 68 cycles long before the CRT registers the line in visible spaces. It is aligning the system constantly. We divide by 3 because 1 CPU Clock Cycle is = 3 TIA Cycles. And so we're working with CPU cycles and need to accommodate for all the things.
+
+Take the image below. There is a part of our resolution that is the "Horizontal Blank" which requires us to take some time after a WSYNC for the cathode ray tube to get to an area that we can see. So, if we take the below, we need to basically burn 68 cycles on the TIA to get us to the viewable space. However, in order for us to get to 68, we have to think in terms of CPU cycles. For every 3 TIA cycles, we have 1 CPU cycle to think about. 
+
+So the below does 5 CPU cycles, 15 TIA cycles per loop. If we run through it 5 times, we get to 75 TIA Cycles. So, we can't really begin on the far left which is why we tend to originate our movable objects in the middle of the screen and send it in one direction. 
+
+![[Pasted image 20250223114103.png]]
+![[Pasted image 20250222163747.png]]
+While these images may make intuitive sense, it might not show up for you until it does. However, the opportunity here is to consider that starting with counting cycles and working it into your workflow becomes more and more important. 
+### Caveats 
+We are stuck with Brute Forcing our Horizontal Register because there is no coordinate system we can rely on. This is by far, the most annoying thing about writing for this console. From the above, most times with movement we will end up with a very awkward number leftover (usually 15) which will then create the very coarse movement structure. However! There are additional pins or things to worry about on the console. This is where we're allowed to do a bit more fine tuning. 
+# Fine Positioning
+There are 5 objects that the 2600 allows the creator or designer to move around. These are also graphically represented so consider: Player0 / Player1 / Missile0 / Missile1 / Ball. Movement happens relative to their current horizontal position. For each object, there are 4-bit horizontal motion registers to help smooth out movement: `HMP0`, `HMP1`, `HMM0`, `HMM1`, `HMBL`. These values can be set with a value between -8 to 7. Here is where we have to think about two's complement. The actual motion is not executed until we strobe the `HMOVE` register.
+
+The sort of path we need to worry about here is basically, 
+1. Get ourselves into our 15-pixel brute force movement. 
+2. Mathematically get ourselves to a situation where we can convert numbers to +7 > -8 dynamically.
+
+What this does or how this can be done is generally like this: 
+1. Wait for a new scanline or `WSYNC`
+2. Get yourself into a space where you can use the brute force or coarse movement to feed into the fine tuning. 
+3. Send that data to `RESP0` through the `HMP0` register.
+
+In the items here, we're doing it one way. But there are others.
+## Caveat
+Not all objects position exactly the same. Recently, the community has had some interesting discoveries with regard to the ways that the TIA warps those movable objects in different ways. We'll get into that soon but basically we ahve double-wide and quad-wide player sprites. What the community discovered is that it tends to shift the processor +1 color clock. This is in juxtaposition to missiles and the ball shift -1 color clock.
+
+The example the community tends to use to describe this is the game River Raid. The designer compensate for this by taking things like a quad-wide bridge sprite and setting it to an x-position of 63 (instead of 64) before its fine-positioning subroutine is called. This quirk will shift the bridge +1 color clock and draw it at the intended x-position of 64.
+
+So now let's talk about Fine Positioning.
+
+![[Pasted image 20250222164220.png]]
+
+![[Pasted image 20250222164630.png]]
+
 # Exercise - Movement Objects
 
 ```asm
@@ -492,4 +540,222 @@ fine_adjust:
 	.word START
 ```
 
+# Movement in the new style
+We'll have to do some more adjusting; specificially, for things getting us toward the other direction. How would you do it? 
 
+Also note, what if you `INC XPOS` more than once?
+
+```asm
+;============================
+; This will demonstrate how to get things moving.
+; Over time, we'll mix and match with this to allow
+; Player input as well.
+;============================
+
+	PROCESSOR 6502
+	INCLUDE "vcs.h"
+        INCLUDE "macro.h"
+        
+        SEG Variables
+        ORG $80
+
+XPOS	= $0080		; Current X position
+XDIR    = $0081     	; Current X direction
+
+;============================
+; We're setting up 2 variables first. 
+; You can see the intent behind them.
+; But constants like this are done before
+; we set up the code block declaration.
+;============================
+
+    	SEG code
+	ORG $F000
+        
+;============================
+; I'm going to use CLEAN_START but when you
+; make your own games, it may depend on your cycle 
+; counting.
+;============================
+        
+START: CLEAN_START
+
+;============================
+; Note that we're setting up our variable values.
+; 76 is near our center given a max area of 160. 
+; 2 fewer pixels on either side will help us with 
+; edge cases. 
+; We'll talk about 2's compliment soon because we're setting a 1 to direction.
+; And by soon, I mean in this program as we flesh it out.
+;============================
+
+	LDA #80		; Center of screen
+	STA XPOS
+	LDA #1		; Go to right
+	STA XDIR
+        
+;============================
+; Alright, we're now getting into our kernel.
+; We will set up the color of the background
+; Then the color of player 1
+;============================
+
+SHOW_FRAME:
+
+	LDA #$FF	; White.
+	STA COLUP0	; Player 0 color.
+	LDA #$88	; Blue.
+	STA COLUBK	; Background color.
+
+   
+;============================
+; Next, we're going to make sure we reset the registers for movement.
+; It is important to do this because of some of our fine tuning needs constant updating.
+; Note the fine tuning all the way in line 193 "fine tuning."
+;============================
+
+	STA HMCLR	; Clear horizontal motion registers
+        
+;============================
+; And now we're getting into our VSYNC
+;============================
+	
+        STA WSYNC
+	LDA #2		; We need to get our Vsync active. 
+	STA VSYNC   ; Then we move things down 3 WSYNC
+        
+	REPEAT 3
+	STA WSYNC
+	REPEND
+	
+        LDA #0		; And turn it off!
+	STA VSYNC
+        
+;============================
+; We'll reset the player position to basically neutral. 
+; Note here that we're basically going to 0 so we can keep the fine tuning going. 
+; if you want to watch this variable, look at it in the 0-age.
+;============================
+
+	LDA XPOS       ; Desired X position
+	AND #$7F       ; same as AND 01111111, forces bit 7 to zero
+	               ; keeping the result positive
+        SEC            ; set carry flag before subtraction
+        STA WSYNC      ; wait for next scanline
+        STA HMCLR      ; clear old horizontal position values
+        
+DivideLoop:
+        SBC #15        ; Subtract 15 from A
+        BCS DivideLoop ; loop while carry flag is still set
+        EOR #7         ; adjust the remainder in A between -8 and 7
+        ASL            ; shift left by 4, as HMP0 uses only 4 bits
+        ASL
+        ASL
+        ASL
+        STA HMP0       ; set player0 smooth position value
+        STA RESP0      ; fix player0 rough position
+        STA WSYNC      ; wait for next scanline
+        STA HMOVE      ; apply fine position offset to all objects
+                        
+;============================
+; So note that we're writing HMOVE just after a WSYNC.
+; Think of this as telling the TIA to wait til the start of a scanline
+; to start fine tuning movement.
+;============================
+        
+BLANK:
+        REPEAT 37
+        STA WSYNC
+        REPEND
+
+	LDA #0		; Disable blanking
+	STA VBLANK
+        
+;============================
+; Now we're in visible lines.
+;============================
+
+VISIBLE:
+	REPEAT 183
+        STA WSYNC
+        REPEND
+
+;============================
+; So you may wonder why we're basically going down ONLY 183 lines. 
+; The remaining 9 are reserved for the player sprite.
+; We will do it this way first and then talk about "sprites" later.
+; I'll add the binary values where I can.
+;============================
+
+	STA WSYNC	; One scanline
+	LDA #$18	; Play around with this value.00011000
+	STA GRP0	; You'll see that this is the top. 
+
+	STA WSYNC	; One scanline
+	LDA #$18	; Play around with this value.00011000
+	STA GRP0
+
+	STA WSYNC	; One scanline
+	LDA #$18	; Play around with this value.00011000
+	STA GRP0
+
+	STA WSYNC	; One scanline
+	LDA #$3c	; Play around with this value. 00111100
+	STA GRP0
+
+	STA WSYNC	; One scanline
+	LDA #$24	; Play around with this value.
+	STA GRP0
+
+	STA WSYNC	; One scanline
+	LDA #$66	; Play around with this value.
+	STA GRP0
+
+	STA WSYNC	; One scanline
+	LDA #$ff	; Play around with this value. #%11111111
+	STA GRP0
+
+	STA WSYNC	; One scanline
+	LDA #$24	; Play around with this value.
+	STA GRP0
+
+	STA WSYNC	; One scanline
+	LDA #$00	; And this one is blank.
+	STA GRP0	; Change it up and see what happens.
+
+;============================
+; We have a kernel, we have a sprite. Now we're doing our overscan.
+; But notice here that we're actually doing some calculations here in order to get our min and max x values in order.
+;============================
+
+BOTTOM:
+	REPEAT 29
+        STA WSYNC
+	REPEND
+
+	LDA XPOS	; A = XPOS
+	CLC		; Clear carry (C flag in P register becomes zero)
+	ADC XDIR	; A = A + XDIR + Carry
+	STA XPOS	; XPOS = A
+	CMP #1		; Reached minimum X-position 1?
+	BEQ L1		; Branch if EQual
+	CMP #153	; Reached maximum X-position 153?
+	BNE JUMP	; Branch if Not Equal
+	
+;============================
+; Here, we might talk about how he's doing some work in and around negative or signed numbers.
+;============================
+
+L1:
+	LDA #0		; A = 0
+	SEC		; Set carry (it means no borrow for subtraction)
+	SBC XDIR	; A = 0 - XDIR (reverses direction)
+	STA XDIR	; XDIR = A
+                
+JUMP        
+        JMP SHOW_FRAME
+
+	ORG $FFFC
+	.word START
+	.word START
+```
