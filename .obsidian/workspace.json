@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Player Input/01 - Making Movement Happen.md",
+                "file": "05 - Player Input/02 - Hell World RUN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 - Making Movement Happen"
+              "title": "02 - Hell World RUN"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "05 - Player Input/01 - Making Movement Happen.md",
+                "file": "05 - Player Input/02 - Hell World RUN.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 01 - Making Movement Happen"
+              "title": "Backlinks for 02 - Hell World RUN"
             }
           },
           {
@@ -139,13 +139,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "05 - Player Input/01 - Making Movement Happen.md",
+                "file": "05 - Player Input/02 - Hell World RUN.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 01 - Making Movement Happen"
+              "title": "Outline of 02 - Hell World RUN"
             }
           },
           {
@@ -179,9 +179,9 @@
   },
   "active": "f9525149260752d6",
   "lastOpenFiles": [
+    "05 - Player Input/01 - Making Movement Happen.md",
     "05 - Player Input/02 - Hell World RUN.md",
     "images/resolution.png",
-    "05 - Player Input/01 - Making Movement Happen.md",
     "Pasted image 20250222163747.png",
     "Pasted image 20250223114103.png",
     "Pasted image 20250222164630.png",
