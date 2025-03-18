@@ -1,4 +1,4 @@
-We have been working almost exclusively on little bibs and bobs in an effort to get you to this point. All of the eccentricities of how the 2600 works are now mostly manifest save the contents of this specific lesson: movement and input.
+qWe have been working almost exclusively on little bibs and bobs in an effort to get you to this point. All of the eccentricities of how the 2600 works are now mostly manifest save the contents of this specific lesson: movement and input.
 
 Much like last time, we'll be working primarily with the same OpCodes for movement but will be using them for player input as well. Also note here that the method of fine movement that doesn't require you to calculate things down to a specific degree are used. Also used are ways to display sprites and ways to position sprites.
 
