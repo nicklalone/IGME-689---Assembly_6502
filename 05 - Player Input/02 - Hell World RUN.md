@@ -374,6 +374,7 @@ DivideLoop:
     REPEND
 
     ldy #17         ; counter to draw 17 rows of player0 bitmap
+    
 DrawBitmap:
     lda P0Bitmap,Y ; load player bitmap slice of data
     sta GRP0       ; set graphics for player 0 slice
