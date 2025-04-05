@@ -523,7 +523,7 @@ lvblank:
 	ldx 	#0 					
 drawfield: 
 	lda 	#%11111111 ; Solid row of pixels for all PF# registers
-	sta 	PF0
+	sta PF0
 	sta	PF1
 	sta	PF2				
 

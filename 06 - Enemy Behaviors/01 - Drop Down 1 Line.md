@@ -91,7 +91,7 @@ LVScan
         lda #0			; not in sprite, load 0
 
 facesmile
-	tay			; local coord -> Y
+		tay			; local coord -> Y
         lda smile,y		; lookup color
         sta WSYNC		; sync w/ scanline
         sta GRP0		; store bitmap
